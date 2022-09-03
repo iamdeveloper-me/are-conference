@@ -21,7 +21,6 @@ class SpeakerCreateView(CreateView):
 	template_name = 'admin/admin_home.html'
 
 	def AddSpeaker(request):
-		import pdb; pdb.set_trace()
 		if request.method == 'POST' :
 			name = request.POST.get("name")
 			designation = request.POST.get("designation")
