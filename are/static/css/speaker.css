@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+.speaker-section::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+    bottom: 0;
+}
+.speaker-section{
+    background: url(../images/speaker/banner.png)no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+    height: 620px;
+}
+.speaker-section .speaker-head{
+    width: 600px;
+    margin-top: 37%;
+    max-width: 100%;
+}
+.speaker-img{
+    width: auto;
+    margin-top: 33%;
+}
+.speaker-section .speaker-head h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 126%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.speaker-section .speaker-head span{
+    color:#00BCFF;
+    font-weight: 600;
+}
+.speaker-section .speaker-head p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    padding-right: 100px;
+}
+.speaker-details{
+    padding: 100px 0px 0px;
+}
+.speaker_right img{
+    width: auto;
+}
+.speaker_right h4{
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 120%;
+    color: #9A1C20;
+    padding-top: 40px;
+}
+.speaker_right h6{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 126%;
+    color: #333333;
+}
+.speaker_right p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #828282;
+    padding-right: 30px;
+}
+.speaker-details img{
+    width: auto;
+}
+.speaker-details .bg-top.right::after{
+    position: absolute;
+    content: "";
+    /* background-image: url(../images/speaker/bg.png); */
+    height: 225px;
+    width: 225px;
+    background: linear-gradient(96.72deg, #FAD0C4 6.25%, #9A1C20 103.39%);
+    border-radius: 20px;
+    right: 30px;
+    top: -15px;
+    z-index: -1;
+}
+.speaker-details .bg-top.left::before{
+    position: absolute;
+    content: "";
+    /* background-image: url(../images/speaker/bg.png); */
+    height: 225px;
+    width: 225px;
+    background: linear-gradient(96.72deg, #FAD0C4 6.25%, #9A1C20 103.39%);
+    border-radius: 20px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    left: -18px;
+    top: -15px;
+    z-index: -1;
+}
+.speaker-details .bg-top.left{
+    top: 40px;
+}
+.row-space{
+    margin-bottom: 80px;
+}
+.speaker-details .bg-top img{
+    border-radius: 20px;
+    width: 300px;
+    height: 300px
+}
+.speaker-details .bg-top {
+    position: relative;
+}
+
+@media (max-width:767px){
+    .speaker-section .speaker-head h1{
+        font-size: 50px;
+    }
+    .speaker-section .speaker-head p{
+        padding: 0 0px 25px 0px;
+    }
+    .speaker-img{
+        width: 100%;
+        display: none;
+    }
+    .speaker-section{
+        height: 100%;
+    }
+    .speaker-details {
+        padding: 50px 0px;
+    }
+}
+@media (min-width:767px) and (max-width: 1024px){
+    .speaker-details .bg-top img{
+        height: 100%;
+        width: 100%;
+    }
+}
+
+
+
+
+@media screen and (max-width: 767px) {}

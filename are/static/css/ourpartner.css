@@ -1,0 +1,128 @@
+.partner-section::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: #000;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+    bottom: 0;
+}
+.partner-section{
+    background: url(../images/partner/banner.png)no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+    height: 350px;
+}
+.partner-section .our-partnerhead h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 126%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #F2F2F2;
+}
+.partner-section .our-partnerhead{
+    margin-top: 12%;
+}
+.partner-section .our-partnerhead p{
+    color: #00BCFF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 70px;
+    line-height: 126%;
+    text-align: center;
+    text-transform: uppercase;
+}
+.partner-content h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+.content-section .partner-card{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+    padding: 25px;
+    height: 238px;
+    margin-bottom: 30px;
+}
+.content-section .partner-card h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 24px;
+    color: #000000;
+}
+.content-section .partner-card img{
+    height: 46px;
+    width: auto;
+    margin-bottom: 10px;
+}
+.content-section .partner-card p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 21px;
+    color: #4B4B4B;
+    padding: 12px 0px 14px 0px;
+}
+.content-section .partner-card a{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 21px;
+    color: #9A1C20;
+}
+.content-section{
+    padding-bottom: 80px;
+}
+
+
+/* responsive */
+@media (max-width:767px){
+    .partner-section .our-partnerhead p{
+        font-size: 50px;
+    }
+    .partner-section .our-partnerhead h1{
+        font-size: 50px;
+    }
+    .partner-section .our-partnerhead {
+        margin-top: 40%;
+    }
+    .content-section .partner-card{
+        margin-bottom: 17px;
+    }
+    
+    .contact-part{
+        padding-bottom: 10px;
+    }
+    .content-section {
+        padding-bottom: 17px;
+    }
+    .content-section .partner-card h3{
+        font-size: 14px;
+    }
+    
+}
+
+@media (min-width:768px) and (max-width: 1024px) {
+    .content-section .partner-card{
+        height: 285px;
+    }
+}

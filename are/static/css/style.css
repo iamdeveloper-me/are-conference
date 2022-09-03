@@ -1,0 +1,751 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+body{
+    font-family: 'Poppins';
+}
+img{
+    width:100%;
+}
+
+h1, h2, h3, h4, h5, h6, ul, p{
+  margin: 0px;
+  padding:0px;
+}
+a{
+    text-decoration:none !important;
+}
+button:focus{
+    outline:none;
+}
+header{
+    position: absolute;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+header nav{
+    height: 80px;
+}
+header nav a:first-child{
+    font-weight: 600;
+}
+header nav a{
+    font-size: 14px;
+    line-height: 21px;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    font-style: normal;
+    padding-left: 40px !important;
+    padding-right: 0 !important;
+}
+.registration-btn {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    background: transparent;
+    text-shadow: none;
+    border: 1px solid #9A1C20;
+    border-radius: 50px;
+    margin-left: 40px;
+    height: 44px;
+    width: 177px;
+    text-align: center;
+    padding: 0px !important;
+    line-height: 42px;
+}
+.banner-section::after{
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(180deg, #000000 0%, #120179 50.52%, #000000 100%);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0.7;
+}
+.banner-section{
+    background: url(../images/homepage/banner.svg)no-repeat;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+}
+.banner-section .inner-content h1 span{
+    color: #00BCFF;
+}
+.banner-section .inner-content{
+    max-width: 758px;
+    margin: 213px auto 0px;
+    text-align: center;
+}
+.banner-section .inner-content h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 126%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+}
+.banner-section .inner-content ul{
+    margin: 28px 0px 0px;
+}
+.banner-section .inner-content li:first-child{
+    margin-right: 33px;
+}
+.banner-section .inner-content li{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.register-area .register-nowbtn{
+    width: 280px;
+    height: 50px;
+    background: #FFFFFF;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #9A1C20;
+}
+.register-area .apply-awardbtn{
+    width: 280px;
+    height: 50px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    color: #FFFFFF;
+    background: transparent;
+}
+.registration-btn img {
+    width: 18px;
+}
+
+.inner-content li.list-inline-item img {
+    width: 40px;
+}
+
+
+/* banner css start */
+
+section.about_section_area {
+  padding: 80px 0px 50px;
+}
+
+.about_content{
+    padding-top:80px;
+    position: relative;
+}
+.about_content::after {
+    content:'';
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    right: 0;
+    width:213px;
+    height:99px;
+    background: url(../images/homepage/about_arrow.png)no-repeat;
+}
+.about_content h3{
+    font-weight: 400;
+    font-size: 32px;
+    color: #252123;
+    padding-bottom:8px;
+}
+.about_content h2{
+    color: #252123;
+    font-weight:800;
+    font-size: 32px;
+    line-height: 48px;
+}
+.about_content h2 span{
+    color:#000;
+}
+.about_content p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4B4B4B;
+    padding-top: 20px;
+    padding-right: 35px;
+}
+
+.about_content a {
+    display: inline-block;
+    margin-top: 38px;
+    background: #9A1C20;
+    color: #fff;
+    width: 220px;
+    height: 50px;
+    font-weight:600;
+    font-size: 14px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+}
+/* energy css start */
+
+section.about_energy_area {
+    background: #252123;
+    padding:40px 0px;
+}
+.energy_slider button.owl-dot.active{
+    border: 1px solid #FFFFFF;
+    border-radius:50%;
+    width:30px;
+    height:30px;
+    
+}
+.energy_slider button.owl-dot.active span{
+   background: #fff !important;
+   margin: 0 auto;
+  }
+
+  .energy_slider .owl-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+}
+.energy_slider .owl-dots button{
+   margin:0px 8px;
+}
+
+.energy_slider button.owl-prev span {
+    color: transparent;
+    background: url(../images/homepage/left_arrow.svg);
+    width: 24px;
+    height: 16px;
+    display: block;
+    /* position: absolute;
+    left: -11px;
+    top: -25px; */
+}
+
+.energy_slider button.owl-next span {
+    color: transparent;
+    background: url(../images/homepage/right_arrow.svg);
+    width: 24px;
+    height: 16px;
+    display: block;
+    /* position: absolute;
+    left: -11px;
+    top: -25px; */
+}
+.energy_slider .owl-nav {
+    position: relative;
+    top: 18px;
+}
+
+.energy_slider button.owl-prev {
+    position: absolute;
+    left: 50px;
+}
+.energy_slider button.owl-next {
+    position: absolute;
+    right: 50px;
+}
+
+.enery_head_light h2{
+   font-size: 32px;
+   line-height: 48px;
+   color:#fff;
+   font-weight:600;
+   padding-bottom: 12px;
+}
+.enery_head_light p{
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    color:#fff;
+}
+
+.energy_content p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #fff;
+}
+.energy_content p span {
+    color: #0082e8;
+}
+.enery_head_light>p {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+}
+
+.energy_content {
+    padding-right: 60px;
+}
+
+a.knowmore span img {
+    width: 30px;
+}
+
+.energy_content a{
+    color:#00BCFF;
+}
+a.knowmore {
+    color: #00BCFF;
+    margin-top: 20px;
+    text-align: right;
+    display: block;
+}
+a.knowmore span {
+    margin-left: 5px;
+}
+
+.confererence_dark p {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    color: #252123;
+}
+.confererence_dark h2{
+    font-size: 32px;
+    line-height: 48px;
+    color: #252123;
+    font-weight: 600;
+    padding-bottom: 12px;
+}
+
+.confererence_content li {
+    color: #4B4B4B;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 12px;
+    list-style: none;
+    position:relative;
+    padding-left: 22px;
+}
+
+.confererence_content li::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    background: #4B4B4B;
+    border-radius: 50%;
+}
+
+.confererence_content {
+    position: relative;
+}
+.confererence_content ul {
+    padding-right: 100px;
+}
+.confererence_content::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 33px;
+    right: -40px;
+    width: 213px;
+    height: 99px;
+    background: url(../images/homepage/botm_arrow.png)no-repeat;
+}
+
+.sponser_head h3{
+   font-weight: 700;
+   font-size: 32px;
+   line-height: 48px;
+   color: #252123;
+   padding-bottom: 15px;
+}
+
+.sponser_head p{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: #252123;
+}
+.sponser_head p {
+    margin-bottom: 15px;
+}
+
+.sponser_box{
+    border: 1px solid #E0E0E0;
+    background:#fafafa;
+    border-radius: 10px;
+    padding: 25px 40px;
+    margin-bottom: 50px;
+}
+
+.sponser_box img {
+    height: 54px;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+    background:transparent !important;
+}
+/* timer css codepen */
+
+.intro {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+    color: #252123;
+    position: relative;
+    z-index: 0;
+}
+.intro__headline {
+	font-size: 3em;
+	line-height: 1;
+	text-transform: uppercase;
+}
+.intro__subheadline {
+	color: var(--fg2);
+	text-align: center;
+}
+.cd,
+.cd1,
+.cd__unit-group,
+.cd__digits {
+	display: flex;
+	justify-content: center;
+}
+.cd__unit-group {
+    padding: 11px 0px;
+}
+.cd__unit {
+	font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 46px;
+	margin: 0;
+	width: 115px;
+    position: relative;
+}
+.cd__digits,
+.cd__digit {
+	position: relative;
+}
+.cd__digits {
+	box-shadow:
+		0 0.1em 0.05em var(--bg1) inset,
+		0 -0.1em 0.05em var(--bg1) inset;
+	font-weight: bold;
+	height: 3.75rem;
+	margin-bottom:0;
+	overflow: hidden;
+}
+.cd__digit {
+	width: 1ch;
+	z-index: -1;
+}
+.cd__digit--roll-in {
+	animation: rollIn 0.5s ease-in-out;
+}
+.cd__next-digit-fade {
+	animation: fade 0.5s ease-in-out;
+}
+.cd__prev-digit-fade {
+	animation: fade 0.5s ease-in-out reverse;
+}
+.cd__unit-label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #4B4B4B;
+}
+.cd__progress {
+	width: 100%;
+}
+.timer-UI h5{
+    background: #00BCFF;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    padding: 4px;
+}
+.timer-UI{
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    width: 603px;
+    display: inline-block;
+    max-width: 100%;
+}
+.timerfirst{
+    width: 472px;
+    margin: 0px 30px 40px 0px;
+    max-width: 100%;
+}
+.timer-UI .cd__digits{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 52px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #252123;
+}
+.btn__text {
+	display: block;
+	font-size: 1.5em;
+	font-weight: bold;
+	height: 100%;
+	padding-top: 0.125rem;
+}
+.content {
+	background: var(--bg2);
+}
+.content__wrap {
+	margin: auto;
+	padding: 3em 1.5em 1.5em;
+	max-width: 32em;
+}
+.cd__unit img{
+    width: auto;
+    position: absolute;
+    top: 7px;
+    right: -9px;
+}
+
+@keyframes rollIn {
+	from { transform: translateY(-100%); }
+	to { transform: translateY(0); }
+}
+@keyframes fade {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+/* Organized css start */
+
+.section_organized{
+    padding: 60px 0px 50px;
+    background-color:#F2F2F2;
+    position: relative;
+}
+.section_organized::after {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 14%;
+    top: 45px;
+    width: 57px;
+    height: 62px;
+    background: url(../images/award/brown_circle.png);
+}
+.section_organized::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 38%;
+    bottom: 30px;
+    width: 57px;
+    height: 62px;
+    background: url(../images/award/brown_circle.png);
+}
+.Organized_img img {
+    width: 200px;
+}
+.organized_text h3 {
+    color: #252123;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 48px;
+    text-transform: capitalize;
+}
+@media screen and (max-width: 767px) {
+
+    .banner-section .inner-content{
+        margin: 105px auto 0px;
+    } 
+    .banner-section .inner-content h1{
+        font-size: 32px;
+    }
+    .banner-section .inner-content ul {
+        margin: 15px 0px 0px;
+    }
+    .banner-section .inner-content li{
+        font-size:14px;
+    }
+    .banner-section .inner-content li:first-child {
+        margin-right: 25px;
+        margin-bottom: 8px;
+    }
+    .register-area.mt-5.mb-5 {
+        margin: 25px 0px !important;
+    }
+    .register-area.mt-5.mb-5 button {
+        display: inline-block;
+    }
+    .register-area .apply-awardbtn {
+        width: 165px;
+    }
+    .register-area .register-nowbtn {
+        width: 165px;
+    }
+    .banner-section{
+        background-size: cover;
+    }
+    .about_content {
+        padding-top: 0;
+    }
+    section.about_section_area {
+        padding: 45px 0px 50px;
+    }
+    .about_content h3{
+        font-size:25px;
+    }
+    .about_content h2{
+        font-size:26px;
+    }
+    .about_content p{
+        padding-top:5px;
+        padding-right:0px;
+    }
+    .about_content a{
+        margin-top: 22px;
+    }
+    .about_content::after{
+        display: none;
+    }
+    .about_img {
+        margin-top: 45px;
+    }
+    .energy_slider {
+        padding-bottom: 35px;
+    }
+    .enery_head_light>p{
+        font-size:25px;
+    }
+    .enery_head_light h2 {
+        font-size: 26px;
+    }
+    a.knowmore{
+        text-align: left;
+    }
+    .energy_content {
+        padding-right: 0px;
+    }
+    .confererence_content::after{
+        display: none;
+    }
+    .confererence_dark p{
+        font-size:25px;
+    }
+    .confererence_dark h2 {
+        font-size: 26px;
+    }
+    .confererence_content ul {
+        padding-right: 0px;
+    }   
+    .sponser_head h3{
+        font-size:26px;
+        padding-bottom: 6px;
+    }
+    .sponser_box{
+        margin-bottom: 15px;
+    }
+    .register-area .register-nowbtn{
+        height: 44px;
+    }
+    .register-area .apply-awardbtn{
+        height:44px;
+    }
+    .about_content a{
+        height:44px;
+        line-height:44px;
+        width: 180px;
+    }
+    .sponser_box{
+        padding: 20px 25px;
+    }
+    .timer-UI .cd__digits{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+
+    .about_content {
+        padding-top: 0;
+    }
+    .about_content p {
+        padding-right: 0px;
+    }
+    .about_content::after{
+        right: -137px;
+    }
+    section.about_section_area {
+        padding: 55px 0px 50px;
+    }
+    .energy_content {
+        padding-right: 0px;
+    }
+    .enery_head_light h2{
+        font-size:29px;
+    }
+    .confererence_content::after{
+        top: -30px;
+        right: -107px;
+    }
+    .confererence_content ul {
+        padding-right: 0;
+    }
+    .sponser_box{
+        margin-bottom:20px;
+    }
+    .register-area .register-nowbtn {
+        width: 230px;
+    }
+    .register-area .apply-awardbtn {
+        width: 230px;
+    }
+    .banner-section {
+        background-size: cover;
+    }
+
+}
+@media screen and (max-width: 1024px) {
+    .banner-section .inner-content{
+        margin: 140px auto 0px;
+    }
+    .about_content{
+        padding-top:0px;
+    }
+}
+

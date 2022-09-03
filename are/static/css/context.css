@@ -1,0 +1,210 @@
+.context_banner{
+    background: url(../images/context/context_banner.png)no-repeat;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+    }
+
+   
+    .context_banner_text {
+        padding: 32% 0px 100px;
+    }
+
+    .context_banner_text h2 {
+        font-weight: 400;
+        font-size: 70px;
+        color: #fff;      
+        text-transform: uppercase;
+        line-height: 85px;
+    }
+    .context_banner_text span{
+        color: #00BCFF;
+        font-weight:700;
+    }
+    .context_banner_text p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 21px;
+        color: #fff;
+        padding-top: 26px;
+    }
+
+.running_section_area{
+    padding-top:70px;
+}
+.running_left_text h4{
+    font-weight: 400;
+    font-size: 32px;
+    color: #252123;
+    padding-bottom:5px;
+    text-transform: capitalize;
+}
+.running_left_text h3{
+    font-weight: 700;
+    font-size: 32px;
+    color: #252123;
+    padding-bottom:20px;
+    text-transform: capitalize;
+}
+.running_left_text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 20px;
+}
+
+.running_left_text.right_runtext {
+    text-align: right;
+    padding-left: 20px;
+}
+
+section.running_section_area.padd_botm {
+    padding-bottom: 100px;
+}
+.padd_botm{
+    position: relative;
+}
+.padd_botm::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: -11px;
+    bottom: 4px;
+    width: 235px;
+    height: 235px;
+    background: url(../images/context/line_circle.png);
+    z-index: -1;
+}
+
+.running_left_text h3 span{
+    font-weight:400;
+}
+
+.running_left_text li span img {
+    width: 15px;
+    display: inline-block;
+    margin-right: 8px;
+}
+.running_left_text li{
+    list-style:none;
+}
+.running_left_text li p{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color:#000;
+}
+
+.Participating_area{
+    position: relative;
+}
+
+.Participating_area::after {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 85px;
+    top: 140px;
+    width: 771px;
+    height: 448px;
+    background: url(../images/context/Participating_img.png);
+    z-index: -1;
+}
+.Participating_area::before {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 6px;
+    width: 1095px;
+    height: 722px;
+    background: url(../images/context/blue_vectore.png);
+    z-index: -1;
+}
+.particioate_pera p {
+    width: 48%;
+}
+.Participating_area{
+    padding-bottom:70px;
+}
+
+.running_imgbox .timer-UI h5 {
+    background: #274079;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+    border-radius: 10px 10px 0px 0px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 34px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    padding: 4px;
+}
+.cd, .cd1, .cd__unit-group, .cd__digits {
+    display: flex;
+    justify-content: center;
+}
+.timer-UI {
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    width: 603px;
+    display: inline-block;
+    max-width: 100%;
+}
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #252123;
+    position: relative;
+    z-index: 0;
+}
+.cd__unit-group {
+    padding: 11px 0px;
+}
+.running_imgbox .cd__unit {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 46px;
+    margin: 0;
+    width: 100px;
+    position: relative;
+}
+.timer-UI .cd__digits {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 52px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #252123;
+}
+.cd__unit img {
+    width: auto;
+    position: absolute;
+    top: 7px;
+    right: -9px;
+}
+
+.running_imgbox{
+    position: relative;
+}
+.context_counter {
+    position: absolute;
+    top: 55%;
+    width: 506px;
+    right: 143px;
+}
+
+.running_left_text.padd_right {
+    padding-right: 15%;
+}

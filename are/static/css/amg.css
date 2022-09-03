@@ -1,0 +1,191 @@
+.amg_banner {
+    background: url(../images/amg/amg_banner.png)no-repeat;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+}
+li{
+    list-style:none;
+}
+
+.AMG_banner_text {
+    padding: 13% 0px 91px;
+    color:#fff;
+}
+
+.AMG_banner_text h3 {
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 91px;
+}
+
+.AMG_banner_text h4 {
+    color: #00BCFF;
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 91px;
+    padding-bottom: 25px;
+}
+
+.AMG_banner_text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    width: 72%;
+}
+/* electricity use css */
+
+.electricity_section{
+  padding-top:80px;
+  position: relative;
+}
+
+.electric_text h3{
+    font-size: 30px;
+    line-height: 32px;
+    color: #000;
+    padding-bottom:12px;
+    font-weight:700;
+}
+
+.electric_text h3 span{
+    font-weight:400;
+}
+
+.electric_text h6 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000;
+    padding: 8px 0px 20px;
+}
+.electric_text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4B4B4B;
+}
+
+.electric_text li span {
+    width: 15px;
+    display: inline-block;
+    margin-right: 8px;
+}
+.electric_text ul{
+    padding:15px 0px 5px;
+}
+
+.electric_text li {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4B4B4B;
+    padding-bottom: 10px;
+}
+.amg_pera{
+    padding-bottom:15px;
+}
+
+.right_electro::after {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 0;
+    bottom: 36px;
+    width: 500px;
+    height: 108px;
+    background: url(../images/amg/line_vave.png);
+}
+
+.left_electro::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0px;
+    bottom: -8px;
+    width: 500px;
+    height: 108px;
+    background: url(../images/amg/line_vave.png);
+}
+.electric_text li p {
+    display: inline-block;
+    width: 80%;
+    vertical-align: top;
+}
+
+.amg_pera2{
+    padding-bottom: 0px;
+    padding-top:15px;
+}
+
+.space_pera p{
+    padding-bottom:15px;
+}
+.botm_head h3 span{
+    font-weight:400;
+}
+.botm_head h3{
+    font-size: 30px;
+    line-height: 32px;
+    color: #000;
+    padding-bottom: 20px;
+    font-weight: 700;
+}
+
+.botm_space{
+    padding-bottom:80px;
+}
+
+.swaraj_text a {
+    display: inline-block;
+    background: #9A1C20;
+    color: #fff;
+    width: 220px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 50px;
+}
+
+section.swaraj_awards {
+    padding: 50px 0px;
+    background: #F2F2F2;
+    position: relative;
+}
+section.swaraj_awards::after {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 11%;
+    top: 36px;
+    width: 57px;
+    height: 62px;
+    background: url(../images/award/brown_circle.png);
+}
+
+section.swaraj_awards::before {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 12%;
+    bottom: 25px;
+    width: 57px;
+    height: 62px;
+    background: url(../images/award/brown_circle.png);
+}
+.swaraj_text {
+    text-align: center;
+}
+
+.swaraj_text h3{
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    color: #000000;
+    padding-bottom: 30px;
+}
+

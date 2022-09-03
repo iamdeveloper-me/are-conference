@@ -1,0 +1,277 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/amg.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <title></title>
+  </head>
+  <body>
+    <!-- Navbar start-->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg ">
+                        <a class="navbar-brand p-0" href="homepage.html">
+                            <img src="{% static 'images/logo.svg' %}"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                          <div class="navbar-nav ml-auto">
+                            <a class="nav-item nav-link active" href="{% url 'home' %}">Home</a>
+                            <a class="nav-item nav-link" href="{% url 'context' %}">Context</a>
+                            <a class="nav-item nav-link" href="{% url 'partner' %}">Partners</a>
+                            <a class="nav-item nav-link" href="{% url 'agenda' %}">Agenda</a>
+                            <a class="nav-item nav-link" href="{% url 'speaker' %}">Speakers</a>
+                            <a class="nav-item nav-link" href="{% url 'award' %}">Awards</a>
+                          </div>
+                        </div>
+                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
+                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
+                            Registration</a>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar end -->
+    <!-- AMG awards start -->
+    <section class="amg_banner">
+           <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                        <div class="AMG_banner_text">
+                            <h3>Avoid - Minimise - Generate </h3>
+                            <h4>(AMG) Challenge Award </h4>
+                            <p>The Energy Swaraj Foundation believes that the use of energy of any kind, even if it is solar energy, has to be done very carefully because there is no manufacturing in the world which does not have an impact on the environment. It may be less, but it will not be zero. Therefore we believe that one should follow the three step AMG approach even when we use solar or renewable energy. In the first step, we should learn to Avoid the use of energy, if possible. In the second step, we should learn to Minimise the use of energy using efficient appliances. And, only as a last option we should Generate energy, that too locally, if possible.</p>
+                        </div>
+                  </div>
+               </div>
+           </div>
+    </section>
+    <!-- AMG awards close -->
+
+    <!-- electricity use start-->
+    <section class="electricity_section right_electro">
+        <div class="container">
+            <div class="row">
+                  <div class="col-md-7">
+                      <div class="electric_text">
+                         <h3><span>Step -1 | </span>Avoid electricity use by 1/3rd </h3>
+                         <h6>“Avoid the use of energy, as much as possible, even if it is solar energy”</h6>
+                         <p>Avoid refers to not using or stop using the appliances at all, even if they are powered by solar energy. Why? Solar PV modules are considered a relatively much cleaner source of electricity than coal-based electricity, but they do have some non-zero carbon footprint. Purification of Silicon, the production of silicon wafer, solar cells, glass, and aluminum frame all require energy. Energy consumption in production means the carbon footprint. After the end of life, solar PV modules and other system components like electronics and batteries would become waste. Hence,  the first rule of using solar energy would be to "Avoid" electricity use even if produced using solar energy or for that matter any other energy.</p>
+                         <p>Avoid the use of energy refers to avoid using appliances that can be avoided. Following are some examples:</p>
+                         <ul>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Avoid (do not use) the use of lights during day time, do not use at all or reduce the number of lights</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Avoid the use of fans by reducing the number or the duration of fan use</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Avoid the use of heavy loads like geysers and air conditioners, they consume a lot of electricity</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Avoiding the use of electric water cooler water from the natural cooler</p></li>
+                         </ul>
+                         <p class="amg_pera">… and there can be many more possibilities</p>
+                         <p>With these measures and many more, one can keep the target to avoid the use of electricity by 1/3rd. This saving of money can be invested in buying efficient appliances that further reduce electricity consumption</p>
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                      <div class="electricity_img">
+                          <img src="{% static 'images/amg/switch_img.png' %}">
+                      </div>
+                  </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- electricity use close-->
+
+    <!-- Minimize electricity start -->
+     <section class="electricity_section left_electro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="electricity_img">
+                        <img src="{% static 'images/amg/eletro_img.png' %}">
+                    </div>
+                </div>
+                  <div class="col-md-7">
+                      <div class="electric_text">
+                        
+                        <h3><span>Step -2 | </span>Minimize electricity use by 1/3rd</h3>
+                         <h6>“Minimize the use of energy, as much as possible, using efficient appliances”</h6>
+                         <p>Minimizing electricity use refers to reducing the use of electricity for a given operation using efficient appliances. Thus in this step, we try to reduce electricity consumption by replacing less efficient appliances with more efficient appliances.  For example, using an LED bulb or tube light reduces electricity consumption by almost 50 to 60% compared to fluorescent lights. Replacing a BLDC fan with a normal induction motor fan can reduce electricity consumption by 50 to 60%. For every gadget that uses electricity, there are efficient alternatives available in the market.  With efficient appliances, electricity consumption can be reduced by another 20 to 50%.</p>
+                         <p class="amg_pera2">Following are some examples for minimizing electricity consumption:</p>
+                         <ul>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg" alt="" title=""></span><p>Replace fluorescent lights with LED lights</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Replace normal ceiling fan with BLDC fans</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Replace 1, 2 or 3 rated appliances with 5 star rated appliances (Fridge, AC, gyser)</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Keep the temperature setting of AC to 25 degree C or above, similarly keep refrigerator temperature setting to higher value</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Replace normal computer with an efficient laptop</p></li>
+                            <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Replace normal water pump with efficient water pump</p></li>
+                         </ul>
+                       
+                      </div>
+                  </div>
+                 
+            </div>
+           
+        </div>
+    </section>
+     <!-- Minimize electricity close -->
+
+     <!-- generate start-->
+    <section class="electricity_section botm_space">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                   <div class="botm_head"> <h3><span>Step -3 | </span>Generate remaining 1/3rd energy locally</h3></div>
+                </div>
+                  <div class="col-md-7">
+                      <div class="electric_text space_pera">
+                      
+                        
+                         <h6>“Generate as little energy as possible locally after avoid and minimize step” </h6>
+                         <p>Once you have avoided what can be avoided (hopefully by 1/3rd) and minimized what can be minimized (hopefully by another 1/3rd), then remaining electricity (the 1/3rd) can be easily generated using solar energy or any renewable energy without needing significant investment. One can connect the solar system with the grid or the best way is to go off-grid and become an independent generator and consumer of electricity.</p>
+                         <p>The 1/3rd-1/3rd-1/3rd approach is just a suggestion and depends on the individual or institution's climatic situation, building design, the sensitivity of building users, etc. The percentage number of each step-1 to step-3 can vary. It is clear that the more you avoid step-1 and the more you minimize in step-2, the less you will generate in step-3.
+                        </p>
+                       
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                      <div class="electricity_img">
+                          <img src="{% static 'images/amg/generate_img.png' %}">
+                      </div>
+                  </div>
+            </div>
+           
+        </div>
+    </section>
+    <!-- generate close-->
+
+    <!-- swaraj award start-->
+    <section class="swaraj_awards">
+          <div class="container">
+              <div class="col-md-12">
+                   <div class="swaraj_text">
+                        <h3>Energy Swaraj Awards - Application Form</h3>
+                        <a href="applicationform.html">Apply Now</a>
+                   </div>
+              </div>
+          </div>
+    </section>
+    <!-- swaraj award close-->
+
+
+     <!-- footer -->
+   <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-part">
+                    <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
+                    <h4 class="contact-us pb-3">Contact us :</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">
+                            <img src="{% static 'images/footer/1.png' %}"/>
+                            +91 8291055825
+                        </li>
+                        <li>
+                            <img src="{% static 'images/footer/2.png' %}"/>
+                            conference@energyswaraj.org 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 menu-list">
+                <h4>Menus</h4>
+                <ul class="list-unstyled my-first">
+                    <li>
+                        <a href="{% url 'home' %}">Home</a></li>
+                    <li>
+                    <li>
+                        <a href="{% url 'context' %}">Context</a></li>
+                    <li>
+                        <a href="{% url 'partner' %}">Partners</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-md-2 menu-list">
+                <!-- <h4 class="pl-0">Column Two</h4> -->
+                <ul class="list-unstyled footer_top">
+                    <li>
+                        <a href="{% url 'agenda' %}">Agenda</a></li>
+                    <li>
+                        <a href="{% url 'speaker' %}">Speakers</a></li>
+                    <li>
+                        <a href="{% url 'award' %}">Awards</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5  menu-list subscribe-div">
+                <h4 class="pl-0">Subscribe</h4>
+                <input class="form-control" placeholder="Enter your email"/>
+                <button class="btn home-button">Submit</button>
+                <p>By subscribing you agree to with our Privacy Policy</p>
+                <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/fb.png' %}"/>
+                    </li>
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/insta.png' %}"/>
+                    </li>
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/twitter.png' %}"/>
+                    </li>
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/linkd.png' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr class="horizontal-line">
+    <div class="container">
+        <div class="row copy-right">
+            <div class="col-md-4">
+                <div class="">
+                    <p>©2022, All right reserved.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="text-xl-right text-lg-right text-md-right text-left">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="">Terms of Service</a>
+                        </li>
+                        <!-- <li class="list-inline-item">
+                            <a href="">Cookies Settings</a>
+                        </li> -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    
+   
+  </body>
+</html>

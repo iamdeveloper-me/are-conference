@@ -1,0 +1,316 @@
+
+/* Award banner css start */
+
+.award_banner{
+    background: url(../images/award/award_banner.png)no-repeat;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+}
+
+.award_text h1{
+    font-weight: 700;
+    font-size: 70px;
+    color: #fff;
+}
+
+.award_text {
+    display: flex;
+    justify-content: center;
+    padding: 20% 0px 12%;
+}
+
+/* award text section css */
+
+.award_textarea{
+    padding:70px 0px;
+}
+
+.banner_text p{
+    font-weight: 400;
+    font-size: 14px;
+    color: #252123;
+    line-height: 21px;
+    padding-right: 15%;
+}
+.opportunity_section_area {
+    background: #F2F2F2;
+    padding: 66px 0px;
+    position: relative;
+}
+.opportunity_section_area::after{
+    content: '';
+    position: relative;
+    display: block;
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:150px;
+    height:128px;
+    background:url(../images/award/appr_rightb.png);
+}
+.opportunity_section_area::before {
+    content: '';
+    position: relative;
+    display: block;
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 195px;
+    height: 199px;
+    background: url(../images/award/appr_leftb.png);
+}
+
+.opportunity_text{
+    position: relative;
+}
+.opportunity_text::after {
+    content: '';
+    position: relative;
+    display: block;
+    position: absolute;
+    left: 34%;
+    top: 134%;
+    width: 57px;
+    height: 62px;
+    background: url(../images/award/brown_circle.png);
+}
+
+.opportunity_text::before {
+    content: '';
+    position: relative;
+    display: block;
+    position: absolute;
+    right: 8%;
+    top: -89%;
+    width: 88px;
+    height: 97px;
+    background: url(../images/award/brown_circle2.png);
+}
+.opportunity_text h2{
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 60px;
+    color: #252123;
+}
+
+.opportunity_img {
+    padding-right: 50px;
+}
+
+.opportunity_text h2 span{
+    font-weight:800;
+    color:#000;
+}
+
+/* category section css */
+
+
+.category_section_area{
+    padding-top:80px;
+    padding-bottom:80px;
+}
+
+.category_text h4 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 30px;
+    color: #252123;
+    padding-bottom: 20px;
+}
+
+.category_text h5 {
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 24px;
+    color: #000;
+    padding-bottom:20px;
+}
+
+.category_text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #252123;
+    padding-bottom: 10px;
+}
+
+.category_text h6 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: #000;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+.category_text a, .saveworld_text a {
+    display: inline-block;
+    background: #9A1C20;
+    color: #fff;
+    width: 220px;
+    height:50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border-radius:50px;
+    line-height:50px;
+}
+
+/* save the world */
+
+.saveworld_section_area{
+  padding-bottom: 80px;
+}
+
+.saveworld_text h2{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color:#000;
+    padding-bottom:20px;
+}
+
+.saveworld_text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 25px;
+}
+
+.saveworld_text h5 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    padding-bottom: 30px;
+    color: #000;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .award_banner{
+        background-size: cover;
+    }
+    .award_text h1{
+        font-size:50px;
+    }
+    .award_textarea {
+        padding: 40px 0px;
+    }
+    .banner_text p{
+        padding-right:0px;
+    }
+    .opportunity_img {
+        padding-right: 0px;
+    }
+
+    .opportunity_text h2 {
+        font-size: 19px;
+        line-height: normal;
+        position: relative;
+        z-index: 1;
+    }
+    .opportunity_text {
+        padding-top: 20px;
+    }
+
+    .opportunity_section_area{
+        padding: 40px 0px;
+    }
+    .opportunity_text::before{
+        display: none;
+    }
+    .opportunity_text::after{
+        display: none;
+    }
+    .category_section_area {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .category_text h4{
+        font-size:22px;
+        padding-bottom: 10px;
+ }
+    .category_text h5{
+       font-size: 20px;
+       padding-bottom: 10px;
+    }
+    .category_text h6{
+        margin-bottom: 15px;
+        margin-top: 0px;
+    }
+    .category_text {
+        padding-bottom: 22px;
+    }
+
+    .saveworld_text h2{
+        font-size: 20px;
+        line-height: 25px;
+        padding-bottom: 10px;
+        padding-top: 15px;
+    }
+    .saveworld_text p{
+        padding-bottom: 10px;
+    }
+
+    .category_text a, .saveworld_text a{
+        width: 180px;
+        height: 44px;
+        line-height: 44px;
+    }
+    .saveworld_section_area {
+        padding-bottom: 40px;
+    }
+    
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+
+    .banner_text p{
+       padding-right:0px;
+    }
+    .award_text{
+        padding: 15% 0px 12%;
+    }
+    .award_textarea {
+        padding: 35px 0px;
+    }
+    .opportunity_section_area{
+        padding: 40px 0px;
+    }
+    .opportunity_text h2{
+        font-size: 25px;
+        line-height: normal;
+    }
+
+    .opportunity_img {
+        padding-right: 30px;
+    }
+    .category_section_area {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .saveworld_section_area {
+        padding-bottom: 50px;
+    }
+    .opportunity_text::before{
+        top: -50%;
+    }
+    .opportunity_text::after{
+         top: 91%;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+    .opportunity_text::before{
+        top: -35%;
+    }
+    .opportunity_text::after{
+        top: 98%;
+    }
+}

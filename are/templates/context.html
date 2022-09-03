@@ -1,0 +1,610 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}{% static '">
+    <link rel="stylesheet" href="{% static 'css/context.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <title></title>
+  </head>
+  <body class="home">
+    <!-- Navbar start-->
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg ">
+                        <a class="navbar-brand p-0" href="homepage.html">
+                            <img src="{% static 'images/logo.svg' %}"/>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                          <div class="navbar-nav ml-auto">
+                            <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
+                            <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
+                          </div>
+                        </div>
+                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
+                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
+                            Registration</a>
+                      </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Navbar end -->
+    <!-- context banner start -->
+      <section class="context_banner">
+          <div class="container">
+             <div class="row">
+                  <div class="col-md-6">
+                       <div class="context_banner_text">
+                                <h2>Do you <span>feel</span> the <span>change?</span></h2>
+                                <p>Have you noticed changes in the natural environment around you? Have you observed changes in weather conditions? If yes, then you are experiencing climate change firsthand. This climate change can be attributed to human activities. All the life-supporting elements of nature's ecosystem like air, water, soil, river, ice caps, and forest have degraded.</p>
+                       </div>
+                  </div>
+             </div>
+          </div>
+      </section>
+    <!-- context banner close -->
+    <!-- Running out of time start -->
+      <section class="running_section_area">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-6">
+                      <div class="running_left_text padd_right">
+                           <h4>We are</h4>
+                           <h3>Running out of time!</h3>
+                           <p>The planet is hotter by 1.19 degrees centigrade, and the average global temperatures are rising. This global warming is leading to repercussions such as rising sea levels, heatwaves, cyclones, floods, droughts, and forest fires are ever-increasing, leading to negative implications for humans. UN Secretary-General Antonia Guterres says, ‘this is code red for humanity. We must combine forces now to avert climate catastrophe.’ We have only 7-8 years before the global temperature touches the 1.5℃ mark.</p>
+                           <p>Climate clock shows how much time is left before we touch global warming of 1.5oC (as per the current rate of carbon emission). At this temperature the climate change starts to become irreversible.</p>
+                       </div>
+                   </div>
+                   <div class="col-md-6">
+                     <div class="running_imgbox">
+                        <img src="{% static 'images/context/running_right.png' %}" alt="" title="">
+                        <div class="context_counter">
+                            <div class="intro timer-UI">
+                                <h5>Time left to touch 1.5<sup>o</sup>C of global warming</h5>
+                                <div class="cd">
+                                    <div class="cd__unit-group">
+                                        <div class="cd__unit">
+                                            <div class="cd__digits">
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'images/homepage/slash.svg' %}"/>
+                                            <div class="cd__unit-label">Years</div>
+                                        </div>
+                                        <div class="cd__unit">
+                                            <div class="cd__digits">
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'images/homepage/slash.svg' %}"/>
+                                            <div class="cd__unit-label">Days</div>
+                                        </div>
+                                    </div>
+                                    <div class="cd__unit-group">
+                                        <div class="cd__unit">
+                                            <div class="cd__digits">
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'images/homepage/slash.svg' %}"/>
+                                            <div class="cd__unit-label">Hours</div>
+                                        </div>
+                                        <div class="cd__unit">
+                                            <div class="cd__digits">
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                            </div>
+                                            <img src="{% static 'images/homepage/slash.svg' %}"/>
+                                            <div class="cd__unit-label">Minutes</div>
+                                        </div>
+                                        <div class="cd__unit">
+                                            <div class="cd__digits">
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                                <div class="cd__digit" data-col>
+                                                    <div data-pos="next">-</div>
+                                                    <div data-pos="prev">-</div>
+                                                </div>
+                                            </div>
+                                            <div class="cd__unit-label">Seconds</div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                   
+                            </div>
+                         </div>
+
+                     </div>
+                    
+                   </div>
+               </div>
+           </div>
+      </section>
+    <!-- Running out of time start -->
+
+    <!-- conference start -->
+    <section class="running_section_area padd_botm">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="running_imgbox">
+                       <img src="{% static 'images/context/conference_img.png' %}" alt="" title="">
+  
+                    </div>
+                  </div>
+                <div class="col-md-6">
+                   <div class="running_left_text right_runtext">
+                        <h4>What is</h4>
+                        <h3>ARE Conference?</h3>
+                        <p>The climate agreements, conferences, deliberations, and devising frameworks started as early as 1998 with the Kyoto Protocol, up to the Paris Agreement in 2015, but unfortunately, climate change is still accelerating at an unprecedented rate. Therefore, there is a need for a global platform, where people can discuss the pathways for restoring the climate and environment. The Action for Restoring Environment (ARE) Conference is going to bring together eminent leaders from different spheres to harmonise environmental conservation activities and to take concrete pledges to save the environment.</p>
+                    </div>
+                </div>
+              
+            </div>
+        </div>
+   </section>
+<!-- conference close -->
+<!-- Participating start-->
+<section class="running_section_area Participating_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <div class="running_left_text particioate_pera">
+                    <h4>Who would benefit from</h4>
+                    <h3>Participating <span>in the</span> ARE Conference?</h3>
+                    <p>Since everyone is a user of energy, everyone is a contributor to climate change, and therefore everyone needs to contribute to climate change mitigation. Anybody from any walk of life can attend the conference, particularly the following members:</p>
+                    <ul>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %' %}}" alt="" title=""></span><p>Industries</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Scientists</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Academicians</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Entrepreneurs</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Government Officials</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>NGOs</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Social Impact Makers</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Students</p></li>
+                    <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span><p>Teachers</p></li>
+                    </ul>
+                   
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- Participating close -->
+    <!-- footer -->
+   <footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="contact-part">
+                    <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
+                    <h4 class="contact-us pb-3">Contact us :</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-1">
+                            <img src="{% static 'images/footer/1.png' %}"/>
+                            +91 8291055825
+                        </li>
+                        <li>
+                            <img src="{% static 'images/footer/2.png' %}"/>
+                            conference@energyswaraj.org 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 menu-list">
+                <h4>Menus</h4>
+                <ul class="list-unstyled my-first">
+                    <li>
+                        <a href="{% url 'awards:home' %}">Home</a></li>
+                    <li>
+                    <li>
+                        <a href="{% url 'awards:context' %}">Context</a></li>
+                    <li>
+                        <a href="{% url 'awards:partner' %}">Partners</a></li>
+                    
+                </ul>
+            </div>
+            <div class="col-md-2 menu-list">
+                <!-- <h4 class="pl-0">Column Two</h4> -->
+                <ul class="list-unstyled footer_top">
+                    <li>
+                        <a href="{% url 'awards:agenda' %}">Agenda</a></li>
+                    <li>
+                        <a href="{% url 'speakers:speaker' %}">Speakers</a></li>
+                    <li>
+                        <a href="{% url 'awards:award' %}">Awards</a></li>
+                </ul>
+            </div>
+            <div class="col-md-5  menu-list subscribe-div">
+                <h4 class="pl-0">Subscribe</h4>
+                <input class="form-control" placeholder="Enter your email"/>
+                <button class="btn home-button">Submit</button>
+                <p>By subscribing you agree to with our Privacy Policy</p>
+                <ul class="list-unstyled list-inline">
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/fb.png' %}"/>
+                    </li>
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/insta.png' %}"/>
+                    </li>
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/twitter.png' %}"/>
+                    </li>
+                    <li class="list-inline-item">
+                        <img src="{% static 'images/footer/linkd.png' %}"/>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <hr class="horizontal-line">
+    <div class="container">
+        <div class="row copy-right">
+            <div class="col-md-4">
+                <div class="">
+                    <p>©2022, All right reserved.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="text-xl-right text-lg-right text-md-right text-left">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="">Terms of Service</a>
+                        </li>
+                        <!-- <li class="list-inline-item">
+                            <a href="">Cookies Settings</a>
+                        </li> -->
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer end -->
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded",() => {
+	const uec = new UnixEpochalypseCountdown(".cd");
+	const infoBtn = document.getElementById("info-btn");
+
+	if (infoBtn)
+		infoBtn.addEventListener("click",jumpToHelp);
+});
+
+function jumpToHelp() {
+	const info = document.getElementById("info");
+
+	if (info) {
+		window.scrollTo({
+			top: info.offsetTop,
+			left: 0,
+			behavior: "smooth"
+		});
+	}
+}
+
+class UnixEpochalypseCountdown {
+	constructor(qs) {
+		this.el = document.querySelector(qs);
+		this.time = [];
+		this.animTimeout = null;
+		this.updateTimeout = null;
+		this.update();
+	}
+	getProgressInSeconds() {
+		if (typeof moment === "function") {
+			const now = moment();
+			const ms = Math.ceil(now.valueOf() / 1e3);
+
+			return ms >> 0;
+		} else {
+			return 0;
+		}
+	}
+	getTimeLeft() {
+		let timeLeft = {
+			y: 0,
+			d: 0,
+			h: 0,
+			m: 0,
+			s: 0
+		};
+
+		if (typeof moment === "function") {
+			const later = moment((2**31 - 1) * 1e3);
+			const now = moment();
+			const diff = moment.duration(later.diff(now));
+
+			if (diff.valueOf() >= 0) {
+				timeLeft.y += diff.years();
+				timeLeft.mo += diff.months();
+				timeLeft.d += diff.days();
+				timeLeft.h += diff.hours();
+				timeLeft.m += diff.minutes();
+				timeLeft.s += diff.seconds();
+			}
+		}
+
+		return timeLeft;
+	}
+	clearAnimations() {
+		if (this.el) {
+			const colAnimsToClear = this.el.querySelectorAll("[data-col]");
+
+			Array.from(colAnimsToClear).forEach(a => {
+				a.classList.remove("cd__digit--roll-in");
+			});
+
+			const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
+
+			Array.from(posAnimsToClear).forEach(a => {
+				a.classList.remove("cd__next-digit-fade","cd__prev-digit-fade");
+			});
+		}
+	}
+	update(doAnimations = false) {
+		// start with all dashes
+		if (!this.time.length) {
+			let digitCount = 12;
+
+			while (digitCount--)
+				this.time.push("-");
+		}
+		// update data
+		const display = this.getTimeLeft();
+		const displayDigits = [];
+
+		for (let v in display) {
+			const digits = `${display[v]}`.split("");
+			// add zero to single digits
+			if (digits.length < 2)
+				digits.unshift("0");
+
+			displayDigits.push(...digits);
+		}
+		// update display
+		const cols = this.el.querySelectorAll("[data-col]");
+
+		if (cols) {
+			Array.from(cols).forEach((c,i) => {
+				const digit = displayDigits[i];
+
+				if (digit !== this.time[i]) {
+					const next = c.querySelector(`[data-pos="next"]`);
+					const prev = c.querySelector(`[data-pos="prev"]`);
+
+					if (doAnimations === true) {
+						c.classList.add("cd__digit--roll-in");
+						next.classList.add("cd__next-digit-fade");
+						prev.classList.add("cd__prev-digit-fade");
+					}
+
+					next.innerHTML = digit;
+					prev.innerHTML = this.time[i];
+				}
+			});
+		}
+
+		this.time = displayDigits;
+		// progress in seconds
+		const progress = this.el.querySelector("[data-progress]");
+
+		if (progress)
+			progress.innerHTML = this.getProgressInSeconds();
+		// loop
+		clearTimeout(this.animTimeout);
+		this.animTimeout = setTimeout(this.clearAnimations.bind(this),500);
+
+		clearTimeout(this.updateTimeout);
+		this.updateTimeout = setTimeout(this.update.bind(this,true),1e3);
+	}
+}
+</script>
+    <script>
+            $('#owl-carousel').owlCarousel({
+                loop: true,
+                margin: 30,
+                dots: true,
+                nav: true,
+                autoplay: true,
+                items: 1,
+            })
+    </script>
+     <script>
+        window.addEventListener("DOMContentLoaded",() => {
+	const uec = new UnixEpochalypseCountdown1(".cd1");
+	const infoBtn = document.getElementById("info-btn");
+
+	if (infoBtn)
+		infoBtn.addEventListener("click",jumpToHelp);
+});
+
+function jumpToHelp() {
+	const info = document.getElementById("info");
+
+	if (info) {
+		window.scrollTo({
+			top: info.offsetTop,
+			left: 0,
+			behavior: "smooth"
+		});
+	}
+}
+
+class UnixEpochalypseCountdown1 {
+	constructor(qs) {
+		this.el = document.querySelector(qs);
+		this.time = [];
+		this.animTimeout = null;
+		this.updateTimeout = null;
+		this.update();
+	}
+	getProgressInSeconds() {
+		if (typeof moment === "function") {
+			const now = moment();
+			const ms = Math.ceil(now.valueOf() / 1e3);
+
+			return ms >> 0;
+		} else {
+			return 0;
+		}
+	}
+	getTimeLeft() {
+		let timeLeft = {
+			y: 0,
+			d: 0,
+			h: 0,
+			m: 0,
+			s: 0
+		};
+
+		if (typeof moment === "function") {
+			const later = moment((2**31 - 1) * 1e3);
+			const now = moment();
+			const diff = moment.duration(later.diff(now));
+
+			if (diff.valueOf() >= 0) {
+				timeLeft.y += diff.years();
+				timeLeft.mo += diff.months();
+				timeLeft.d += diff.days();
+				timeLeft.h += diff.hours();
+				timeLeft.m += diff.minutes();
+				timeLeft.s += diff.seconds();
+			}
+		}
+
+		return timeLeft;
+	}
+	clearAnimations() {
+		if (this.el) {
+			const colAnimsToClear = this.el.querySelectorAll("[data-col]");
+
+			Array.from(colAnimsToClear).forEach(a => {
+				a.classList.remove("cd__digit--roll-in");
+			});
+
+			const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
+
+			Array.from(posAnimsToClear).forEach(a => {
+				a.classList.remove("cd__next-digit-fade","cd__prev-digit-fade");
+			});
+		}
+	}
+	update(doAnimations = false) {
+		// start with all dashes
+		if (!this.time.length) {
+			let digitCount = 12;
+
+			while (digitCount--)
+				this.time.push("-");
+		}
+		// update data
+		const display = this.getTimeLeft();
+		const displayDigits = [];
+
+		for (let v in display) {
+			const digits = `${display[v]}`.split("");
+			// add zero to single digits
+			if (digits.length < 2)
+				digits.unshift("0");
+
+			displayDigits.push(...digits);
+		}
+		// update display
+		const cols = this.el.querySelectorAll("[data-col]");
+
+		if (cols) {
+			Array.from(cols).forEach((c,i) => {
+				const digit = displayDigits[i];
+
+				if (digit !== this.time[i]) {
+					const next = c.querySelector(`[data-pos="next"]`);
+					const prev = c.querySelector(`[data-pos="prev"]`);
+
+					if (doAnimations === true) {
+						c.classList.add("cd__digit--roll-in");
+						next.classList.add("cd__next-digit-fade");
+						prev.classList.add("cd__prev-digit-fade");
+					}
+
+					next.innerHTML = digit;
+					prev.innerHTML = this.time[i];
+				}
+			});
+		}
+
+		this.time = displayDigits;
+		// progress in seconds
+		const progress = this.el.querySelector("[data-progress]");
+
+		if (progress)
+			progress.innerHTML = this.getProgressInSeconds();
+		// loop
+		clearTimeout(this.animTimeout);
+		this.animTimeout = setTimeout(this.clearAnimations.bind(this),500);
+
+		clearTimeout(this.updateTimeout);
+		this.updateTimeout = setTimeout(this.update.bind(this,true),1e3);
+	}
+}
+</script>
+  </body>
+</html>

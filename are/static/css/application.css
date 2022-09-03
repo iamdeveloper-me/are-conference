@@ -1,0 +1,262 @@
+.appform-section{
+    padding: 50px 0px 70px;
+}
+.appform-section .form-head h1{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+    color: #252123;
+}
+.appform-section .form-head h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 16px;
+    color: #000000;
+    padding-top: 30px;
+    display: inline-block;
+    width: 81%;
+}
+.appform-section .form-head p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 16px;
+    color: #000000;
+    display: inline-block;
+    text-align: right;
+}
+.appform-section span{
+    color: #EB5757;  
+}
+.appform-section .form-head span{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 16px;
+    color: #EB5757;
+}
+.appform-section .application-form label{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #252123;
+    text-transform: capitalize;
+}
+.email-input{
+    width: 556px;
+}
+.appform-section .application-form textarea{
+    /* resize: none; */
+    border: 1px solid #BDBDBD;
+    border-radius: 6px;
+}
+.appform-section .application-form input{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #828282;
+    border: 1px solid #BDBDBD;
+    border-radius: 6px;
+    height: 50px;
+    text-indent: 10px;
+    max-width: 100%;
+}
+.appform-section .application-form{
+    margin-top: 50px;
+}
+.appform-section .application-form h4.section-bghead{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000000;
+    padding-top: 40px;
+}
+.checkbox-section p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000000;
+    padding-top: 30px;
+}
+.checkbox-section span{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 16px;
+    color: #EB5757;
+}
+.checkbox-section label{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #4B4B4B;
+}
+.indiviual-register{
+    margin-top: 42px;
+}
+.appform-section .application-form select {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #828282;
+    border: 1px solid #BDBDBD;
+    border-radius: 6px;
+    height: 50px;
+    text-indent: 10px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.indiviual-register h2{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000000;
+}
+.award-detailslabel{
+    line-height: 21px !important;
+    padding-top: 20px;
+}
+ textarea.height-textarea{
+    height: 119px;
+}
+p.required-text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #828282;
+}
+.without-bgbtn {
+    width: 220px;
+    height: 50px;
+    border: 1px solid #9A1C20;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 49px;
+    padding: 0;
+    text-align: center;
+    color: #9A1C20;
+    background: transparent;
+    text-transform: capitalize;
+    margin-right: 30px;
+}
+a.with-bgbtn {
+    width: 220px;
+    height: 50px;
+    background: #9A1C20;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 38px;
+    text-align: center;
+    color: #FFFFFF !important;
+    text-transform: capitalize;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
+    background: #9A1C20;
+    box-shadow: 0px 2.9707px 2.9707px rgb(50 50 71 / 8%), 0px 2.9707px 5.94141px rgb(50 50 71 / 6%);
+}
+.custom-checkbox .custom-control-label::before{
+    height: 18px;
+    width: 18px;
+    border-radius: 4.45605px;
+    cursor: pointer;
+}
+.custom-checkbox .custom-control-label::after{
+    height: 18px;
+    width: 18px;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::after {
+    background-image: url("../images/check.svg");
+}
+.attach-filehead{
+    margin-top: 30px;
+}
+.attach-filehead h3{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #000000;
+}
+.attach-filehead p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    color: #828282;
+}
+.button-footer {
+    border-top: 1px solid #ccc;
+    padding-top: 27px;
+    margin-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+[type=file] {
+    height: 0;
+    overflow: hidden;
+    width: 0;
+  }
+  
+  [type=file] + label {
+    background:transparent;
+    border: 1px solid #9A1C20;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    width:220px;
+    height:50px;
+    line-height:50px;
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    color: #9A1C20;
+  }
+  .attach-filehead label {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
