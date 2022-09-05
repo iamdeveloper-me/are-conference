@@ -1,227 +1,221 @@
 {% extends "layout/base.html" %}
 {% load static %}
 {% block content %}
-    <!-- banner -->
-    <section class="banner-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                   <div class="inner-content">
-                        <h1>
-                            ARE <span>Conference</span><br>
-                            and <span>Awards</span>
-                        </h1>
-                        <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <img src="{% static 'images/homepage/1.png' %}" alt="" title="" class="mr-2"/>
-                                24th - 26th November 2022
-                            </li>
-                            <li class="list-inline-item">
-                                <img src="{% static 'images/homepage/2.png' %}" alt="" title="" class="mr-2"/>
-                                AICTE Headquarter, New Delhi
-                            </li>
-                        </ul>
-                        <div class="register-area mt-5 mb-5">
-                            <button class="btn  register-nowbtn mr-2"> Register Now</button>
-                            <button class="btn apply-awardbtn"> Apply for Award</button>
+<!-- banner -->
+<section class="banner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inner-content">
+                    <h1>
+                        ARE <span>Conference</span><br>
+                        and <span>Awards</span>
+                    </h1>
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <img src="{% static 'images/homepage/1.png' %}" alt="" title="" class="mr-2" />
+                            24th - 26th November 2022
+                        </li>
+                        <li class="list-inline-item">
+                            <img src="{% static 'images/homepage/2.png' %}" alt="" title="" class="mr-2" />
+                            AICTE Headquarter, New Delhi
+                        </li>
+                    </ul>
+                    <div class="register-area mt-5 mb-5">
+                        <button class="btn  register-nowbtn mr-2"> Register Now</button>
+                        <button class="btn apply-awardbtn"> Apply for Award</button>
+                    </div>
+                    <div class="counter_box">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8"></div>
                         </div>
-                        <div class="counter_box">
-                            <div class="row">
-                                  <div class="col-md-4"></div>
-                                  <div class="col-md-8"></div>
+                    </div>
+                </div>
+                <!-- time first -->
+                <div class="intro timer-UI timerfirst">
+                    <h5>Time left to touch 1.5<sup>o</sup>C of global warming</h5>
+                    <div class="cd1">
+                        <div class="cd__unit-group">
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Years</div>
+                            </div>
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Days</div>
+                            </div>
+                        </div>
+                        <div class="cd__unit-group">
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Hours</div>
+                            </div>
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                </div>
+                                <div class="cd__unit-label">Minutes</div>
                             </div>
                         </div>
                     </div>
-                    <!-- time first -->
-                    <div class="intro timer-UI timerfirst">
-                        <h5>Time left to touch 1.5<sup>o</sup>C of global warming</h5>
-                        <div class="cd1">
-                            <div class="cd__unit-group">
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                </div>
+                <!-- time first end-->
+                <!-- time second -->
+                <div class="intro timer-UI">
+                    <h5>Time left to touch 1.5<sup>o</sup> of global warming</h5>
+                    <div class="cd">
+                        <div class="cd__unit-group">
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Years</div>
-                                </div>
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Days</div>
                                 </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Years</div>
                             </div>
-                            <div class="cd__unit-group">
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Hours</div>
-                                </div>
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <div class="cd__unit-label">Minutes</div>
                                 </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Days</div>
                             </div>
-                            
                         </div>
-                           
-                    </div>
-                    <!-- time first end-->
-                    <!-- time second -->
-                    <div class="intro timer-UI">
-                        <h5>Time left to touch 1.5<sup>o</sup> of global warming</h5>
-                        <div class="cd">
-                            <div class="cd__unit-group">
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                        <div class="cd__unit-group">
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Years</div>
-                                </div>
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Days</div>
                                 </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Hours</div>
                             </div>
-                            <div class="cd__unit-group">
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Hours</div>
-                                </div>
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
                                     </div>
-                                    <img src="{% static 'images/homepage/slash.svg' %}"/>
-                                    <div class="cd__unit-label">Minutes</div>
                                 </div>
-                                <div class="cd__unit">
-                                    <div class="cd__digits">
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                        <div class="cd__digit" data-col>
-                                            <div data-pos="next">-</div>
-                                            <div data-pos="prev">-</div>
-                                        </div>
-                                    </div>
-                                    <div class="cd__unit-label">Seconds</div>
-                                </div>
+                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <div class="cd__unit-label">Minutes</div>
                             </div>
-                            
+                            <div class="cd__unit">
+                                <div class="cd__digits">
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
+                                </div>
+                                <div class="cd__unit-label">Seconds</div>
+                            </div>
                         </div>
-                           
                     </div>
-                    <!-- time second end-->
+                </div>
+                <!-- time second end-->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- about start -->
+<section class="about_section_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about_content">
+                    <h3>About</h3>
+                    <h2><span>ARE</span> Conference</h2>
+                    <p>The climate is not changing, it has changed. The rate of global warming (climate change) and associated events like rising sea levels, heatwaves, cyclones, floods, droughts, forest fires are ever-increasing, resulting in ever-increasing troubles for humans.</p>
+                    <p>Despite COP meetings every year, despite the PARIS agreement, despite governments implementing renewable energy projects and making policies, despite thousands of NGO working on the issue, climate change is worsening. ARE we taking enough actions? Is the question that needs to be posed to every citizen and leaders from all walks of life be it industrial, political, scientific, academic or even spiritual.</p>
+                    <a href="#!">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about_img">
+                    <img src="{% static 'images/homepage/about_img.png' %}" alt="" title="" />
                 </div>
             </div>
         </div>
-    </section>
-    <!-- banner end -->
-
-    <!-- about start -->
-    <section class="about_section_area">
-          <div class="container">
-              <div class="row">
-                  <div class="col-md-6">
-                      <div class="about_content">
-                          <h3>About</h3>
-                          <h2><span>ARE</span> Conference</h2>
-                          <p>The climate is not changing, it has changed. The rate of global warming (climate change) and associated events like rising sea levels, heatwaves, cyclones, floods, droughts, forest fires are ever-increasing, resulting in ever-increasing troubles for humans.</p>
-                          <p>Despite COP meetings every year, despite the PARIS agreement, despite governments implementing renewable energy projects and making policies, despite thousands of NGO working on the issue, climate change is worsening. ARE we taking enough actions? Is the question that needs to be posed to every citizen and leaders from all walks of life be it industrial, political, scientific, academic or even spiritual.</p>
-                          <a href="#!">Read More</a>
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="about_img">
-                          <img src="{% static 'images/homepage/about_img.png' %}" alt="" title=""/>
-                      </div>
-                  </div>
-              </div>
-          </div>
-    </section>
-    <!-- about close -->
-
-    <!-- About Energy start -->
+    </div>
+</section>
+<!-- about close -->
+<!-- About Energy start -->
 <section class="about_energy_area">
-      <div class="container">
-          <div class="row">
-               <div class="col-md-4">
-                   <div class="energy_slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="energy_slider">
                     <div id="owl-carousel" class="owl-carousel owl-theme">
                         <div class="item">
-                           <div class="custom_item">
-                              <img src="{% static 'images/homepage/slide1.png' %}" alt="" title="">
-                           </div>
+                            <div class="custom_item">
+                                <img src="{% static 'images/homepage/slide1.png' %}" alt="" title="">
+                            </div>
                         </div>
                         <div class="item">
                             <img src="{% static 'images/homepage/slide1.png' %}" alt="" title="">
@@ -229,429 +223,418 @@
                         <div class="item">
                             <img src="{% static 'images/homepage/slide1.png' %}" alt="" title="">
                         </div>
-                       
-                      </div>
-                   </div>
-               </div>
-               <div class="col-md-8">
-                  <div class="energy_content">
-                        <div class="enery_head_light">
-                             <p>About</p>
-                             <h2>Energy Swaraj Awards</h2>
-                        </div>
-                        <p>From worsening climate and environmental conditions, it is clear that probably we are not taking enough corrective actions. But there are odd individuals, organisations and government bodies out there, who are actually taking significant actions and having brilliant ideas to save the world from catastrophic effects of climate change. Energy Swaraj Foundation is launching AMG (Avoid-Minimise-Generate) Awards as well as Climate Hackathon Challenge - ideas and actions to save the world to recognize citizen’s contributions, encourage them and provide them limelight so that they can spread their actions and ideas.</p>
-                         <p>
-                        Energy Swaraj Foundation collaborating with Earth Day Network (<span>earth day India network</span>) to organise these awards.
-                            </p>
-                         
-                  </div>
-                  <a href="#" class="knowmore">Know More <span><img src="{% static 'images/homepage/right_blue.svg' %}" alt="" title=""></span></a>
-               </div>
-          </div>
-      </div>
-</section>
-    <!-- About Energy close -->
-
-     <!-- conference start -->
-     <section class="about_section_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="confererence_content">
-                        <div class="confererence_dark">
-                            <p>Highlights of the</p>
-                            <h2>Conference & Awards</h2>
-                       </div>
-                   
-                         <ul>
-                             <li>Opportunity to part of unique global platform on hottest topic in the world</li>
-                             <li>Listen to over 40 eminent leaders from all walks of life</li>
-                             <li>Present your innovative actions and ideas to influential leaders and experts</li>
-                             <li>Inspiring sessions by people who have taken significant contribution in climate and environment</li>
-                             <li>Solutions to climate change for industry, institutions and individuals as take away</li>
-                             <li>Participate in awards and competitions and win prizes upto INR. 15 Lakhs</li>
-                             <li>Young entrepreneurs and students can compete in offering brilliant ideas to solve issue</li>
-                         </ul>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="about_img">
-                        <img src="{% static 'images/homepage/conference.png' %}" alt="" title=""/>
                     </div>
                 </div>
             </div>
+            <div class="col-md-8">
+                <div class="energy_content">
+                    <div class="enery_head_light">
+                        <p>About</p>
+                        <h2>Energy Swaraj Awards</h2>
+                    </div>
+                    <p>From worsening climate and environmental conditions, it is clear that probably we are not taking enough corrective actions. But there are odd individuals, organisations and government bodies out there, who are actually taking significant actions and having brilliant ideas to save the world from catastrophic effects of climate change. Energy Swaraj Foundation is launching AMG (Avoid-Minimise-Generate) Awards as well as Climate Hackathon Challenge - ideas and actions to save the world to recognize citizen’s contributions, encourage them and provide them limelight so that they can spread their actions and ideas.</p>
+                    <p>
+                        Energy Swaraj Foundation collaborating with Earth Day Network (<span>earth day India network</span>) to organise these awards.
+                    </p>
+                </div>
+                <a href="#" class="knowmore">Know More <span><img src="{% static 'images/homepage/right_blue.svg' %}" alt="" title=""></span></a>
+            </div>
         </div>
-  </section>
-  <!-- conference close -->
-
-  <!-- sponser section start -->
-  <section class="sponser_area">
-       <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                 <div class="sponser_head">
+    </div>
+</section>
+<!-- About Energy close -->
+<!-- conference start -->
+<section class="about_section_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="confererence_content">
+                    <div class="confererence_dark">
+                        <p>Highlights of the</p>
+                        <h2>Conference & Awards</h2>
+                    </div>
+                    <ul>
+                        <li>Opportunity to part of unique global platform on hottest topic in the world</li>
+                        <li>Listen to over 40 eminent leaders from all walks of life</li>
+                        <li>Present your innovative actions and ideas to influential leaders and experts</li>
+                        <li>Inspiring sessions by people who have taken significant contribution in climate and environment</li>
+                        <li>Solutions to climate change for industry, institutions and individuals as take away</li>
+                        <li>Participate in awards and competitions and win prizes upto INR. 15 Lakhs</li>
+                        <li>Young entrepreneurs and students can compete in offering brilliant ideas to solve issue</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="about_img">
+                    <img src="{% static 'images/homepage/conference.png' %}" alt="" title="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- conference close -->
+<!-- sponser section start -->
+<section class="sponser_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="sponser_head">
                     <h3>Sponsors</h3>
                     <p>Platinum Sponsor</p>
-                 </div>
-              </div>
-          </div>
-             <div class="row">
-                 <div class="col-md-3">
-                      <div class="sponser_box">
-                         <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
-                      </div>
-                 </div>
-                 <div class="col-md-3">
-                    <div class="sponser_box">
-                       <img src="{% static 'images/homepage/sponser2.svg' %}" alt="" title="">
-                    </div>
-               </div>
-               <div class="col-md-3">
-                <div class="sponser_box">
-                   <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
                 </div>
-               </div>
-               <div class="col-md-3">
-                <div class="sponser_box">
-                   <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
-                </div>
-           </div>
-           <div class="col-md-3">
-              <div class="sponser_box">
-                 <img src="{% static 'images/homepage/sponser2.svg' %}" alt="" title="">
-              </div>
-         </div>
-         <div class="col-md-3">
-          <div class="sponser_box">
-             <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
-          </div>
-         </div>
-         <div class="col-md-3">
-            <div class="sponser_box">
-               <img src="{% static 'images/homepage/sponser2.svg' %}" alt="" title="">
             </div>
-       </div>
-       <div class="col-md-3">
-        <div class="sponser_box">
-           <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
         </div>
-       </div>
-             </div>
-       </div>
-  </section>
-  <!-- sponser section close -->
-  <!-- Organized section start-->
-  <section class="section_organized">
-       <div class="container">
-          <div class="row align-items-center no-gutters">
-              <div class="col-md-3">
-                  <div class="Organized_img"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
-              </div>
-              <div class="col-md-9">
-                  <div class="organized_text">
-                      <h3>Organized by Energy Swaraj Foundation jointly with All India Council for Technical Education (AICTE)</h3>
-                  </div>
-              </div>
-          </div>
-       </div>
-  </section>
-  <!-- Organized section close-->
+        <div class="row">
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser2.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser2.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser2.svg' %}" alt="" title="">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="sponser_box">
+                    <img src="{% static 'images/homepage/sponser1.svg' %}" alt="" title="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- sponser section close -->
+<!-- Organized section start-->
+<section class="section_organized">
+    <div class="container">
+        <div class="row align-items-center no-gutters">
+            <div class="col-md-3">
+                <div class="Organized_img"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
+            </div>
+            <div class="col-md-9">
+                <div class="organized_text">
+                    <h3>Organized by Energy Swaraj Foundation jointly with All India Council for Technical Education (AICTE)</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Organized section close-->
 {% endblock content %}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+{% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+    const uec = new UnixEpochalypseCountdown(".cd");
+    const infoBtn = document.getElementById("info-btn");
 
-   
-
- <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-   {% block extra_js %}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-    <script>
-        window.addEventListener("DOMContentLoaded",() => {
-	const uec = new UnixEpochalypseCountdown(".cd");
-	const infoBtn = document.getElementById("info-btn");
-
-	if (infoBtn)
-		infoBtn.addEventListener("click",jumpToHelp);
+    if (infoBtn)
+        infoBtn.addEventListener("click", jumpToHelp);
 });
 
 function jumpToHelp() {
-	const info = document.getElementById("info");
+    const info = document.getElementById("info");
 
-	if (info) {
-		window.scrollTo({
-			top: info.offsetTop,
-			left: 0,
-			behavior: "smooth"
-		});
-	}
+    if (info) {
+        window.scrollTo({
+            top: info.offsetTop,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
 }
 
 class UnixEpochalypseCountdown {
-	constructor(qs) {
-		this.el = document.querySelector(qs);
-		this.time = [];
-		this.animTimeout = null;
-		this.updateTimeout = null;
-		this.update();
-	}
-	getProgressInSeconds() {
-		if (typeof moment === "function") {
-			const now = moment();
-			const ms = Math.ceil(now.valueOf() / 1e3);
+    constructor(qs) {
+        this.el = document.querySelector(qs);
+        this.time = [];
+        this.animTimeout = null;
+        this.updateTimeout = null;
+        this.update();
+    }
+    getProgressInSeconds() {
+        if (typeof moment === "function") {
+            const now = moment();
+            const ms = Math.ceil(now.valueOf() / 1e3);
 
-			return ms >> 0;
-		} else {
-			return 0;
-		}
-	}
-	getTimeLeft() {
-		let timeLeft = {
-			y: 0,
-			d: 0,
-			h: 0,
-			m: 0,
-			s: 0
-		};
+            return ms >> 0;
+        } else {
+            return 0;
+        }
+    }
+    getTimeLeft() {
+        let timeLeft = {
+            y: 0,
+            d: 0,
+            h: 0,
+            m: 0,
+            s: 0
+        };
 
-		if (typeof moment === "function") {
-			const later = moment((2**31 - 1) * 1e3);
-			const now = moment();
-			const diff = moment.duration(later.diff(now));
+        if (typeof moment === "function") {
+            const later = moment((2 ** 31 - 1) * 1e3);
+            const now = moment();
+            const diff = moment.duration(later.diff(now));
 
-			if (diff.valueOf() >= 0) {
-				timeLeft.y += diff.years();
-				timeLeft.mo += diff.months();
-				timeLeft.d += diff.days();
-				timeLeft.h += diff.hours();
-				timeLeft.m += diff.minutes();
-				timeLeft.s += diff.seconds();
-			}
-		}
+            if (diff.valueOf() >= 0) {
+                timeLeft.y += diff.years();
+                timeLeft.mo += diff.months();
+                timeLeft.d += diff.days();
+                timeLeft.h += diff.hours();
+                timeLeft.m += diff.minutes();
+                timeLeft.s += diff.seconds();
+            }
+        }
 
-		return timeLeft;
-	}
-	clearAnimations() {
-		if (this.el) {
-			const colAnimsToClear = this.el.querySelectorAll("[data-col]");
+        return timeLeft;
+    }
+    clearAnimations() {
+        if (this.el) {
+            const colAnimsToClear = this.el.querySelectorAll("[data-col]");
 
-			Array.from(colAnimsToClear).forEach(a => {
-				a.classList.remove("cd__digit--roll-in");
-			});
+            Array.from(colAnimsToClear).forEach(a => {
+                a.classList.remove("cd__digit--roll-in");
+            });
 
-			const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
+            const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
 
-			Array.from(posAnimsToClear).forEach(a => {
-				a.classList.remove("cd__next-digit-fade","cd__prev-digit-fade");
-			});
-		}
-	}
-	update(doAnimations = false) {
-		// start with all dashes
-		if (!this.time.length) {
-			let digitCount = 12;
+            Array.from(posAnimsToClear).forEach(a => {
+                a.classList.remove("cd__next-digit-fade", "cd__prev-digit-fade");
+            });
+        }
+    }
+    update(doAnimations = false) {
+        // start with all dashes
+        if (!this.time.length) {
+            let digitCount = 12;
 
-			while (digitCount--)
-				this.time.push("-");
-		}
-		// update data
-		const display = this.getTimeLeft();
-		const displayDigits = [];
+            while (digitCount--)
+                this.time.push("-");
+        }
+        // update data
+        const display = this.getTimeLeft();
+        const displayDigits = [];
 
-		for (let v in display) {
-			const digits = `${display[v]}`.split("");
-			// add zero to single digits
-			if (digits.length < 2)
-				digits.unshift("0");
+        for (let v in display) {
+            const digits = `${display[v]}`.split("");
+            // add zero to single digits
+            if (digits.length < 2)
+                digits.unshift("0");
 
-			displayDigits.push(...digits);
-		}
-		// update display
-		const cols = this.el.querySelectorAll("[data-col]");
+            displayDigits.push(...digits);
+        }
+        // update display
+        const cols = this.el.querySelectorAll("[data-col]");
 
-		if (cols) {
-			Array.from(cols).forEach((c,i) => {
-				const digit = displayDigits[i];
+        if (cols) {
+            Array.from(cols).forEach((c, i) => {
+                const digit = displayDigits[i];
 
-				if (digit !== this.time[i]) {
-					const next = c.querySelector(`[data-pos="next"]`);
-					const prev = c.querySelector(`[data-pos="prev"]`);
+                if (digit !== this.time[i]) {
+                    const next = c.querySelector(`[data-pos="next"]`);
+                    const prev = c.querySelector(`[data-pos="prev"]`);
 
-					if (doAnimations === true) {
-						c.classList.add("cd__digit--roll-in");
-						next.classList.add("cd__next-digit-fade");
-						prev.classList.add("cd__prev-digit-fade");
-					}
+                    if (doAnimations === true) {
+                        c.classList.add("cd__digit--roll-in");
+                        next.classList.add("cd__next-digit-fade");
+                        prev.classList.add("cd__prev-digit-fade");
+                    }
 
-					next.innerHTML = digit;
-					prev.innerHTML = this.time[i];
-				}
-			});
-		}
+                    next.innerHTML = digit;
+                    prev.innerHTML = this.time[i];
+                }
+            });
+        }
 
-		this.time = displayDigits;
-		// progress in seconds
-		const progress = this.el.querySelector("[data-progress]");
+        this.time = displayDigits;
+        // progress in seconds
+        const progress = this.el.querySelector("[data-progress]");
 
-		if (progress)
-			progress.innerHTML = this.getProgressInSeconds();
-		// loop
-		clearTimeout(this.animTimeout);
-		this.animTimeout = setTimeout(this.clearAnimations.bind(this),500);
+        if (progress)
+            progress.innerHTML = this.getProgressInSeconds();
+        // loop
+        clearTimeout(this.animTimeout);
+        this.animTimeout = setTimeout(this.clearAnimations.bind(this), 500);
 
-		clearTimeout(this.updateTimeout);
-		this.updateTimeout = setTimeout(this.update.bind(this,true),1e3);
-	}
+        clearTimeout(this.updateTimeout);
+        this.updateTimeout = setTimeout(this.update.bind(this, true), 1e3);
+    }
 }
-</script>
-    <script>
-            $('#owl-carousel').owlCarousel({
-                loop: true,
-                margin: 30,
-                dots: true,
-                nav: true,
-                autoplay: true,
-                items: 1,
-            })
-    </script>
-     <script>
-        window.addEventListener("DOMContentLoaded",() => {
-	const uec = new UnixEpochalypseCountdown1(".cd1");
-	const infoBtn = document.getElementById("info-btn");
+$('#owl-carousel').owlCarousel({
+    loop: true,
+    margin: 30,
+    dots: true,
+    nav: true,
+    autoplay: true,
+    items: 1,
+})
 
-	if (infoBtn)
-		infoBtn.addEventListener("click",jumpToHelp);
+window.addEventListener("DOMContentLoaded", () => {
+    const uec = new UnixEpochalypseCountdown1(".cd1");
+    const infoBtn = document.getElementById("info-btn");
+
+    if (infoBtn)
+        infoBtn.addEventListener("click", jumpToHelp);
 });
 
 function jumpToHelp() {
-	const info = document.getElementById("info");
+    const info = document.getElementById("info");
 
-	if (info) {
-		window.scrollTo({
-			top: info.offsetTop,
-			left: 0,
-			behavior: "smooth"
-		});
-	}
+    if (info) {
+        window.scrollTo({
+            top: info.offsetTop,
+            left: 0,
+            behavior: "smooth"
+        });
+    }
 }
 
 class UnixEpochalypseCountdown1 {
-	constructor(qs) {
-		this.el = document.querySelector(qs);
-		this.time = [];
-		this.animTimeout = null;
-		this.updateTimeout = null;
-		this.update();
-	}
-	getProgressInSeconds() {
-		if (typeof moment === "function") {
-			const now = moment();
-			const ms = Math.ceil(now.valueOf() / 1e3);
+    constructor(qs) {
+        this.el = document.querySelector(qs);
+        this.time = [];
+        this.animTimeout = null;
+        this.updateTimeout = null;
+        this.update();
+    }
+    getProgressInSeconds() {
+        if (typeof moment === "function") {
+            const now = moment();
+            const ms = Math.ceil(now.valueOf() / 1e3);
 
-			return ms >> 0;
-		} else {
-			return 0;
-		}
-	}
-	getTimeLeft() {
-		let timeLeft = {
-			y: 0,
-			d: 0,
-			h: 0,
-			m: 0,
-			s: 0
-		};
+            return ms >> 0;
+        } else {
+            return 0;
+        }
+    }
+    getTimeLeft() {
+        let timeLeft = {
+            y: 0,
+            d: 0,
+            h: 0,
+            m: 0,
+            s: 0
+        };
 
-		if (typeof moment === "function") {
-			const later = moment((2**31 - 1) * 1e3);
-			const now = moment();
-			const diff = moment.duration(later.diff(now));
+        if (typeof moment === "function") {
+            const later = moment((2 ** 31 - 1) * 1e3);
+            const now = moment();
+            const diff = moment.duration(later.diff(now));
 
-			if (diff.valueOf() >= 0) {
-				timeLeft.y += diff.years();
-				timeLeft.mo += diff.months();
-				timeLeft.d += diff.days();
-				timeLeft.h += diff.hours();
-				timeLeft.m += diff.minutes();
-				timeLeft.s += diff.seconds();
-			}
-		}
+            if (diff.valueOf() >= 0) {
+                timeLeft.y += diff.years();
+                timeLeft.mo += diff.months();
+                timeLeft.d += diff.days();
+                timeLeft.h += diff.hours();
+                timeLeft.m += diff.minutes();
+                timeLeft.s += diff.seconds();
+            }
+        }
 
-		return timeLeft;
-	}
-	clearAnimations() {
-		if (this.el) {
-			const colAnimsToClear = this.el.querySelectorAll("[data-col]");
+        return timeLeft;
+    }
+    clearAnimations() {
+        if (this.el) {
+            const colAnimsToClear = this.el.querySelectorAll("[data-col]");
 
-			Array.from(colAnimsToClear).forEach(a => {
-				a.classList.remove("cd__digit--roll-in");
-			});
+            Array.from(colAnimsToClear).forEach(a => {
+                a.classList.remove("cd__digit--roll-in");
+            });
 
-			const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
+            const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
 
-			Array.from(posAnimsToClear).forEach(a => {
-				a.classList.remove("cd__next-digit-fade","cd__prev-digit-fade");
-			});
-		}
-	}
-	update(doAnimations = false) {
-		// start with all dashes
-		if (!this.time.length) {
-			let digitCount = 12;
+            Array.from(posAnimsToClear).forEach(a => {
+                a.classList.remove("cd__next-digit-fade", "cd__prev-digit-fade");
+            });
+        }
+    }
+    update(doAnimations = false) {
+        // start with all dashes
+        if (!this.time.length) {
+            let digitCount = 12;
 
-			while (digitCount--)
-				this.time.push("-");
-		}
-		// update data
-		const display = this.getTimeLeft();
-		const displayDigits = [];
+            while (digitCount--)
+                this.time.push("-");
+        }
+        // update data
+        const display = this.getTimeLeft();
+        const displayDigits = [];
 
-		for (let v in display) {
-			const digits = `${display[v]}`.split("");
-			// add zero to single digits
-			if (digits.length < 2)
-				digits.unshift("0");
+        for (let v in display) {
+            const digits = `${display[v]}`.split("");
+            // add zero to single digits
+            if (digits.length < 2)
+                digits.unshift("0");
 
-			displayDigits.push(...digits);
-		}
-		// update display
-		const cols = this.el.querySelectorAll("[data-col]");
+            displayDigits.push(...digits);
+        }
+        // update display
+        const cols = this.el.querySelectorAll("[data-col]");
 
-		if (cols) {
-			Array.from(cols).forEach((c,i) => {
-				const digit = displayDigits[i];
+        if (cols) {
+            Array.from(cols).forEach((c, i) => {
+                const digit = displayDigits[i];
 
-				if (digit !== this.time[i]) {
-					const next = c.querySelector(`[data-pos="next"]`);
-					const prev = c.querySelector(`[data-pos="prev"]`);
+                if (digit !== this.time[i]) {
+                    const next = c.querySelector(`[data-pos="next"]`);
+                    const prev = c.querySelector(`[data-pos="prev"]`);
 
-					if (doAnimations === true) {
-						c.classList.add("cd__digit--roll-in");
-						next.classList.add("cd__next-digit-fade");
-						prev.classList.add("cd__prev-digit-fade");
-					}
+                    if (doAnimations === true) {
+                        c.classList.add("cd__digit--roll-in");
+                        next.classList.add("cd__next-digit-fade");
+                        prev.classList.add("cd__prev-digit-fade");
+                    }
 
-					next.innerHTML = digit;
-					prev.innerHTML = this.time[i];
-				}
-			});
-		}
+                    next.innerHTML = digit;
+                    prev.innerHTML = this.time[i];
+                }
+            });
+        }
 
-		this.time = displayDigits;
-		// progress in seconds
-		const progress = this.el.querySelector("[data-progress]");
+        this.time = displayDigits;
+        // progress in seconds
+        const progress = this.el.querySelector("[data-progress]");
 
-		if (progress)
-			progress.innerHTML = this.getProgressInSeconds();
-		// loop
-		clearTimeout(this.animTimeout);
-		this.animTimeout = setTimeout(this.clearAnimations.bind(this),500);
+        if (progress)
+            progress.innerHTML = this.getProgressInSeconds();
+        // loop
+        clearTimeout(this.animTimeout);
+        this.animTimeout = setTimeout(this.clearAnimations.bind(this), 500);
 
-		clearTimeout(this.updateTimeout);
-		this.updateTimeout = setTimeout(this.update.bind(this,true),1e3);
-	}
+        clearTimeout(this.updateTimeout);
+        this.updateTimeout = setTimeout(this.update.bind(this, true), 1e3);
+    }
 }
-
 </script>
 {% endblock extra_js %}
-  </body>
+</body>
+
 </html>
