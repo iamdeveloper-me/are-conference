@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'awards',
     # 'agenda',
     'phonenumber_field',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

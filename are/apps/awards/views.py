@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
-from .models import Award
+from django.views.generic import TemplateView, CreateView
+from django.shortcuts import redirect
+from .models import AmgAward
+from .forms import AmgApplicationForm
+
 # Create your views here.
 
 class HomePage(TemplateView):
@@ -21,10 +24,35 @@ class AmgAward(TemplateView):
 class Award(TemplateView):
 	template_name = "award.html"
 
-class ApplicationForm(TemplateView):
-	model = Award
+class ApplicationForm(CreateView):
+	model = AmgAward
+	form_class = AmgApplicationForm
 	template_name = "applicationform.html"
+	success_url = '/thanks'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		# import pdb;pdb.set_trace()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+	# def post(self, request, *args, **kwargs):
+	# 	form = AmgApplicationForm(request.POST)
+	# 	for field in form:
+	# 		print("Field Error:", field.name,  field.errors)	
+
 
 class Partner(TemplateView):
 	template_name = "ourpartner.html"
+
+class ThanksEnergy(TemplateView):
+	template_name = "thank.html"
+
+
+
+
+
 

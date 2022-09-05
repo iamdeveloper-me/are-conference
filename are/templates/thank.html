@@ -27,12 +27,12 @@
                         </button>
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                           <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link active" href="homepage.html">Home</a>
-                            <a class="nav-item nav-link" href="context.html">Context</a>
-                            <a class="nav-item nav-link" href="ourpartner.html">Partners</a>
-                            <a class="nav-item nav-link" href="agenda.html">Agenda</a>
-                            <a class="nav-item nav-link" href="speaker.html">Speakers</a>
-                            <a class="nav-item nav-link" href="award.html">Awards</a>
+                            <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
+                            <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
+                            <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
                           </div>
                         </div>
                         <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
@@ -74,23 +74,23 @@
                     <h4>Menus</h4>
                     <ul class="list-unstyled my-first">
                         <li>
-                            <a href="{% url 'home' %}">Home</a></li>
+                            <a href="{% url 'awards:home' %}">Home</a></li>
                         <li>
                         <li>
-                            <a href="{% url 'context' %}">Context</a></li>
+                            <a href="{% url 'awards:context' %}">Context</a></li>
                         <li>
-                            <a href="{% url 'partner' %}">Partners</a></li>
+                            <a href="{% url 'awards:partner' %}">Partners</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 menu-list">
                     <!-- <h4 class="pl-0">Column Two</h4> -->
                     <ul class="list-unstyled footer_top">
                         <li>
-                            <a href="{% url 'agenda' %}">Agenda</a></li>
+                            <a href="{% url 'awards:agenda' %}">Agenda</a></li>
                         <li>
-                            <a href="{% url 'speaker' %}">Speakers</a></li>
+                            <a href="{% url 'speakers:speaker' %}">Speakers</a></li>
                         <li>
-                            <a href="{% url 'award' %}">Awards</a></li>
+                            <a href="{% url 'awards:award' %}">Awards</a></li>
                     </ul>
                 </div>
                 <div class="col-md-5  menu-list subscribe-div">

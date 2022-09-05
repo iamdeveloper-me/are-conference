@@ -10,4 +10,5 @@ urlpatterns = [
 	path('ourpartner/',views.Partner.as_view(),name='partner'),
 	path('agenda/',views.Agenda.as_view(),name='agenda'),
 	path('context/',views.Context.as_view(),name='context'),
+	path('thanks/',views.ThanksEnergy.as_view(),name='thanks'),
 ]

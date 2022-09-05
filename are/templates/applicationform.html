@@ -58,81 +58,79 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <form class="application-form">
+                    <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="">email <span>*</span></label>
-                            <input type="email" class="form-control email-input" id="" placeholder="Enter your email">
+                            <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
                         </div>
-                        
-                    </form>
-                    <form>
                         <h4 class="section-bghead pt-3">Section A – Background of the Applicant</h4>
                         <div class="form-group checkbox-section">
                             <p class="mb-3">Type of Work <span>*</span></p>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1" checked>
+                                <input type="radio" class="custom-control-input" id="customCheck1" checked name="work_status" value="Com">
                                 <label class="custom-control-label" for="customCheck1">Completed: Application for work already done</label>
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <input type="radio" class="custom-control-input" id="customCheck2" name="work_status" value="InPro">
                                 <label class="custom-control-label" for="customCheck2">In Progress: Application for work in progress or is planned in the immediate future</label>
                             </div>
                         </div>
-                        <div class="form-group checkbox-section">
+                        <div class="form-group checkbox-section" id="select-radio-check">
                             <p class="mb-3">Are you applying as an individual or organization? <span>*</span></p>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3" >
+                                <input type="radio" class="custom-control-input" id="customCheck3" name="apply_type" checked value="Ind">
                                 <label class="custom-control-label" for="customCheck3">Individual</label>
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck4">
+                                <input type="radio" class="custom-control-input" id="customCheck4" name="apply_type" value="Org">
                                 <label class="custom-control-label" for="customCheck4">Organization</label>
                             </div>
                         </div>
                         <div class="form-group checkbox-section">
                             <p class="mb-3">Nomination Type</p>
                                <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck5" >
+                                <input type="radio" class="custom-control-input" id="customCheck5" name="nomination_type" checked value="S">
                                 <label class="custom-control-label" for="customCheck5">Self</label>
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="checkbox" class="custom-control-input" id="customCheck6">
+                                <input type="radio" class="custom-control-input" id="customCheck6" name="nomination_type" value="O">
                                 <label class="custom-control-label" for="customCheck6">Nominating Others</label>
                             </div>
                         </div>
-                        <div class="row indiviual-register application-form">
+                        <div class="row indiviual-register application-form individual">
                             <div class="col-md-12 mb-4">
                                 <h2>Individual Registration</h2>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 individual">
                                 <div class="form-group">
                                     <label for="">Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                                    <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">          
                                 <div class="form-group">
                                     <label for="">Designation <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Designation...">
+                                    <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Phone No.* <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Number...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Number..." name="phone_number">
                                 </div>
                             </div>
                             
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Website (If any)</label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter website...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter website..." name="website">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Address*</label>
-                                    <textarea class="form-control" placeholder="Enter your Address..."></textarea>
+                                    <textarea class="form-control" placeholder="Enter your Address..." name="address"></textarea>
                                 </div>
                             </div>  
                         </div>
@@ -140,10 +138,10 @@
                             <div class="col-md-12 mb-4">
                                 <h2>Organization Registration</h2>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Type of Organization <span>*</span></label>
-                                    <select>
+                                    <select name="org_type" id="type_of_org">
                                         <option>Academic Institutions</option>
                                         <option>Government</option>
                                         <option>Corporations</option>
@@ -151,60 +149,60 @@
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Name of Organization</label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Designation<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation..">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Email ID<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Phone No<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Phone No...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Phone No..." name="org_person_mobile">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Organization’s Registered Address<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Organization’s Website<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web">
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <h4 class="section-bghead pt-3">Section B – Award related details</h4>
                                 <label class="award-detailslabel">How long have you (individual)/ organization been working towards<br> mitigating climate change?Website<span>*</span></label>
-                                <textarea class="form-control height-textarea"></textarea>
+                                <textarea class="form-control height-textarea" name="work_exp"></textarea>
                             </div>
                             <div class="col-md-12">
                                 <label class="award-detailslabel">What is your interpretation of Avoid-Minimize-Generate Principle? * <br> (not more than 300 words)*</label>
-                                <textarea class="form-control height-textarea"></textarea>
+                                <textarea class="form-control height-textarea" name="interpretation"></textarea>
                             </div>
                             <div class="col-md-12">
                                 <label class="award-detailslabel">What are the major climate change challenges that you/<br>organization is addressing?*</label>
-                                <textarea class="form-control height-textarea"></textarea>
+                                <textarea class="form-control height-textarea" name="climate_change_challenge"></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -212,61 +210,61 @@
                             <div class="form-group checkbox-section">
                                 <p class="mb-3">Nomination Type</p>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="one" >
+                                    <input type="radio" class="custom-control-input" id="one" name="award_category" checked value="a" >
                                     <label class="custom-control-label" for="one">Only avoid</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="two">
+                                    <input type="radio" class="custom-control-input" id="two" name="award_category" value="m">
                                     <label class="custom-control-label" for="two">Only minimize</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="three">
+                                    <input type="radio" class="custom-control-input" id="three" name="award_category" value="g">
                                     <label class="custom-control-label" for="three">Only Generate</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="four">
+                                    <input type="radio" class="custom-control-input" id="four" name="award_category" value="a&m">
                                     <label class="custom-control-label" for="four">Avoid and minimize</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="five">
+                                    <input type="radio" class="custom-control-input" id="five" name="award_category" value="a,m&g">
                                     <label class="custom-control-label" for="five">Avoid, Minimize and Generate</label>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">If in Progress, what target has been set?<span>*</span></label>
-                            <textarea class="form-control height-textarea"></textarea>
+                            <textarea class="form-control height-textarea" name="target_status"></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">If Completed, what was the target that was set out to be achieved?<span>*</span></label>
-                            <textarea class="form-control height-textarea"></textarea>
+                            <textarea class="form-control height-textarea" name="target_completed"></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">Please provide a summary of your ongoing or planned intervention.<span>*</span></label>
-                            <textarea class="form-control height-textarea"></textarea>
+                            <textarea class="form-control height-textarea" name="ongoing_invitation_summary"></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">Please provide a summary of the intervention.</label>
-                            <textarea class="form-control height-textarea"></textarea>
+                            <textarea class="form-control height-textarea" name="invitation_summary"></textarea>
                             <p class="required-text">As part of the summary please specify the efforts undertaken and the results achieved.<br> * (not more than 500 words)</p>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">What are the challenges faced during the intervention?</label>
-                            <textarea class="form-control height-textarea"></textarea>
+                            <textarea class="form-control height-textarea" name="challenge_in_invitation"></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">What are the best practices used for the implementing the intervention?</label>
-                            <textarea class="form-control height-textarea"></textarea>
+                            <textarea class="form-control height-textarea" name="implement_invitation"></textarea>
                         </div>
                         <div class="col-md-12 attach-filehead">
                             <h3 class="">Please attach the images before applying AMG Principle</h3>
-                            <input type="file" id="file" />
+                            <input type="file" id="file" name="amg_image_before" />
                             <label for="file">Choose File</label>
                            <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
                         </div>
                         <div class="col-md-12 attach-filehead">
-                            <h3 class="">Please attach the images before applying AMG Principle</h3>
-                            <input type="file" id="file" />
+                            <h3 class="">Please attach the images after applying AMG Principle</h3>
+                            <input type="file" id="file" name="amg_image_after" />
                             <label for="file">Choose File</label>
                             <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
                         </div>
@@ -277,7 +275,8 @@
                                 </div>
                                 <div class="float-right d-inline-block">
                                     <button class="btn without-bgbtn">back</button>
-                                    <a href="thank.html" class="btn with-bgbtn">Submit</a>
+                                    <button type="submit" class="btn with-bgbtn">Submit</button>
+                                    <!-- <a href="{% url 'awards:thanks' %}" class="btn with-bgbtn">Submit</a> -->
                                 </div>
                             </div>
                         </div>
@@ -391,6 +390,19 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        $('.organization').find('*').prop('disabled', true);
+        $('#select-radio-check input:radio').change(function () {
+            if ($("#customCheck3").is(":checked")) {
+                $('.organization').find('*').prop('disabled', true);
+                $('.individual').find('*').prop('disabled', false);
+            }
+            if ($("#customCheck4").is(":checked")) {
+                $('.organization').find('*').prop('disabled', false);
+                $('.individual').find('*').prop('disabled', true);
+            }
+        });
+    </script>
    
     
   </body>

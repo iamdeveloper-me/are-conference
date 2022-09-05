@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Award
+from .models import AmgAward, Award, AwardSubCategory
 from django import forms
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
-class AwardForm(forms.ModelForm):
+class AmgAwardForm(forms.ModelForm):
     class Meta:
         widgets = {                          # Here
             'phone_number': PhoneNumberPrefixWidget(initial='IN'),
@@ -12,7 +12,11 @@ class AwardForm(forms.ModelForm):
 
 
 # Register your models here.
-@admin.register(Award)
-class AwardAdmin(admin.ModelAdmin):
-	form = AwardForm
-	model = Award
+@admin.register(AmgAward)
+class AmgAwardAdmin(admin.ModelAdmin):
+	form = AmgAwardForm
+	model = AmgAward
+
+admin.site.register(Award)
+admin.site.register(AwardSubCategory)
+
