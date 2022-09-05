@@ -1,53 +1,11 @@
+{% extends "layout/base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-    <title></title>
-  </head>
-  <body>
-    <!-- Navbar start-->
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg ">
-                        <a class="navbar-brand p-0" href="homepage.html">
-                            <img src="{% static 'images/logo.svg' %}"/>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                          <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
-                            <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
-                          </div>
-                        </div>
-                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
-                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
-                            Registration</a>
-                      </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Navbar end -->
+{% endblock extra_css %}
 
+
+{% block content %}
     <!-- agenda banner start-->
     <section class="agenda_banner">
         <div class="container">
@@ -75,66 +33,62 @@
                       <table class="table table-bordered custom_table">
                         <thead class="head_top">
                           <tr>
-                            <th scope="col">session</th>
-                            <th scope="col">Time</th>
-                            <th scope="col">Duration</th>
+                            <th class="session_width">session</th>
+                            <th class="session_2">Time</th>
+                            <th class="session_2">Duration</th>
                             <th scope="col">Event</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <td></td>
+                            <td rowspan="3">session-1</td>
                             <td>9 to 10</td>
                             <td>1 hour</td>
                             <td>Registration and High Tea</td>
                           </tr>
-                          <tr class="light_bg">
-                            <td>session-1</td>
+                          <tr>
                             <td>10 to 11:30</td>
                             <td>90 min</td>
                             <td>Inauguration of the ARE conference and awards</td>
-                            
                           </tr>
                           <tr>
-                            <td></td>
+                           
                             <td>11:30 to 12:00</td>
                             <td>30 min</td>
                             <td>Tea Break</td>
                           </tr>
                            <tr class="light_bg">
-                            <td rowspan="2">Session-2</td>
-                            <td rowspan="2">12 to 1:30</td>
+                            <td rowspan="3">Session-2</td>
+                            <td rowspan="3">12 to 1:30</td>
                             <td>70 min</td>
                             <td>The Cascading Cycle: Warming world — Rising energy demand — Warming World - ARE We heading the Right Direction?
                             </td>
                           </tr>
                           <tr class="light_bg">
-                         
                             <td>20 min</td>
                             <td>Institutions! People taking enough actions</td>
                           </tr>
-                          <tr>
-                            <td></td>
+                          <tr class="light_bg">
+                            <!-- <td></td> -->
                             <td>1:30 to 2:30</td>
                             <td>60 min</td>
-                            <td></td>
+                           
                           </tr>
-                          <tr class="light_bg">
-                            <td rowspan="2">Session-3</td>
-                            <td rowspan="2">2:30 to 4</td>
+                          <tr>
+                            <td rowspan="3">Session-3</td>
+                            <td rowspan="3">2:30 to 4</td>
                             <td>70 min</td>
                             <td>Policies and Programmes to Secure Climate and Energy security to the nation —ARE the Government initiatives pragmatic enough?</td>
                           </tr>
-                          <tr class="light_bg">
-                            
+                          <tr>
                             <td>20 min</td>
                             <td>Institutions! People taking enough actions</td>
                           </tr>
                           <tr>
-                            <td></td>
+                            <!-- <td></td> -->
                             <td>4:00 to 4:30</td>
                             <td>30 min</td>
-                            <td></td>
+                            <!-- <td></td> -->
                           </tr>
                           <tr class="light_bg">
                             <td rowspan="2">Session-4</td>
@@ -156,39 +110,38 @@
                      <table class="table table-bordered custom_table">
                        <thead class="head_top">
                          <tr>
-                           <th scope="col">session</th>
-                           <th scope="col">Time</th>
-                           <th scope="col">Duration</th>
+                           <th class="session_width">session</th>
+                           <th class="session_2">Time</th>
+                           <th class="session_2">Duration</th>
                            <th scope="col"></th>
                          </tr>
                        </thead>
                        <tbody>
                         <tr>
-                            <td></td>
+                          <td rowspan="3">Session-5</td>
                             <td>9 to 10</td>
                             <td>1 hour</td>
-                            <td></td>
+                            <!-- <td></td> -->
                           </tr>
-                          <tr class="light_bg">
-                            <td rowspan="2">Session-5</td>
+                          <tr>
                             <td rowspan="2">12 to 1:30</td>
                             <td>70 min</td>
                             <td>Mobilizing masses towards Sustainable Actions through Spiritual Sensitization - ARE the Spiritual Organizations doing enought?
                             </td>
                           </tr>
-                          <tr class="light_bg">
+                          <tr>
                            
                             <td>20 min</td>
                             <td>Institutions! People taking enough actions</td>
                           </tr>
-                          <tr>
-                            <td></td>
+                          <tr class="light_bg">
+                            <td rowspan="3" class="light_bg">Session-6</td>
                             <td>11:30 to 12:00</td>
                             <td>1 hour</td>
-                            <td></td>
+                            <!-- <td></td> -->
                           </tr>
                           <tr class="light_bg">
-                           <td rowspan="2" class="light_bg">Session-6</td>
+                          
                            <td rowspan="2">12 to 1:30</td>
                            <td>70 min</td>
                            <td>Political Vision, Messaging and Bold Actions for climate correction - ARE leaders on it?
@@ -200,29 +153,27 @@
                            <td>Institutions! People taking enough actions</td>
                          </tr>
                          <tr>
-                           <td></td>
+                           <td rowspan="3">Session-7</td>
                            <td>1:30 to 2:30</td>
                            <td>60 min</td>
-                           <td></td>
-                         </tr>
-                         <tr class="light_bg">
-                           <td rowspan="2">Session-7</td>
+                          </tr>
+                         <tr>
                            <td rowspan="2">2:30 to 4</td>
                            <td>70 min</td>
                            <td>Industries, their sustainability, environmental goals and outcomes - ARE they enough?</td>
                          </tr>
-                         <tr class="light_bg">
+                         <tr>
                            <td>20 min</td>
                            <td>Institutions! People taking enough actions</td>
                          </tr>
-                         <tr>
-                           <td></td>
+                         <tr class="light_bg">
+                          <td rowspan="3">Session-8</td>
                            <td>4:00 to 4:30</td>
                            <td>30 min</td>
                            <td></td>
                          </tr>
                          <tr class="light_bg">
-                           <td rowspan="2">Session-8</td>
+                           
                            <td rowspan="2">4:30 to 6</td>
                            <td>70 min</td>
                            <td>Education and Research for Climate Change Mitigation and Management - ARE the Academic Institutions prepared?</td>
@@ -240,38 +191,36 @@
                      <table class="table table-bordered custom_table">
                        <thead class="head_top">
                          <tr>
-                           <th scope="col">session</th>
-                           <th scope="col">Time</th>
-                           <th scope="col">Duration</th>
+                           <th class="session_width">session</th>
+                           <th class="session_2">Time</th>
+                           <th class="session_2">Duration</th>
                            <th scope="col"></th>
                          </tr>
                        </thead>
                        <tbody>
                         <tr>
-                            <td></td>
+                            <td rowspan="3">Session-9</td>
                             <td>9 to 10</td>
                             <td>1 hour</td>
                             <td></td>
                           </tr>
-                          <tr class="light_bg">
-                            <td rowspan="2">Session-9</td>
+                          <tr>
                             <td rowspan="2">12 to 1:30</td>
                             <td>70 min</td>
                             <td>Media's effectiveness in informaing and influencing societies in climate correction -ARE media giving enough space?
                             </td>
                           </tr>
-                          <tr class="light_bg">
+                          <tr>
                             <td>20 min</td>
                             <td>Institutions! People taking enough actions</td>
                           </tr>
-                          <tr>
-                            <td></td>
+                          <tr class="light_bg">
+                            <td rowspan="3">Session-10</td>
                             <td>11:30 to 12:00</td>
                             <td>1 hour</td>
                             <td></td>
                           </tr>
                           <tr class="light_bg">
-                           <td rowspan="2">Session-10</td>
                            <td rowspan="2">12 to 1:30</td>
                            <td>70 min</td>
                            <td>Concluding the Actions for Restoring Environment Conference? ARE we taking enough actions?</td>
@@ -281,24 +230,23 @@
                            <td>Institutions! People taking enough actions</td>
                          </tr>
                          <tr>
-                           <td></td>
+                          <td rowspan="4">Session-11</td>
                            <td>1:30 to 2:30</td>
                            <td>60 min</td>
                            <td></td>
                          </tr>
-                         <tr class="light_bg">
-                           <td rowspan="2">Session-11</td>
-                           <td rowspan="2">2:30 to 4</td>
+                         <tr>
+                          <td rowspan="2">2:30 to 4</td>
                            <td>70 min</td>
                            <td>Address by Chief Guest</td>
                          </tr>
-                         <tr class="light_bg">
+                         <tr>
                            <td>20 min</td>
                            <td>Recognizing extraordinary efforts of climate combat:
                             Presenting Energy Swaraj Awards</td>
                          </tr>
                          <tr>
-                           <td></td>
+                           <!-- <td></td> -->
                            <td>4:00 to 4:30</td>
                            <td>30 min</td>
                            <td>Tea Break</td>
@@ -318,109 +266,6 @@
           </div>
     </div>
 </section>
-<!-- table section close b -->
 
-       <!-- footer -->
-   <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="contact-part">
-                    <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
-                    <h4 class="contact-us pb-3">Contact us :</h4>
-                    <ul class="list-unstyled">
-                        <li class="mb-1">
-                            <img src="{% static 'images/footer/1.png' %}"/>
-                            +91 8291055825
-                        </li>
-                        <li>
-                            <img src="{% static 'images/footer/2.png' %}"/>
-                            conference@energyswaraj.org 
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-2 menu-list">
-                <h4>Menus</h4>
-                <ul class="list-unstyled my-first">
-                    <li>
-                        <a href="{% url 'awards:home' %}">Home</a></li>
-                    <li>
-                    <li>
-                        <a href="{% url 'awards:context' %}">Context</a></li>
-                    <li>
-                        <a href="{% url 'awards:partner' %}">Partners</a></li>
-                    
-                </ul>
-            </div>
-            <div class="col-md-2 menu-list">
-                <!-- <h4 class="pl-0">Column Two</h4> -->
-                <ul class="list-unstyled footer_top">
-                    <li>
-                        <a href="{% url 'awards:agenda' %}">Agenda</a></li>
-                    <li>
-                        <a href="{% url 'speakers:speaker' %}">Speakers</a></li>
-                    <li>
-                        <a href="{% url 'awards:award' %}">Awards</a></li>
-                </ul>
-            </div>
-            <div class="col-md-5  menu-list subscribe-div">
-                <h4 class="pl-0">Subscribe</h4>
-                <input class="form-control" placeholder="Enter your email"/>
-                <button class="btn home-button">Submit</button>
-                <p>By subscribing you agree to with our Privacy Policy</p>
-                <ul class="list-unstyled list-inline">
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/fb.png' %}"/>
-                    </li>
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/insta.png' %}"/>
-                    </li>
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/twitter.png' %}"/>
-                    </li>
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/linkd.png' %}"/>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <hr class="horizontal-line">
-    <div class="container">
-        <div class="row copy-right">
-            <div class="col-md-4">
-                <div class="">
-                    <p>©2022, All right reserved.</p>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="text-xl-right text-lg-right text-md-right text-left">
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <a href="">Privacy Policy</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="">Terms of Service</a>
-                        </li>
-                        <!-- <li class="list-inline-item">
-                            <a href="">Cookies Settings</a>
-                        </li> -->
-
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- footer end -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-    
-   
-  </body>
-</html>
+<!-- table section close fgdf-->
+{% endblock content %}

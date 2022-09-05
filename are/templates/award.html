@@ -1,53 +1,10 @@
+{% extends "layout/base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/award.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
-    <title></title>
-  </head>
-  <body>
-    <!-- Navbar start-->
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg ">
-                        <a class="navbar-brand p-0" href="homepage.html">
-                            <img src="{% static 'images/logo.svg' %}"/>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                          <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
-                            <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
-                          </div>
-                        </div>
-                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
-                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
-                            Registration</a>
-                      </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Navbar end -->
-
+{% endblock extra_css %}
+  
+{% block content %}
 <!-- award banner start -->
 <section class="award_banner">
       <div class="container">
@@ -99,7 +56,7 @@
                    <p>The consistent efforts of conscious and aware citizens help sustain the world. Many people and organisations in the world are working hard to promote sustainable living. The Energy Swaraj Award will recognize the best examples of individuals, organisations, industries, non-governmental organisations and government bodies that follow the Avoid-Minimise-Generate (AMG) principle in their actions towards reducing their energy (electricity) consumption and adopting renewable energy solutions.</p>
                    <p>Not only the past good work done But, even If you have not yet taken any action to adopt AMG, it is not too late, you can still plan to take action in the immediate future and apply for the Energy Swaraj Awards.</p>
                    <h6>So apply now, win cash prizes and get recognition on this global platform.</h6>
-                   <a href="{% url 'awards:application' %}">Apply Now</a>
+                   <a href="{% url 'awards:application' %}">Know More</a>
                </div>
           </div>
           <div class="col-md-5">
@@ -128,7 +85,7 @@
                     <p>Action begins with an idea. Climate change solutions need drastic and immediate changes in energy use patterns, if anyone has any idea that one can suggest to an industry or an institution or an individual and implementation of which will be a considerable step towards solving the problem of climate change, then you have an opportunity here to shine your idea and win cash prizes and off-course good recognition and global platform. </p>
                     <p>If not an idea but you are a writer or a painter, still you have the opportunity to win prizes. You can write a song or a drama or paint something that brings the attention of the world to this serious issue of climate change and environmental degradation,</p>
                    <h5>So apply now, win cash prizes and get recognition on this global platform.</h5>
-                   <a href="{% url 'awards:application' %}">Apply Now</a>
+                   <a href="{% url 'awards:challenge_award' %}">Apply Now</a>
                </div>
           </div>
           
@@ -137,107 +94,8 @@
 </section>
 <!-- opportunity close -->
 
-     <!-- footer -->
-   <footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="contact-part">
-                    <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
-                    <h4 class="contact-us pb-3">Contact us :</h4>
-                    <ul class="list-unstyled">
-                        <li class="mb-1">
-                            <img src="{% static 'images/footer/1.png' %}"/>
-                            +91 8291055825
-                        </li>
-                        <li>
-                            <img src="{% static 'images/footer/2.png' %}"/>
-                            conference@energyswaraj.org 
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-2 menu-list">
-                <h4>Menus</h4>
-                <ul class="list-unstyled my-first">
-                    <li>
-                        <a href="{% url 'awards:home' %}">Home</a></li>
-                    <li>
-                    <li>
-                        <a href="{% url 'awards:context' %}">Context</a></li>
-                    <li>
-                        <a href="{% url 'awards:partner' %}">Partners</a></li>
-                    
-                </ul>
-            </div>
-            <div class="col-md-2 menu-list">
-                <!-- <h4 class="pl-0">Column Two</h4> -->
-                <ul class="list-unstyled footer_top">
-                    <li>
-                        <a href="{% url 'awards:agenda' %}">Agenda</a></li>
-                    <li>
-                        <a href="{% url 'speakers:speaker' %}">Speakers</a></li>
-                    <li>
-                        <a href="{% url 'awards:award' %}">Awards</a></li>
-                </ul>
-            </div>
-            <div class="col-md-5  menu-list subscribe-div">
-                <h4 class="pl-0">Subscribe</h4>
-                <input class="form-control" placeholder="Enter your email"/>
-                <button class="btn home-button">Submit</button>
-                <p>By subscribing you agree to with our Privacy Policy</p>
-                <ul class="list-unstyled list-inline">
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/fb.png' %}"/>
-                    </li>
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/insta.png' %}"/>
-                    </li>
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/twitter.png' %}"/>
-                    </li>
-                    <li class="list-inline-item">
-                        <img src="{% static 'images/footer/linkd.png' %}"/>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <hr class="horizontal-line">
-    <div class="container">
-        <div class="row copy-right">
-            <div class="col-md-4">
-                <div class="">
-                    <p>©2022, All right reserved.</p>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="text-xl-right text-lg-right text-md-right text-left">
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <a href="">Privacy Policy</a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a href="">Terms of Service</a>
-                        </li>
-                        <!-- <li class="list-inline-item">
-                            <a href="">Cookies Settings</a>
-                        </li> -->
+{% endblock content %}
 
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<!-- footer end -->
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-    
    
   </body>
 </html>

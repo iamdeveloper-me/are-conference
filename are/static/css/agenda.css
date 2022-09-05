@@ -1,5 +1,5 @@
 .agenda_banner {
-    background: url(../images/context/context_banner.png)no-repeat;
+    background: url(../images/agenda/agenda_banner.png)no-repeat;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center top;
@@ -18,7 +18,13 @@
     width: 75%;
     text-transform: capitalize;
 }
+.session_width{
+    width:95px;
+}
 
+.session_2 {
+    width: 125px;
+}
 .agenda_banner_text h1 span{
     font-weight: 700;
     color: #00BCFF;

@@ -2,13 +2,53 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView 
 from django.views.generic.edit import DeleteView, UpdateView
+from django.contrib.auth.views import LoginView
 from speakers.models import Speaker
 from speakers.forms import SpeakerForm
 from django.http import HttpResponseRedirect
+from django.shortcuts import redirect
+from django.contrib import messages
+
 
 # Create your views here.
-class AdminLogin(TemplateView):
-	template_name = 'admin/admin_home.html'
+class AdminLogin(LoginView):
+	template_name = 'admin/admin_login.html'
+
+
+	def post(self, request, *args, **kwargs):
+		form=form.get_form()
+		if form.is_valid():
+			user = form.get_user()
+			if user is not none and user.is_staff ==True:
+				return redirect('speakers:speaker')
+			else:
+				messages.error(request,'invalid user')
+				return redirect('admin_login')
+		else:
+			return self.form_invalid(form)
+
+
+	# def post(self, request, *args, **kwargs):		
+	# 	# import pdb;pdb.set_trace()
+	#     form = self.get_form()
+	#     if form.is_valid():
+	#     	if user is not None and user.is_staff == True:
+	#         	return redirect('speakers:speaker')
+	#         else:
+	#         	messages.error(request,'invalid username')
+	#         	return redirect('admin_login')
+	#     else:
+	#         return self.form_invalid(form)
+
+	# def form_valid(self, form):
+	# 	user = form.get_user()
+	# 	if user is not None and user.is_staff == True:
+	# 		# import pdb;pdb.set_trace()
+	# 		return redirect('speakers:speaker')
+	# 	else:
+	# 		messages.error(request, 'Document deleted.')
+	# 		return redirect('admin_login')
+
 
 
 class AdminViewSpeaker(ListView):
