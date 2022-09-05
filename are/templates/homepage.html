@@ -34,9 +34,23 @@
                 </div>
                 <!-- time first -->
                 <div class="intro timer-UI timerfirst">
-                    <h5>Time left to touch 1.5<sup>o</sup>C of global warming</h5>
+                    <h5>Time left for the conference</h5>
                     <div class="cd1">
                         <div class="cd__unit-group">
+                            <!-- <div class="cd__unit">
+                    <div class="cd__digits">
+                      <div class="cd__digit" data-col>
+                        <div data-pos="next">-</div>
+                        <div data-pos="prev">-</div>
+                      </div>
+                      <div class="cd__digit" data-col>
+                        <div data-pos="next">-</div>
+                        <div data-pos="prev">-</div>
+                      </div>
+                    </div>
+                    <img src="./images/homepage/slash.svg" />
+                    <div class="cd__unit-label">Years</div>
+                  </div> -->
                             <div class="cd__unit">
                                 <div class="cd__digits">
                                     <div class="cd__digit" data-col>
@@ -48,21 +62,7 @@
                                         <div data-pos="prev">-</div>
                                     </div>
                                 </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
-                                <div class="cd__unit-label">Years</div>
-                            </div>
-                            <div class="cd__unit">
-                                <div class="cd__digits">
-                                    <div class="cd__digit" data-col>
-                                        <div data-pos="next">-</div>
-                                        <div data-pos="prev">-</div>
-                                    </div>
-                                    <div class="cd__digit" data-col>
-                                        <div data-pos="next">-</div>
-                                        <div data-pos="prev">-</div>
-                                    </div>
-                                </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <img src="./images/homepage/slash.svg" />
                                 <div class="cd__unit-label">Days</div>
                             </div>
                         </div>
@@ -78,7 +78,7 @@
                                         <div data-pos="prev">-</div>
                                     </div>
                                 </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <img src="./images/homepage/slash.svg" />
                                 <div class="cd__unit-label">Hours</div>
                             </div>
                             <div class="cd__unit">
@@ -114,7 +114,7 @@
                                         <div data-pos="prev">-</div>
                                     </div>
                                 </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <img src="./images/homepage/slash.svg" />
                                 <div class="cd__unit-label">Years</div>
                             </div>
                             <div class="cd__unit">
@@ -127,8 +127,12 @@
                                         <div data-pos="next">-</div>
                                         <div data-pos="prev">-</div>
                                     </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
                                 </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <img src="./images/homepage/slash.svg" />
                                 <div class="cd__unit-label">Days</div>
                             </div>
                         </div>
@@ -144,7 +148,7 @@
                                         <div data-pos="prev">-</div>
                                     </div>
                                 </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <img src="./images/homepage/slash.svg" />
                                 <div class="cd__unit-label">Hours</div>
                             </div>
                             <div class="cd__unit">
@@ -158,7 +162,7 @@
                                         <div data-pos="prev">-</div>
                                     </div>
                                 </div>
-                                <img src="{% static 'images/homepage/slash.svg' %}" />
+                                <img src="./images/homepage/slash.svg" />
                                 <div class="cd__unit-label">Minutes</div>
                             </div>
                             <div class="cd__unit">
@@ -326,8 +330,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const uec = new UnixEpochalypseCountdown(".cd");
     const infoBtn = document.getElementById("info-btn");
 
-    if (infoBtn)
-        infoBtn.addEventListener("click", jumpToHelp);
+    if (infoBtn) infoBtn.addEventListener("click", jumpToHelp);
 });
 
 function jumpToHelp() {
@@ -337,7 +340,7 @@ function jumpToHelp() {
         window.scrollTo({
             top: info.offsetTop,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
     }
 }
@@ -366,58 +369,75 @@ class UnixEpochalypseCountdown {
             d: 0,
             h: 0,
             m: 0,
-            s: 0
+            s: 0,
         };
 
         if (typeof moment === "function") {
-            const later = moment((2 ** 31 - 1) * 1e3);
+            const later = moment({
+                year: 2029,
+                month: 7,
+                day: 7,
+                hour: 21,
+                minute: 29,
+                second: 59,
+            });
             const now = moment();
             const diff = moment.duration(later.diff(now));
 
+            let extraDays = moment({
+                year: moment().year() + 1,
+                month: 6,
+                day: 22,
+                //   hour: 18,
+                //   minute: 10,
+                //   second: 3,
+            }).diff(moment(), "days"); // 3
+
             if (diff.valueOf() >= 0) {
                 timeLeft.y += diff.years();
-                timeLeft.mo += diff.months();
-                timeLeft.d += diff.days();
+                //   timeLeft.mo += diff.months();
+                timeLeft.d += diff.days() + extraDays;
                 timeLeft.h += diff.hours();
                 timeLeft.m += diff.minutes();
                 timeLeft.s += diff.seconds();
             }
         }
-
         return timeLeft;
     }
     clearAnimations() {
         if (this.el) {
             const colAnimsToClear = this.el.querySelectorAll("[data-col]");
 
-            Array.from(colAnimsToClear).forEach(a => {
+            Array.from(colAnimsToClear).forEach((a) => {
                 a.classList.remove("cd__digit--roll-in");
             });
 
             const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
 
-            Array.from(posAnimsToClear).forEach(a => {
+            Array.from(posAnimsToClear).forEach((a) => {
                 a.classList.remove("cd__next-digit-fade", "cd__prev-digit-fade");
             });
         }
     }
     update(doAnimations = false) {
+        let f = false;
         // start with all dashes
         if (!this.time.length) {
             let digitCount = 12;
 
-            while (digitCount--)
-                this.time.push("-");
+            while (digitCount--) this.time.push("-");
         }
         // update data
         const display = this.getTimeLeft();
+        if (display.d < 100) {
+            f = true;
+        }
         const displayDigits = [];
 
         for (let v in display) {
             const digits = `${display[v]}`.split("");
             // add zero to single digits
-            if (digits.length < 2)
-                digits.unshift("0");
+            if (digits.length < 2) digits.unshift("0");
 
             displayDigits.push(...digits);
         }
@@ -448,8 +468,7 @@ class UnixEpochalypseCountdown {
         // progress in seconds
         const progress = this.el.querySelector("[data-progress]");
 
-        if (progress)
-            progress.innerHTML = this.getProgressInSeconds();
+        if (progress) progress.innerHTML = this.getProgressInSeconds();
         // loop
         clearTimeout(this.animTimeout);
         this.animTimeout = setTimeout(this.clearAnimations.bind(this), 500);
@@ -458,21 +477,13 @@ class UnixEpochalypseCountdown {
         this.updateTimeout = setTimeout(this.update.bind(this, true), 1e3);
     }
 }
-$('#owl-carousel').owlCarousel({
-    loop: true,
-    margin: 30,
-    dots: true,
-    nav: true,
-    autoplay: true,
-    items: 1,
-})
-
+</script>
+<script>
 window.addEventListener("DOMContentLoaded", () => {
     const uec = new UnixEpochalypseCountdown1(".cd1");
     const infoBtn = document.getElementById("info-btn");
 
-    if (infoBtn)
-        infoBtn.addEventListener("click", jumpToHelp);
+    if (infoBtn) infoBtn.addEventListener("click", jumpToHelp);
 });
 
 function jumpToHelp() {
@@ -482,7 +493,7 @@ function jumpToHelp() {
         window.scrollTo({
             top: info.offsetTop,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
         });
     }
 }
@@ -507,25 +518,35 @@ class UnixEpochalypseCountdown1 {
     }
     getTimeLeft() {
         let timeLeft = {
-            y: 0,
+            // y: 0,
             d: 0,
             h: 0,
             m: 0,
-            s: 0
+            // s: 0,
         };
 
         if (typeof moment === "function") {
-            const later = moment((2 ** 31 - 1) * 1e3);
+            const later = moment({
+                year: 2022,
+                month: 10,
+                day: 10,
+                hour: 9,
+            });
+            let extraDays = moment({
+                year: moment().year(),
+                month: 10,
+                day: 20,
+            }).diff(moment(), "days");
             const now = moment();
             const diff = moment.duration(later.diff(now));
 
             if (diff.valueOf() >= 0) {
-                timeLeft.y += diff.years();
-                timeLeft.mo += diff.months();
-                timeLeft.d += diff.days();
+                //   timeLeft.y += diff.years();
+                //   timeLeft.mo += diff.months();
+                timeLeft.d += diff.days() + extraDays;
                 timeLeft.h += diff.hours();
                 timeLeft.m += diff.minutes();
-                timeLeft.s += diff.seconds();
+                //   timeLeft.s += diff.seconds();
             }
         }
 
@@ -535,13 +556,13 @@ class UnixEpochalypseCountdown1 {
         if (this.el) {
             const colAnimsToClear = this.el.querySelectorAll("[data-col]");
 
-            Array.from(colAnimsToClear).forEach(a => {
+            Array.from(colAnimsToClear).forEach((a) => {
                 a.classList.remove("cd__digit--roll-in");
             });
 
             const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
 
-            Array.from(posAnimsToClear).forEach(a => {
+            Array.from(posAnimsToClear).forEach((a) => {
                 a.classList.remove("cd__next-digit-fade", "cd__prev-digit-fade");
             });
         }
@@ -551,8 +572,7 @@ class UnixEpochalypseCountdown1 {
         if (!this.time.length) {
             let digitCount = 12;
 
-            while (digitCount--)
-                this.time.push("-");
+            while (digitCount--) this.time.push("-");
         }
         // update data
         const display = this.getTimeLeft();
@@ -561,8 +581,7 @@ class UnixEpochalypseCountdown1 {
         for (let v in display) {
             const digits = `${display[v]}`.split("");
             // add zero to single digits
-            if (digits.length < 2)
-                digits.unshift("0");
+            if (digits.length < 2) digits.unshift("0");
 
             displayDigits.push(...digits);
         }
@@ -593,8 +612,7 @@ class UnixEpochalypseCountdown1 {
         // progress in seconds
         const progress = this.el.querySelector("[data-progress]");
 
-        if (progress)
-            progress.innerHTML = this.getProgressInSeconds();
+        if (progress) progress.innerHTML = this.getProgressInSeconds();
         // loop
         clearTimeout(this.animTimeout);
         this.animTimeout = setTimeout(this.clearAnimations.bind(this), 500);
@@ -603,5 +621,152 @@ class UnixEpochalypseCountdown1 {
         this.updateTimeout = setTimeout(this.update.bind(this, true), 1e3);
     }
 }
+</script>
+<script>
+$('#owl-carousel').owlCarousel({
+    loop: true,
+    margin: 30,
+    dots: true,
+    nav: true,
+    autoplay: true,
+    items: 1,
+})
+
+// window.addEventListener("DOMContentLoaded", () => {
+//     const uec = new UnixEpochalypseCountdown1(".cd1");
+//     const infoBtn = document.getElementById("info-btn");
+
+//     if (infoBtn)
+//         infoBtn.addEventListener("click", jumpToHelp);
+// });
+
+// function jumpToHelp() {
+//     const info = document.getElementById("info");
+
+//     if (info) {
+//         window.scrollTo({
+//             top: info.offsetTop,
+//             left: 0,
+//             behavior: "smooth"
+//         });
+//     }
+// }
+
+// class UnixEpochalypseCountdown1 {
+//     constructor(qs) {
+//         this.el = document.querySelector(qs);
+//         this.time = [];
+//         this.animTimeout = null;
+//         this.updateTimeout = null;
+//         this.update();
+//     }
+//     getProgressInSeconds() {
+//         if (typeof moment === "function") {
+//             const now = moment();
+//             const ms = Math.ceil(now.valueOf() / 1e3);
+
+//             return ms >> 0;
+//         } else {
+//             return 0;
+//         }
+//     }
+//     getTimeLeft() {
+//         let timeLeft = {
+//             y: 0,
+//             d: 0,
+//             h: 0,
+//             m: 0,
+//             s: 0
+//         };
+
+//         if (typeof moment === "function") {
+//             const later = moment((2 ** 31 - 1) * 1e3);
+//             const now = moment();
+//             const diff = moment.duration(later.diff(now));
+
+//             if (diff.valueOf() >= 0) {
+//                 timeLeft.y += diff.years();
+//                 timeLeft.mo += diff.months();
+//                 timeLeft.d += diff.days();
+//                 timeLeft.h += diff.hours();
+//                 timeLeft.m += diff.minutes();
+//                 timeLeft.s += diff.seconds();
+//             }
+//         }
+
+//         return timeLeft;
+//     }
+//     clearAnimations() {
+//         if (this.el) {
+//             const colAnimsToClear = this.el.querySelectorAll("[data-col]");
+
+//             Array.from(colAnimsToClear).forEach(a => {
+//                 a.classList.remove("cd__digit--roll-in");
+//             });
+
+//             const posAnimsToClear = this.el.querySelectorAll("[data-pos]");
+
+//             Array.from(posAnimsToClear).forEach(a => {
+//                 a.classList.remove("cd__next-digit-fade", "cd__prev-digit-fade");
+//             });
+//         }
+//     }
+//     update(doAnimations = false) {
+//         // start with all dashes
+//         if (!this.time.length) {
+//             let digitCount = 12;
+
+//             while (digitCount--)
+//                 this.time.push("-");
+//         }
+//         // update data
+//         const display = this.getTimeLeft();
+//         const displayDigits = [];
+
+//         for (let v in display) {
+//             const digits = `${display[v]}`.split("");
+//             // add zero to single digits
+//             if (digits.length < 2)
+//                 digits.unshift("0");
+
+//             displayDigits.push(...digits);
+//         }
+//         // update display
+//         const cols = this.el.querySelectorAll("[data-col]");
+
+//         if (cols) {
+//             Array.from(cols).forEach((c, i) => {
+//                 const digit = displayDigits[i];
+
+//                 if (digit !== this.time[i]) {
+//                     const next = c.querySelector(`[data-pos="next"]`);
+//                     const prev = c.querySelector(`[data-pos="prev"]`);
+
+//                     if (doAnimations === true) {
+//                         c.classList.add("cd__digit--roll-in");
+//                         next.classList.add("cd__next-digit-fade");
+//                         prev.classList.add("cd__prev-digit-fade");
+//                     }
+
+//                     next.innerHTML = digit;
+//                     prev.innerHTML = this.time[i];
+//                 }
+//             });
+//         }
+
+//         this.time = displayDigits;
+//         // progress in seconds
+//         const progress = this.el.querySelector("[data-progress]");
+
+//         if (progress)
+//             progress.innerHTML = this.getProgressInSeconds();
+//         // loop
+//         clearTimeout(this.animTimeout);
+//         this.animTimeout = setTimeout(this.clearAnimations.bind(this), 500);
+
+//         clearTimeout(this.updateTimeout);
+//         this.updateTimeout = setTimeout(this.update.bind(this, true), 1e3);
+//     }
+// }
 </script>
 {% endblock extra_js %}
