@@ -28,3 +28,6 @@ class ApplicationForm(TemplateView):
 class Partner(TemplateView):
 	template_name = "ourpartner.html"
 
+
+class Thankyou(TemplateView):
+	template_name = "thank.html"

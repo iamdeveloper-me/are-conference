@@ -1,50 +1,11 @@
+{% extends "layout/base.html" %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/speaker.css' %}">
-    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
-    <title></title>
-  </head>
-  <body class="">
-    <!-- Navbar start-->
-    <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg ">
-                        <a class="navbar-brand p-0" href="homepage.html">
-                            <img src="{% static 'images/logo.svg' %}"/>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                          <div class="navbar-nav ml-auto">
-                            <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
-                            <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
-                            <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
-                          </div>
-                        </div>
-                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
-                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
-                            Registration</a>
-                      </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Navbar end -->
+{% endblock extra_css %}
+
+
+{% block content %}
     <!--Popup for Add Speaker Start-->
     <div id="myModal" class="modal fade">
         <div class="modal-dialog modal-login">
@@ -199,109 +160,8 @@
         </div>
     </section>
     <!-- speaker details  end-->
+{% endblock content %}
 
-
-
-    <!-- footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="contact-part">
-                        <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
-                        <h4 class="contact-us pb-3">Contact us :</h4>
-                        <ul class="list-unstyled">
-                            <li class="mb-1">
-                                <img src="{% static 'images/footer/1.png' %}"/>
-                                +91 8291055825
-                            </li>
-                            <li>
-                                <img src="{% static 'images/footer/2.png' %}"/>
-                                conference@energyswaraj.org 
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-2 menu-list">
-                    <h4>Menus</h4>
-                    <ul class="list-unstyled my-first">
-                        <li>
-                            <a href="{% url 'awards:home' %}">Home</a></li>
-                        <li>
-                        <li>
-                            <a href="{% url 'awards:context' %}">Context</a></li>
-                        <li>
-                            <a href="{% url 'awards:partner' %}">Partners</a></li>
-                        
-                    </ul>
-                </div>
-                <div class="col-md-2 menu-list">
-                    <!-- <h4 class="pl-0">Column Two</h4> -->
-                    <ul class="list-unstyled footer_top">
-                        <li>
-                            <a href="{% url 'awards:agenda' %}">Agenda</a></li>
-                        <li>
-                            <a href="{% url 'speakers:speaker' %}">Speakers</a></li>
-                        <li>
-                            <a href="{% url 'awards:award' %}">Awards</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5  menu-list subscribe-div">
-                    <h4 class="pl-0">Subscribe</h4>
-                    <input class="form-control" placeholder="Enter your email"/>
-                    <button class="btn home-button">Submit</button>
-                    <p>By subscribing you agree to with our Privacy Policy</p>
-                    <ul class="list-unstyled list-inline">
-                        <li class="list-inline-item">
-                            <img src="{% static 'images/footer/fb.png' %}"/>
-                        </li>
-                        <li class="list-inline-item">
-                            <img src="{% static 'images/footer/insta.png' %}"/>
-                        </li>
-                        <li class="list-inline-item">
-                            <img src="{% static 'images/footer/twitter.png' %}"/>
-                        </li>
-                        <li class="list-inline-item">
-                            <img src="{% static 'images/footer/linkd.png' %}"/>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <hr class="horizontal-line">
-        <div class="container ">
-            <div class="row copy-right">
-                <div class="col-md-4">
-                    <div class="">
-                        <p>©2022, All right reserved.</p>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="text-xl-right text-lg-right text-md-right text-left">
-                        <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <a href="">Privacy Policy</a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="">Terms of Service</a>
-                            </li>
-                            <!-- <li class="list-inline-item">
-                                <a href="">Cookies Settings</a>
-                            </li> -->
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- footer end -->
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
-   
     
   </body>
 </html>
