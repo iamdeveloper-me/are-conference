@@ -14,5 +14,4 @@ class AwardForm(forms.ModelForm):
 # Register your models here.
 @admin.register(Award)
 class AwardAdmin(admin.ModelAdmin):
-	form = AwardForm
 	model = Award
