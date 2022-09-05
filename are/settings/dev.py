@@ -1,5 +1,5 @@
 from .base import *
-print("3")
+# print("3")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -10,4 +10,4 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-print("4")
+# print("4")
