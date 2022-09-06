@@ -118,6 +118,10 @@
 .row-space{
     margin-bottom: 80px;
 }
+
+.row-space2{
+    margin-bottom:120px;
+}
 .speaker-details .bg-top img{
     border-radius: 20px;
     width: 300px;
@@ -129,7 +133,7 @@
 
 @media (max-width:767px){
     .speaker-section .speaker-head h1{
-        font-size: 50px;
+        font-size: 40px;
     }
     .speaker-section .speaker-head p{
         padding: 0 0px 25px 0px;
@@ -144,7 +148,13 @@
     .speaker-details {
         padding: 50px 0px;
     }
+    .bg-top{text-align: center;}
+    .speaker-details .bg-top.right::after{right: 10px;}
+    .speaker-details .bg-top.left::before{
+        left: 8px;    
+        top: -20px;}
 }
+
 @media (min-width:767px) and (max-width: 1024px){
     .speaker-details .bg-top img{
         height: 100%;
@@ -155,4 +165,3 @@
 
 
 
-@media screen and (max-width: 767px) {}

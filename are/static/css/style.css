@@ -29,6 +29,9 @@ header nav{
 header nav a:first-child{
     font-weight: 600;
 }
+.register_btn{
+    display:none;
+}
 header nav a{
     font-size: 14px;
     line-height: 21px;
@@ -37,6 +40,11 @@ header nav a{
     font-style: normal;
     padding-left: 40px !important;
     padding-right: 0 !important;
+    transition:all 0.3s;
+}
+
+header nav a:hover{
+    color: #00BCFF !important;
 }
 .registration-btn {
     font-family: 'Poppins';
@@ -111,7 +119,7 @@ header nav a{
     text-transform: uppercase;
     color: #FFFFFF;
 }
-.register-area .register-nowbtn{
+.register-area a.register-nowbtn {
     width: 280px;
     height: 50px;
     background: #FFFFFF;
@@ -120,11 +128,11 @@ header nav a{
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 38px;
     text-align: center;
-    color: #9A1C20;
+    color: #9A1C20 !important;
 }
-.register-area .apply-awardbtn{
+.register-area a.apply-awardbtn{
     width: 280px;
     height: 50px;
     border: 1px solid #FFFFFF;
@@ -133,10 +141,14 @@ header nav a{
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 38px;
     text-align: center;
     color: #FFFFFF;
     background: transparent;
+    text-transform: capitalize;
+}
+.register-area a.apply-awardbtn:hover{
+    color:#fff;
 }
 .registration-btn img {
     width: 18px;
@@ -239,9 +251,6 @@ section.about_energy_area {
     width: 24px;
     height: 16px;
     display: block;
-    /* position: absolute;
-    left: -11px;
-    top: -25px; */
 }
 
 .energy_slider button.owl-next span {
@@ -250,10 +259,7 @@ section.about_energy_area {
     width: 24px;
     height: 16px;
     display: block;
-    /* position: absolute;
-    left: -11px;
-    top: -25px; */
-}
+   }
 .energy_slider .owl-nav {
     position: relative;
     top: 18px;
@@ -567,18 +573,18 @@ a.knowmore span {
     height: 62px;
     background: url(../images/award/brown_circle.png);
 }
-.section_organized::before {
+.section_organized::after {
     content: '';
     position: absolute;
     display: block;
-    left: 38%;
-    bottom: 30px;
+    right: 7%;
+    top: 30px;
     width: 57px;
     height: 62px;
     background: url(../images/award/brown_circle.png);
 }
 .Organized_img img {
-    width: 200px;
+    width: 130px;
 }
 .organized_text h3 {
     color: #252123;
@@ -587,13 +593,175 @@ a.knowmore span {
     line-height: 48px;
     text-transform: capitalize;
 }
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+
+    .about_content {
+        padding-top: 0;
+    }
+    .about_content p {
+        padding-right: 0px;
+    }
+    .about_content::after{
+        right: -137px;
+    }
+    section.about_section_area {
+        padding: 55px 0px 50px;
+    }
+    .energy_content {
+        padding-right: 0px;
+    }
+    .enery_head_light h2{
+        font-size:29px;
+    }
+    .confererence_content::after{
+        top: -30px;
+        right: -107px;
+    }
+    .confererence_content ul {
+        padding-right: 0;
+    }
+    .sponser_box{
+        margin-bottom:20px;
+    }
+    .register-area .register-nowbtn {
+        width: 230px;
+    }
+    .register-area .apply-awardbtn {
+        width: 230px;
+    }
+    .banner-section {
+        background-size: cover;
+    }
+
+}
 @media screen and (max-width: 767px) {
 
-    .banner-section .inner-content{
-        margin: 105px auto 0px;
-    } 
+    .banner-section .inner-content {
+        margin: 100px auto 0px;
+    }
+    .custom_collapse{
+        background-color:#fff;
+    }
+    img.logo-img {
+        max-width: 220px !important;
+    }
+    .copy-right li.list-inline-item {
+        padding-left: 0px;
+    }
+    .contact-part {
+        padding-bottom: 22px;
+    }
+    .copy-right {
+        padding: 15px 0px !important;
+    }
+    .copy-right p{
+        padding-bottom:10px;
+    }
+    ul.list-unstyled.footer_top {
+        padding-top: 0 !important;
+    }
+    ul.list-unstyled.footer_top {
+        padding-bottom: 10px;
+    }
+    footer .subscribe-div p{
+       padding: 20px 0px 10px !important;
+    }
+     .section_organized {
+        padding: 40px 0px 10px;
+    }
+    .Organized_img{
+        text-align: center;
+        padding-bottom: 12px;
+    }
+    .Organized_img img {
+        width: 95px;
+    }
+    .organized_text {
+        padding-bottom: 25px;
+    }
+    .organized_text h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .organized_text {
+        text-align: center;
+    }
+    .cd__unit-label{
+        position: relative;
+        top: -24px;
+    }
+    .cd__unit img {
+        right: -14px !important;
+    }
+    .timerfirst{
+        margin: 0px 0px 20px 0px;
+    }
+    .timer-UI h5{
+        font-size: 14px;
+    }
+    .register-area a.register-nowbtn {
+        width: 160px;
+        height: 44px;
+        line-height: 34px;
+    }
+    .cd__unit{
+        width: 65px;
+    }
+    .register-area a.apply-awardbtn{
+        width: 160px;
+        height: 44px;
+        line-height: 34px;
+    }
+    .register_btn a {
+        background: #9A1C20;
+    }
+    .navbar-collapse.custom_collapse {
+        padding-top: 15px;
+    }
+    .register_btn {
+        padding-top: 10px;
+    }
+    .custom_collapse .navbar-nav.ml-auto a {
+        border-bottom: 1px solid #d7d7d775;
+    }
+    .register_btn{
+        padding-bottom:30px;
+    }
+    a.navbar-brand img {
+        width: 230px;
+    }
+    button.navbar-toggler {
+        padding: 0px 0 0px 0.25rem;
+    }
+    header nav a{
+    color:#000;
+    padding-left: 22px !important;
+    }
+    .registration-btn{
+        margin-left: 22px;
+    }
+    .register_btn a:hover {
+        color: #fff !important;
+    }
+    .register_btn{
+        display: block;
+    }
+    header nav {
+        height: 62px;
+    }
+    .register_btn a.btn.registration-btn{
+        display: block;
+    }
+    a.btn.registration-btn{
+        display: none;
+    }
+    nav.navbar.navbar-expand-lg {
+        padding: 0;
+    }
     .banner-section .inner-content h1{
-        font-size: 32px;
+        font-size: 30px;
     }
     .banner-section .inner-content ul {
         margin: 15px 0px 0px;
@@ -614,11 +782,10 @@ a.knowmore span {
     .register-area .apply-awardbtn {
         width: 165px;
     }
-    .register-area .register-nowbtn {
-        width: 165px;
-    }
+    
     .banner-section{
         background-size: cover;
+        padding-bottom: 35px;
     }
     .about_content {
         padding-top: 0;
@@ -628,6 +795,7 @@ a.knowmore span {
     }
     .about_content h3{
         font-size:25px;
+        padding-bottom: 0px;
     }
     .about_content h2{
         font-size:26px;
@@ -679,9 +847,7 @@ a.knowmore span {
     .sponser_box{
         margin-bottom: 15px;
     }
-    .register-area .register-nowbtn{
-        height: 44px;
-    }
+    
     .register-area .apply-awardbtn{
         height:44px;
     }
@@ -696,56 +862,9 @@ a.knowmore span {
     .timer-UI .cd__digits{
         font-size: 20px;
     }
+    footer{
+        padding-top:15px !important;
+    }
+    
 
 }
-
-@media screen and (min-width: 768px) and (max-width: 991px) { 
-
-    .about_content {
-        padding-top: 0;
-    }
-    .about_content p {
-        padding-right: 0px;
-    }
-    .about_content::after{
-        right: -137px;
-    }
-    section.about_section_area {
-        padding: 55px 0px 50px;
-    }
-    .energy_content {
-        padding-right: 0px;
-    }
-    .enery_head_light h2{
-        font-size:29px;
-    }
-    .confererence_content::after{
-        top: -30px;
-        right: -107px;
-    }
-    .confererence_content ul {
-        padding-right: 0;
-    }
-    .sponser_box{
-        margin-bottom:20px;
-    }
-    .register-area .register-nowbtn {
-        width: 230px;
-    }
-    .register-area .apply-awardbtn {
-        width: 230px;
-    }
-    .banner-section {
-        background-size: cover;
-    }
-
-}
-@media screen and (max-width: 1024px) {
-    .banner-section .inner-content{
-        margin: 140px auto 0px;
-    }
-    .about_content{
-        padding-top:0px;
-    }
-}
-

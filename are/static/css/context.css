@@ -208,3 +208,55 @@ section.running_section_area.padd_botm {
 .running_left_text.padd_right {
     padding-right: 15%;
 }
+
+@media (max-width:767px){
+    .context_banner_text h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .running_section_area {
+        padding-top: 40px;
+    }
+    .running_left_text h4{
+        font-size:25px;
+    }
+    .Participating_area {
+        padding-bottom: 35px;
+    }
+    .running_imgbox .timer-UI h5{
+        font-size:14px;
+    }
+    .running_left_text p{
+        padding-bottom:15px;
+    }
+    .timer-UI .cd__digits{
+        font-size: 27px;
+    line-height: 48px;
+    }
+    .running_left_text h3{
+        font-size:26px;
+        padding-bottom: 15px;
+    }
+    .Participating_area::before ,.Participating_area::after{
+       background-image: none;
+    }
+    .context_banner_text p{
+        padding-top:10px;
+    }
+    .context_banner_text {
+        padding: 28% 0px 35px;
+    }
+    .running_left_text.padd_right {
+        padding-right: 0%;
+    }
+    .context_counter{right: 0px;width: 100%;}
+    .running_imgbox .cd__unit{width: 70px;}
+    .running_left_text.right_runtext {
+        text-align: left;
+        padding-left: 0px;
+        margin-top: 35px;
+    }
+    section.running_section_area.padd_botm {
+        padding-bottom: 0px;
+    }
+}
