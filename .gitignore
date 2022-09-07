@@ -1,4 +1,5 @@
 
+
 #ignore specific files
 # Added
 *.ini
@@ -9,7 +10,6 @@ venv/
 ENV/
 **/script/
 
-<<<<<<< HEAD
 
 *~
 *.pyc
@@ -19,11 +19,13 @@ ENV/
 # Byte-compiled / optimized / DLL files
 
 
+
 *.py[cod]
 *$py.class
 # Byte-compiled / optimized / DLL files
 __pycache__/
 */__pycache__/.pyc
+
 
 
 
