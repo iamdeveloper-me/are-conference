@@ -25,7 +25,8 @@ AWARD_CATE = (
 	)
 
 class AmgAward(models.Model):
-	email = models.EmailField(null=True, blank=True)
+	is_admin = models.BooleanField(default=False)
+	email = models.EmailField(primary_key=True, blank=True)
 	work_status = models.CharField(max_length=50,choices=WORK_CHOICES,null=True, blank=True)
 	apply_type = models.CharField(max_length=50,choices=APPLY_FOR,null=True, blank=True)
 	nomination_type = models.CharField(max_length=50,choices=NOMINATION_TYPE,null=True, blank=True)

@@ -20,6 +20,9 @@
                     <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-group">
+                            {% if request.user.is_authenticated %}
+                                <input type="hidden" name="is_admin" value="True">
+                            {% endif %}
                             <label for="">email <span>*</span></label>
                             <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
                         </div>
@@ -64,19 +67,19 @@
                             <div class="col-md-6 individual">
                                 <div class="form-group">
                                     <label for="">Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="">
+                                    <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="" required>
                                 </div>
                             </div>
                             <div class="col-md-6">          
                                 <div class="form-group">
                                     <label for="">Designation <span>*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="">
+                                    <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Phone No.* <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Number..." name="phone_number">
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Number..." name="phone_number" required>
                                 </div>
                             </div>
                             
@@ -89,7 +92,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Address*</label>
-                                    <textarea class="form-control" placeholder="Enter your Address..." name="address"></textarea>
+                                    <textarea class="form-control" placeholder="Enter your Address..." name="address" required></textarea>
                                 </div>
                             </div>  
                         </div>
@@ -111,57 +114,57 @@
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Name of Organization</label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name">
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name" required>
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name" required>
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Designation<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation" required>
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Email ID<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email" required>
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Phone No<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Phone No..." name="org_person_mobile">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Phone No..." name="org_person_mobile" required>
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Organization’s Registered Address<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address" required>
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Organization’s Website<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web" required>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <h4 class="section-bghead pt-3">Section B – Award related details</h4>
                                 <label class="award-detailslabel">How long have you (individual)/ organization been working towards<br> mitigating climate change?Website<span>*</span></label>
-                                <textarea class="form-control height-textarea" name="work_exp"></textarea>
+                                <textarea class="form-control height-textarea" name="work_exp" required></textarea>
                             </div>
                             <div class="col-md-12">
                                 <label class="award-detailslabel">What is your interpretation of Avoid-Minimize-Generate Principle? * <br> (not more than 300 words)*</label>
-                                <textarea class="form-control height-textarea" name="interpretation"></textarea>
+                                <textarea class="form-control height-textarea" name="interpretation" required></textarea>
                             </div>
                             <div class="col-md-12">
                                 <label class="award-detailslabel">What are the major climate change challenges that you/<br>organization is addressing?*</label>
-                                <textarea class="form-control height-textarea" name="climate_change_challenge"></textarea>
+                                <textarea class="form-control height-textarea" name="climate_change_challenge" required></textarea>
                             </div>
                         </div>
                         <div class="row">
@@ -192,28 +195,28 @@
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">If in Progress, what target has been set?<span>*</span></label>
-                            <textarea class="form-control height-textarea" name="target_status"></textarea>
+                            <textarea class="form-control height-textarea" name="target_status" required></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">If Completed, what was the target that was set out to be achieved?<span>*</span></label>
-                            <textarea class="form-control height-textarea" name="target_completed"></textarea>
+                            <textarea class="form-control height-textarea" name="target_completed" required></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">Please provide a summary of your ongoing or planned intervention.<span>*</span></label>
-                            <textarea class="form-control height-textarea" name="ongoing_invitation_summary"></textarea>
+                            <textarea class="form-control height-textarea" name="ongoing_invitation_summary" required></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">Please provide a summary of the intervention.</label>
-                            <textarea class="form-control height-textarea" name="invitation_summary"></textarea>
+                            <textarea class="form-control height-textarea" name="invitation_summary" required></textarea>
                             <p class="required-text">As part of the summary please specify the efforts undertaken and the results achieved.<br> * (not more than 500 words)</p>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">What are the challenges faced during the intervention?</label>
-                            <textarea class="form-control height-textarea" name="challenge_in_invitation"></textarea>
+                            <textarea class="form-control height-textarea" name="challenge_in_invitation" required></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">What are the best practices used for the implementing the intervention?</label>
-                            <textarea class="form-control height-textarea" name="implement_invitation"></textarea>
+                            <textarea class="form-control height-textarea" name="implement_invitation" required></textarea>
                         </div>
                         <div class="col-md-12 attach-filehead">
                             <h3 class="">Please attach the images before applying AMG Principle</h3>
@@ -250,15 +253,15 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script type="text/javascript">
-        $('.organization').find('*').prop('disabled', true);
+        $('.organization').hide();
         $('#select-radio-check input:radio').change(function () {
             if ($("#customCheck3").is(":checked")) {
-                $('.organization').find('*').prop('disabled', true);
-                $('.individual').find('*').prop('disabled', false);
+                $('.organization').hide();
+                $('.individual').show();
             }
             if ($("#customCheck4").is(":checked")) {
-                $('.organization').find('*').prop('disabled', false);
-                $('.individual').find('*').prop('disabled', true);
+                $('.organization').show();
+                $('.individual').hide();
             }
         });
     </script>
