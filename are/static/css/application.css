@@ -282,6 +282,32 @@ h2.top_padd{
         font-size: 20px;
         line-height: 28px;
     }
+    h2.top_padd{
+        font-size:25px;
+    }
+    .float-left.d-inline-block {
+        display: block !important;
+        text-align: center;
+        float: none !important;
+    }
+    .without-bgbtn{
+        margin-right:0px;
+        width: 160px;
+        height: 44px;
+        line-height: 42px;
+    }
+    .botm_spc {
+        margin-bottom: 15px;
+    }
+    a.with-bgbtn {
+        width: 160px;
+        height: 44px;
+        line-height: 32px;
+    }
+    .float-right.d-inline-block {
+        float: none !important;
+        text-align: center;
+    }
     .appform-section .form-head h2{
         font-size: 20px;
         line-height: 27px;
@@ -301,7 +327,7 @@ h2.top_padd{
         height:44px;
     }
     .appform-section {
-        padding: 18% 0px 70px;
+        padding: 18% 0px 40px;
     }
     h4.section-bghead.pt-3 {
         font-size: 22px;
@@ -310,6 +336,20 @@ h2.top_padd{
     .checkbox-section p{
         padding-top: 18px;
         line-height: 25px;
+    }
+    .attach-filehead h3{
+        line-height: 22px;
+    }
+    .appform-section .application-form label{
+        font-size:15px;
+    }
+    .award-detailslabel{
+        padding-top:15px;
+    }
+    [type=file] + label{
+        width: 160px;
+        height: 44px;
+        line-height: 44px !important;
     }
 
 }

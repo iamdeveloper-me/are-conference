@@ -1,0 +1,45 @@
+section.privacy_content {
+    padding: 10% 0px 70px;
+}
+.privacy_text p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4B4B4B;
+    margin-bottom: 15px;
+}
+
+.privacy_text h2 {
+    font-weight: 600;
+    font-size: 21px;
+    line-height: 16px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.privacy_text h3 {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 16px;
+    padding-bottom: 20px;
+    padding-top: 6px;
+}
+
+@media screen and (max-width: 767px) {
+
+section.privacy_content {
+    padding: 24% 0px 35px;
+}
+
+.privacy_text h2 {
+    line-height: 26px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+.privacy_text h3{
+    font-size: 20px;
+    line-height: 16px;
+    padding-top: 2px;
+}
+
+}

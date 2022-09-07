@@ -138,6 +138,10 @@
     footer .subscribe-div button{
         width:100px;
     }
+    .speaker_right p{
+        padding-right: 0px;
+    }
+    
     .speaker-section .speaker-head p{
         padding: 0 0px 25px 0px;
     }
