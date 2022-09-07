@@ -197,7 +197,7 @@
         font-size:30px;
     }
     .award_textarea {
-        padding: 40px 0px;
+        padding: 30px 0px;
     }
     .banner_text p{
         padding-right:0px;
@@ -220,7 +220,7 @@
     }
 
     .opportunity_section_area{
-        padding: 40px 0px;
+        padding: 40px 0px 60px;
     }
     .opportunity_text::before{
         display: none;
@@ -232,10 +232,11 @@
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .category_text h4{
-        font-size:22px;
-        padding-bottom: 10px;
- }
+    .category_text h4 {
+        font-size: 19px;
+        padding-bottom: 8px;
+        padding-top: 15px;
+    }
     .category_text h5{
        font-size: 20px;
        padding-bottom: 10px;

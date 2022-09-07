@@ -93,16 +93,19 @@
     width:100%;
 }
 .agenda_banner_text h1 {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 34px;
 }
 .agenda_banner{
     padding: 28% 0px 45px;
 }
 .agenda_banner_text h3{
-    font-size: 25px;
+    font-size: 23px;
     padding-top: 12px;
     padding-bottom: 12px;
+}
+.custom_table td{
+    white-space: nowrap;
 }
 .agenda_banner_text h4{
     line-height: 30px;

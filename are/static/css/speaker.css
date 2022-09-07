@@ -135,6 +135,9 @@
     .speaker-section .speaker-head h1{
         font-size: 30px;
     }
+    footer .subscribe-div button{
+        width:100px;
+    }
     .speaker-section .speaker-head p{
         padding: 0 0px 25px 0px;
     }

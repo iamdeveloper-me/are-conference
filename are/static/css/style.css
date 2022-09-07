@@ -560,15 +560,15 @@ a.knowmore span {
 
 .section_organized{
     padding: 60px 0px 50px;
-    background-color:#F2F2F2;
+    background-color:#FFF8F2;
     position: relative;
 }
-.section_organized::after {
+.section_organized::before {
     content: '';
     position: absolute;
     display: block;
-    right: 14%;
-    top: 45px;
+    left: 1%;
+    bottom: 45px;
     width: 57px;
     height: 62px;
     background: url(../images/award/brown_circle.png);
@@ -577,44 +577,60 @@ a.knowmore span {
     content: '';
     position: absolute;
     display: block;
-    right: 7%;
-    top: 30px;
+    right: 1%;
+    top: 40px;
     width: 57px;
     height: 62px;
     background: url(../images/award/brown_circle.png);
 }
 
 .organized_text h3 {
-    color: #252123;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 32px;
+    color: #000;
     text-transform: capitalize;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 27px;
 }
 .organized_img img {
-    width: 100px;
-    object-fit: contain;
+    width: 91px;
+    }
+
+.border_box {
+    border: 1px solid #BDBDBD;
+    border-radius: 10px;
+    padding: 30px 65px;
+    position: relative;
 }
 .organized_img {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 .organized_text {
     text-align: center;
 }
-.organized_img2 img {
-    width: 250px;
-}
+
 .organized_img2{
     text-align:center;
 }
 .organized_img2 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
-.text2 h3 {
-    width: 55%;
-    margin: 0px auto;
+.organized_img2 img {
+    width: 100%;
+}
+
+.border_box::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 1px;
+    height: 98px;
+    background: #BDBDBD;
+    top: 0;
+    left: 46%;
+    bottom: 0;
+    transform: translate(0 , 50%);
 }
 @media screen and (min-width: 768px) and (max-width: 991px) { 
 
@@ -720,18 +736,21 @@ a.knowmore span {
         margin: 0px 0px 20px 0px;
     }
     .timer-UI h5{
-        font-size: 14px;
+        font-size: 12px;
     }
     .register-area a.register-nowbtn {
-        width: 160px;
+        width: 135px;
         height: 44px;
-        line-height: 34px;
+        line-height: 33px;
+    }
+    .register-area a.apply-awardbtn{
+        font-size:13px;
     }
     .cd__unit{
         width: 65px;
     }
     .register-area a.apply-awardbtn{
-        width: 160px;
+        width:135px;
         height: 44px;
         line-height: 34px;
     }
@@ -751,7 +770,7 @@ a.knowmore span {
         padding-bottom:30px;
     }
     a.navbar-brand img {
-        width: 230px;
+        width:90px;
     }
     button.navbar-toggler {
         padding: 0px 0 0px 0.25rem;
@@ -841,7 +860,7 @@ a.knowmore span {
         font-size:25px;
     }
     .enery_head_light h2 {
-        font-size: 26px;
+        font-size: 25px;
     }
     a.knowmore{
         text-align: left;

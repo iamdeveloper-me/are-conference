@@ -274,3 +274,42 @@ h2.top_padd{
   .attach-filehead input {
     border: none !important;
 }
+
+@media (max-width:767px){
+
+    
+    .appform-section .form-head h1{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .appform-section .form-head h2{
+        font-size: 20px;
+        line-height: 27px;
+        padding-top: 18px;
+        padding-bottom: 10px;
+        display: inline-block;
+        width: 100%;
+    }
+    .appform-section .application-form {
+        margin-top: 25px;
+    }
+    .form-head p {
+        padding-top: 15px;
+        font-size: 20px !important;
+    }
+    .appform-section .application-form input{
+        height:44px;
+    }
+    .appform-section {
+        padding: 18% 0px 70px;
+    }
+    h4.section-bghead.pt-3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .checkbox-section p{
+        padding-top: 18px;
+        line-height: 25px;
+    }
+
+}
