@@ -32,18 +32,11 @@ class ApplicationForm(CreateView):
 
 	def post(self, request, *args, **kwargs):
 		form = self.get_form()
-		# import pdb;pdb.set_trace()
 		if form.is_valid():
 			form.save()
 			return redirect('awards:thanks')
 		else:
 			return self.form_invalid(form)
-
-	# def post(self, request, *args, **kwargs):
-	# 	form = AmgApplicationForm(request.POST)
-	# 	for field in form:
-	# 		print("Field Error:", field.name,  field.errors)	
-
 
 class Partner(TemplateView):
 	template_name = "ourpartner.html"
