@@ -1,14 +1,26 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Award
+<<<<<<< HEAD
 from django.http import HttpResponse
 from django.core.mail import send_mail
 # Create your views here.
+=======
+from django.contrib import auth, messages
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+# from django.contrib.auth.mixins import LoginRequiredMixin
+
+>>>>>>> dev
 
 class HomePage(TemplateView):
 	template_name = "homepage.html"
 
-class Agenda(TemplateView):
+
+class AdminAgenda(TemplateView):
+	template_name = "agenda.html"
+
+class Agenda(TemplateView): 
 	template_name = "agenda.html"
 
 class Context(TemplateView):
@@ -35,6 +47,7 @@ class Thankyou(TemplateView):
 	template_name = "thank.html"
 
 
+<<<<<<< HEAD
 
 def sendmail(request):
 	import pdb; pdb.set_trace()
@@ -67,3 +80,5 @@ def sendmail(request):
 #     )
 
 #     return HttpResponse('Mail successfully sent')
+=======
+>>>>>>> dev

@@ -1,121 +1,345 @@
 {% extends "layout/base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
+<link rel="stylesheet" href="{% static 'css/agenda.css' %}">
 {% endblock extra_css %}
-
-
 {% block content %}
-    <!-- agenda banner start-->
-    <section class="agenda_banner">
+<!-- agenda banner start-->
+<section class="agenda_banner">
     <a href="#myModal1" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conferense</a>
-    <div id="myModal1" class="modal fade">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <form action="{% url 'agenda:confadd' %}" method="post" enctype='multipart/form-data'>
-                    {% csrf_token %}
-                    <div class="modal-header">              
-                        <h4>Add Conferense</h4>
-                    </div>
-                    <div class="modal-body">                
-                        <div class="form-group">
-
-                            <label for="">title</label>
-                            <input type="text" name="title" class="form-control" id="" placeholder="title" required="true">
-                            <label for="">Start Date</label>
-                            <input type="date" name="date" class="form-control" id="" placeholder="date" required="true"> 
-                            <label for="">End Date</label>
-                            <input type="date" name="date" class="form-control" id="" placeholder="date" required="true"> 
-                            <input type="submit" class="btn btn-primary" value="add">     
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-            </div>
-            </form>
+    <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
+    {% for conferense in objects %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="agenda_banner_text">
+                    <h3>{{ conferense.title }}</h3>
+                    <h4>Tentative Agenda {{ conferense.startdate }}-{{ conferense.enddate }}</h4>
+                </div>
             </div>
         </div>
     </div>
-       <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
-        {% for conferense in objects %}
-        <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="agenda_banner_text">
-                           <h3>{{ conferense.title }}</h3>
-                           <h4>Tentative Agenda {{ conferense.startdate }}-{{ conferense.enddate }}</h4>
-                      </div>
-                  </div>
-              </div>
-        </div>  
-        {% endfor %}   
-    </section>
-    <!-- agenda banner close-->
-
-     <!--Popup for Add Agenda Start-->
-    <a href="#myModal2" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
-    <div id="myModal2" class="modal fade">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <form action="{% url 'agenda:add_agenda' %}" method="post" enctype='multipart/form-data'>
-                    {% csrf_token %}
-                    <div class="modal-header">              
-                        <h4>Add Agenda</h4>
-                    </div>
-                    <div class="modal-body">                
-                        <div class="form-group">
-
-                            <label for="">session</label>
-                            <input type="text" name="session" class="form-control" id="" placeholder="session" required="true">
-                            <label for="">Start Time</label>
-                            <input type="time" name="time" class="form-control" id="" placeholder="time" required="true"> 
-                            <label for="">End Time</label>
-                            <input type="Time" name="time" class="form-control" id="" placeholder="Time" required="true"> 
-                            <label for="">Duration</label>
-                            <input type="Date-Time" name="duration" class="form-control" id="" placeholder="duration" required="">
-                            <label for="">Event</label>
-                            <textarea name="event"  class="form-control" id="" placeholder="Detail" required=""> </textarea> 
-                            <input type="submit" class="btn btn-primary" value="add">     
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer justify-content-between">
+    {% endfor %}
+</section>
+<!-- agenda banner close-->
+<!--Popup for Add Agenda Start-->
+<a href="#myModal2" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
+<!-- table section start -->
+<section class="table_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table_main_box">
+                    <h4>Day 1, Thursday | 24/11/2022</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Duration</th>
+                                <th scope="col">Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">session-1</td>
+                                <td>9 to 10</td>
+                                <td>1 hour</td>
+                                <td>Registration and High Tea</td>
+                            </tr>
+                            <tr>
+                                <td>10 to 11:30</td>
+                                <td>90 min</td>
+                                <td>Inauguration of the ARE conference and awards</td>
+                            </tr>
+                            <tr>
+                                <td>11:30 to 12:00</td>
+                                <td>30 min</td>
+                                <td>Tea Break</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="3">Session-2</td>
+                                <td rowspan="2">12 to 1:30</td>
+                                <td>70 min</td>
+                                <td>The Cascading Cycle: Warming world — Rising energy demand — Warming World - ARE We heading the Right Direction?
+                                </td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>1:30 to 2:30</td>
+                                <td>1 hour</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Session-3</td>
+                                <td rowspan="2">2:30 to 4</td>
+                                <td>70 min</td>
+                                <td>Policies and Programmes to Secure Climate and Energy security to the nation —ARE the Government initiatives pragmatic enough?</td>
+                            </tr>
+                            <tr>
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                            <tr>
+                                <td>4:00 to 4:30</td>
+                                <td>30 min</td>
+                                <td></td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="2">Session-4</td>
+                                <td rowspan="2">4:30 to 6</td>
+                                <td>70 min</td>
+                                <td>Enhancing awareness and preparedness of the climate change to the grassroot level - ARE the NGOs sensitizing the communities enough?</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table_main_box">
+                    <h4>Day 2, Friday | 25/11/2022</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Duration</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">Session-5</td>
+                                <td>9 to 10</td>
+                                <td>1 hour</td>
+                                <td>Registration</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">10 to 11:30</td>
+                                <td>70 min</td>
+                                <td>Mobilizing masses towards Sustainable Actions through Spiritual Sensitization - ARE the Spiritual Organizations doing enought?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="3" class="light_bg">Session-6</td>
+                                <td>11:30 to 12:00</td>
+                                <td>30 min</td>
+                                <td>High Tea</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="2">12 to 1:30</td>
+                                <td>70 min</td>
+                                <td>Political Vision, Messaging and Bold Actions for climate correction - ARE leaders on it?
+                                </td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="3">Session-7</td>
+                                <td>1:30 to 2:30</td>
+                                <td>1 hour</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">2:30 to 4</td>
+                                <td>70 min</td>
+                                <td>Sustainability, environmental goals and outcomes of
+                                    industries - ARE they enough?</td>
+                            </tr>
+                            <tr>
+                                <td>20 min</td>
+                                <td>Speaker + Shell Powering Lives challenge award</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="3">Session-8</td>
+                                <td>4:00 to 4:30</td>
+                                <td>30 min</td>
+                                <td></td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="2">4:30 to 6</td>
+                                <td>70 min</td>
+                                <td>Education and Research for Climate Change Mitigation and Management - ARE the Academic Institutions prepared?</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table_main_box botm_space">
+                    <h4>Day 3, Saturday | 26/11/2022</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Duration</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="3">Session-9</td>
+                                <td>9 to 10</td>
+                                <td>1 hour</td>
+                                <td>Registration and High Tea</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">10 to 11:30</td>
+                                <td>70 min</td>
+                                <td>Media's effectiveness in informaing and influencing societies in climate correction -ARE media giving enough space?
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="3">Session-10</td>
+                                <td>11:30 to 12:00</td>
+                                <td>1 hour</td>
+                                <td>Tea Break</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td rowspan="2">12 to 1:30</td>
+                                <td>70 min</td>
+                                <td>Concluding the Actions for Restoring Environment Conference? ARE we taking enough actions?</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>20 min</td>
+                                <td>Institutions/ People taking enough actions</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="4">Session-11</td>
+                                <td>1:30 to 2:30</td>
+                                <td>1 hour</td>
+                                <td>Lunch</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">2:30 to 4</td>
+                                <td>30 min</td>
+                                <td>Address by Chief Guest</td>
+                            </tr>
+                            <tr>
+                                <td>1 hour</td>
+                                <td>Energy Swaraj Awards - 2022</td>
+                            </tr>
+                            <tr>
+                                <!-- <td></td> -->
+                                <td>4:00 to 4:30</td>
+                                <td>30 min</td>
+                                <td>Tea Break</td>
+                            </tr>
+                            <tr class="light_bg">
+                                <td>Session-12</td>
+                                <td>4:30 to 5</td>
+                                <td>70 min</td>
+                                <td>Closing Ceremony</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-     <!--Popup for Add Agenda End-->
-
+</section>
+<!--Popup for Add Agenda End-->
+{% comment %}
 <!-- dynamic table section start -->
 <section class="table_section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="table_main_box">
-         <h4>{{ agenda.date }}</h4>
-          <table class="table table-bordered custom_table">
-            <thead class="head_top">
-              <tr>
-                <th class="session_width">Session</th>
-                <th class="session_2">Time</th>
-                <th class="session_2">Durations</th>
-                <th scope="col">Event</th>
-              </tr> 
-            </thead>
-            {% for agenda in objects %}
-            <tbody>
-              <td rowspan="3">{{ agenda.session }}</td>
-              <td>{{ agenda.starttime }} to {{ agenda.endtime }} </td>
-              <td>{{ agenda.duration }}</td>
-              <td>{{ agenda.event }}</td>
-            </tbody>
-            {% endfor %}
-           
-          </table>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table_main_box">
+                    <h4>{{ agenda.date }}</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">Session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Durations</th>
+                                <th scope="col">Event</th>
+                            </tr>
+                        </thead>
+                        {% for agenda in objects %}
+                        <tbody>
+                            <td rowspan="3">{{ agenda.session }}</td>
+                            <td>{{ agenda.starttime }} to {{ agenda.endtime }} </td>
+                            <td>{{ agenda.duration }}</td>
+                            <td>{{ agenda.event }}</td>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div> 
 </section>
+{% endcomment %}
+<div id="myModal2" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <form action="{% url 'agenda:add_agenda' %}" method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h4>Add Agenda</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">session</label>
+                        <input type="text" name="session" class="form-control" id="" placeholder="session" required="true">
+                        <label for="">Start Time</label>
+                        <input type="time" name="time" class="form-control" id="" placeholder="time" required="true">
+                        <label for="">End Time</label>
+                        <input type="Time" name="time" class="form-control" id="" placeholder="Time" required="true">
+                        <label for="">Duration</label>
+                        <input type="Date-Time" name="duration" class="form-control" id="" placeholder="duration" required="">
+                        <label for="">Event</label>
+                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
+                        <input type="submit" class="btn btn-primary" value="add">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+        </div>
+    </div>
+</div>
+<div id="myModal1" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <form action="{% url 'agenda:confadd' %}" method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h4>Add Conferense</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">title</label>
+                        <input type="text" name="title" class="form-control" id="" placeholder="title" required="true">
+                        <label for="">Start Date</label>
+                        <input type="date" name="date" class="form-control" id="" placeholder="date" required="true">
+                        <label for="">End Date</label>
+                        <input type="date" name="date" class="form-control" id="" placeholder="date" required="true">
+                        <input type="submit" class="btn btn-primary" value="add">
+                    </div>
+                </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+        </div>
+        </form>
+    </div>
+</div>
 {% endblock content %}
-
