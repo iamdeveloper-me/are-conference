@@ -1,5 +1,5 @@
-{% load static %}
 
+{% load static %}
 <header>
         <div class="container-fluid">
             <div class="row">
@@ -18,7 +18,15 @@
                             <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
                             <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
                             <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
+                            {% if user.is_authenticated %}
+                            <a href="#myModal" class="trigger-btn nav-item nav-link" data-toggle="modal">Add_Speaker</a>
+                            {% endif %}
                             <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'admin_logout' %}" target="_blank" class="btn registration-btn">
+                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-1"/>
+                            Logout</a>
+                            {% endif %}
                             {% comment %}
                             <a class="nav-item nav-link" href="{% url 'admin_login' %}">Admin Login</a>
                             {% endcomment %}

@@ -9,6 +9,6 @@ class Speaker(models.Model):
 	detail = models.TextField()
 
 	def get_absolute_url(self):
-		return reverse('speaker_admin')
+		return reverse('speaker')
 
 	
