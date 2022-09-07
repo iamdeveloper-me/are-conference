@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="contact-part">
-                    <img class="logo-img" src="{% static 'images/Logo.png' %}"/>
+                    <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
                     <h4 class="contact-us pb-3">Contact us :</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
@@ -26,7 +26,7 @@
                         <a href="{% url 'awards:home' %}">Home</a></li>
                     <li>
                     <li>
-                        <a href="{% url 'awards:context' %}">Context</a></li>
+                        <a href="#">Context</a></li>
                     <li>
                         <a href="{% url 'awards:partner' %}">Partners</a></li>
                     
@@ -45,11 +45,19 @@
             </div>
             <div class="col-md-5  menu-list subscribe-div">
                 <h4 class="pl-0">Subscribe</h4>
-                <form action="'{% url 'awards:email' %}">
-                     {% csrf_token %}
-                    <input class="form-control" type="email" id="email" placeholder="Enter your email"/>
-                    <button for="email" class="btn home-button">Submit</button>
-                </form>
+                {% if messageSent %}
+                <div class="container">
+                    <h3><strong>Email successfully sent</strong></h3>
+                    <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
+                </div>
+                {% else %}
+                    <form method="post" action="{% url 'awards:email' %}">
+                         {% csrf_token %}{{ form.as_p }}
+                        <input class="form-control" type="email"  id="email" placeholder="Enter your email"/>
+                        <button for="email" class="btn home-button">Submit</button>
+                    </form>
+                {% endif %}
+                </div>
                 <p>By subscribing you agree to with our Privacy Policy</p>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
@@ -80,11 +88,15 @@
                 <div class="text-xl-right text-lg-right text-md-right text-left">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <a href="privacy_policy.html">Privacy Policy</a>
+                            <a href="">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
                             <a href="">Terms of Service</a>
                         </li>
+                        <!-- <li class="list-inline-item">
+                            <a href="">Cookies Settings</a>
+                        </li> -->
+
                     </ul>
                 </div>
             </div>

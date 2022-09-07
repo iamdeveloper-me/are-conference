@@ -1,11 +1,7 @@
 from django.urls import path
 from . import views
-<<<<<<< HEAD
-from .views import sendmail
-=======
+from .views import sendMail
 from django.contrib.auth.decorators import login_required
-
->>>>>>> dev
 app_name = 'awards'
 
 urlpatterns = [
@@ -19,5 +15,5 @@ urlpatterns = [
 	path('agenda/',views.Agenda.as_view(),name='agenda'),
 	path('context/',views.Context.as_view(),name='context'),
 	path('thankyou/',views.Thankyou.as_view(),name='thankyou'),
-	path('sendmail/',sendmail,name='email'),
+	path('sendmail/',sendMail,name='email'),
 ]
