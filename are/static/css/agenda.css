@@ -107,5 +107,15 @@
 .agenda_banner_text h4{
     line-height: 30px;
 }
+.session_width {
+    min-width: 95px;
+}
+.session_2 {
+    min-width: 105px;
+}
+.table_main_box {
+    width: 100%;
+    overflow-x: scroll;
+}
 
 }

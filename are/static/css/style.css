@@ -583,18 +583,39 @@ a.knowmore span {
     height: 62px;
     background: url(../images/award/brown_circle.png);
 }
-.Organized_img img {
-    width: 130px;
-}
+
 .organized_text h3 {
     color: #252123;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 48px;
+    font-size: 21px;
+    line-height: 32px;
     text-transform: capitalize;
 }
-
-
+.organized_img img {
+    width: 100px;
+    object-fit: contain;
+}
+.organized_img {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.organized_text {
+    text-align: center;
+}
+.organized_img2 img {
+    width: 250px;
+}
+.organized_img2{
+    text-align:center;
+}
+.organized_img2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text2 h3 {
+    width: 55%;
+    margin: 0px auto;
+}
 @media screen and (min-width: 768px) and (max-width: 991px) { 
 
     .about_content {

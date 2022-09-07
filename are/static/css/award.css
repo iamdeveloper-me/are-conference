@@ -194,7 +194,7 @@
         background-size: cover;
     }
     .award_text h1{
-        font-size:50px;
+        font-size:30px;
     }
     .award_textarea {
         padding: 40px 0px;
@@ -202,12 +202,15 @@
     .banner_text p{
         padding-right:0px;
     }
+    .award_text{
+        padding: 30% 0px 16%;
+    }
     .opportunity_img {
         padding-right: 0px;
     }
 
     .opportunity_text h2 {
-        font-size: 19px;
+        font-size: 15px;
         line-height: normal;
         position: relative;
         z-index: 1;

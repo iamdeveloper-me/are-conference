@@ -230,12 +230,15 @@ section.running_section_area.padd_botm {
         padding-bottom:15px;
     }
     .timer-UI .cd__digits{
-        font-size: 27px;
-    line-height: 48px;
+        font-size:19px;
+        line-height: 48px;
     }
     .running_left_text h3{
         font-size:26px;
         padding-bottom: 15px;
+    }
+    .cd__unit-label{
+        font-size: 10px;
     }
     .Participating_area::before ,.Participating_area::after{
        background-image: none;
@@ -250,7 +253,7 @@ section.running_section_area.padd_botm {
         padding-right: 0%;
     }
     .context_counter{right: 0px;width: 100%;}
-    .running_imgbox .cd__unit{width: 70px;}
+    .running_imgbox .cd__unit{width: 60px;}
     .running_left_text.right_runtext {
         text-align: left;
         padding-left: 0px;
