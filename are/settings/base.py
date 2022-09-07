@@ -12,19 +12,21 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 # print("1")
 import os, sys
 #from pathlib import Path
-from decouple import config
 from unipath import Path
+from decouple import config
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-PROJECT_DIR = Path(__file__).ancestor(2)
-PROJECT_APPS = Path(__file__).ancestor(2)
+# PROJECT_DIR = Path(__file__).ancestor(2)
+# PROJECT_APPS = Path(__file__).ancestor(2)
 
-sys.path.insert(0, Path(PROJECT_APPS, 'apps'))
+# sys.path.insert(0, Path(PROJECT_APPS, 'apps'))
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-#BASE_DIR = Path(__file__).resolve().parent.parent
-#sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+BASE_DIR = Path(__file__).resolve().parent.parent
+# print(BASE_DIR1)
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -136,12 +138,10 @@ USE_TZ = True
 # image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_URL = '/media/'
