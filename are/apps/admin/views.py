@@ -11,9 +11,6 @@ from django.contrib import messages
 from django.contrib import auth, messages
 from django.contrib.auth import login, logout
 
-
-
-
 # Create your views here.
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'

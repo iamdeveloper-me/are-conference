@@ -151,7 +151,12 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+<<<<<<< HEAD
 
 # LOGIN_REDIRECT_URL = 'awards:home'
 LOGOUT_REDIRECT_URL = 'awards:home'
 
+=======
+# LOGIN_REDIRECT_URL = 'awards:home'
+LOGOUT_REDIRECT_URL = 'awards:home'
+>>>>>>> ba2c48a (Admin login logout)
