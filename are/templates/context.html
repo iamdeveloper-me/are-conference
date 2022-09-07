@@ -65,6 +65,10 @@
                                                     <div data-pos="next">-</div>
                                                     <div data-pos="prev">-</div>
                                                 </div>
+                                                 <div class="cd__digit" data-col>
+                        <div data-pos="next">-</div>
+                        <div data-pos="prev">-</div>
+                      </div>
                                             </div>
                                             <img src="{% static 'images/homepage/slash.svg' %}"/>
                                             <div class="cd__unit-label">Days</div>
@@ -133,7 +137,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="running_imgbox">
-                       <img src="{% static 'images/context/conference_img.png' %}" alt="" title="">
+                       <img src="{% static 'images/context/conference_img2.png' %}" alt="" title="">
   
                     </div>
                   </div>
@@ -233,14 +237,30 @@ class UnixEpochalypseCountdown {
 		};
 
 		if (typeof moment === "function") {
-			const later = moment((2**31 - 1) * 1e3);
+		 const later = moment({
+                year: 2029,
+                month: 7,
+                day: 8,
+                hour: 21,
+                minute: 29,
+                second: 59,
+            });
 			const now = moment();
 			const diff = moment.duration(later.diff(now));
 
+      let extraDays = moment({
+                year: moment().year() + 1,
+                month: 6,
+                day: 22,
+                //   hour: 18,
+                //   minute: 10,
+                //   second: 3,
+            }).diff(moment(), "days"); // 3
+
 			if (diff.valueOf() >= 0) {
 				timeLeft.y += diff.years();
-				timeLeft.mo += diff.months();
-				timeLeft.d += diff.days();
+				// timeLeft.mo += diff.months();
+				timeLeft.d += diff.days() + extraDays;
 				timeLeft.h += diff.hours();
 				timeLeft.m += diff.minutes();
 				timeLeft.s += diff.seconds();

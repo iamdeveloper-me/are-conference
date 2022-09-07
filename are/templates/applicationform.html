@@ -94,10 +94,8 @@
                                     <textarea class="form-control" placeholder="Enter your Address..."></textarea>
                                 </div>
                             </div>  
-                        </div>
-                        <div class="row indiviual-register application-form">
-                            <div class="col-md-12 mb-4">
-                                <h2>Organization Registration</h2>
+                            <div class="col-md-12 mb-4 ">
+                                <h2 class="top_padd">Organization Registration</h2>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -165,82 +163,85 @@
                                 <label class="award-detailslabel">What are the major climate change challenges that you/<br>organization is addressing?*</label>
                                 <textarea class="form-control height-textarea"></textarea>
                             </div>
-                        </div>
-                        <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group checkbox-section">
-                                <p class="mb-3">Nomination Type</p>
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="one" >
-                                    <label class="custom-control-label" for="one">Only avoid</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="two">
-                                    <label class="custom-control-label" for="two">Only minimize</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="three">
-                                    <label class="custom-control-label" for="three">Only Generate</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="four">
-                                    <label class="custom-control-label" for="four">Avoid and minimize</label>
-                                </div>
-                                <div class="custom-control custom-checkbox mb-2">
-                                    <input type="checkbox" class="custom-control-input" id="five">
-                                    <label class="custom-control-label" for="five">Avoid, Minimize and Generate</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="award-detailslabel">If in Progress, what target has been set?<span>*</span></label>
-                            <textarea class="form-control height-textarea"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="award-detailslabel">If Completed, what was the target that was set out to be achieved?<span>*</span></label>
-                            <textarea class="form-control height-textarea"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="award-detailslabel">Please provide a summary of your ongoing or planned intervention.<span>*</span></label>
-                            <textarea class="form-control height-textarea"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="award-detailslabel">Please provide a summary of the intervention.</label>
-                            <textarea class="form-control height-textarea"></textarea>
-                            <p class="required-text">As part of the summary please specify the efforts undertaken and the results achieved.<br> * (not more than 500 words)</p>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="award-detailslabel">What are the challenges faced during the intervention?</label>
-                            <textarea class="form-control height-textarea"></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <label class="award-detailslabel">What are the best practices used for the implementing the intervention?</label>
-                            <textarea class="form-control height-textarea"></textarea>
-                        </div>
-                        <div class="col-md-12 attach-filehead">
-                            <h3 class="">Please attach the images before applying AMG Principle</h3>
-                            <input type="file" id="file" />
-                            <label for="file">Choose File</label>
-                           <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
-                        </div>
-                        <div class="col-md-12 attach-filehead">
-                            <h3 class="">Please attach the images before applying AMG Principle</h3>
-                            <input type="file" id="file" />
-                            <label for="file">Choose File</label>
-                            <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="button-footer">
-                                <div class="float-left d-inline-block">
-                                    <button class="btn without-bgbtn">Cancel</button>
-                                </div>
-                                <div class="float-right d-inline-block">
-                                    <button class="btn without-bgbtn">back</button>
-                                    <a href="{% url 'awards:thankyou' %}" class="btn with-bgbtn">Submit</a>
+
+                            <div class="col-md-12">
+                                <div class="form-group checkbox-section">
+                                    <p class="mb-3">Nomination Type</p>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="one" >
+                                        <label class="custom-control-label" for="one">Only avoid</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="two">
+                                        <label class="custom-control-label" for="two">Only minimize</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="three">
+                                        <label class="custom-control-label" for="three">Only Generate</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="four">
+                                        <label class="custom-control-label" for="four">Avoid and minimize</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="five">
+                                        <label class="custom-control-label" for="five">Avoid, Minimize and Generate</label>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <label class="award-detailslabel">If in Progress, what target has been set?<span>*</span></label>
+                                <textarea class="form-control height-textarea"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="award-detailslabel">If Completed, what was the target that was set out to be achieved?<span>*</span></label>
+                                <textarea class="form-control height-textarea"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="award-detailslabel">Please provide a summary of your ongoing or planned intervention.<span>*</span></label>
+                                <textarea class="form-control height-textarea"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="award-detailslabel">Please provide a summary of the intervention.</label>
+                                <textarea class="form-control height-textarea"></textarea>
+                                <p class="required-text">As part of the summary please specify the efforts undertaken and the results achieved.<br> * (not more than 500 words)</p>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="award-detailslabel">What are the challenges faced during the intervention?</label>
+                                <textarea class="form-control height-textarea"></textarea>
+                            </div>
+                            <div class="col-md-12">
+                                <label class="award-detailslabel">What are the best practices used for the implementing the intervention?</label>
+                                <textarea class="form-control height-textarea"></textarea>
+                            </div>
+                            <div class="col-md-12 attach-filehead">
+                                <h3 class="">Please attach the images before applying AMG Principle</h3>
+                                <input type="file" id="file" />
+                                <label for="file">Choose File</label>
+                               <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
+                            </div>
+                            <div class="col-md-12 attach-filehead">
+                                <h3 class="">Please attach the images before applying AMG Principle</h3>
+                                <input type="file" id="file" />
+                                <label for="file">Choose File</label>
+                                <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="button-footer">
+                                    <div class="float-left d-inline-block">
+                                        <button class="btn without-bgbtn">Cancel</button>
+                                    </div>
+                                    <div class="float-right d-inline-block">
+                                        <button class="btn without-bgbtn">back</button>
+                                        <a href="{% url 'awards:thankyou' %}" class="btn with-bgbtn">Submit</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
-                    </div>
+                        
+                       
+                       
                     </form>
                     
                 </div>
