@@ -1,4 +1,5 @@
 from django.urls import path
+from .models import AmgAward
 from . import views
 app_name = 'awards'
 urlpatterns = [
@@ -11,4 +12,6 @@ urlpatterns = [
 	path('agenda/',views.Agenda.as_view(),name='agenda'),
 	path('context/',views.Context.as_view(),name='context'),
 	path('thanks/',views.ThanksEnergy.as_view(),name='thanks'),
+	path('amg/',views.amg_applicant,name='amg_applicant'),
+	# path('amg_applicants/',views.AdminViewAmgApplicant.as_view(model=AmgAward), name='amg_applicants'),
 ]
