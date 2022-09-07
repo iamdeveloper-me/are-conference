@@ -22,8 +22,8 @@
                         </li>
                     </ul>
                     <div class="register-area mt-5 mb-5">
-                        <button class="btn  register-nowbtn mr-2"> Register Now</button>
-                        <button class="btn apply-awardbtn"> Apply for Award</button>
+                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn  register-nowbtn mr-2"> Register Now</a>
+                        <a href="{% url 'awards:award' %}" class="btn apply-awardbtn"> Apply for Award</a>
                     </div>
                     <div class="counter_box">
                         <div class="row">
@@ -306,16 +306,31 @@
 <!-- Organized section start-->
 <section class="section_organized">
     <div class="container">
-        <div class="row align-items-center no-gutters">
-            <div class="col-md-3">
-                <div class="Organized_img"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
+       <div class="border_box">
+        <div class="row no-gutters">
+            <div class="col-md-6">
+                  <div class="row align-items-center">
+                  
+                    <div class="col-md-12">
+                        <div class="organized_img"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
+                        <div class="organized_text text2">
+                            <h3>Organized by Energy Swaraj Foundation</h3>
+                        </div>
+                    </div>
+                  </div>
             </div>
-            <div class="col-md-9">
-                <div class="organized_text">
-                    <h3>Organized by Energy Swaraj Foundation jointly with All India Council for Technical Education (AICTE)</h3>
+            <div class="col-md-6">
+                <div class="row row align-items-center">
+                  <div class="col-md-12">
+                    <div class="organized_img2  "><img src="{% static 'images/homepage/Energy_logo2.png' %}" alt="" title=""></div>
+                      <div class="organized_text">
+                          <h3>Jointly with All India Council for Technical Education (AICTE)</h3>
+                      </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+          </div>
+        </div> 
+       </div>
     </div>
 </section>
 <!-- Organized section close-->
