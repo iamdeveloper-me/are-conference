@@ -15,9 +15,10 @@ class SpeakerView(ListView):
 class SpeakerCreateView(CreateView):
 	model = Speaker
 	form_class = SpeakerForm
-
+	
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
+
 
 # def AddSpeaker(request):
 # 	if request.method == 'POST' :
@@ -41,6 +42,5 @@ class SpeakerCreateView(CreateView):
 
 	# 	return redirect("speakers/speaker")
 
-	# def get_success_url(self, **kwargs):
-	# 	return self.object.get_absolute_url()
+	
 
