@@ -13,20 +13,20 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os, sys
 #from pathlib import Path
 from unipath import Path
-from decouple import config
+# from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# PROJECT_DIR = Path(__file__).ancestor(2)
-# PROJECT_APPS = Path(__file__).ancestor(2)
+PROJECT_DIR = Path(__file__).ancestor(2)
+PROJECT_APPS = Path(__file__).ancestor(2)
 
-# sys.path.insert(0, Path(PROJECT_APPS, 'apps'))
+sys.path.insert(0, Path(PROJECT_APPS, 'apps'))
 
-# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-# print(BASE_DIR1)
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
+# BASE_DIR = Path(__file__).resolve().parent.parent
+# # print(BASE_DIR1)
+# sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -37,7 +37,8 @@ SECRET_KEY = 'django-insecure-64c0ak(bj(m$do84j+m187a0pmmgfeob24$j&m@48f%y-desil
 # SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=False, cast=bool)
+# DEBUG = config('DEBUG', default=False, cast=bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -138,7 +139,7 @@ USE_TZ = True
 # image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
 
 #MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
