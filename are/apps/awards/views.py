@@ -36,7 +36,6 @@ class ApplicationForm(CreateView):
 	success_url = '/thanks'
 
 	def post(self, request, *args, **kwargs):
-		# import pdb;pdb.set_trace(); 
 		form = self.get_form()
 		if form.is_valid():
 			form.save()
@@ -51,27 +50,24 @@ class Partner(TemplateView):
 class ThanksEnergy(TemplateView):
 	template_name = "thank.html"
 
-<<<<<<< HEAD
 # class AdminViewAmgApplicant(ListView):
 # 	model = AmgAward
 # 	template_name = 'admin/admin_view_amg_applicants.html'
 # 	# queryset = AmgAward.objects.all()
 
-# 	# def get(self, request, *args, **kwargs):
-# 	#     self.object_list = self.get_queryset()
-# 	#     allow_empty = self.get_allow_empty()	        	
-# 	#     context = self.get_context_data()
-# 	#     return context
-# 	def get_context_data(self, **kwargs):
-# 		context = super().get_context_data(**kwargs)
-# 		context = AmgAward._default_manager.all()
-# 		return {'context':context}
+	# def get(self, request, *args, **kwargs):
+	#     self.object_list = self.get_queryset()
+	#     allow_empty = self.get_allow_empty()	        	
+	#     context = self.get_context_data()
+	#     return context
+	# def get_context_data(self, **kwargs):
+	# 	context = super().get_context_data(**kwargs)
+	# 	context = AmgAward._default_manager.all()
+	# 	return {'context':context}
 
 def amg_applicant(request):
 	# import pdb;pdb.set_trace()
 	data = AmgAward.objects.all()
 	return render(request, 'admin/admin_view_amg_applicants.html', {'data':data})
 
-=======
->>>>>>> 6f8a5939dc2132c463f4ce3e216332ee933788fc
 

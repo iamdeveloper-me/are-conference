@@ -20,9 +20,9 @@
                     <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-group">
-                            {% if request.user.is_authenticated %}
+                            <!-- {% if request.user.is_authenticated %}
                                 <input type="hidden" name="is_admin" value="True">
-                            {% endif %}
+                            {% endif %} -->
                             <label for="">email <span>*</span></label>
                             <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
                         </div>
@@ -67,19 +67,19 @@
                             <div class="col-md-6 individual">
                                 <div class="form-group">
                                     <label for="">Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="" required>
+                                    <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">          
                                 <div class="form-group">
                                     <label for="">Designation <span>*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="" required>
+                                    <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Phone No.* <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Number..." name="phone_number" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Number..." name="phone_number">
                                 </div>
                             </div>
                             
@@ -92,7 +92,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">Address*</label>
-                                    <textarea class="form-control" placeholder="Enter your Address..." name="address" required></textarea>
+                                    <textarea class="form-control" placeholder="Enter your Address..." name="address"></textarea>
                                 </div>
                             </div>  
                         </div>
@@ -114,43 +114,43 @@
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Name of Organization</label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name" >
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name">
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Designation<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation">
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Email ID<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email" >
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Key Contact Person Phone No<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Phone No..." name="org_person_mobile" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Phone No..." name="org_person_mobile">
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Organization’s Registered Address<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address">
                                 </div>
                             </div>
                             <div class="col-md-6 organization">
                                 <div class="form-group">
                                     <label for="">Organization’s Website<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web" required>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -207,16 +207,16 @@
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">Please provide a summary of the intervention.</label>
-                            <textarea class="form-control height-textarea" name="invitation_summary" required></textarea>
+                            <textarea class="form-control height-textarea" name="invitation_summary"></textarea>
                             <p class="required-text">As part of the summary please specify the efforts undertaken and the results achieved.<br> * (not more than 500 words)</p>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">What are the challenges faced during the intervention?</label>
-                            <textarea class="form-control height-textarea" name="challenge_in_invitation" required></textarea>
+                            <textarea class="form-control height-textarea" name="challenge_in_invitation"></textarea>
                         </div>
                         <div class="col-md-12">
                             <label class="award-detailslabel">What are the best practices used for the implementing the intervention?</label>
-                            <textarea class="form-control height-textarea" name="implement_invitation" required></textarea>
+                            <textarea class="form-control height-textarea" name="implement_invitation"></textarea>
                         </div>
                         <div class="col-md-12 attach-filehead">
                             <h3 class="">Please attach the images before applying AMG Principle</h3>
@@ -256,11 +256,19 @@
         $('.organization').hide();
         $('#select-radio-check input:radio').change(function () {
             if ($("#customCheck3").is(":checked")) {
-                $('.organization').hide();
+                $('.organization').hide()
+                $('.organization').find('*').prop('disabled', true);
+                $('.organization').find('input').removeAttr('required');
+                $('.individual').find('input').prop('required',true);
+                $('.individual').find('*').prop('disabled', false);
                 $('.individual').show();
             }
             if ($("#customCheck4").is(":checked")) {
                 $('.organization').show();
+                $('.organization').find('*').prop('disabled', false);
+                $('.organization').find('input').prop('required',true);
+                $('.individual').find('input').removeAttr('required');
+                $('.individual').find('*').prop('disabled', true);
                 $('.individual').hide();
             }
         });

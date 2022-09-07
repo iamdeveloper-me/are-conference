@@ -24,6 +24,25 @@ AWARD_CATE = (
     ('a,m&g','Avoid,Minimize and Generate'),
 	)
 
+
+
+class Award(models.Model):
+	name = models.CharField(max_length=255)
+	title = models.CharField(max_length=255)
+	description = models.TextField()
+	image = models.ImageField(upload_to='images/awards_forms/', blank=True, null=True)
+
+
+class AwardSubCategory(models.Model):
+	award_type = models.ForeignKey(Award, related_name='award_type', on_delete=models.CASCADE)
+	title = models.CharField(max_length=255)
+	participants = models.CharField(max_length=255)
+	description = RichTextField(blank=True, null=True)
+	submit_by_participants = RichTextField(blank=True, null=True)
+	evaluation = RichTextField(blank=True, null=True)
+	reward = RichTextField(blank=True, null=True)
+	guidelines = RichTextField(blank=True, null=True)
+
 class AmgAward(models.Model):
 	is_admin = models.BooleanField(default=False)
 	email = models.EmailField(primary_key=True, blank=True)
@@ -56,20 +75,3 @@ class AmgAward(models.Model):
 	amg_image_before = models.ImageField(null=True, blank=True,upload_to="images/awards_forms/")
 	amg_image_after = models.ImageField(null=True, blank=True,upload_to="images/awards_forms/")
 
-
-class Award(models.Model):
-	name = models.CharField(max_length=255)
-	title = models.CharField(max_length=255)
-	description = models.TextField()
-	image = models.ImageField(upload_to='images/awards_forms/', blank=True, null=True)
-
-
-class AwardSubCategory(models.Model):
-	award_type = models.ForeignKey(Award, related_name='award_type', on_delete=models.CASCADE)
-	title = models.CharField(max_length=255)
-	participants = models.CharField(max_length=255)
-	description = RichTextField(blank=True, null=True)
-	submit_by_participants = RichTextField(blank=True, null=True)
-	evaluation = RichTextField(blank=True, null=True)
-	reward = RichTextField(blank=True, null=True)
-	guidelines = RichTextField(blank=True, null=True)
