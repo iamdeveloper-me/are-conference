@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-3">
                 <div class="contact-part">
-                    <img class="logo-img" src="{% static 'images/logo.svg' %}"/>
+                    <img class="logo-img" src="{% static 'images/Logo.png' %}"/>
                     <h4 class="contact-us pb-3">Contact us :</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
@@ -26,7 +26,7 @@
                         <a href="{% url 'awards:home' %}">Home</a></li>
                     <li>
                     <li>
-                        <a href="#">Context</a></li>
+                        <a href="{% url 'awards:context' %}">Context</a></li>
                     <li>
                         <a href="{% url 'awards:partner' %}">Partners</a></li>
                     
@@ -77,15 +77,11 @@
                 <div class="text-xl-right text-lg-right text-md-right text-left">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
-                            <a href="">Privacy Policy</a>
+                            <a href="privacy_policy.html">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
                             <a href="">Terms of Service</a>
                         </li>
-                        <!-- <li class="list-inline-item">
-                            <a href="">Cookies Settings</a>
-                        </li> -->
-
                     </ul>
                 </div>
             </div>

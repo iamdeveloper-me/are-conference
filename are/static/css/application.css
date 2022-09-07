@@ -1,5 +1,5 @@
 .appform-section{
-    padding: 50px 0px 70px;
+    padding: 8% 0px 70px;
 }
 .appform-section .form-head h1{
     font-family: 'Poppins';
@@ -41,6 +41,7 @@
     line-height: 16px;
     color: #EB5757;
 }
+
 .appform-section .application-form label{
     font-family: 'Poppins';
     font-style: normal;
@@ -258,5 +259,57 @@ p.required-text{
   .attach-filehead label {
     margin-top: 15px;
     margin-bottom: 15px;
+    color: #9A1C20 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 50px !important;
 }
 
+h2.top_padd{
+    padding-top:30px;
+    color: #212529;
+    font-size:32px;
+  }
+
+  .attach-filehead input {
+    border: none !important;
+}
+
+@media (max-width:767px){
+
+    
+    .appform-section .form-head h1{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .appform-section .form-head h2{
+        font-size: 20px;
+        line-height: 27px;
+        padding-top: 18px;
+        padding-bottom: 10px;
+        display: inline-block;
+        width: 100%;
+    }
+    .appform-section .application-form {
+        margin-top: 25px;
+    }
+    .form-head p {
+        padding-top: 15px;
+        font-size: 20px !important;
+    }
+    .appform-section .application-form input{
+        height:44px;
+    }
+    .appform-section {
+        padding: 18% 0px 70px;
+    }
+    h4.section-bghead.pt-3 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+    .checkbox-section p{
+        padding-top: 18px;
+        line-height: 25px;
+    }
+
+}
