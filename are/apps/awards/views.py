@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Award
+from django.http import HttpResponse
+from django.core.mail import send_mail
 # Create your views here.
 
 class HomePage(TemplateView):
@@ -31,3 +33,37 @@ class Partner(TemplateView):
 
 class Thankyou(TemplateView):
 	template_name = "thank.html"
+
+
+
+def sendmail(request):
+	import pdb; pdb.set_trace()
+	email = request.POST.get('email', '')
+	if request.method == 'POST' and email:
+		send_mail(subject, content, settings.EMAIL_HOST_USER, ['kuldeep.thoughtwin@gmail.com'], fail_silently=False)
+	return render(request, 'home.html',{'email':email})
+
+
+
+	# if request.method=='POST':
+	# 	email = request.POST.get('email')
+	# 	print(email)
+	# 	return render('home.html')
+
+
+
+
+
+
+
+# def sendmail(request):
+
+#     send_mail(
+#         'Thank you for suscribing ARE conferense',
+#         'WelCome to Are conferense ',
+#         'kuldeep.thoughtwin@gmail.com',
+#         ['dipesh@thoughtwin.com'],
+#         fail_silently=False,
+#     )
+
+#     return HttpResponse('Mail successfully sent')

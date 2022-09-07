@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import sendmail
 app_name = 'awards'
 urlpatterns = [
 	path('challange_award/',views.ChallengeAward.as_view(),name='challenge_award'),
@@ -11,4 +12,5 @@ urlpatterns = [
 	path('agenda/',views.Agenda.as_view(),name='agenda'),
 	path('context/',views.Context.as_view(),name='context'),
 	path('thankyou/',views.Thankyou.as_view(),name='thankyou'),
+	path('sendmail/',sendmail,name='email'),
 ]
