@@ -48,11 +48,7 @@ class ApplicationForm(CreateView):
 class Partner(TemplateView):
 	template_name = "ourpartner.html"
 
+
 class ThanksEnergy(TemplateView):
 	template_name = "thank.html"
-
-
-
-
-
 

@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'registration',
     'speakers',
     'awards',
-    # 'agenda',
     'phonenumber_field',
     'ckeditor',
 ]
@@ -136,4 +135,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'admin'
+LOGIN_REDIRECT_URL = 'speakers:speaker'

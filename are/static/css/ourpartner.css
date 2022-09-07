@@ -56,7 +56,6 @@
     box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
     border-radius: 20px;
     padding: 25px;
-    height: 238px;
     margin-bottom: 30px;
 }
 .content-section .partner-card h3{
@@ -79,7 +78,7 @@
     font-size: 13px;
     line-height: 21px;
     color: #4B4B4B;
-    padding: 12px 0px 14px 0px;
+    padding: 12px 0px 10px 0px;
 }
 .content-section .partner-card a{
     font-family: 'Poppins';
@@ -90,7 +89,7 @@
     color: #9A1C20;
 }
 .content-section{
-    padding-bottom: 80px;
+    padding-bottom:55px;
 }
 
 

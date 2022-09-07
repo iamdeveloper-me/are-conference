@@ -17,6 +17,10 @@ class AmgAwardAdmin(admin.ModelAdmin):
 	form = AmgAwardForm
 	model = AmgAward
 
-admin.site.register(Award)
+# admin.site.register(Award)
 admin.site.register(AwardSubCategory)
+
+@admin.register(Award)
+class AwardAdmin(admin.ModelAdmin):
+	model = Award
 
