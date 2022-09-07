@@ -8,7 +8,7 @@
 {% block content %}
     <!--Popup for Add Speaker Start-->
     <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-login">
+        <div class="modal-dialog modal-login">  
             <div class="modal-content">
                 <form action="{% url 'speaker_add' %}" method="post" enctype='multipart/form-data'>
                     {% csrf_token %}

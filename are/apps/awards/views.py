@@ -1,12 +1,20 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
 from .models import Award
-# Create your views here.
+from django.contrib import auth, messages
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+# from django.contrib.auth.mixins import LoginRequiredMixin
+
 
 class HomePage(TemplateView):
 	template_name = "homepage.html"
 
-class Agenda(TemplateView):
+
+class AdminAgenda(TemplateView):
+	template_name = "agenda.html"
+
+class Agenda(TemplateView): 
 	template_name = "agenda.html"
 
 class Context(TemplateView):
@@ -31,3 +39,5 @@ class Partner(TemplateView):
 
 class Thankyou(TemplateView):
 	template_name = "thank.html"
+
+
