@@ -40,13 +40,12 @@
                                 <th scope="col">Event</th>
                             </tr>
                         </thead>
-                        {{ agenda_list }}
-                        {% for agenda in queryset %}
-                        <tbody>
-                            <td rowspan="3">{{ agenda.session }}</td>
-                            <td>{{ agenda.starttime }} to {{ agenda.endtime }} </td>
-                            <td>{{ agenda.duration }}</td>
-                            <td>{{ agenda.event }}</td>
+                        {% for object in object_list %}                            <tbody>
+                        {{ object }}
+                            <td rowspan="3">{{ object.session }}</td>
+                            <td>{{ object.starttime }} to {{ object.endtime }} </td>
+                            <td>{{ object.duration }}</td>
+                            <td>{{ object.event }}</td>
                         </tbody>
                         {% endfor %}
                     </table>
