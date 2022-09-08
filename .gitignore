@@ -18,8 +18,6 @@ ENV/
 *.swp
 # Byte-compiled / optimized / DLL files
 
-
-
 *.py[cod]
 *$py.class
 # Byte-compiled / optimized / DLL files
