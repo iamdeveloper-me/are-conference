@@ -77,14 +77,24 @@
 }
 
 .head_top {
-    background-color: #d9d9d9;
+    background-color: #fff2cc;
 }
 
-.light_bg{
-    background-color:#f2f2f2;
+.light_bg {
+    background-color: #cfe2f3;
 }
-
-
+.table-bordered td, .table-bordered th {
+    border: 1px solid #858585;
+}
+.dark_bg{
+    background-color: #D9D2E9;
+}
+.green_bg{
+    background-color: #b6d7a8;
+}
+.light-pink{
+    background-color: #ead1dc;
+}
 @media (max-width:767px){
 .agenda_banner{
     background-size: cover;
