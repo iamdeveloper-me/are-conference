@@ -120,6 +120,9 @@
 .agenda_banner_text h4{
     line-height: 30px;
 }
+/* .session_width {
+    min-width: 95px;
+} */
 .session_width {
     min-width: 95px;
 }
