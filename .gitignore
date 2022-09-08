@@ -9,12 +9,16 @@ venv/
 ENV/
 **/script/
 
+<<<<<<< HEAD
 
 *~
 *.pyc
 *.bak
 *.swo
 *.swp
+# Byte-compiled / optimized / DLL files
+
+
 *.py[cod]
 *$py.class
 # Byte-compiled / optimized / DLL files

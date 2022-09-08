@@ -40,6 +40,7 @@ class Partner(TemplateView):
 class Thankyou(TemplateView):
 	template_name = "thank.html"
 
+
 class Privacypolicy(TemplateView):
 	template_name = 'privacy_policy.html'
 
@@ -48,3 +49,4 @@ class climatetable(TemplateView):
 
 class applicationform(TemplateView):
 	template_name = 'application_form.html'
+
