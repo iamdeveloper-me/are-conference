@@ -29,10 +29,14 @@
         {% block content %}
         <!-- This is main tag body. -->
         {% endblock content %}
+        {% block extra_content %}
+        {% include 'popup/add_speaker_popup.html' %}
+        {% endblock extra_content %}
 
-	    {% block footer %}
-	    {% include "layout/footer.html" %}
-	    {% endblock footer %}
+
+  	    {% block footer %}
+  	    {% include "layout/footer.html" %}
+  	    {% endblock footer %}
 
 
 
