@@ -5,9 +5,10 @@ app_name = 'agenda'
 urlpatterns = [
 	# path('',views.ConferenceView.as_view(),name='conference_list'),
 	path('conferenceadd/',views.ConferenceCreateView.as_view(),name='conference_add'),
-	path('',views.ConferenceListView.as_view(),name='conference_list'),
+	# path('conference/',views.ConferenceListView.as_view(template_name='agenda.html'),name='conference_list'),
+	# path('conference/',views.conferencelist,name='conference_list'),
 	path('agenda_add/',views.AgendaCreateView.as_view(),name='agenda_add'),
-	path('',views.AgendaListView.as_view(),name='agenda_list'),
+	path('list/',views.AgendaView.as_view(),name='agenda_list'),
 	# path('addagenda/',views.AgendaCreateView.as_view(),name='agenda_add'),
 	# path('conferencedelete/',views.ConferenceDeleteView.as_view(),name='conference_delete'),
 	# path('conferenceupdate/',views.ConferenceUpdateView.as_view(),name='conference_update'),
