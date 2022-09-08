@@ -151,5 +151,7 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'speakers:speaker'
-# print("2")
+
+# LOGIN_REDIRECT_URL = 'awards:home'
+LOGOUT_REDIRECT_URL = 'awards:home'
+

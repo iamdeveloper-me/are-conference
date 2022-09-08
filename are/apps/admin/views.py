@@ -2,53 +2,34 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, CreateView, ListView 
 from django.views.generic.edit import DeleteView, UpdateView
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView,LogoutView
 from speakers.models import Speaker
 from speakers.forms import SpeakerForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.contrib import auth, messages
+from django.contrib.auth import login, logout
 
 
 # Create your views here.
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
 
-
 	def post(self, request, *args, **kwargs):
-		form=form.get_form()
+		form = self.get_form()
 		if form.is_valid():
-			user = form.get_user()
-			if user is not none and user.is_staff ==True:
-				return redirect('speakers:speaker')
+			username = request.POST['username']
+			password = request.POST['password']
+			user = auth.authenticate(username = username, password = password)
+			login(request, user)
+			if user is not None and user.is_staff == True:
+				return redirect('awards:home')
 			else:
-				messages.error(request,'invalid user')
 				return redirect('admin_login')
-		else:
-			return self.form_invalid(form)
 
-
-	# def post(self, request, *args, **kwargs):		
-	# 	# import pdb;pdb.set_trace()
-	#     form = self.get_form()
-	#     if form.is_valid():
-	#     	if user is not None and user.is_staff == True:
-	#         	return redirect('speakers:speaker')
-	#         else:
-	#         	messages.error(request,'invalid username')
-	#         	return redirect('admin_login')
-	#     else:
-	#         return self.form_invalid(form)
-
-	# def form_valid(self, form):
-	# 	user = form.get_user()
-	# 	if user is not None and user.is_staff == True:
-	# 		# import pdb;pdb.set_trace()
-	# 		return redirect('speakers:speaker')
-	# 	else:
-	# 		messages.error(request, 'Document deleted.')
-	# 		return redirect('admin_login')
-
+class AdminLogout(LogoutView):
+	success_url = '/'
 
 
 class AdminViewSpeaker(ListView):

@@ -1,5 +1,5 @@
-{% load static %}
 
+{% load static %}
 <header>
         <div class="container-fluid">
             <div class="row">
@@ -18,15 +18,17 @@
                             <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
                             <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
                             <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
+                            {% if user.is_authenticated %}
+                            <a href="#myModal" class="trigger-btn nav-item nav-link" data-toggle="modal">Add_Speaker</a>
+                            {% endif %}
                             <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
-                            {% comment %}
-                            <a class="nav-item nav-link" href="{% url 'admin_login' %}">Admin Login</a>
-                            {% endcomment %}
-                            <div class="register_btn">
-                              <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
-                                <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
-                                Registration</a>
-                            </div>
+
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'admin_logout' %}" target="_blank" class="btn registration-btn">
+                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-1"/>
+                            Logout</a>
+                            {% endif %}
+
                           </div>
                         </div>
                         <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
