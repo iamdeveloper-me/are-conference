@@ -8,17 +8,15 @@
 # Byte-compiled / optimized / DLL files
 
 
-*/__pycache__/.pyc
-
-
+__pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+*/__pycache__/.pyc
 
 # C extensions
 *.so
 
-__pycache__/
 
 # Distribution / packaging
 .Python

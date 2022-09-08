@@ -48,3 +48,4 @@ class climatetable(TemplateView):
 
 class applicationform(TemplateView):
 	template_name = 'application_form.html'
+
