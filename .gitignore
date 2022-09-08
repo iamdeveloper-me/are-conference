@@ -9,9 +9,11 @@ ENV/
 
 # Byte-compiled / optimized / DLL files
 
+
 *.py[cod]
 *$py.class
 *.pyc
+*/__pycache__/.pyc
 
 # C extensions
 *.so
