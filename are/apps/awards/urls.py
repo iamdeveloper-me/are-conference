@@ -11,4 +11,7 @@ urlpatterns = [
 	path('agenda/',views.Agenda.as_view(),name='agenda'),
 	path('context/',views.Context.as_view(),name='context'),
 	path('thankyou/',views.Thankyou.as_view(),name='thankyou'),
+	path('privacy_policy/',views.Privacypolicy.as_view(),name='privacy_policy'),
+	path('application_form/',views.applicationform.as_view(),name='application_form'),
+	path('climate_table/',views.climatetable.as_view(),name='climate_table'),
 ]

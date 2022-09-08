@@ -7,4 +7,5 @@ urlpatterns = [
 	path('speaker/', views.AdminViewSpeaker.as_view(), name='speaker_admin'),
 	path('deletespeaker/<int:pk>', views.SpeakerDeleteView.as_view(), name='speaker_delete'),
 	path('updatespeaker/<int:pk>', views.SpeakerUpdateView.as_view(), name='speaker_update'),
+	
 ]
