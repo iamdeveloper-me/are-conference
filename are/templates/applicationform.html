@@ -20,9 +20,9 @@
                     <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="form-group">
-                            <!-- {% if request.user.is_authenticated %}
+                            {% if request.user.is_authenticated %}
                                 <input type="hidden" name="is_admin" value="True">
-                            {% endif %} -->
+                            {% endif %}
                             <label for="">email <span>*</span></label>
                             <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
                         </div>
@@ -30,33 +30,33 @@
                         <div class="form-group checkbox-section">
                             <p class="mb-3">Type of Work <span>*</span></p>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck1" checked name="work_status" value="Com">
+                                <input type="radio" class="custom-control-input" id="customCheck1" checked name="work_status" value="Completed: Application for work already done">
                                 <label class="custom-control-label" for="customCheck1">Completed: Application for work already done</label>
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck2" name="work_status" value="InPro">
+                                <input type="radio" class="custom-control-input" id="customCheck2" name="work_status" value="In Progress: Application for work in progress or is planned in the immediate future">
                                 <label class="custom-control-label" for="customCheck2">In Progress: Application for work in progress or is planned in the immediate future</label>
                             </div>
                         </div>
                         <div class="form-group checkbox-section" id="select-radio-check">
                             <p class="mb-3">Are you applying as an individual or organization? <span>*</span></p>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck3" name="apply_type" checked value="Ind">
+                                <input type="radio" class="custom-control-input" id="customCheck3" name="apply_type" checked value="Individual">
                                 <label class="custom-control-label" for="customCheck3">Individual</label>
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck4" name="apply_type" value="Org">
+                                <input type="radio" class="custom-control-input" id="customCheck4" name="apply_type" value="Organization">
                                 <label class="custom-control-label" for="customCheck4">Organization</label>
                             </div>
                         </div>
                         <div class="form-group checkbox-section">
                             <p class="mb-3">Nomination Type</p>
                                <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck5" name="nomination_type" checked value="S">
+                                <input type="radio" class="custom-control-input" id="customCheck5" name="nomination_type" checked value="Self">
                                 <label class="custom-control-label" for="customCheck5">Self</label>
                             </div>
                             <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck6" name="nomination_type" value="O">
+                                <input type="radio" class="custom-control-input" id="customCheck6" name="nomination_type" value="Nominating Others">
                                 <label class="custom-control-label" for="customCheck6">Nominating Others</label>
                             </div>
                         </div>
@@ -172,23 +172,23 @@
                             <div class="form-group checkbox-section">
                                 <p class="mb-3">Nomination Type</p>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="radio" class="custom-control-input" id="one" name="award_category" checked value="a" >
+                                    <input type="radio" class="custom-control-input" id="one" name="award_category" checked value="Only avoid" >
                                     <label class="custom-control-label" for="one">Only avoid</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="radio" class="custom-control-input" id="two" name="award_category" value="m">
+                                    <input type="radio" class="custom-control-input" id="two" name="award_category" value="Only minimize">
                                     <label class="custom-control-label" for="two">Only minimize</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="radio" class="custom-control-input" id="three" name="award_category" value="g">
+                                    <input type="radio" class="custom-control-input" id="three" name="award_category" value="Only Generate">
                                     <label class="custom-control-label" for="three">Only Generate</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="radio" class="custom-control-input" id="four" name="award_category" value="a&m">
+                                    <input type="radio" class="custom-control-input" id="four" name="award_category" value="Avoid and minimize">
                                     <label class="custom-control-label" for="four">Avoid and minimize</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="radio" class="custom-control-input" id="five" name="award_category" value="a,m&g">
+                                    <input type="radio" class="custom-control-input" id="five" name="award_category" value="Avoid, Minimize and Generate">
                                     <label class="custom-control-label" for="five">Avoid, Minimize and Generate</label>
                                 </div>
                             </div>

@@ -1,3 +1,4 @@
+migrations/
 # Added
 *.ini
 .env

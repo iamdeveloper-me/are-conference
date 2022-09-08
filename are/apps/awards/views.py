@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, CreateView, ListView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from django.shortcuts import redirect
 from .models import AmgAward, Award
 from .forms import AmgApplicationForm
@@ -7,29 +7,28 @@ from django.contrib import auth, messages
 from django.contrib.auth import logout
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
-class HomePage(TemplateView):
+class HomePageView(TemplateView):
 	template_name = "homepage.html"
 
-
-class AdminAgenda(TemplateView):
+class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
-class Agenda(TemplateView): 
+class AgendaView(TemplateView): 
 	template_name = "agenda.html"
 
-class Context(TemplateView):
+class ContextView(TemplateView):
 	template_name = "context.html"
 
-class ChallengeAward(TemplateView):
+class ChallengeAwardView(TemplateView):
 	template_name = "challange_award.html"
 
-class AmgAward(TemplateView):
+class AmgAwardView(TemplateView):
 	template_name = "amg_awards.html"
 
-class Award(TemplateView):
+class AwardView(TemplateView):
 	template_name = "award.html"
 
-class ApplicationForm(CreateView):
+class ApplicationFormView(CreateView):
 	model = AmgAward
 	form_class = AmgApplicationForm
 	template_name = "applicationform.html"
@@ -41,33 +40,28 @@ class ApplicationForm(CreateView):
 			form.save()
 			return redirect('awards:thanks')
 		else:
-			return self.form_invalid(form)	
+			return self.form_invalid(form)
 
-class Partner(TemplateView):
+class PartnerView(TemplateView):
 	template_name = "ourpartner.html"
 
-
-class ThanksEnergy(TemplateView):
+class ThanksEnergyView(TemplateView):
 	template_name = "thank.html"
 
-# class AdminViewAmgApplicant(ListView):
-# 	model = AmgAward
-# 	template_name = 'admin/admin_view_amg_applicants.html'
-# 	# queryset = AmgAward.objects.all()
+class AdminViewAmgApplicant(ListView):
+	model = AmgAward
+	template_name = 'admin/admin_view_amg_applicants.html'
 
-	# def get(self, request, *args, **kwargs):
-	#     self.object_list = self.get_queryset()
-	#     allow_empty = self.get_allow_empty()	        	
-	#     context = self.get_context_data()
-	#     return context
-	# def get_context_data(self, **kwargs):
-	# 	context = super().get_context_data(**kwargs)
-	# 	context = AmgAward._default_manager.all()
-	# 	return {'context':context}
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context = AmgAward.objects.all().order_by('id')
+		return {'context':context}
 
-def amg_applicant(request):
-	# import pdb;pdb.set_trace()
-	data = AmgAward.objects.all()
-	return render(request, 'admin/admin_view_amg_applicants.html', {'data':data})
+
+class AdminDetailViewAmgApplicant(DetailView):
+	model = AmgAward
+	template_name = 'admin/admin_detail_view_amg_applicants.html'
+
+
 
 

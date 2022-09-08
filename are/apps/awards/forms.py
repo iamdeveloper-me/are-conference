@@ -13,3 +13,8 @@ class AmgApplicationForm(forms.ModelForm):
 					'challenge_in_invitation', 'implement_invitation', 'amg_image_before',
 					'amg_image_after' ]
 
+
+	# def clean_work_status(self):
+	# 	value = self.cleaned_data.get('work_status')
+	# 	return dict(self.fields['work_status'].choices)[value]
+

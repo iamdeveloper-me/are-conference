@@ -1,0 +1,226 @@
+{% extends "layout/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div style="padding:120px;">
+
+{% if amgaward.full_name != None %}
+	<table class="table">
+
+	  	<thead class="thead-dark">
+		    <tr>
+		      	<th scope="col">Fields</th>
+		      	<th scope="col">Details</th>
+		    </tr>
+		</thead>
+		<tbody>
+		    <tr>
+		      	<th scope="row">ID</th>
+		      	<td>{{amgaward.id}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Filled by Admin</th>
+		      	<td>{{amgaward.is_admin}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Type of Work</th>
+		      	<td>{{amgaward.work_status}}</td>   	
+		    </tr>
+		    <tr>
+		      	<th scope="row">Are you applying as an individual or organization?</th>
+		      	<td>{{amgaward.apply_type}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Nomination Type</th>
+		      	<td>{{amgaward.nomination_type}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Full Name</th>
+		      	<td>{{amgaward.full_name}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Designation</th>
+		      	<td>{{amgaward.designation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Phone No.</th>
+		      	<td>{{amgaward.phone_number}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Website (If Any)</th>
+		      	<td>{{amgaward.website}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Address</th>
+		      	<td>{{amgaward.address}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">How Long Have You (Individual)/ Organization Been Working Towards
+					Mitigating Climate Change?Website</th>
+		      	<td>{{amgaward.work_exp}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Is Your Interpretation Of Avoid-Minimize-Generate Principle? 	*</th>
+		      	<td>{{amgaward.interpretation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Are The Major Climate Change Challenges That You/
+					Organization Is Addressing?</th>
+		      	<td>{{amgaward.climate_change_challenge}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Nomination Type</th>
+		      	<td>{{amgaward.award_category}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">If In Progress, What Target Has Been Set?</th>
+		      	<td>{{amgaward.target_status}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">If Completed, What Was The Target That Was Set Out To Be Achieved?</th>
+		      	<td>{{amgaward.target_completed}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please Provide A Summary Of Your Ongoing Or Planned Intervention.</th>
+		      	<td>{{amgaward.ongoing_invitation_summary}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please Provide A Summary Of The Intervention.</th>
+		      	<td>{{amgaward.invitation_summary}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Are The Challenges Faced During The Intervention?</th>
+		      	<td>{{amgaward.challenge_in_invitation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Are The Best Practices Used For The Implementing The Intervention?</th>
+		      	<td>{{amgaward.implement_invitation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please attach the images before applying AMG Principle</th>
+		      	<td><img src="{{amgaward.amg_image_before.url}}"></td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please attach the images after applying AMG Principle</th>
+		      	<td><img src="{{amgaward.amg_image_after.url}}"></td>
+		    </tr>
+	  	</tbody>
+	</table>
+{% endif %}
+
+{% if amgaward.full_name == None %}
+	<table class="table">
+
+	  	<thead class="thead-dark">
+		    <tr>
+		      	<th scope="col">Fields</th>
+		      	<th scope="col">Details</th>
+		    </tr>
+		</thead>
+		<tbody>
+		    <tr>
+		      	<th scope="row">ID</th>
+		      	<td>{{amgaward.id}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Type of Work</th>
+		      	<td>{{amgaward.work_status}}</td>   	
+		    </tr>
+		    <tr>
+		      	<th scope="row">Are you applying as an individual or organization?</th>
+		      	<td>{{amgaward.apply_type}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Nomination Type</th>
+		      	<td>{{amgaward.nomination_type}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Type Of Organization </th>
+		      	<td>{{amgaward.org_type}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Name Of Organization</th>
+		      	<td>{{amgaward.org_name}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Key Contact Person Full Name</th>
+		      	<td>{{amgaward.org_person_name}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Key Contact Person Designation</th>
+		      	<td>{{amgaward.org_person_designation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Key Contact Person Email ID</th>
+		      	<td>{{amgaward.org_person_email}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Key Contact Person Phone No</th>
+		      	<td>{{amgaward.org_person_mobile}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Organization’s Registered Address</th>
+		      	<td>{{amgaward.org_address}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Organization’s Website</th>
+		      	<td>{{amgaward.org_web}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">How Long Have You (Individual)/ Organization Been Working Towards
+					Mitigating Climate Change?Website</th>
+		      	<td>{{amgaward.work_exp}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Is Your Interpretation Of Avoid-Minimize-Generate Principle? 	*</th>
+		      	<td>{{amgaward.interpretation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Are The Major Climate Change Challenges That You/
+					Organization Is Addressing?</th>
+		      	<td>{{amgaward.climate_change_challenge}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Nomination Type</th>
+		      	<td>{{amgaward.award_category}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">If In Progress, What Target Has Been Set?</th>
+		      	<td>{{amgaward.target_status}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">If Completed, What Was The Target That Was Set Out To Be Achieved?</th>
+		      	<td>{{amgaward.target_completed}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please Provide A Summary Of Your Ongoing Or Planned Intervention.</th>
+		      	<td>{{amgaward.ongoing_invitation_summary}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please Provide A Summary Of The Intervention.</th>
+		      	<td>{{amgaward.invitation_summary}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Are The Challenges Faced During The Intervention?</th>
+		      	<td>{{amgaward.challenge_in_invitation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">What Are The Best Practices Used For The Implementing The Intervention?</th>
+		      	<td>{{amgaward.implement_invitation}}</td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please attach the images before applying AMG Principle</th>
+		      	<td><img src="{{amgaward.amg_image_before.url}}"></td>
+		    </tr>
+		    <tr>
+		      	<th scope="row">Please attach the images after applying AMG Principle</th>
+		      	<td><img src="{{amgaward.amg_image_after.url}}"></td>
+		    </tr>
+	  	</tbody>
+	</table>
+{% endif %}
+
+</div>
+
+{% endblock content %}

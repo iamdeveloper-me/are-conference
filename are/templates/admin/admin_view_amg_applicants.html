@@ -5,37 +5,54 @@
 
 <div style="padding:120px;">
 
-	{{context}}
+	<h4>Individual</h4>
 	<table class="table">
 
 	  	<thead class="thead-dark">
 		    <tr>
-		      	<th scope="col">#</th>
-		      	<th scope="col">First</th>
-		      	<th scope="col">Last</th>
-		      	<th scope="col">Handle</th>
+		      	<th scope="col">ID</th>
+		      	<th scope="col">Full Name</th>
+		      	<th scope="col">Email</th>
+		      	<th scope="col">View Details</th>
 		    </tr>
 		</thead>
-		<tbody>
+		{% for applicant in context %}
+			{% if applicant.full_name != None %}
+				<tbody>
+				    <tr>
+				      	<th scope="row">{{applicant.id}}</th>
+				      	<td>{{applicant.full_name}}</td>
+				      	<td>{{applicant.email}}</td>
+				      	<td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+				    </tr>
+			  	</tbody>
+			{% endif %}
+	  	{% endfor %}
+	</table>
+
+	<h4>Organization</h4>
+	<table class="table">
+
+	  	<thead class="thead-dark">
 		    <tr>
-		      	<th scope="row">1</th>
-		      	<td>Mark</td>
-		      	<td>Otto</td>
-		      	<td>@mdo</td>
+		      	<th scope="col">ID</th>
+		      	<th scope="col">Org Name</th>
+		      	<th scope="col">Contact Person Name</th>
+		      	<th scope="col">View Details</th>
 		    </tr>
-		    <tr>
-		      	<th scope="row">2</th>
-		      	<td>Jacob</td>
-		      	<td>Thornton</td>
-		      	<td>@fat</td>
-		    </tr>
-		    <tr>
-		      	<th scope="row">3</th>
-		      	<td>Larry</td>
-		      	<td>the Bird</td>
-		      	<td>@twitter</td>
-		    </tr>
-	  	</tbody>
+		</thead>
+		{% for applicant in context %}
+			{% if applicant.full_name == None %}
+				<tbody>
+				    <tr>
+				      	<th scope="row">{{applicant.id}}</th>
+				      	<td>{{applicant.org_name}}</td>
+				      	<td>{{applicant.org_person_name}}</td>
+				      	<td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+				    </tr>
+			  	</tbody>
+			{% endif %}
+	  	{% endfor %}
 	</table>
 </div>
 
