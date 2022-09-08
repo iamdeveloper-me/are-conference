@@ -5,7 +5,7 @@ from .models import AmgAward, Award
 from .forms import AmgApplicationForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
-# from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
@@ -48,7 +48,7 @@ class PartnerView(TemplateView):
 class ThanksEnergyView(TemplateView):
 	template_name = "thank.html"
 
-class AdminViewAmgApplicant(ListView):
+class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 	model = AmgAward
 	template_name = 'admin/admin_view_amg_applicants.html'
 
