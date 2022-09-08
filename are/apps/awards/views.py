@@ -9,6 +9,7 @@ from django.contrib import auth, messages
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 from awards.forms import EmailForm
+
 # from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -46,21 +47,6 @@ class Thankyou(TemplateView):
 	template_name = "thank.html"
 
 
-# def sendmail(request):
-# 	import pdb; pdb.set_trace()
-# 	email = request.POST.get('email', '')
-# 	if request.method == 'POST' and email:
-# 		send_mail(subject, content, settings.EMAIL_HOST_USER, ['kuldeep.thoughtwin@gmail.com'], fail_silently=False)
-# 	return render(request, 'home.html',{'email':email})
-
-
-
-	# if request.method=='POST':
-	# 	email = request.POST.get('email')
-	# 	print(email)
-	# 	return render('home.html')
-
-
 def sendMail(request):
 	messageSent = False
 	# import pdb; pdb.set_trace()
@@ -68,16 +54,17 @@ def sendMail(request):
 		form = EmailForm(request.POST)
 		if form.is_valid():
 			cd = form.cleaned_data
-			subject = "Sending an email with Django"
+			subject = "Sending an email for verifying email "
 			message = 'Thankyou'
 			send_mail(subject, message,settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
 			messageSent = True
 	else:
 		form = EmailForm()
-		return render(request, 'layout/footer.html', {
+		response = render(request, 'layout/footer.html', {
         'form': form,
         'messageSent':messageSent,
     })
+		return response
 
 
 

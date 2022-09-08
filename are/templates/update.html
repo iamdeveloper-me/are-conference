@@ -1,9 +1,17 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/thank.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
   <input class="btn btn-outline-info" type="submit" style="background-color:lightblue" value="Update" />
 </form>
+{% endblock content %}
 
 
 

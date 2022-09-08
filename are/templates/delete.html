@@ -1,7 +1,14 @@
-  <h1>Delete</h1>
-  { }
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/thank.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
   <form action="" method="post">
     {% csrf_token %}
     <p>Are you sure you want to delete ?</p>
     <input type="submit" style="background-color:red" value="Confirm" />
   </form>
+{% endblock content %}

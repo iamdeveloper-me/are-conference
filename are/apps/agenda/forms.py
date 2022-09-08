@@ -1,11 +1,12 @@
 from django import forms
-from .models import Agenda,Conferense
+from .models import Agenda,Conference
 
 
-class ConferenseForm(forms.ModelForm):
+class ConferenceForm(forms.ModelForm):
 	class Meta:
-		model = Conferense
+		model = Conference
 		fields = ['title', 'startdate', 'enddate']
+		
 
 class AgendaForm(forms.ModelForm):
 	class Meta:

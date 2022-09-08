@@ -51,8 +51,8 @@
                     <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
                 </div>
                 {% else %}
-                    <form method="post" action="{% url 'awards:email' %}">
-                         {% csrf_token %}{{ form.as_p }}
+                    <form role="form" method="post" action="" enctype="multipart/form-data">
+                         {% csrf_token %}
                         <input class="form-control" type="email"  id="email" placeholder="Enter your email"/>
                         <button for="email" class="btn home-button">Submit</button>
                     </form>

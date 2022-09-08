@@ -6,25 +6,61 @@
 {% block content %}
 <!-- agenda banner start-->
 <section class="agenda_banner">
-    <a href="#myModal1" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conferense</a>
-    <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
-    {% for conferense in objects %}
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="agenda_banner_text">
-                    <h3>{{ conferense.title }}</h3>
-                    <h4>Tentative Agenda {{ conferense.startdate }}-{{ conferense.enddate }}</h4>
+                    <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
+                    <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conferense</a>
+                    {% for conference in objects_list %}
+                    <h3>{{ conference.title }}</h3>
+                    <h4>Tentative Agenda {{ conference.startdate }}-{{ conference.enddate }}</h4>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
-    {% endfor %}
 </section>
 <!-- agenda banner close-->
 <!--Popup for Add Agenda Start-->
-<a href="#myModal2" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
-<!-- table section start -->
+<a href="#add_session" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
+<!-- dynamic table section start -->
+<section class="table_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table_main_box">
+                    <h4>{{ agenda.date }}</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">Session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Durations</th>
+                                <th scope="col">Event</th>
+                            </tr>
+                        </thead>
+                        {{ agenda_list }}
+                        {% for agenda in queryset %}
+                        <tbody>
+                            <td rowspan="3">{{ agenda.session }}</td>
+                            <td>{{ agenda.starttime }} to {{ agenda.endtime }} </td>
+                            <td>{{ agenda.duration }}</td>
+                            <td>{{ agenda.event }}</td>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end dynamic table section -->
+
+
+
+
+{% comment %}
 <section class="table_section">
     <div class="container">
         <div class="row">
@@ -255,91 +291,13 @@
         </div>
     </div>
 </section>
-<!--Popup for Add Agenda End-->
-{% comment %}
-<!-- dynamic table section start -->
-<section class="table_section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="table_main_box">
-                    <h4>{{ agenda.date }}</h4>
-                    <table class="table table-bordered custom_table">
-                        <thead class="head_top">
-                            <tr>
-                                <th class="session_width">Session</th>
-                                <th class="session_2">Time</th>
-                                <th class="session_2">Durations</th>
-                                <th scope="col">Event</th>
-                            </tr>
-                        </thead>
-                        {% for agenda in objects %}
-                        <tbody>
-                            <td rowspan="3">{{ agenda.session }}</td>
-                            <td>{{ agenda.starttime }} to {{ agenda.endtime }} </td>
-                            <td>{{ agenda.duration }}</td>
-                            <td>{{ agenda.event }}</td>
-                        </tbody>
-                        {% endfor %}
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 {% endcomment %}
-<div id="myModal2" class="modal fade">
-    <div class="modal-dialog modal-login">
-        <div class="modal-content">
-            <form action="{% url 'agenda:add_agenda' %}" method="post" enctype='multipart/form-data'>
-                {% csrf_token %}
-                <div class="modal-header">
-                    <h4>Add Agenda</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="">session</label>
-                        <input type="text" name="session" class="form-control" id="" placeholder="session" required="true">
-                        <label for="">Start Time</label>
-                        <input type="time" name="time" class="form-control" id="" placeholder="time" required="true">
-                        <label for="">End Time</label>
-                        <input type="Time" name="time" class="form-control" id="" placeholder="Time" required="true">
-                        <label for="">Duration</label>
-                        <input type="Date-Time" name="duration" class="form-control" id="" placeholder="duration" required="">
-                        <label for="">Event</label>
-                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
-                        <input type="submit" class="btn btn-primary" value="add">
-                    </div>
-                </div>
-            </form>
-        </div>
-        <div class="modal-footer justify-content-between">
-        </div>
-    </div>
-</div>
-<div id="myModal1" class="modal fade">
-    <div class="modal-dialog modal-login">
-        <div class="modal-content">
-            <form action="{% url 'agenda:confadd' %}" method="post" enctype='multipart/form-data'>
-                {% csrf_token %}
-                <div class="modal-header">
-                    <h4>Add Conferense</h4>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="">title</label>
-                        <input type="text" name="title" class="form-control" id="" placeholder="title" required="true">
-                        <label for="">Start Date</label>
-                        <input type="date" name="date" class="form-control" id="" placeholder="date" required="true">
-                        <label for="">End Date</label>
-                        <input type="date" name="date" class="form-control" id="" placeholder="date" required="true">
-                        <input type="submit" class="btn btn-primary" value="add">
-                    </div>
-                </div>
-        </div>
-        <div class="modal-footer justify-content-between">
-        </div>
-        </form>
-    </div>
-</div>
+<!--Popup for Add Agenda End-->
+
+
 {% endblock content %}
+{% block extra_content %}
+{% include 'add_agenda_popup.html' %}
+{% include 'add_conference_popup.html' %}
+{% endblock extra_content %}
+  

@@ -22,13 +22,4 @@ class Migration(migrations.Migration):
                 ('event', models.CharField(blank=True, max_length=255, null=True)),
             ],
         ),
-        migrations.CreateModel(
-            name='Conferense',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(blank=True, max_length=155, null=True)),
-                ('startdate', models.DateField()),
-                ('enddate', models.DateField()),
-            ],
-        ),
     ]

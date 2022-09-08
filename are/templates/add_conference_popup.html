@@ -1,0 +1,25 @@
+<div id="add_conference" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <form action="{% url 'agenda:conference_add' %}" method="post" enctype='multipart/form-data'>
+                {% csrf_token %}
+                <div class="modal-header">
+                    <h4>Add Conferense</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="">title</label>
+                        <input type="text" name="title" class="form-control" id="" placeholder="title" required="true">
+                        <label for="">Start Date</label>
+                        <input type="date" name="startdate" class="form-control" id="" placeholder="date" required="true">
+                        <label for="">End Date</label>
+                        <input type="date" name="enddate" class="form-control" id="" placeholder="date" required="true">
+                        <input type="submit" class="btn btn-primary" value="add">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer justify-content-between">
+        </div>
+    </div>
+</div>

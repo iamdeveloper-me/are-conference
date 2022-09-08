@@ -18,21 +18,21 @@ SESSION_CHOICES=(
 	)
 
 
-class Conferense(models.Model):
+class Conference(models.Model):
 	title = models.CharField(max_length=155,null=True,blank=True)
-	startdate = models.DateField()
-	enddate = models.DateField()
+	startdate = models.DateField(null=True,blank=True)
+	enddate = models.DateField(null=True,blank=True)
 
-	# def __str__(self):
- #        return self.title   
+	def get_absolute_url(self):
+		return reverse('agenda:conference_list')  
 
 
 class Agenda(models.Model):
 	session = models.CharField(max_length=55,choices=SESSION_CHOICES,null=True,blank=True)
-	starttime = models.TimeField()
-	endtime = models.TimeField()
+	starttime = models.TimeField(null=True,blank=True)
+	endtime = models.TimeField(null=True,blank=True)
 	duration = models.DurationField()
 	event = models.CharField(max_length=255,null=True,blank=True)
 
-	 # def __str__(self):
-  #       return self.session  
+	def get_absolute_url(self):
+		return reverse('agenda:agenda_list') 
