@@ -1,5 +1,5 @@
 
-
+migrations/
 #ignore specific files
 # Added
 *.ini
