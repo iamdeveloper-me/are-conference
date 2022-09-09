@@ -702,7 +702,7 @@ a.knowmore span {
          margin-bottom: 18px;
     }
     img.logo-img {
-        max-width: 220px !important;
+        height: 46px !important;
     }
     .copy-right li.list-inline-item {
         padding-left: 0px;
@@ -926,7 +926,7 @@ a.knowmore span {
         font-size: 20px;
     }
     footer{
-        padding-top:15px !important;
+        padding-top:40px !important;
     }
     
 

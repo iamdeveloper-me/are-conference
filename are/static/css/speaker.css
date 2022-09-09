@@ -30,6 +30,12 @@
     width: auto;
     margin-top: 33%;
 }
+.speaker_botm{
+    padding-bottom:60px;
+}
+.speaker_botm2 {
+    padding-bottom: 80px;
+}
 .speaker-section .speaker-head h1{
     font-family: 'Poppins';
     font-style: normal;
@@ -53,7 +59,7 @@
     padding-right: 100px;
 }
 .speaker-details{
-    padding: 100px 0px 0px;
+    padding: 100px 0px 60px;
 }
 .speaker_right img{
     width: auto;
@@ -119,9 +125,6 @@
     margin-bottom: 80px;
 }
 
-.row-space2{
-    margin-bottom:120px;
-}
 .speaker-details .bg-top img{
     border-radius: 20px;
     width: 300px;
@@ -138,8 +141,14 @@
     footer .subscribe-div button{
         width:100px;
     }
+    .speaker_botm {
+        padding-bottom: 40px;
+    }
     .speaker_right p{
         padding-right: 0px;
+    }
+    .speaker_botm2 {
+        padding-bottom: 50px;
     }
     
     .speaker-section .speaker-head p{
@@ -152,13 +161,13 @@
     margin-top: 28px;
     }
     .row-space {
-        margin-bottom: 25px;
+        margin-bottom:40px;
     }
     .bg-top.left.botm_space {
         padding-bottom: 45px;
     }
     .row-space2 {
-        margin-bottom: 60px;
+        margin-bottom:14px;
     }
     .speaker_right h6{
         font-size:19px;
@@ -179,7 +188,7 @@
         height: 100%;
     }
     .speaker-details {
-        padding: 70px 0px 30px;
+        padding: 70px 0px 40px;
     }
     .bg-top{text-align: center;}
     .speaker-details .bg-top.right::after{right: 10px;}

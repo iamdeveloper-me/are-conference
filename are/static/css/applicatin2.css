@@ -112,7 +112,7 @@
     color: #9A1C20;
     font-weight: 400;
     font-size: 14px;
-    line-height: 44px;
+    line-height: 42px;
     border-radius: 5px;
 }
 .file-upload .file-select .file-select-name {
@@ -276,4 +276,60 @@ span.note{
 }
 .challange_btn {
     margin-top: 25px;
+}
+
+@media screen and (max-width:767px) {
+    .application_banner_area{
+        background-size: cover;
+        background-position: center top !important;
+    }
+    .application_head h2{
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .application_head h3{
+        font-size:30px;
+        line-height:35px;
+    }
+    .application_head {
+        padding: 23% 0px 10%;
+    }
+    .form-head {
+        margin-top: 40px;
+    }
+    .form-head h2{
+        margin-bottom:20px;
+    }
+    .appform-section .form-head p{
+        float: left;
+        margin-bottom: 15px;
+    }
+    .indiviual-register.application-form .form-group {
+        margin-bottom: 20px;
+    }
+
+    .top_spc{
+        margin-bottom: 0px;
+        margin-top:0px;
+    }
+    .file-upload span{
+        margin-bottom: 20px;
+    }
+    .without-bgbtn {
+        width: 160px;
+        height:44px;
+        line-height: 30px;
+    }
+    .indiviual-register.application-form {
+        margin-bottom: 12px;
+    }
+    .with-bgbtn{
+        width: 160px;
+        height:44px;
+        line-height: 30px;
+    }
+    .file-select-button {
+        width: 130px;
+    }
+   
 }
