@@ -4,307 +4,857 @@
 <link rel="stylesheet" href="{% static 'css/applicatin2.css' %}">
 {% endblock extra_css %}
 {% block content %}
-
 <!-- banner start -->
 <section class="application_banner_area">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="application_head">
-          <h2>Climate Hachathon Challange</h2>
-          <h3>Application Form</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="application_head">
+                    <h2>Climate Hachathon Challange</h2>
+                    <h3>Application Form</h3>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 <!-- banner close -->
-
- <!-- form area -->
- <section class="appform-section">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="form-head">
-                  <h2>Enter Hackathon Challenge 1</h2>
-                  <p><span>*</span> Mandatory fields</p>
-              </div>
-          </div>
-          <div class="col-md-12">
-             <div class="indiviual-register application-form">
-                  <form>
-                  <div class="row">
-                     <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="">Individual or Organisations<span>*</span></label>
-                              <select>
-                                <option>Organisations</option>
-                                <option>Organisations</option>
-                                <option>Organisations</option>
-                              </select>
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                        <div class="form-group">
-                          <label for="">Full Name <span>*</span></label>
-                          <input type="text" class="form-control" id="" placeholder="Enter your name...">
-                      </div>
-                      </div>
-                      <div class="col-md-6">          
-                          <div class="form-group">
-                              <label for="">Email <span>*</span></label>
-                              <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
-                          </div>
-                      </div>
-                      <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="">Contact Number<span>*</span></label>
-                              <input type="number" class="form-control" id="" placeholder="+91 1234567890">
-                          </div>
-                      </div>
-                      
-                      <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="">Organisation name or College name<span>*</span></label>
-                              <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
-                          </div>
-                      </div>
-                     
-                      <div class="col-md-6">
-                      <div class="form-group">
-                          <label for="">Designation<span>*</span></label>
-                          <input type="text" class="form-control" id="" placeholder="Enter Designation...">
-                      </div>
-                      </div>
-                    </div>
-                    <div class="form_inner">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="">Address<span>*</span></label>
-                              <textarea class="form-control height-textarea">Address line 1</textarea>
-                              <textarea class="form-control height-textarea">Address line 2</textarea>
-                              <textarea class="form-control height-textarea">Landmark</textarea>
-                          </div>
-                       </div>
-                       <div class="col-md-6">
-                           <div class="row">
-                              <div class="col-md-6">
-                                <label for="">City<span>*</span></label>
-                                <input type="text" class="form-control" id="" placeholder="Enter Your City...">
-                              </div>
-                              <div class="col-md-6">
-                                <label for="">State<span>*</span></label>
-                                <input type="text" class="form-control" id="" placeholder="Enter Your State...">
-                              </div>
-                              <div class="col-md-12 top_spc">
-                                <label for="">Pin Code<span>*</span></label>
-                                <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
-                              </div>
-                           </div>
-                       </div>
-  
-                      </div>
-                    </div>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <div class="form-group">
-                              <label for="">Brief description of your hardware and software<span>*</span></label>
-                              <textarea class="form-control height-textarea">Description...</textarea>
-                              <span class="note">(Text should not exceed 100 words)</span>
-                          </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Working video of Hardware and Software<span>*</span></label>
-                                <div class="file-upload">
-                                  <div class="file-select">
-                                    <div class="file-select-name" id="noFile">No file chosen...</div> 
-                                    <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
-                                    <span>( Video length should not exceed 30 seconds, and file size should not
-                                      exceed 5 MB. )</span>
-                                  </div>
+<!-- form area -->
+<section class="appform-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-head">
+                    <h2>Enter Hackathon Challenge 1</h2>
+                    <p><span>*</span> Mandatory fields</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="indiviual-register application-form">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Individual or Organisations<span>*</span></label>
+                                    <select>
+                                        <option>Organisations</option>
+                                        <option>Organisations</option>
+                                        <option>Organisations</option>
+                                    </select>
                                 </div>
-                                
-                            </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <label for="">What are the major climate change issues you want to address?</label>
-                                <textarea class="form-control height-textarea">Enter Your climate change issues address...</textarea>
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="form-group">
-                                <label for="">What steps should an individual or any type of institution or organisation take to mitigate climate change?</label>
-                                <textarea class="form-control height-textarea">Enter Your Text...</textarea>
-                              </div>
                             </div>
                             <div class="col-md-6">
-                              <div class="d-inline-block">
-                                <button class="btn without-bgbtn">Cancel</button>
-                                <button class="btn with-bgbtn">Submit</button>
+                                <div class="form-group">
+                                    <label for="">Full Name <span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                                </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Email <span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Contact Number<span>*</span></label>
+                                    <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Organisation name or College name<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Designation<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                                </div>
                             </div>
                         </div>
-                      </div>
-                 </form>
-              </div>
+                        <div class="form_inner">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="">Address<span>*</span></label>
+                                        <textarea class="form-control height-textarea">Address line 1</textarea>
+                                        <textarea class="form-control height-textarea">Address line 2</textarea>
+                                        <textarea class="form-control height-textarea">Landmark</textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="">City<span>*</span></label>
+                                            <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">State<span>*</span></label>
+                                            <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                        </div>
+                                        <div class="col-md-12 top_spc">
+                                            <label for="">Pin Code<span>*</span></label>
+                                            <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Brief description of your hardware and software<span>*</span></label>
+                                    <textarea class="form-control height-textarea">Description...</textarea>
+                                    <span class="note">(Text should not exceed 100 words)</span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Working video of Hardware and Software<span>*</span></label>
+                                    <div class="file-upload">
+                                        <div class="file-select">
+                                            <div class="file-select-name" id="noFile">No file chosen...</div>
+                                            <div class="file-select-button" id="fileName">Choose File</div>
+                                            <input type="file" name="chooseFile" id="chooseFile">
+                                            <span>( Video length should not exceed 30 seconds, and file size should not
+                                                exceed 5 MB. )</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">What are the major climate change issues you want to address?</label>
+                                    <textarea class="form-control height-textarea">Enter Your climate change issues address...</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="">What steps should an individual or any type of institution or organisation take to
+                                        mitigate climate change?</label>
+                                    <textarea class="form-control height-textarea">Enter Your Text...</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="d-inline-block">
+                                    <button class="btn without-bgbtn">Cancel</button>
+                                    <button class="btn with-bgbtn">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </form>
             </div>
-            <!-- first form close -->
-      
-              <div class="indiviual-register application-form">
-                   <div class="row">
-                    <div class="col-md-12">
-                      <div class="form-head">
-                          <h2>Enter Hackathon Challenge 1</h2>
-                          <p><span>*</span> Mandatory fields</p>
-                      </div>
-                  </div>
-                   </div>
-                   <form>
-                   <div class="row">
-                      <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="">Individual or Organisations<span>*</span></label>
-                               <select>
-                                 <option>Organisations</option>
-                                 <option>Organisations</option>
-                                 <option>Organisations</option>
-                               </select>
-                           </div>
-                       </div>
-                       <div class="col-md-6">
-                         <div class="form-group">
-                           <label for="">Full Name <span>*</span></label>
-                           <input type="text" class="form-control" id="" placeholder="Enter your name...">
-                       </div>
-                       </div>
-                       <div class="col-md-6">          
-                           <div class="form-group">
-                               <label for="">Email <span>*</span></label>
-                               <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
-                           </div>
-                       </div>
-                       <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="">Contact Number<span>*</span></label>
-                               <input type="number" class="form-control" id="" placeholder="+91 1234567890">
-                           </div>
-                       </div>
-                       
-                       <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="">Organisation name or College name<span>*</span></label>
-                               <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
-                           </div>
-                       </div>
-                      
-                       <div class="col-md-6">
-                       <div class="form-group">
-                           <label for="">Designation<span>*</span></label>
-                           <input type="text" class="form-control" id="" placeholder="Enter Designation...">
-                       </div>
-                       </div>
-                     </div>
-                     <div class="form_inner">
-                       <div class="row">
-                         <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="">Address<span>*</span></label>
-                               <textarea class="form-control height-textarea">Address line 1</textarea>
-                               <textarea class="form-control height-textarea">Address line 2</textarea>
-                               <textarea class="form-control height-textarea">Landmark</textarea>
-                           </div>
+        </div>
+        <!-- first form close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 2</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
-                               <div class="col-md-6">
-                                 <label for="">City<span>*</span></label>
-                                 <input type="text" class="form-control" id="" placeholder="Enter Your City...">
-                               </div>
-                               <div class="col-md-6">
-                                 <label for="">State<span>*</span></label>
-                                 <input type="text" class="form-control" id="" placeholder="Enter Your State...">
-                               </div>
-                               <div class="col-md-12 top_spc">
-                                 <label for="">Pin Code<span>*</span></label>
-                                 <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
-                               </div>
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
                             </div>
                         </div>
-   
-                       </div>
-                     </div>
-                       <div class="row">
-                         <div class="col-md-6">
-                           <div class="form-group">
-                               <label for="">Brief description of your hardware and software<span>*</span></label>
-                               <textarea class="form-control height-textarea">Description...</textarea>
-                               <span class="note">(Text should not exceed 100 words)</span>
-                           </div>
-                           </div>
-                           <div class="col-md-6">
-                             <div class="form-group">
-                                 <label for="">Working video of Hardware and Software<span>*</span></label>
-                                 <div class="file-upload">
-                                   <div class="file-select">
-                                     <div class="file-select-name" id="noFile">No file chosen...</div> 
-                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                     <input type="file" name="chooseFile" id="chooseFile">
-                                     <span>( Video length should not exceed 30 seconds, and file size should not
-                                       exceed 5 MB. )</span>
-                                   </div>
-                                 </div>
-                                 
-                             </div>
-                             </div>
-                             <div class="col-md-12">
-                               <div class="form-group">
-                                 <label for="">What are the major climate change issues you want to address?</label>
-                                 <textarea class="form-control height-textarea">Enter Your climate change issues address...</textarea>
-                               </div>
-                             </div>
-                             <div class="col-md-12">
-                               <div class="form-group">
-                                 <label for="">What steps should an individual or any type of institution or organisation take to mitigate climate change?</label>
-                                 <textarea class="form-control height-textarea">Enter Your Text...</textarea>
-                               </div>
-                             </div>
-                             <div class="col-md-6">
-                               <div class="d-inline-block">
-                                 <button class="btn without-bgbtn">Cancel</button>
-                                 <button class="btn with-bgbtn">Submit</button>
-                             </div>
-                             </div>
-                         </div>
-                       </div>
-                  </form>
-               
-             </div>
-      </div>
-  </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Please upload your submission here<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <span>The submission must be in Word or PDF format. </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- second close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 3</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Please upload your submission here<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <span>The submission must be in Word or PDF format.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- third close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 4</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Please upload your submission here<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <span>The submission must be in Word or PDF format.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- four close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 5</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Please upload your submission here<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <span>The submission must be in Word or PDF format.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- five close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 6</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Your view on Climate Change </label>
+                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Title of the song</label>
+                            <input type="text" class="form-control" id="" placeholder="Enter title of the song...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Please upload your submission here<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <span>The submission must be in Word or PDF format.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block challange_btn">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- six close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 7</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Your view on Climate Change</label>
+                            <input type="text" class="form-control" id="" placeholder="Your view on Climate Change">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Title of the drama script <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter title of the drama script...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Please upload your submission here<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <span>The submission must be in Word or PDF format.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- seven close -->
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 8</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea">Address line 1</textarea>
+                                <textarea class="form-control height-textarea">Address line 2</textarea>
+                                <textarea class="form-control height-textarea">Landmark</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Your view on Climate Change</label>
+                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change...">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Sent the Tshirt on the mentioned address <span>*</span></label>
+                            <select>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Upload a photo of your hand-painted T-shirt<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select file_up">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="chooseFile" id="chooseFile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <!-- eight close -->
+        </form>
+    </div>
+    </div>
+    </div>
 </section>
 <!-- form area end-->
-  
 {% endblock content %}
-
 {% block extra_js %}
-
 <script>
-
-  $('#chooseFile').bind('change', function () {
+$('#chooseFile').bind('change', function() {
     var filename = $("#chooseFile").val();
     if (/^\s*$/.test(filename)) {
-      $(".file-upload").removeClass('active');
-      $("#noFile").text("No file chosen..."); 
+        $(".file-upload").removeClass('active');
+        $("#noFile").text("No file chosen...");
+    } else {
+        $(".file-upload").addClass('active');
+        $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
     }
-    else {
-      $(".file-upload").addClass('active');
-      $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
-    }
-  });
+});
 </script>
-
 {% endblock extra_js %}

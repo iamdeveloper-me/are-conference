@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'speakers',
     'awards',
     'phonenumber_field',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [

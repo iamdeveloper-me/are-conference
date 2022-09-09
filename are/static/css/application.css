@@ -192,7 +192,7 @@ p.required-text{
     text-transform: capitalize;
     margin-right: 30px;
 }
-a.with-bgbtn {
+.with-bgbtn {
     width: 220px;
     height: 50px;
     background: #9A1C20;

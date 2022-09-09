@@ -131,6 +131,7 @@
     color: #828282;
     margin-top: 2px;
     display: inline-block;
+    float: left;
 }
 
 span.note{
@@ -260,4 +261,19 @@ span.note{
     font-weight: 700;
     color: #fff;
     font-size: 49px;
+}
+.file-select.file_up .file-select-button{
+    height: 48px;
+    line-height: 50px;
+}
+
+.file-upload .file_up.file-select {
+    height: 50px !important;
+}
+
+.challange_btn{
+   margin-top:50px;
+}
+.challange_btn {
+    margin-top: 25px;
 }
