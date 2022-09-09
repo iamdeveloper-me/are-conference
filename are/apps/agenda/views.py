@@ -32,25 +32,6 @@ class MyFormView(CreateView):
 			agenda_add=Agenda(session=session,starttime=starttime,endtime=endtime,duration=duration,event=event)						
 			agenda_add.save()
 		return redirect("/agenda/list")
-		# return render(request, 'agenda.html')
-
-# class AgendaCreateView(CreateView):
-# 	# import pdb;pdb.set_trace()
-# 	model = Agenda 
-# 	fields = ['session', 'starttime','endtime','duration','event']
-# 	template_name="agenda.html"
-
-# 	def form_valid(self, form):
-# 		import pdb;pdb.set_trace()
-# 		self.object = form.save()
-# 		return super().form_valid(form)
-
-# 	def get_success_url(self, **kwargs):
-# 		return self.object.get_absolute_url()
-
-	# def form_valid(self, form):
-	# 	return HttpResponseRedirect(self.get_success_url())
-
 
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
