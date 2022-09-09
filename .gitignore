@@ -1,4 +1,15 @@
+
+
 #ignore specific files
+# Added
+*.ini
+.env
+.venv
+env/
+venv/
+ENV/
+**/script/
+
 
 *~
 *.pyc
@@ -6,13 +17,18 @@
 *.swo
 *.swp
 # Byte-compiled / optimized / DLL files
+
+
+
 __pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+*/__pycache__/.pyc
 
 # C extensions
 *.so
+
 
 # Distribution / packaging
 .Python

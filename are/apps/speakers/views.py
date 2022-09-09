@@ -20,14 +20,4 @@ class SpeakerCreateView(CreateView):
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
 
-# def AddSpeaker(request):
-# 	if request.method == 'POST' :
-# 		name = request.POST.get("name")
-# 		designation = request.POST.get("designation")
-# 		detail = request.POST.get("detail")
-# 		profile_image = request.POST.get("profile_image")
-# 		speaker_register = Speaker(name=name,designation=designation,detail=detail,profile_image=profile_image)
-# 		speaker_register.save()
-
-# 		return render(request,'speaker.html')
 

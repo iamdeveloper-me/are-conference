@@ -64,9 +64,12 @@ section.chanllege_text {
     .chanllange_banner_text{
         width:100%;
     }
+    .chanllange_banner_text {
+        padding: 22% 0px 10%;
+    }
     .chanllange_banner_text h1{
-        font-size:35px;
-        line-height: 50px;
+        font-size: 30px;
+        line-height: 34px;
     }
     section.chanllege_text {
         padding: 40px 0px 35px;
@@ -86,6 +89,10 @@ section.chanllege_text {
     .chanllege_left {
         padding-bottom: 15px;
     }   
+
+    .chanllege_img {
+        padding-bottom: 15px;
+    }
 
 }
 
@@ -112,21 +119,8 @@ section.chanllege_text {
     section.chanllege_text {
         padding: 40px 0px 50px;
     }
+
+    
     
 
-}
-
-@media screen and (max-width: 1024px) {
-    .chanllange_banner_text{
-        width: 100%;
-    }
-    .chanllange_banner_text{
-        padding: 11% 0px 5.4%;
-    }
-    section.chanllege_text {
-        padding: 50px 0px 50px;
-    }
-    section.chanllege_text {
-        height: 51vh;
-    }
 }

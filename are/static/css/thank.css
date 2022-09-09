@@ -25,3 +25,16 @@
     font-size: 16px;
     line-height: 25px;
 }
+
+
+@media screen and (max-width: 767px) {
+
+    .thank_content h2{
+        font-size:30px;
+    }
+    .thank_content p {
+        width: 90%;
+}
+
+
+}
