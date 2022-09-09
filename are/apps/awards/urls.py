@@ -1,7 +1,7 @@
 from django.urls import path
 from .models import AmgAward
 from . import views
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 
 app_name = 'awards'
 
