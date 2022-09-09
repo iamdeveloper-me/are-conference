@@ -28,7 +28,7 @@ class AmgAwardView(TemplateView):
 class AwardView(TemplateView):
 	template_name = "award.html"
 
-class ApplicationFormView(CreateView):
+class AmgApplicationFormView(CreateView):
 	model = AmgAward
 	form_class = AmgApplicationForm
 	template_name = "applicationform.html"
@@ -63,5 +63,12 @@ class AdminDetailViewAmgApplicant(DetailView):
 	template_name = 'admin/admin_detail_view_amg_applicants.html'
 
 
+class Privacypolicy(TemplateView):
+	template_name = 'privacy_policy.html'
 
+class ClimateTable(TemplateView):
+	template_name = 'climate_table.html'
+
+class ClimateApplicationForm(TemplateView):
+	template_name = 'application_form.html'
 

@@ -1,0 +1,915 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/climate_table.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+
+<section class="climate_banner_area">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="climate_banner">
+          <h2> Climate Hachathon Challange </h2>
+          <h3>Ideas and actions to save the world</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="challenges_area">
+  <div class="container">
+    <div class="col-md-12">
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 1</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Build a Climate Clock</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>AICTE affiliated institutions + Companies</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants are required to build a climate clock hardware device and software to run on it. The
+                climate clock tracks global CO₂ emissions, temperature data, % of renewables and uses it to estimate the
+                period until the 1.5 degree Celsius threshold for global </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p> Participants must submit a 90 second working video </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation will be carried out by the research scientists who are working at grassroots level for
+                climate action.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>There are a total of 5 awards. Top 5 winners will receive Rs 25,000 each.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Video length should not exceed 90 seconds, and file size should not exceed 5 MB </p>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- first close -->
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 2</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>What industries should do to mitigate climate change?</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Anyone can participate.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Climate is not changing, it has changed. It is already having an impact on the lives of millions of
+                people across the world. Climate change has been identified as one of the biggest global threats. Every
+                individual is using energy and material and hence contributing to climate change.
+
+                Industries consume a significant amount of energy and resources and contribute to climate change.
+
+                You are required to present your idea in writing about what action needs to be taken by the industries
+                to mitigate climate change.
+
+                Your solution can be just a workable idea, a suggestion for technology, an alternative way of doing
+                things or any other innovative idea that can help industries to reduce its impact on climate change.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants must submit their write-ups via a web form.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation will be carried out by the research scientists who are working at grassroots level for
+                climate action.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are total of 5 awards. Top 5 winners will receive Rs 11,000 each. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The best idea is selected to speak at the conference, and two other ideas are selected to present a
+                    poster at the conference.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The structure of the content should be: Title, Address the problem (Maximum 300 words), Provide a
+                    solution to the problem you're addressing (Maximum 300 words), Elaborate on the solution to the
+                    problem you mentioned above (Maximum 500 words), Conclusion</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Font size and writing style should be 12 and Times New Roman, respectively.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p> Lines should be 1.5 inches apart.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants may submit diagrams, figures, and tabular data with elaborative descriptions.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must submit their ideas in English only. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The entries shall be submitted in word or PDF format. (No Scan) </p>
+                </li>
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- second close -->
+
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 3</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>What academic institutions should do to mitigate climate change?</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Anyone can participate</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Climate is not changing, it has changed. It is already having an impact on the lives of millions of people across the world. Climate change has been identified as one of the biggest global threats. Every academic institution is using a significant amount of energy and material and hence contributing to climate change.
+
+                You are required to present your idea in writing about what action needs to be taken by the academic institutions to mitigate climate change.
+                
+                Your solution can be just a workable idea, suggestion for technology, an alternative way of doing things or any other innovative idea that can help academic institutions to reduce its impact on climate change.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants must submit their write-ups via a web form.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation will be carried out by the research scientists who are working at grassroots level for climate action.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are total of 5 awards. Top 5 winners will receive Rs 11,000 each. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The best idea is selected to speak at the conference, and two other ideas are selected to present a poster at the conference.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The structure of the content should be: Title, Address the problem (Maximum 300 words), Provide a solution to the problem you're addressing (Maximum 300 words), Elaborate on the solution to the problem you mentioned above (Maximum 500 words), Conclusion</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Font size and writing style should be 12 and Times New Roman, respectively.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p> Lines should be 1.5 inches apart.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants may submit diagrams, figures, and tabular data with elaborative descriptions.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must submit their ideas in English only.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The entries shall be submitted in word or PDF format. (No Scan) </p>
+                </li>
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- Third close -->
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 4</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>What should individuals do to mitigate climate change?</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Anyone can participate</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Climate is not changing, it has changed. It is already having an impact on the lives of millions of people across the world. Climate change has been identified as one of the biggest global threats. Every individual is using significant amount of energy and material and hence contributing to climate change. 
+
+                You are required to present your idea in writing about what action needs to be taken by the individual to mitigate the climate change.
+                
+                Your solution can be just an workable idea, suggestion for technology, an alternative way of doing things or any other innovative idea that can help individual to reduce its impact on climate change.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants must submit their write-ups via a web form.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation will be carried out by the research scientists who are working at grassroots level for climate action.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are total of 5 awards. Top 5 winners will receive Rs 11,000 each. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The best idea is selected to speak at the conference, and two other ideas are selected to present a poster at the conference.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The structure of the content should be: Title, Address the problem (Maximum 300 words), Provide a solution to the problem you're addressing (Maximum 300 words), Elaborate on the solution to the problem you mentioned above (Maximum 500 words), Conclusion</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Font size and writing style should be 12 and Times New Roman, respectively.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Lines should be 1.5 inches apart.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants may submit diagrams, figures, and tabular data with elaborative descriptions.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must submit their ideas in English only. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The entries shall be submitted in word or PDF format. (No Scan) </p>
+                </li>
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+       <!-- four close -->
+
+       <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 5</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Write an on Essay on Climate Change and its Solution</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants of any state, located anywhere in the world.</p>
+               <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The applicant must be a student of Class of 1 to 10 standard: age not more than 18 years old.</p>
+                </li>
+               </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>National Level Essay Writing Competition
+
+                The competition encourages participants to think, write persuasively, and present well-connected ideas for Environment Restoration.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants must submit their write-ups via a web form.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation of the essay will be done by Prof. Chetan Singh Solanki with the leaders from industry, government, religion, research and academia. </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are a total of 5 awards. Top 5 winners will receive Rs 11,000 each.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The best entries will have the opportunity to read their essays at the conference.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The word limits for essay competition on Climate Change and Its Solution is 1000 to 2500 words.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Font size and writing style should be 12 and Times New Roman, respectively.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Lines should be 1.5 inches apart.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants may submit diagrams, figures, and tabular data with elaborative descriptions.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must submit their ideas in English only. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The entries shall be submitted in word or PDF format. (No Scan) </p>
+                </li>
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- five close -->
+
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 6</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Write a Song on Climate Change and Its Solution</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Anyone from any discipline is welcome to participate.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Song writing competition on Climate Change and Its Solution.
+
+                This competition is being created in a collaborative spirit to encourage people to express, inspire and encourage through songs. How climate change is affecting people, what actions individuals, corporations, governments, and institutions should take, and your thoughts on climate change.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants must submit their entries via a web form.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation of the song will be done by the Energy Swaraj Foundation Team and leaders from industry, government, religion, research and academia. </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are a total of 3 awards. Top 3 winners will receive Rs 25,000 each.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The best team or individual will perform at the conference.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must submit their entries either in English or Hindi only. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The entries shall be submitted in word or PDF format. (No Scan)</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants' songs must be their own original work.</p>
+                </li>
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- six close -->
+
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 7</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Write Drama Script on  Climate Change and Its solutions</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Anyone from any discipline is welcome to participate.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Writing a drama script for Climate Change and Its solutions.
+
+                Climate is not changing, it has changed. It is already affecting the lives of millions of people across the world. Climate change has been identified as one of the biggest global threats. Every individual is using energy and material and hence contributing to climate change.
+                
+                Drama is an effective way to raise awareness and generate meaningful discussion about climate changes and its solutions which aims to bring positive changes in people's attitude and behavior. It ignites curiosity and excitement and can easily draw a crowd of audience and capture their attention.
+                
+                Write a powerful and impactful drama script to bring awareness about climate change to masses and encourage them to take immediate actions.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants must submit their entries via a web form.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>The evaluation of the essay will be done by the Energy Swaraj Foundation Team and leaders from industry, government, religion, research and academia.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are a total of 3 awards. Top 3 winners will receive Rs 25,000 each.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The winning team will present drama at the conference.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must submit their entries either in English only. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The entries shall be submitted in word or PDF format. (No Scan)</p>
+                </li>
+              
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- seven close -->
+
+      <div class="challenge_box">
+        <h2>Climate Hackathon Challenge No: 8</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Title</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Paint a T-shirt with message related to climate change and its solutions</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Who can participate?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Anyone from any discipline is welcome to participate.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Description</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Climate is not changing, it has changed. It is already affecting the lives of millions of people across the world. Climate change has been identified as one of the biggest global threats. Every individual is using energy and material and hence contributing to climate change. 
+
+                The theme of the t-shirt painting is "Climate Change and Its solution". How climate change is adversely affecting humans, human life and planet and what actions need to be taken?
+                
+                This is your best chance to showcase your skills on a global scale. Paint something jaw dropping to generate curiosity among masses on climate change so that they think about taking some action immediately.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants need to submit?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Participants need to send their hand-painted t shirts through post to the address below.
+
+                Energy Swaraj Foundation, Room No. 6, Second Floor, New Hetal Apartment CHS, Near Deepali Travels, N S Road, Mulund West, Mumbai 400080.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>How will the evaluation be done?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <p>Submissions will be judged on the basis of creativity, concept, visual impact, color scheme and effective conveying of the theme.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>What participants will get?</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>There are a total of 5 awards. Top 5 winners will receive Rs 11,000 each.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Certificates of rewards for winners.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>The selected t-shirts will be displayed at the conference and worn by Prof. Chetan Singh Solanki during his Energy Swaraj Yatra.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>In addition, the Jury may select some of the best ideas for a "Certificate of Appreciation".</p>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="climate_title">
+              <p>Guidelines</p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="climate_description">
+              <ul>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Only plain white t-shirts in sizes "L" or "40" are allowed.</p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Participants must use only fabric or acrylic paints. It is strictly forbidden to use any other materials or ready-made stickers. </p>
+                </li>
+                <li><span> <img src="{% static 'images/amg/check-circle.svg' %}" alt="" title=""></span>
+                  <p>Hand painting only.</p>
+                </li>
+              
+                <p>For queries, kindly contact on conference@energyswaraj.org</p>
+              </ul>
+            </div>
+          </div>
+          <a href="#!">Apply Now</a>
+        </div>
+      </div>
+      <!-- eight close -->
+    </div>
+  </div>
+</section>
+
+
+{% endblock content %}

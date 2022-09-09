@@ -1,4 +1,7 @@
 migrations/
+
+#ignore specific files
+
 # Added
 *.ini
 .env
@@ -8,15 +11,25 @@ venv/
 ENV/
 **/script/
 
+
+*~
+*.pyc
+*.bak
+*.swo
+*.swp
 # Byte-compiled / optimized / DLL files
 
+
+
+__pycache__/
 *.py[cod]
 *$py.class
 *.pyc
+*/__pycache__/.pyc
 
 # C extensions
 *.so
-__pycache__/
+
 
 # Distribution / packaging
 .Python
@@ -139,3 +152,31 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+.project
+.pydevproject
+.idea/*
+.settings/*
+*.vscode
+*.log
+/venv/
+logs/*
+.DS_Store
+/config/cov.coverage
+/config/.env
+/config/cov.syspath.txt
+/config/coverage.xml
+/config/.coverage
+/.coverage
+.scannerwork/.sonar_lock
+.scannerwork/report-task.txt
+coverage_report/coverage.xml
+static/*
+/media/ddata/*
+/.scannerwork/pylint/
+/Dore-JQuery-Admin-Dashboard-2.3.0 2/
+/.scannerwork/
+
+google-alps-sit.json
+setup.sh
+/config/static/

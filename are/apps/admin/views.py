@@ -12,6 +12,7 @@ from django.contrib import auth, messages
 from django.contrib.auth import login, logout
 
 
+
 # Create your views here.
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
@@ -71,6 +72,9 @@ class SpeakerUpdateView(UpdateView):
 
     def get_success_url(self, **kwargs):
     	return self.object.get_absolute_url()
+
+
+
 
 
 

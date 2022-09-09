@@ -1,5 +1,5 @@
-.appform-section{
-    padding: 8% 0px 70px;
+.appform-section {
+    padding: 40px 0px 70px;
 }
 .appform-section .form-head h1{
     font-family: 'Poppins';
@@ -8,6 +8,31 @@
     font-size: 32px;
     line-height: 48px;
     color: #252123;
+}
+
+.application_banner_area{
+    background: url(../images/application_banner.png)no-repeat;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    z-index: 0;
+}
+
+.application_head h2{
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 96px;
+    color: #fff;
+}
+.application_head h3{
+    font-weight: 700;
+    font-size: 70px;
+    line-height: 96px;
+    color: #00BCFF;
+}
+.application_head {
+    padding: 12% 0px 8%;
 }
 .appform-section .form-head h2{
     font-family: 'Poppins';
@@ -282,6 +307,32 @@ h2.top_padd{
         font-size: 20px;
         line-height: 28px;
     }
+    h2.top_padd{
+        font-size:25px;
+    }
+    .float-left.d-inline-block {
+        display: block !important;
+        text-align: center;
+        float: none !important;
+    }
+    .without-bgbtn{
+        margin-right:0px;
+        width: 160px;
+        height: 44px;
+        line-height: 42px;
+    }
+    .botm_spc {
+        margin-bottom: 15px;
+    }
+    a.with-bgbtn {
+        width: 160px;
+        height: 44px;
+        line-height: 32px;
+    }
+    .float-right.d-inline-block {
+        float: none !important;
+        text-align: center;
+    }
     .appform-section .form-head h2{
         font-size: 20px;
         line-height: 27px;
@@ -301,7 +352,7 @@ h2.top_padd{
         height:44px;
     }
     .appform-section {
-        padding: 18% 0px 70px;
+        padding: 18% 0px 40px;
     }
     h4.section-bghead.pt-3 {
         font-size: 22px;
@@ -310,6 +361,20 @@ h2.top_padd{
     .checkbox-section p{
         padding-top: 18px;
         line-height: 25px;
+    }
+    .attach-filehead h3{
+        line-height: 22px;
+    }
+    .appform-section .application-form label{
+        font-size:15px;
+    }
+    .award-detailslabel{
+        padding-top:15px;
+    }
+    [type=file] + label{
+        width: 160px;
+        height: 44px;
+        line-height: 44px !important;
     }
 
 }
