@@ -216,10 +216,13 @@ section.running_section_area.padd_botm {
         line-height: 40px;
     }
     .running_section_area {
-        padding-top: 40px;
+        padding-top: 22px;
     }
     .particioate_pera >p {
         width: 100%;
+    }
+    .cd__unit-group {
+        padding: 11px 0px 0px !important;
     }
     .running_left_text h4{
         font-size:25px;
