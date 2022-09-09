@@ -1,5 +1,6 @@
 {% extends "layout/base.html" %}
 {% load static %}
+{% load filter %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
 {% endblock extra_css %}
@@ -40,10 +41,28 @@
                         </thead>
                         {% for object in agenda %}
                         <tbody>
-                            <td rowspan="3">{{ object.session }}</td>
-                            <td>{{ object.starttime }} to {{ object.endtime }} </td>
-                            <td>{{ object.duration }}</td>
-                            <td>{{ object.event }}</td>
+                            <tr class="green_bg">
+                            <td></td>
+                            <td>{{object.starttime}} to {{object.starttime}} </td>
+                            <td>1 hour</td>
+                            <td>Registration and High Tea</td>
+                        </tr>
+                        <tr class="light-pink">
+                            <td>session-1</td>
+                            <td>10 to 11:30</td>
+                            <td>90 min</td>
+                            <td>Inauguration of the ARE conference and awards</td>
+                        </tr>
+                        <tr class="green_bg">
+                            <td></td>
+                            <td> to 12:00</td>
+                            <td>30 min</td>
+                            <td>Tea Break</td>
+                            {% with next_element=agenda|next:forloop.counter0 %}
+                            <td>{{next_element.starttime}}</td>
+
+                            {% endwith %}
+                        </tr>
                         </tbody>
                         {% endfor %}
                     </table>
@@ -53,9 +72,7 @@
     </div>
 </section>
 <!-- end dynamic table section -->
-
-
-
+                        
 
 {% comment %}
 <section class="table_section">

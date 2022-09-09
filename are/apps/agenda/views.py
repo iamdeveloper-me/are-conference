@@ -1,3 +1,4 @@
+
 from django.shortcuts import render ,redirect
 from django.views.generic import TemplateView
 from agenda.models import Agenda,Conference
@@ -53,7 +54,7 @@ class MyFormView(CreateView):
 
 
 class AgendaView(ListView):
-    context_object_name = 'name'
+    # context_object_name = 'name'
     template_name = 'agenda.html'
     queryset = Conference.objects.all()
 
