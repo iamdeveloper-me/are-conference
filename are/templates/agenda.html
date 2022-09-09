@@ -12,10 +12,8 @@
                 <div class="agenda_banner_text">
                     <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
                     <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conferense</a>
-                    {% for conference in conf %}
-                    <h3>{{ conference.title }}</h3>
-                    <h4>Tentative Agenda {{ conference.startdate }}-{{ conference.enddate }}</h4>
-                    {% endfor %}
+                    <h3>Conference and Awards</h3>
+                    <h4>{{ conf.title }}   {{ conf.startdate }}-{{ conf.enddate }}</h4>
                 </div>
             </div>
         </div>
