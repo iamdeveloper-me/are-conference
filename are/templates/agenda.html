@@ -12,10 +12,8 @@
                 <div class="agenda_banner_text">
                     <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
                     <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conferense</a>
-                    {% for conference in conf %}
-                    <h3>{{ conference.title }}</h3>
-                    <h4>Tentative Agenda {{ conference.startdate }}-{{ conference.enddate }}</h4>
-                    {% endfor %}
+                    <h3>{{ conf.title }}</h3>
+                    <h4>Tentative Agenda {{ conf.startdate }}-{{ conf.enddate }}</h4>
                 </div>
             </div>
         </div>
@@ -23,16 +21,17 @@
 </section>
 <!-- agenda banner close-->
 <!--Popup for Add Agenda Start-->
-{% if conference %}
+{% if conf %}
 <a href="#add_session" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
 {% endif %}
 <!-- dynamic table section start -->
+{% if conf %}
 <section class="table_section">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="table_main_box">
-                    <h4>{{ agenda.date }}</h4>
+                    <h4>{{ conf.date }}</h4>
                     <table class="table table-bordered custom_table">
                         <thead class="head_top">
                             <tr>
@@ -56,6 +55,7 @@
         </div>
     </div>
 </section>
+{% endif %}
 <!-- end dynamic table section -->
 
 

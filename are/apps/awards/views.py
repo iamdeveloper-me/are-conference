@@ -20,8 +20,8 @@ class HomePage(TemplateView):
 class AdminAgenda(TemplateView):
 	template_name = "agenda.html"
 
-class Agenda(TemplateView): 
-	template_name = "agenda.html"
+# class Agenda(TemplateView): 
+# 	template_name = "agenda.html"
 
 class Context(TemplateView):
 	template_name = "context.html"
