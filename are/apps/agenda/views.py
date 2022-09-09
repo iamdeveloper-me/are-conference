@@ -16,17 +16,23 @@ class ConferenceCreateView(CreateView):
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
 
-class MyFormView(View):
+class MyFormView(CreateView):
 	model = Agenda 
 	form_class = AgendaForm
 	template_name = 'agenda.html'
 
 	def post(self, request, *args, **kwargs):
-		import pdb;pdb.set_trace()        
-		if form.is_valid():
-			form.save()
-			return HttpResponseRedirect(self.get_success_url())
-		return render(request, 'agenda.html', {'form': form})
+		# import pdb;pdb.set_trace()        
+		if request.method == 'POST':
+			session = request.POST.get("session")
+			starttime = request.POST.get("starttime")
+			endtime = request.POST.get("endtime")
+			duration = request.POST.get("duration")
+			event = request.POST.get("event")
+			agenda_add=Agenda(session=session,starttime=starttime,endtime=endtime,duration=duration,event=event)						
+			agenda_add.save()
+		return redirect("/agenda/list")
+		# return render(request, 'agenda.html')
 
 # class AgendaCreateView(CreateView):
 # 	# import pdb;pdb.set_trace()
