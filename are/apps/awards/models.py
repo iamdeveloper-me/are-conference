@@ -43,6 +43,7 @@ class AwardSubCategory(models.Model):
 	guidelines = RichTextField(blank=True, null=True)
 
 class AmgAward(models.Model):
+	award_type = models.ForeignKey(Award, related_name='award_type', on_delete=models.CASCADE)
 	is_admin = models.BooleanField(default=False)
 	email = models.EmailField(unique=True, blank=True)
 	work_status = models.CharField(max_length=255,choices=WORK_CHOICES,null=True, blank=True)
