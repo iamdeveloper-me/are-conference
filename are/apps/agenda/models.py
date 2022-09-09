@@ -24,7 +24,7 @@ class Conference(models.Model):
 	enddate = models.DateField(null=True,blank=True)
 
 	def get_absolute_url(self):
-		return reverse('agenda:conference_list')  
+		return reverse('agenda:agenda_list')  
 
 
 class Agenda(models.Model):
