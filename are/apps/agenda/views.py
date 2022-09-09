@@ -21,6 +21,10 @@ class AgendaCreateView(CreateView):
 	model = Agenda 
 	fields = ['session', 'starttime','endtime','duration','event']
 
+	def get_success_url(self, **kwargs):
+		return self.object.get_absolute_url()
+
+
 class AgendaView(ListView):
     context_object_name = 'name'
     template_name = 'agenda.html'

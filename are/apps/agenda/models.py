@@ -31,7 +31,7 @@ class Agenda(models.Model):
 	session = models.CharField(max_length=55,choices=SESSION_CHOICES,null=True,blank=True)
 	starttime = models.TimeField(null=True,blank=True)
 	endtime = models.TimeField(null=True,blank=True)
-	duration = models.DurationField()
+	duration = models.DurationField(null=True,blank=True)
 	event = models.CharField(max_length=255,null=True,blank=True)
 
 	def get_absolute_url(self):
