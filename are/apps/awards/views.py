@@ -20,8 +20,8 @@ class HomePage(TemplateView):
 class AdminAgenda(TemplateView):
 	template_name = "agenda.html"
 
-class Agenda(TemplateView): 
-	template_name = "agenda.html"
+# class Agenda(TemplateView): 
+# 	template_name = "agenda.html"
 
 class Context(TemplateView):
 	template_name = "context.html"
@@ -48,35 +48,16 @@ class Thankyou(TemplateView):
 
 
 def sendMail(request):
-	messageSent = False
-	# import pdb; pdb.set_trace()
-	if request.method == 'POST':
-		form = EmailForm(request.POST)
-		if form.is_valid():
-			cd = form.cleaned_data
-			subject = "Sending an email for verifying email "
-			message = 'Thankyou'
-			send_mail(subject, message,settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
-			messageSent = True
-	else:
-		form = EmailForm()
-		response = render(request, 'layout/footer.html', {
-        'form': form,
-        'messageSent':messageSent,
-    })
-		return response
+    if request.method == 'POST':
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            subject = "Sending an email with Django"
+            message = "Thank YOu for suscribing as Are"
+            send_mail(subject, message,
+                      settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
+    else:
+        form = EmailForm()
 
+    return render(request, 'homepage.html')
 
-
-
-# def sendmail(request):
-
-#     send_mail(
-#         'Thank you for suscribing ARE conferense',
-#         'WelCome to Are conferense ',
-#         'kuldeep.thoughtwin@gmail.com',
-#         ['dipesh@thoughtwin.com'],
-#         fail_silently=False,
-#     )
-
-#     return HttpResponse('Mail successfully sent')

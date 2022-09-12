@@ -45,18 +45,11 @@
             </div>
             <div class="col-md-5  menu-list subscribe-div">
                 <h4 class="pl-0">Subscribe</h4>
-                {% if messageSent %}
-                <div class="container">
-                    <h3><strong>Email successfully sent</strong></h3>
-                    <p>Your message was successfully sent to {{ form.cleaned_data.to }}</p>
-                </div>
-                {% else %}
-                    <form role="form" method="post" action="" enctype="multipart/form-data">
-                         {% csrf_token %}
-                        <input class="form-control" type="email"  id="email" placeholder="Enter your email"/>
+                    <form role="form" method="post" action="{% url 'awards:email' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input class="form-control" type="email" name="recipient" id="email" placeholder="Enter your email"/>
                         <button for="email" class="btn home-button">Submit</button>
                     </form>
-                {% endif %}
                 </div>
                 <p>By subscribing you agree to with our Privacy Policy</p>
                 <ul class="list-unstyled list-inline">
