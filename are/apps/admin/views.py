@@ -18,16 +18,19 @@ class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
 
 	def post(self, request, *args, **kwargs):
+		
 		form = self.get_form()
 		if form.is_valid():
+			
 			username = request.POST['username']
 			password = request.POST['password']
 			user = auth.authenticate(username = username, password = password)
-			login(request, user)
+			
 			if user is not None and user.is_staff == True:
+				login(request, user)
 				return redirect('awards:home')
 			else:
-				return redirect('admin_login')
+				return redirect('/admin_login')
 
 class AdminLogout(LogoutView):
 	success_url = '/'
