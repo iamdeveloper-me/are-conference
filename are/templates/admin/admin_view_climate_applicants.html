@@ -1,0 +1,31 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/thank.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+<div style="padding:120px;">
+    <form>
+        <select>
+            <option>Climate Hackathon Challenge 1</option>
+            <option>Climate Hackathon Challenge 2</option>
+            <option>Climate Hackathon Challenge 3</option>
+            <option>Climate Hackathon Challenge 4</option>
+            <option>Climate Hackathon Challenge 5</option>
+            <option>Climate Hackathon Challenge 6</option>
+        </select>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown button
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </div>
+    </form>
+</div>
+{% endblock content %}
+

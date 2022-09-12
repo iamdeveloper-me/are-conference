@@ -8,8 +8,8 @@
 	<h4>Individual</h4>
 	<table class="table">
 
-	  	<thead class="thead-dark">
-		    <tr>
+	  	<thead>
+		    <tr class="table-secondary">
 		      	<th scope="col">ID</th>
 		      	<th scope="col">Full Name</th>
 		      	<th scope="col">Email</th>
@@ -33,8 +33,8 @@
 	<h4>Organization</h4>
 	<table class="table">
 
-	  	<thead class="thead-dark">
-		    <tr>
+	  	<thead>
+		    <tr class="table-secondary">
 		      	<th scope="col">ID</th>
 		      	<th scope="col">Org Name</th>
 		      	<th scope="col">Contact Person Name</th>
@@ -42,16 +42,20 @@
 		    </tr>
 		</thead>
 		{% for applicant in context %}
-			{% if applicant.full_name == None %}
-				<tbody>
-				    <tr>
-				      	<th scope="row">{{applicant.id}}</th>
-				      	<td>{{applicant.org_name}}</td>
-				      	<td>{{applicant.org_person_name}}</td>
-				      	<td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
-				    </tr>
-			  	</tbody>
-			{% endif %}
+			<!-- {% if applicant.full_name == None %} -->
+				{% if applicant.org_name %}
+					<tbody>
+					    <tr>
+					      	<th scope="row">{{applicant.id}}</th>
+					      	<td>{{applicant.org_name}}</td>
+					      	<td>{{applicant.org_person_name}}</td>
+					      	<td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+					    </tr>
+				  	</tbody>
+			  	{% else %}
+			  		<h3>No Data Found</h3>
+			  	{% endif %}
+			<!-- {% endif %} -->
 	  	{% endfor %}
 	</table>
 </div>

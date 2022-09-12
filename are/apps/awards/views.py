@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from django.shortcuts import redirect
-from .models import AmgAward, Award
-from .forms import AmgApplicationForm
+from .models import AmgAward, Award, ClimateAwardOne, ClimateAwardTwo, ClimateAwardThree, ClimateAwardFour, ClimateAwardFive, ClimateAwardSix, ClimateAwardSeven, ClimateAwardEight
+from .forms import AmgApplicationForm, ChallengeFormOne, ChallengeFormTwo, ChallengeFormThree, ChallengeFormFour, ChallengeFormFive, ChallengeFormSix, ChallengeFormSeven, ChallengeFormEight
 from django.contrib import auth, messages
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -69,6 +69,114 @@ class Privacypolicy(TemplateView):
 class ClimateTable(TemplateView):
 	template_name = 'climate_table.html'
 
-class ClimateApplicationForm(TemplateView):
+class ClimateApplicationForm(CreateView):
 	template_name = 'application_form.html'
+
+class ClimateApplicationFormOne(CreateView):
+	model = ClimateAwardOne
+	form_class = ChallengeFormOne
+	template_name = 'climate/challenge_form_1.html'
+
+	def post(self, request, *args, **kwargs):
+		form = ChallengeFormOne(request.POST)
+		for field in form:
+			print("Field Error:", field.name,  field.errors)
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormTwo(CreateView):
+	model = ClimateAwardTwo
+	form_class = ChallengeFormTwo
+	template_name = 'climate/challenge_form_2.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormThree(CreateView):
+	model = ClimateAwardThree
+	form_class = ChallengeFormThree
+	template_name = 'climate/challenge_form_3.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormFour(CreateView):
+	model = ClimateAwardFour
+	form_class = ChallengeFormFour
+	template_name = 'climate/challenge_form_4.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormFive(CreateView):
+	model = ClimateAwardFive
+	form_class = ChallengeFormFive
+	template_name = 'climate/challenge_form_5.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormSix(CreateView):
+	model = ClimateAwardSix
+	form_class = ChallengeFormSix
+	template_name = 'climate/challenge_form_6.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormSeven(CreateView):
+	model = ClimateAwardSeven
+	form_class = ChallengeFormSeven
+	template_name = 'climate/challenge_form_7.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+class ClimateApplicationFormEight(CreateView):
+	model = ClimateAwardEight
+	form_class = ChallengeFormEight
+	template_name = 'climate/challenge_form_8.html'
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
 
