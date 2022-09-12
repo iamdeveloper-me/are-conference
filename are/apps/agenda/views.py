@@ -22,12 +22,9 @@ class MyFormView(CreateView):
 	form_class = AgendaForm
 	template_name = 'agenda.html'
 
-
-
 	def agenda_new(request,pk):
 		# conf = get_object_or_404(Conference, pk=pk)
-		obj = Conference.objects.filter(id=kwargs['pk'])[0]
-		# import pdb;pdb.set_trace()        
+		obj = Conference.objects.filter(id=kwargs['pk'])[0]        
 		if request.method == 'POST':
 			form = AgendaForm(request.POST)
 			if form.is_valid():
@@ -41,14 +38,13 @@ class MyFormView(CreateView):
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
 
-
+		
 class AgendaView(ListView):
 	# context_object_name = 'name'
 	template_name = 'agenda.html'
 	queryset = Conference.objects.all()
 
 	def get_context_data(self, **kwargs):
-		# import pdb; pdb.set_trace()
 		context = super(AgendaView, self).get_context_data(**kwargs)
 		if len(self.queryset)>0:
 			context['conf'] = self.queryset[0]
