@@ -25,9 +25,7 @@ class MyFormView(CreateView):
 
 
 	def agenda_new(request,pk):
-		# conf = get_object_or_404(Conference, pk=pk)
-		obj = Conference.objects.filter(id=kwargs['pk'])[0]
-		# import pdb;pdb.set_trace()        
+		obj = Conference.objects.filter(id=kwargs['pk'])[0]		       
 		if request.method == 'POST':
 			form = AgendaForm(request.POST)
 			if form.is_valid():

@@ -31,7 +31,8 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table_main_box">
-                    <h4>{{ conf.startdate }}</h4>
+                   {% for object in agenda %}
+                    <h4>{{ object.date }}</h4>
                     <table class="table table-bordered custom_table">
                         <thead class="head_top">
                             <tr>
@@ -41,7 +42,6 @@
                                 <th scope="col">Event</th>
                             </tr>
                         </thead>
-                        {% for object in agenda %}
                         <tbody>
                             <td rowspan="3">{{ object.session }}</td>
                             <td>{{ object.starttime }} to {{ object.endtime }} </td>

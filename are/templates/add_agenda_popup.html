@@ -15,6 +15,8 @@
                         <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
                         <label for="">End Time</label>
                         <input type="Time" name="endtime" class="form-control" id="" placeholder="Time" required="true">
+                        <label for="">Date</label>
+                        <input type="date" name="date" class="form-control" id="date" value="conf.startdate-conf.enddate" placeholder="date" required="true">
                         <label for="">Duration</label>
                         <input type="Date-Time" name="duration" class="form-control" id="" placeholder="duration" required="">
                         <label for="">Event</label>
@@ -28,3 +30,14 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$("#date").datepicker({ minDate: 0, dateFormat: 'yy-mm-dd',
+    onSelect: function(obj, event){
+        var from_date = $("#startdate").datepicker("getDate");
+        $("#enddate").datepicker("option","minDate",from_date);
+    }
+});
+$("#enddate").datepicker({ dateFormat: 'yy-mm-dd'});
+
+
+</script>
