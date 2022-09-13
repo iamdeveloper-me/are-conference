@@ -26,9 +26,7 @@ header{
 header nav{
     height: 80px;
 }
-header nav a:first-child{
-    font-weight: 600;
-}
+
 .register_btn{
     display:none;
 }
@@ -736,11 +734,12 @@ a.knowmore span {
         width: 95px;
     }
     .organized_text {
-        padding-bottom: 25px;
+        padding-bottom: 30px;
     }
     .organized_text h3 {
         font-size: 18px;
         line-height: 26px;
+        text-align: center;
     }
     .organized_text {
         text-align: center;
@@ -936,3 +935,26 @@ a.knowmore span {
 
 
 
+@media screen and (max-width: 320px) {
+    .cd__unit {
+        width: 55px;
+    }
+    .cd__unit-label{
+        font-size:11px;
+    }
+    .timer-UI .cd__digits {
+        font-size: 18px;
+    }
+    .organized_text h3 {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+    }
+    .organized_img img {
+        width: 80px;
+    }
+    .cd__unit-group {
+        padding: 11px 0px 0px;
+    }
+
+}

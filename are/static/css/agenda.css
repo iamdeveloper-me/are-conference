@@ -104,7 +104,7 @@
 }
 .agenda_banner_text h1 {
     font-size: 28px;
-    line-height: 34px;
+    line-height: 30px;
 }
 .agenda_banner{
     padding: 28% 0px 45px;
@@ -118,11 +118,9 @@
     white-space: nowrap;
 }
 .agenda_banner_text h4{
-    line-height: 30px;
+    line-height:22px;
 }
-/* .session_width {
-    min-width: 95px;
-} */
+
 .session_width {
     min-width: 95px;
 }
