@@ -6,6 +6,8 @@ from django.views.generic import ListView,View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.utils.timezone import now
+from datetime import timedelta, date
+
 # Create your views here.
 
 
@@ -13,19 +15,20 @@ class ConferenceCreateView(CreateView):
 	model = Conference 
 	fields = ['title', 'startdate','enddate']
 	template_name="agenda.html"
+	
 
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
 
-class MyFormView(CreateView):
+class AgendaCreateView(CreateView):
+	import pdb; pdb.set_trace()
 	model = Agenda 
 	form_class = AgendaForm
 	template_name = 'agenda.html'
-
-
-
+	
 	def agenda_new(request,pk):
-		obj = Conference.objects.filter(id=kwargs['pk'])[0]		       
+		obj = Conference.objects.filter(id=kwargs['pk'])[0]
+		date_range = Agenda.objects.filter(date_range("conf.startdate","conf.enddate"))		       
 		if request.method == 'POST':
 			form = AgendaForm(request.POST)
 			if form.is_valid():
@@ -38,6 +41,7 @@ class MyFormView(CreateView):
 
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
+
 
 
 class AgendaView(ListView):

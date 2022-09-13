@@ -1,3 +1,4 @@
+<body>
 <div id="add_session" class="modal fade">
     <div class="modal-dialog modal-login">
         <div class="modal-content">
@@ -5,22 +6,24 @@
                 {% csrf_token %}
                 <div class="modal-header">
                     <h4>Add Agenda</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <label for="">session</label>
                         <input type="choice" name="session" class="form-control" id="" placeholder="session" required="true">
-                        <input type="time" name="confernce_id" hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
+                        <input type="id" name="confernce_id" hidden class="form-control" id="" placeholder="id" value="{{ conf.pk }}">
                         <label for="">Start Time</label>
                         <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
                         <label for="">End Time</label>
-                        <input type="Time" name="endtime" class="form-control" id="" placeholder="Time" required="true">
+                        <input type="time" name="endtime" class="form-control" id="" placeholder="time" required="true">
                         <label for="">Date</label>
-                        <input type="date" name="date" class="form-control" id="date" value="conf.startdate-conf.enddate" placeholder="date" required="true">
+                        <input type="date" name="daterange" class="form-control" id="date" placeholder="date" required="true">
                         <label for="">Duration</label>
-                        <input type="Date-Time" name="duration" class="form-control" id="" placeholder="duration" required="">
+                        <input type="Duration" name="duration" class="form-control" id="" placeholder="duration" required="">
                         <label for="">Event</label>
-                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
+                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""></textarea>
                         <input type="submit" class="btn btn-primary" value="add">
                     </div>
                 </div>
@@ -30,14 +33,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-$("#date").datepicker({ minDate: 0, dateFormat: 'yy-mm-dd',
-    onSelect: function(obj, event){
-        var from_date = $("#startdate").datepicker("getDate");
-        $("#enddate").datepicker("option","minDate",from_date);
-    }
-});
-$("#enddate").datepicker({ dateFormat: 'yy-mm-dd'});
-
-
-</script>

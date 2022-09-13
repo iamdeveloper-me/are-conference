@@ -19,8 +19,11 @@
                 <div class="col-md-12">
                     <form class="application-form">
                         <div class="form-group">
-                            <label for="">email <span>*</span></label>
-                            <input type="email" class="form-control email-input" id="" placeholder="Enter your email">
+                            <form role="form" method="post" action="{% url 'awards:email' %}" enctype="multipart/form-data">
+                            {% csrf_token %}
+                                <label for="">email <span>*</span></label>
+                                <input type="email" class="form-control email-input" id="" placeholder="Enter your email">
+                            </form>
                         </div>
                         
                     </form>
@@ -233,7 +236,7 @@
                                     </div>
                                     <div class="float-right d-inline-block">
                                         <button class="btn without-bgbtn">back</button>
-                                        <a href="{% url 'awards:thankyou' %}" class="btn with-bgbtn">Submit</a>
+                                        <a for="email" href="{% url 'awards:thankyou' %}" class="btn with-bgbtn">Submit</a>
                                     </div>
                                 </div>
                             </div>

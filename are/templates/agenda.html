@@ -11,7 +11,7 @@
             <div class="col-md-12">
                 <div class="agenda_banner_text">
                     <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
-                    <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conferense</a>
+                    <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conference</a>
                     <h3>{{ conf.title }}</h3>
                     <h4>Tentative Agenda {{ conf.startdate }}-{{ conf.enddate }}</h4>
                 </div>
@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="table_main_box">
-                   {% for object in agenda %}
+                    {% for object in agenda %}
                     <h4>{{ object.date }}</h4>
                     <table class="table table-bordered custom_table">
                         <thead class="head_top">

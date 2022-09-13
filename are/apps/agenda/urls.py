@@ -14,6 +14,6 @@ urlpatterns = [
 	# path('conferenceupdate/',views.ConferenceUpdateView.as_view(),name='conference_update'),
 	# path('deleteagenda/',views.AgendaDeleteView.as_view(),name='delete_agenda'),
 	# path('updateagenda/',views.AgendaUpdateView.as_view(),name='update_agenda'),
-	path('agenda_add/',views.MyFormView.as_view(),name='agenda_add'),
+	path('agenda_add/',views.AgendaCreateView.as_view(),name='agenda_add'),
 
 	]
