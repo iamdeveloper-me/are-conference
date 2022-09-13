@@ -23,53 +23,55 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="form-head">
+                <div class="form-head challenge_one 1">
                     <h2>Enter Hackathon Challenge 1</h2>
                     <p><span>*</span> Mandatory fields</p>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="indiviual-register application-form">
-                    <form>
+                <div class="indiviual-register application-form 1">
+                    <form method="post" action="{% url 'awards:climate_application_form' 1 %}" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Individual or Organisations<span>*</span></label>
-                                    <select>
-                                        <option>Organisations</option>
-                                        <option>Organisations</option>
-                                        <option>Organisations</option>
+                                    <input type="hidden" name="challenge_number" value="1">
+                                    <label for="">Organizations<span>*</span></label>
+                                    <select name="participant" required>
+                                        <option></option>
+                                        <option>AICTE affiliated institutions</option>
+                                        <option>AICTE affiliated Companies</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Email <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Contact Number<span>*</span></label>
-                                    <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                                    <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Organisation name or College name<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Designation<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                                 </div>
                             </div>
                         </div>
@@ -78,24 +80,24 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="">Address<span>*</span></label>
-                                        <textarea class="form-control height-textarea">Address line 1</textarea>
-                                        <textarea class="form-control height-textarea">Address line 2</textarea>
-                                        <textarea class="form-control height-textarea">Landmark</textarea>
+                                        <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                        <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                        <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <label for="">City<span>*</span></label>
-                                            <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                            <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                         </div>
                                         <div class="col-md-6">
                                             <label for="">State<span>*</span></label>
-                                            <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                            <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                         </div>
                                         <div class="col-md-12 top_spc">
                                             <label for="">Pin Code<span>*</span></label>
-                                            <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                            <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                         </div>
                                     </div>
                                 </div>
@@ -105,7 +107,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Brief description of your hardware and software<span>*</span></label>
-                                    <textarea class="form-control height-textarea">Description...</textarea>
+                                    <textarea class="form-control height-textarea" placeholder="Description..." name="brief_description" required></textarea>
                                     <span class="note">(Text should not exceed 100 words)</span>
                                 </div>
                             </div>
@@ -116,7 +118,7 @@
                                         <div class="file-select">
                                             <div class="file-select-name" id="noFile">No file chosen...</div>
                                             <div class="file-select-button" id="fileName">Choose File</div>
-                                            <input type="file" name="chooseFile" id="chooseFile">
+                                            <input type="file" accept="video/*" id="chooseFile" name="working_video" required>
                                             <span>( Video length should not exceed 30 seconds, and file size should not
                                                 exceed 5 MB. )</span>
                                         </div>
@@ -126,14 +128,14 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">What are the major climate change issues you want to address?</label>
-                                    <textarea class="form-control height-textarea">Enter Your climate change issues address...</textarea>
+                                    <textarea class="form-control height-textarea" placeholder="Enter Your climate change issues address..." name="major_climate_challenge"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="">What steps should an individual or any type of institution or organisation take to
                                         mitigate climate change?</label>
-                                    <textarea class="form-control height-textarea">Enter Your Text...</textarea>
+                                    <textarea class="form-control height-textarea" placeholder="Enter Your Text..." name="steps"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -148,7 +150,7 @@
             </div>
         </div>
         <!-- first form close -->
-        <div class="indiviual-register application-form">
+       <div class="indiviual-register application-form 2">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -157,30 +159,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 2 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="2">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -189,24 +193,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +220,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -226,7 +230,7 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
                                     <span>The submission must be in Word or PDF format. </span>
                                 </div>
                             </div>
@@ -242,7 +246,7 @@
             </form>
         </div>
         <!-- second close -->
-        <div class="indiviual-register application-form">
+       <div class="indiviual-register application-form 3">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -251,30 +255,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 3 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="3">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -283,24 +289,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -310,7 +316,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -320,7 +326,7 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
                             </div>
@@ -333,9 +339,10 @@
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
         <!-- third close -->
-        <div class="indiviual-register application-form">
+        <div class="indiviual-register application-form 4">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -344,30 +351,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 4 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="4">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -376,24 +385,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -403,7 +412,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -413,7 +422,7 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
                             </div>
@@ -426,9 +435,10 @@
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
         <!-- four close -->
-        <div class="indiviual-register application-form">
+        <div class="indiviual-register application-form 5">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -437,30 +447,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 5 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="5">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -469,24 +481,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -496,7 +508,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -506,7 +518,7 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
                             </div>
@@ -519,9 +531,10 @@
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
         <!-- five close -->
-        <div class="indiviual-register application-form">
+        <div class="indiviual-register application-form 6">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -530,30 +543,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 6 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="6">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -562,24 +577,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -589,19 +604,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Your view on Climate Change </label>
-                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change...">
+                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change..." name="your_view" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Title of the song</label>
-                            <input type="text" class="form-control" id="" placeholder="Enter title of the song...">
+                            <input type="text" class="form-control" id="" placeholder="Enter title of the song..." name="title_song">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -611,7 +626,7 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
                             </div>
@@ -624,9 +639,10 @@
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
         <!-- six close -->
-        <div class="indiviual-register application-form">
+        <div class="indiviual-register application-form 7">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -635,30 +651,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 7 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="7">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -667,24 +685,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -694,19 +712,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Your view on Climate Change</label>
-                            <input type="text" class="form-control" id="" placeholder="Your view on Climate Change">
+                            <input type="text" class="form-control" id="" placeholder="Your view on Climate Change" name="your_view">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Title of the drama script <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter title of the drama script...">
+                            <input type="text" class="form-control" id="" placeholder="Enter title of the drama script..." name="title_drama" required>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -716,7 +734,7 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
                             </div>
@@ -729,9 +747,10 @@
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
         <!-- seven close -->
-        <div class="indiviual-register application-form">
+        <div class="indiviual-register application-form 8">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-head">
@@ -740,30 +759,32 @@
                     </div>
                 </div>
             </div>
-            <form>
+            <form method="post" action="{% url 'awards:climate_application_form' 8 %}" enctype="multipart/form-data">
+                {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
+                            <input type="hidden" name="challenge_number" value="8">
                             <label for="">Full Name <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Email <span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id...">
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="number" class="form-control" id="" placeholder="+91 1234567890">
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Organisation name or College name<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
                         </div>
                     </div>
                 </div>
@@ -772,24 +793,24 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Address<span>*</span></label>
-                                <textarea class="form-control height-textarea">Address line 1</textarea>
-                                <textarea class="form-control height-textarea">Address line 2</textarea>
-                                <textarea class="form-control height-textarea">Landmark</textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label for="">City<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your City...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="">State<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Your State...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
                                 </div>
                                 <div class="col-md-12 top_spc">
                                     <label for="">Pin Code<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code...">
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
                                 </div>
                             </div>
                         </div>
@@ -799,19 +820,19 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Designation<span>*</span></label>
-                            <input type="text" class="form-control" id="" placeholder="Enter Designation...">
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Your view on Climate Change</label>
-                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change...">
+                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change..." name="your_view">
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">Sent the Tshirt on the mentioned address <span>*</span></label>
-                            <select>
+                            <label for="">Send the Tshirt on the mentioned address <span>*</span></label>
+                            <select name="send_tshirt" required>
                                 <option>Yes</option>
                                 <option>No</option>
                             </select>
@@ -824,7 +845,7 @@
                                 <div class="file-select file_up">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" name="chooseFile" id="chooseFile">
+                                    <input type="file" accept="image/*" name="file" required id="chooseFile">
                                 </div>
                             </div>
                         </div>
@@ -836,6 +857,7 @@
                         </div>
                     </div>
                 </div>
+            </form>
         </div>
         <!-- eight close -->
         </form>
@@ -857,5 +879,10 @@ $('#chooseFile').bind('change', function() {
         $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
     }
 });
+$('.indiviual-register').hide();
+$('.challenge_one').hide();
+var id = "{{context}}";
+$(`.${id}`).show();
+
 </script>
 {% endblock extra_js %}

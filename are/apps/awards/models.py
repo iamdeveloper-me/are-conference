@@ -65,11 +65,12 @@ class AmgAward(models.Model):
 	amg_image_after = models.ImageField(null=True, blank=True,upload_to="images/awards_forms/")
 
 
-class ClimateAwardOne(models.Model):
-	participant = models.CharField(max_length=255,null=True, blank=True)
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
+class ClimateAward(models.Model):
+	challenge_number = models.IntegerField()
+	participant = models.CharField(max_length=255, null=True, blank=True)
+	full_name = models.CharField(max_length=255, null=True, blank=True)
+	email = models.EmailField(blank=True, null=True)
+	phone_number = PhoneNumberField(blank=True, null=True, help_text='Contact phone number')
 	org_college_name = models.CharField(max_length=255,null=True, blank=True)
 	designation = models.CharField(max_length=255,null=True, blank=True)
 	address_line_one = models.TextField(null=True, blank=True)
@@ -79,118 +80,12 @@ class ClimateAwardOne(models.Model):
 	state = models.CharField(max_length=255,null=True, blank=True)
 	pincode = models.IntegerField()
 	brief_description = models.TextField(null=True, blank=True, max_length=100)
-	working_video = models.FileField(upload_to="images/awards_forms/")
 	major_climate_challenge = models.TextField(null=True, blank=True)
 	steps = models.TextField(null=True, blank=True)
-
-
-class ClimateAwardTwo(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
-	file = models.FileField(upload_to="images/awards_forms/")
-
-
-class ClimateAwardThree(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
-	file = models.FileField(upload_to="images/awards_forms/")
-
-
-class ClimateAwardFour(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
-	file = models.FileField(upload_to="images/awards_forms/")
-
-
-class ClimateAwardFive(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
-	file = models.FileField(upload_to="images/awards_forms/")
-
-
-class ClimateAwardSix(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
 	your_view = models.CharField(max_length=255, null=True, blank=True)
 	title_song = models.CharField(max_length=255, null=True, blank=True)
-	file = models.FileField(upload_to="images/awards_forms/")
-
-
-class ClimateAwardSeven(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
-	your_view = models.CharField(max_length=255, null=True, blank=True)
 	title_drama = models.CharField(max_length=255, null=True, blank=True)
-	file = models.FileField(upload_to="images/awards_forms/")
-
-
-class ClimateAwardEight(models.Model):
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
-	org_college_name = models.CharField(max_length=255,null=True, blank=True)
-	designation = models.CharField(max_length=255,null=True, blank=True)
-	address_line_one = models.TextField(null=True, blank=True)
-	address_line_two = models.TextField(null=True, blank=True)
-	address_landmark = models.TextField(null=True, blank=True)
-	city = models.CharField(max_length=255,null=True, blank=True)
-	state = models.CharField(max_length=255,null=True, blank=True)
-	pincode = models.IntegerField()
-	your_view = models.CharField(max_length=255, null=True, blank=True)
 	send_tshirt = models.CharField(max_length=255, null=True, blank=True)
-	file = models.FileField(upload_to="images/awards_forms/")
+	file = models.FileField(upload_to="images/awards_forms/", blank=True, null=True)
+	working_video = models.FileField(upload_to="images/awards_forms/", blank=True, null=True)
 
