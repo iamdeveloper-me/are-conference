@@ -65,6 +65,9 @@ class AdminDetailViewAmgApplicant(DetailView):
 
 class Privacypolicy(TemplateView):
 	template_name = 'privacy_policy.html'
+	
+class Termsservices(TemplateView):
+	template_name = 'term_services.html'
 
 class ClimateTable(TemplateView):
 	template_name = 'climate_table.html'

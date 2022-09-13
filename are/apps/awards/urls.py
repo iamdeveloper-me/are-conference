@@ -22,5 +22,6 @@ urlpatterns = [
 	path('application_form/',views.ClimateApplicationForm.as_view(),name='climate_application_form'),
 	path('privacy_policy/',views.Privacypolicy.as_view(),name='privacy_policy'),
 	path('climate_table/',views.ClimateTable.as_view(),name='climate_table'),
+	path('terms_services/',views.Termsservices.as_view(),name='terms_services'),
 	
 ]
