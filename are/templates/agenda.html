@@ -7,6 +7,7 @@
 <!-- agenda banner start-->
 <section class="agenda_banner">
     <div class="container">
+
         <div class="row">
             <div class="col-md-12">
                 <div class="agenda_banner_text">
@@ -57,6 +58,12 @@
 </section>
 {% endif %}
 <!-- end dynamic table section -->
+{% endblock content %}
+{% block extra_content %}
+{% include 'add_agenda_popup.html' %}
+{% include 'add_conference_popup.html' %}
+{% endblock extra_content %}
+  
 
 
 
@@ -296,9 +303,4 @@
 <!--Popup for Add Agenda End-->
 
 
-{% endblock content %}
-{% block extra_content %}
-{% include 'add_agenda_popup.html' %}
-{% include 'add_conference_popup.html' %}
-{% endblock extra_content %}
-  
+

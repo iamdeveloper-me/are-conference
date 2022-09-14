@@ -1,3 +1,7 @@
+<!doctype html>
+<html lang="en">
+<head>
+</head>
 <body>
 <div id="add_session" class="modal fade">
     <div class="modal-dialog modal-login">
@@ -11,9 +15,11 @@
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
+
+                        <input type="text" name="conference"  hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">                           
+                        <input type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
                         <label for="">session</label>
                         <input type="choice" name="session" class="form-control" id="" placeholder="session" required="true">
-                        <input type="id" name="confernce_id" hidden class="form-control" id="" placeholder="id" value="{{ conf.pk }}">
                         <label for="">Start Time</label>
                         <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
                         <label for="">End Time</label>
@@ -23,7 +29,7 @@
                         <label for="">Duration</label>
                         <input type="Duration" name="duration" class="form-control" id="" placeholder="duration" required="">
                         <label for="">Event</label>
-                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""></textarea>
+                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
                         <input type="submit" class="btn btn-primary" value="add">
                     </div>
                 </div>
@@ -32,4 +38,26 @@
         <div class="modal-footer justify-content-between">
         </div>
     </div>
+
 </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+    <!-- <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> -->
+
+    <script type="text/javascript">
+    $(document).ready(function(){
+        var min_date =`{{conf.startdate|date:"Y-m-d"}}`;  
+        var max_date=`{{conf.enddate|date:"Y-m-d"}}`;
+        min = min_date;
+        max = max_date;
+               
+        $('#datepicker1').attr('min',min_date);
+        $('#datepicker1').attr('max',max_date);
+        // $('#datepicker1').datepicker({
+        //     minDate:min_date,
+        //     maxDate:max_date,
+        // });
+    });
+    </script>
+</body> 
+
+</html>

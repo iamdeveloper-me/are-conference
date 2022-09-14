@@ -1,13 +1,11 @@
 from django.urls import path
 from .models import AmgAward
 from . import views
-
-
+from django.contrib.auth.decorators import login_required
 
 app_name = 'awards'
 
 urlpatterns = [
-
 	path('agenda/',views.AdminAgendaView.as_view(),name='admin_agenda'),
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
@@ -27,5 +25,4 @@ urlpatterns = [
 	path('climate_applicants/',views.AdminViewClimateApplicant.as_view(),name='climate_applicants'),
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
 	path('sendmail/',views.sendMail,name='email'),
-
 ]
