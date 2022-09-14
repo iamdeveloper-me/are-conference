@@ -13,13 +13,17 @@ class Conference(models.Model):
 
 
 class Agenda(models.Model):
-	conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
+	conference = models.ForeignKey(Conference, on_delete=models.CASCADE, related_name='agenda')
 	session = models.CharField(max_length=55,null=True,blank=True)
 	date = models.DateField(blank=True,null=True)
 	starttime = models.TimeField(null=True,blank=True)
 	endtime = models.TimeField(null=True,blank=True)
 	duration = models.DurationField(null=True,blank=True)
 	event = models.CharField(max_length=255,null=True,blank=True)
+	created = models.DateTimeField(auto_now_add=True)
+
+	class Meta:
+		ordering = ('created',)
 
 	def get_absolute_url(self):
 		return reverse('agenda:agenda_list') 
