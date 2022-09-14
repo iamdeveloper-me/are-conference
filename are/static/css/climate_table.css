@@ -105,3 +105,54 @@
 .climate_description ul p {
     padding: 0px;
 }
+
+@media screen and (max-width:767px) {
+
+    .climate_banner h2{
+        font-size:28px;
+        line-height: 35px;
+    }
+    .climate_banner_area{
+        background-size:cover;
+    }
+    .climate_banner h3{
+        font-size:28px;
+    }
+    .climate_banner {
+        padding: 25% 0px 25px;
+    }
+    .challenges_area {
+        padding-top: 38px;
+    }
+    .climate_description p{
+        padding-bottom: 15px;
+    }
+    .climate_title p{
+       padding-bottom: 5px;
+       font-size: 13px;
+    }
+    .challenge_box{
+        padding: 20px 15px;
+    }
+    .challenge_box h2{
+        padding-bottom:15px;
+    }
+    .challenge_box a{
+        width: 160px;
+        height: 44px;
+        line-height: 41px;
+        font-size: 13px;
+    }
+    .challenge_box a{
+        margin-top: 0px;
+    }
+    .climate_description ul li p{
+        width:89%;
+    }
+    .climate_description ul {
+        margin-bottom: 12px;
+    }
+    .challenge_box{
+        margin-bottom:30px;
+    }
+}
