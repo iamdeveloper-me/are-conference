@@ -22,15 +22,15 @@ class MyFormView(CreateView):
 	form_class = AgendaForm
 	template_name = 'agenda.html'
 
-	def agenda_new(request,pk):
+	def post(self, request, *args, **kwargs):
 		# conf = get_object_or_404(Conference, pk=pk)
-		obj = Conference.objects.filter(id=kwargs['pk'])[0]        
-		if request.method == 'POST':
-			form = AgendaForm(request.POST)
-			if form.is_valid():
-				agenda = form.save(commit=False)
-				agenda.save()
-				return redirect('agenda.html',pk=conference.id)
+		# obj = Conference.objects.filter(id=self.kwargs['conf'])     
+		
+		form = AgendaForm(request.POST)
+		if form.is_valid():
+			agenda = form.save(commit=False)
+			agenda.save()
+			return redirect('/agenda')
 		else:
 			form = AgendaForm(pk=conference.id)
 		return render(request, 'agenda.html', {'form': form})
@@ -42,7 +42,7 @@ class MyFormView(CreateView):
 class AgendaView(ListView):
 	# context_object_name = 'name'
 	template_name = 'agenda.html'
-	queryset = Conference.objects.all()
+	queryset = Conference.objects.all().order_by('startdate')
 
 	def get_context_data(self, **kwargs):
 		context = super(AgendaView, self).get_context_data(**kwargs)
@@ -50,13 +50,16 @@ class AgendaView(ListView):
 			context['conf'] = self.queryset[0]
 		else:
 			context['conf'] = None
+
 		context['agenda'] = Agenda.objects.all()
 		return context
 
-    # context_object_name = 'name'
-    # template_name = 'agenda.html'
-    # queryset = Conference.objects.all()
-    # import pdb; pdb.set_trace()
+	def get_queryset(self):
+		conference = self.queryset[0]
+		agenda_list=conference.agenda.all()
+		return agenda_list
+
+
     
      
     

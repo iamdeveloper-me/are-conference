@@ -3,7 +3,7 @@ from django.urls import reverse
 
 # Create your models here
 
-class Conference(models.Model):
+class Conference(models.Model):	
 	title = models.CharField(max_length=155,null=True,blank=True)
 	startdate = models.DateField(null=True,blank=True)
 	enddate = models.DateField(null=True,blank=True)
@@ -13,7 +13,7 @@ class Conference(models.Model):
 
 
 class Agenda(models.Model):
-	conference = models.ForeignKey(Conference, on_delete=models.CASCADE)
+	conference = models.ForeignKey(Conference,related_name="agenda", on_delete=models.CASCADE)
 	session = models.CharField(max_length=55,null=True,blank=True)
 	starttime = models.TimeField(null=True,blank=True)
 	endtime = models.TimeField(null=True,blank=True)

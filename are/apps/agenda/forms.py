@@ -11,5 +11,5 @@ class ConferenceForm(forms.ModelForm):
 class AgendaForm(forms.ModelForm):
 	class Meta:
 		model = Agenda
-		fields = ['session', 'starttime', 'endtime', 'duration', 'event']
+		fields = ['conference','session', 'starttime', 'endtime', 'duration', 'event']
 

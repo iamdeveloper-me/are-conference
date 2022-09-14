@@ -17,9 +17,9 @@
                         <label for="">title</label>
                         <input type="text" name="title" class="form-control" id="" placeholder="title" required="true">
                         <label for="">Start Date</label>
-                        <input type="date" id="datepicker1" name="startdate" class="form-control" id="" placeholder="date" required="true">
+                        <input type="date"  name="startdate" id="datepicker1" class="form-control " placeholder="date" required="true">
                         <label for="">End Date</label>
-                        <input type="date" id="datepicker2" name="enddate" class="form-control" placeholder="date" required="true">
+                        <input type="date" id="datepicker2" name="enddate" class="form-control " placeholder="date" required="true">
                         <input type="submit" class="btn btn-primary" value="add">
                     </div>
                 </div>
@@ -30,20 +30,6 @@
     </div>
 </div>
 
-    <script language="javascript">
-        debugger
-        var today = new Date();
-        var dd = String(today.getDate()).padStart(2, '0');
-        var mm = String(today.getMonth() + 1).padStart(2, '0');
-        var yyyy = today.getFullYear();
-
-
-        today = yyyy + '-' + mm + '-' + dd;
-        min = today;
-        $('#datepicker1').attr('min',today);
-        $('#datepicker2').attr('min',today);
-
-    </script>
 </body> 
 </html>
 

@@ -42,12 +42,12 @@
                                 <th scope="col">Event</th>
                             </tr>
                         </thead>
-                        {{agenda}}
-                        {% for object in agenda %}
+                        {{agenda_list}}
+                        {% for object in agenda_list %}
                         <tbody>
                             <tr class="green_bg">
                             <td></td>
-                            <td>{{object.starttime}} to {{object.starttime}} </td>
+                            <td>{{object.starttime}} to {{object.endtime}} </td>
                             <td>1 hour</td>
                             <td>Registration and High Tea</td>
                         </tr>
@@ -76,6 +76,257 @@
     </div>
 </section>
 {% endif %}
+
+<section class="table_section">
+    <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <div class="table_main_box">
+                     <h4>Day 1, Thursday | 24/11/2022</h4>
+                      <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                          <tr>
+                            <th class="session_width">session</th>
+                            <th class="session_2">Time</th>
+                            <th class="session_2">Duration</th>
+                            <th scope="col">Event</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="green_bg">
+                            <td></td>
+                            <td>9 to 10</td>
+                            <td>1 hour</td>
+                            <td>Registration and High Tea</td>
+                          </tr>
+                          <tr class="light-pink">
+                            <td>session-1</td>
+                            <td>10 to 11:30</td>
+                            <td>90 min</td>
+                            <td>Inauguration of the ARE conference and awards</td>
+                          </tr>
+                          <tr class="green_bg">
+                            <td></td>
+                            <td>11:30 to 12:00</td>
+                            <td>30 min</td>
+                            <td>Tea Break</td>
+                          </tr>
+                           <tr class="dark_bg">
+                            <td rowspan="2">Session-2</td>
+                            <td rowspan="2">12 to 1:30</td>
+                            
+                            <td>70 min</td>
+                            <td>The Cascading Cycle: Warming world — Rising energy demand — Warming World - ARE We heading the Right Direction?
+                            </td>
+                          </tr>
+                          <tr class="dark_bg">
+                            <td>20 min</td>
+                            <td>Institutions/ People taking enough actions</td>
+                          </tr>
+                          <tr class="green_bg">
+                            <td></td>
+                            <td>1:30 to 2:30</td>
+                            <td>1 hour</td>
+                            <td>Lunch</td>
+                           
+                          </tr>
+                          <tr class="light_bg">
+                            <td rowspan="2">Session-3</td>
+                            <td rowspan="2">2:30 to 4</td>
+                            <td>70 min</td>
+                            <td>Policies and Programmes to Secure Climate and Energy security to the nation —ARE the Government initiatives pragmatic enough?</td>
+                          </tr>
+                          <tr class="light_bg">
+                            <td>20 min</td>
+                            <td>Institutions/ People taking enough actions</td>
+                          </tr>
+                          <tr class="green_bg">
+                            <td></td>
+                            <td>4:00 to 4:30</td>
+                            <td>30 min</td>
+                            <td>High Tea</td>
+                             
+                          </tr>
+                          <tr class="light_bg">
+                            <td rowspan="2">Session-4</td>
+                            <td rowspan="2">4:30 to 6</td>
+                            <td>70 min</td>
+                            <td>Enhancing awareness and preparedness of the climate change to the grassroot level - ARE the NGOs sensitizing the communities enough?</td>
+                          </tr>
+                          <tr class="light_bg">
+                            
+                            <td>20 min</td>
+                            <td>Institutions/ People taking enough actions</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+
+                  <div class="table_main_box">
+                    <h4>Day 2, Friday | 25/11/2022</h4>
+                     <table class="table table-bordered custom_table">
+                       <thead class="head_top">
+                         <tr>
+                           <th class="session_width">session</th>
+                           <th class="session_2">Time</th>
+                           <th class="session_2">Duration</th>
+                           <th scope="col"></th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                        <tr class="green_bg">
+                            <td></td>
+                            <td>9 to 10</td>
+                            <td>1 hour</td>
+                            <td>Registration</td>
+                          </tr>
+                          <tr class="light-pink">
+                            <td rowspan="2">Session-5</td>
+                            <td rowspan="2">10 to 11:30</td>
+                            <td>70 min</td>
+                            <td>Mobilizing masses towards Sustainable Actions through Spiritual Sensitization - ARE the Spiritual Organizations doing enought?
+                            </td>
+                          </tr>
+                          <tr class="light-pink">
+                           <td>20 min</td>
+                            <td>Institutions/ People taking enough actions</td>
+                          </tr>
+                          <tr class="green_bg">
+                            <td></td>
+                            <td>11:30 to 12:00</td>
+                            <td>30 min</td>
+                            <td>High Tea</td>
+                          </tr>
+                          <tr class="dark_bg">
+                            <td rowspan="2">Session-6</td>
+                           <td rowspan="2">12 to 1:30</td>
+                           <td>70 min</td>
+                           <td>Political Vision, Messaging and Bold Actions for climate correction - ARE leaders on it?
+                           </td>
+                         </tr>
+                         <tr class="dark_bg">
+                           <td>20 min</td>
+                           <td>Institutions/ People taking enough actions</td>
+                         </tr>
+                         <tr class="green_bg">
+                           <td></td>
+                           <td>1:30 to 2:30</td>
+                           <td>1 hour</td>
+                           <td>High Tea</td>
+                          </tr>
+                         <tr class="light_bg">
+                          <td rowspan="2">Session-7</td>
+                           <td rowspan="2">2:30 to 4</td>
+                           <td>70 min</td>
+                           <td>Sustainability, environmental goals and outcomes of
+                            industries - ARE they enough?</td>
+                         </tr>
+                         <tr class="light_bg">
+                           <td>20 min</td>
+                           <td>Speaker + Shell Powering Lives challenge award</td>
+                         </tr>
+                         <tr class="green_bg">
+                           <td></td>
+                           <td>4:00 to 4:30</td>
+                           <td>30 min</td>
+                           <td>Lunch</td>
+                         </tr>
+                         <tr class="light_bg">
+                          <td rowspan="3">Session-8</td>
+                           <td rowspan="2">4:30 to 6</td>
+                           <td>70 min</td>
+                           <td>Education and Research for Climate Change Mitigation and Management - ARE the Academic Institutions prepared?</td>
+                         </tr>
+                         <tr class="light_bg">
+                           <td>20 min</td>
+                           <td>Institutions/ People taking enough actions</td>
+                         </tr>
+                       </tbody>
+                     </table>
+                 </div>
+
+                <div class="table_main_box botm_space">
+                    <h4>Day 3, Saturday | 26/11/2022</h4>
+                     <table class="table table-bordered custom_table">
+                       <thead class="head_top">
+                         <tr>
+                           <th class="session_width">session</th>
+                           <th class="session_2">Time</th>
+                           <th class="session_2">Duration</th>
+                           <th scope="col"></th>
+                         </tr>
+                       </thead>
+                       <tbody>
+                        <tr class="green_bg">
+                            <td></td>
+                            <td>9 to 10</td>
+                            <td>1 hour</td>
+                            <td>High Tea</td>
+                          </tr>
+                          <tr class="light-pink">
+                            <td rowspan="2">Session-9</td>
+                            <td rowspan="2">10 to 11:30</td>
+                            <td>70 min</td>
+                            <td>Media's effectiveness in informaing and influencing societies in climate correction -ARE media giving enough space?
+                            </td>
+                          </tr>
+                          <tr class="light-pink">
+                            <td>20 min</td>
+                            <td>Institutions/ People taking enough actions</td>
+                          </tr>
+                          <tr class="green_bg">
+                            <td></td>
+                            <td>11:30 to 12:00</td>
+                            <td>1 hour</td>
+                            <td>Tea  Break</td>
+                          </tr>
+                          <tr class="dark_bg">
+                            <td rowspan="2">Session-10</td>
+                           <td rowspan="2">12 to 1:30</td>
+                           <td>70 min</td>
+                           <td>Concluding the Actions for Restoring Environment Conference? ARE we taking enough actions?</td>
+                         </tr>
+                         <tr class="dark_bg">
+                           <td>20 min</td>
+                           <td>Institutions/ People taking enough actions</td>
+                         </tr>
+                         <tr class="green_bg">
+                          <td></td>
+                           <td>1:30 to 2:30</td>
+                           <td>1 hour</td>
+                           <td>Lunch</td>
+                         </tr>
+                         <tr class="light_bg">
+                          <td rowspan="2">Session-11</td>
+                          <td rowspan="2">2:30 to 4</td>
+                           <td>30 min</td>
+                           <td>Address by Chief Guest</td>
+                         </tr>
+                         <tr class="light_bg">
+                           <td>1 hour</td>
+                           <td>Energy Swaraj Awards - 2022</td>
+                         </tr>
+                         <tr class="green_bg">
+                           <td></td>
+                           <td>4:00 to 4:30</td>
+                           <td>30 min</td>
+                           <td>Tea Break</td>
+                         </tr>
+                         <tr class="light_bg">
+                           <td>Session-12</td>
+                           <td>4:30 to 5:00</td>
+                           <td>30 min</td>
+                           <td>Closing Ceremony</td>
+                         </tr>
+                        
+                       </tbody>
+                     </table>
+                 </div>
+
+              </div>
+          </div>
+    </div>
+</section>
 <!-- end dynamic table section -->
 
 <!--Popup for Add Agenda End-->
