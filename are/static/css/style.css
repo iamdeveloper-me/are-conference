@@ -26,9 +26,7 @@ header{
 header nav{
     height: 80px;
 }
-header nav a:first-child{
-    font-weight: 600;
-}
+
 .register_btn{
     display:none;
 }
@@ -603,7 +601,7 @@ a.knowmore span {
 }
 .organized_img {
     text-align: center;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
 }
 .organized_text {
     text-align: center;
@@ -614,13 +612,13 @@ a.knowmore span {
 }
 .organized_img2 {
     text-align: center;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
 }
 .organized_img2 img {
     width: 100%;
 }
 
-.border_box::after {
+/* .border_box::after {
     content: '';
     position: absolute;
     display: block;
@@ -631,7 +629,7 @@ a.knowmore span {
     left: 46%;
     bottom: 0;
     transform: translate(0 , 50%);
-}
+} */
 @media screen and (min-width: 768px) and (max-width: 991px) { 
 
     .about_content {
@@ -681,8 +679,28 @@ a.knowmore span {
     .custom_collapse{
         background-color:#fff;
     }
+    .border_box::after{
+        display:none;
+    }
+    .organized_img{
+        margin-bottom:15px;
+    }
+    .border_box {
+        padding: 55px 30px 30px;
+    }
+    .section_organized::before{
+        left: 2%;
+        bottom: 3px;
+    }
+    .section_organized::after{
+        right: 2%;
+        top: 32px;
+    }
+    .organized_img2 {
+         margin-bottom: 18px;
+    }
     img.logo-img {
-        max-width: 220px !important;
+        height: 46px !important;
     }
     .copy-right li.list-inline-item {
         padding-left: 0px;
@@ -716,11 +734,12 @@ a.knowmore span {
         width: 95px;
     }
     .organized_text {
-        padding-bottom: 25px;
+        padding-bottom: 30px;
     }
     .organized_text h3 {
         font-size: 18px;
         line-height: 26px;
+        text-align: center;
     }
     .organized_text {
         text-align: center;
@@ -759,6 +778,9 @@ a.knowmore span {
     }
     .navbar-collapse.custom_collapse {
         padding-top: 15px;
+        position: absolute;
+        width: 100%;
+        top: 63px;
     }
     .register_btn {
         padding-top: 10px;
@@ -903,8 +925,36 @@ a.knowmore span {
         font-size: 20px;
     }
     footer{
-        padding-top:15px !important;
+        padding-top:40px !important;
     }
     
+
+}
+
+
+
+
+
+@media screen and (max-width: 320px) {
+    .cd__unit {
+        width: 55px;
+    }
+    .cd__unit-label{
+        font-size:11px;
+    }
+    .timer-UI .cd__digits {
+        font-size: 18px;
+    }
+    .organized_text h3 {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+    }
+    .organized_img img {
+        width: 80px;
+    }
+    .cd__unit-group {
+        padding: 11px 0px 0px;
+    }
 
 }

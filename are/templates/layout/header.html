@@ -1,47 +1,47 @@
-
 {% load static %}
 <header>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-12">
-                    <nav class="navbar navbar-expand-lg ">
-                        <a class="navbar-brand p-0" href="{% url 'awards:home' %}">
-                            <img src="{% static 'images/Logo.png' %}"/>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"><img src="{% static 'images/homepage/menu.png' %}" alt="" title=""/></span>
-                        </button>
-                        <div class="collapse navbar-collapse custom_collapse" id="navbarNavAltMarkup">
-                          <div class="navbar-nav ml-auto">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg ">
+                    <a class="navbar-brand p-0" href="{% url 'awards:home' %}">
+                        <img src="{% static 'images/Logo.png' %}" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><img src="{% static 'images/homepage/menu.png' %}" alt="" title="" /></span>
+                    </button>
+                    <div class="collapse navbar-collapse custom_collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav ml-auto">
                             <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a>
                             <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a>
                             <a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a>
                             <a class="nav-item nav-link" href="{% url 'agenda:agenda_list' %}">Agenda</a>
-                            <a class="nav-item nav-link" href="{% url 'speakers:speaker' %}">Speakers</a>
-                            {% if user.is_authenticated %}
-                            <a href="#myModal" class="trigger-btn nav-item nav-link" data-toggle="modal">Add_Speaker</a>
-                            {% endif %}
+                            <a class="nav-item nav-link" href="{% url 'speakers:speaker_list' %}">Speakers</a>
+                            {% comment %}
+                            <a class="nav-item nav-link" href="{% url 'awards:agenda' %}">Agenda</a>
+                            <a class="nav-item nav-link" href="{% url 'speakers:speaker_list' %}">Speakers</a>
+                            {% endcomment %}
                             <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
                             {% if user.is_authenticated %}
-                            <a href="{% url 'admin_logout' %}" target="_blank" class="btn registration-btn">
-                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-1"/>
-                            Logout</a>
+                            <a href="#Addspeaker" class="trigger-btn nav-item nav-link" data-toggle="modal">Add_Speaker</a>
                             {% endif %}
-                            {% comment %}
-                            <a class="nav-item nav-link" href="{% url 'admin_login' %}">Admin Login</a>
-                            {% endcomment %}
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'admin_logout' %}" target="_blank" class="btn registration-btn">
+                                <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-1" />
+                                Logout</a>
+                            {% endif %}
                             <div class="register_btn">
-                              <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
-                                <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
-                                Registration</a>
+                                <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
+                                    <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2" />
+                                    Registration</a>
                             </div>
-                          </div>
                         </div>
-                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
-                            <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2"/>
-                            Registration</a>
-                      </nav>
-                </div>
+                    </div>
+                    <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn registration-btn">
+                        <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-2" />
+                        Registration</a>
+                </nav>
             </div>
         </div>
-    </header>
+    </div>
+</header>

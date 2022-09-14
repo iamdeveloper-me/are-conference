@@ -12,21 +12,25 @@ from django.contrib import auth, messages
 from django.contrib.auth import login, logout
 
 
+
 # Create your views here.
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
 
 	def post(self, request, *args, **kwargs):
+		
 		form = self.get_form()
 		if form.is_valid():
+			
 			username = request.POST['username']
 			password = request.POST['password']
 			user = auth.authenticate(username = username, password = password)
-			login(request, user)
+			
 			if user is not None and user.is_staff == True:
+				login(request, user)
 				return redirect('awards:home')
 			else:
-				return redirect('admin_login')
+				return redirect('/admin_login')
 
 class AdminLogout(LogoutView):
 	success_url = '/'
@@ -71,6 +75,9 @@ class SpeakerUpdateView(UpdateView):
 
     def get_success_url(self, **kwargs):
     	return self.object.get_absolute_url()
+
+
+
 
 
 

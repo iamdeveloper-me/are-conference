@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'agenda',
     'awards',
     'phonenumber_field',
+    'ckeditor',
 ]
 
 MIDDLEWARE = [
@@ -152,8 +153,6 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-
 #Send Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -162,8 +161,8 @@ EMAIL_HOST_PASSWORD = 'cbmn atso cvkp viza'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-
 LOGIN_REDIRECT_URL = 'awards:home'
+
 LOGOUT_REDIRECT_URL = 'awards:home'
 
 

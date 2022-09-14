@@ -308,31 +308,26 @@
     <div class="container">
        <div class="border_box">
         <div class="row no-gutters">
-            <div class="col-md-6">
+            <div class="col-md-12">
                   <div class="row align-items-center">
                   
-                    <div class="col-md-12">
-                        <div class="organized_img"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
-                        <div class="organized_text text2">
+                        <div class="organized_img2 col-md-3"><img src="{% static 'images/homepage/Energy_logo2.png' %}" alt="" title=""></div>
+                       
+                        <div class="organized_text text-left col-md-3">
                             <h3>Organized by Energy Swaraj Foundation</h3>
                         </div>
-                    </div>
+                        <div class="organized_img col-md-2"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
+                          <div class="organized_text text-left col-md-4">
+                              <h3>Jointly with All India Council for Technical Education (AICTE)</h3>
+                          </div>
                   </div>
             </div>
-            <div class="col-md-6">
-                <div class="row row align-items-center">
-                  <div class="col-md-12">
-                    <div class="organized_img2  "><img src="{% static 'images/homepage/Energy_logo2.png' %}" alt="" title=""></div>
-                      <div class="organized_text">
-                          <h3>Jointly with All India Council for Technical Education (AICTE)</h3>
-                      </div>
-                    </div>
-                </div>
-          </div>
+          
         </div> 
        </div>
     </div>
 </section>
+
 <!-- Organized section close-->
 {% endblock content %}
 <!-- Optional JavaScript -->
@@ -389,24 +384,26 @@ class UnixEpochalypseCountdown {
 
         if (typeof moment === "function") {
             const later = moment({
-                year: 2029,
-                month: 7,
-                day: 8,
-                hour: 21,
-                minute: 29,
-                second: 59,
+              year: 2029,
+              month: 5,
+              day: 5,
+              hour: 21,
+              minute: 29,
+              second: 59,
             });
             const now = moment();
             const diff = moment.duration(later.diff(now));
 
+            // console.log(diff, "diff");
+
             let extraDays = moment({
-                year: moment().year() + 1,
-                month: 6,
-                day: 22,
-                //   hour: 18,
-                //   minute: 10,
-                //   second: 3,
-            }).diff(moment(), "days"); // 3
+              year: moment().year() + 1,
+              month: 5,
+              day: 27,
+              // hour: 23,
+              minute: 59,
+              second: 2,
+            }).diff(moment(), "days"); // 1
 
             if (diff.valueOf() >= 0) {
                 timeLeft.y += diff.years();

@@ -142,7 +142,7 @@ img.logo-img {
         padding-right: 20px !important;
     }
     footer .subscribe-div input{
-        width:176px;
+        width: 65%;
     }
     footer .menu-list h4{
         padding-left: 0 !important;
@@ -171,4 +171,11 @@ img.logo-img {
     footer .subscribe-div input {
         width: 225px;
     }
+}
+
+@media screen and (max-width:320px) {
+    footer .subscribe-div input {
+        width: 151px;
+    }
+    
 }

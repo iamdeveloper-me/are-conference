@@ -8,7 +8,7 @@
 {% block content %}
     <!--Popup for Add Speaker Start-->
     <div id="myModal" class="modal fade">
-        <div class="modal-dialog modal-login">  
+        <div class="modal-dialog modal-login">
             <div class="modal-content">
                 <form action="{% url 'speaker_add' %}" method="post" enctype='multipart/form-data'>
                     {% csrf_token %}
@@ -62,8 +62,13 @@
     <!-- speaker details -->
     <section class="speaker-details">
         <div class="container">
-            <div class="row row-space">
-                <div class="col-md-8 order-md-first order-last">
+            <div class="row speaker_botm mob_spce">
+                <div class="col-md-4 order-md-first order-first box_smsspace">
+                    <div class="bg-top left">
+                        <img src="{% static 'images/speaker/anil.png' %}" alt="" title=""/>
+                    </div>
+                </div>
+                <div class="col-md-8 order-md-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
                         <h4 class="pb-1">Dr. Anil Kakodkar</h4>
@@ -72,18 +77,10 @@
                          India's second-highest civilian honor, on 26 January 2009.</p>
                     </div>
                 </div>
-                <div class="col-md-4 order-md-last order-first">
-                    <div class="bg-top right">
-                        <img src="{% static 'images/speaker/anil.png' %}" alt="" title=""/>
-                    </div>
-                </div>
+                
             </div>
-            <div class="row row-space2">
-                <div class="col-md-4">
-                    <div class="bg-top left botm_space">
-                        <img src="{% static 'images/speaker/guri.png' %}" alt="" title=""/>
-                    </div>
-                </div>
+            <div class="row speaker_botm">
+               
                 <div class="col-md-8">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
@@ -93,8 +90,13 @@
                              an early policy framework designed to drive solar power development across the country.</p>
                     </div>
                 </div>
+                <div class="col-md-4 order-md-last order-first">
+                    <div class="bg-top right">
+                        <img src="{% static 'images/speaker/guri.png' %}" alt="" title=""/>
+                    </div>
+                </div>
             </div>
-            <div class="row row-space">
+            <!-- <div class="row row-space">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
@@ -109,10 +111,10 @@
                         <img src="{% static 'images/speaker/diya.png' %}" alt="" title=""/>
                     </div>
                 </div>
-            </div>
-            <div class="row row-space2">
+            </div> -->
+            <div class="row speaker_botm mob_spce">
                 <div class="col-md-4">
-                    <div class="bg-top left botm_space">
+                    <div class="bg-top left">
                         <img src="{% static 'images/speaker/proanil.png' %}" alt="" title=""/>
                     </div>
                 </div>
@@ -126,13 +128,13 @@
                     </div>
                 </div>
             </div>
-            <div class="row row-space">
+            <div class="row speaker_botm">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
                         <h4 class="pb-1">Dr. Anjal Prakash</h4>
                         <h6 class="pb-2">Research Director and Adjunct Associate Professor, Indian School of Business</h6>
-                        <p>Dia Mirza is an award-winning Actor, Producer. Today, Dia Mirza has become the voice of environmental and wildlife conservation in the country and a torchbearer for causes related to nature. She was appointed as the United Nations Environment Goodwill Ambassador for India at the UNEA assembly held in Nairobi.</p>
+                        <p>Dr. Anjal Prakash is the Research Director and Adjunct Associate Professor, Bharti Institute of Public Policy, Indian School of Business (ISB), Hyderabad India. He is the coordinating lead author for the IPCC Special Report on the Ocean and Cryosphere in a Changing Climate (SROCC). He is also a Lead Author in the chapter on cities, settlements, and key infrastructure in the IPCC’s 6th Assessment Report. His work focuses on water and climate change, urban resilience, and gender and social inclusion issues covering south Asia.</p>
                     </div>
                 </div>
                 <div class="col-md-4 order-md-last order-first">
@@ -141,9 +143,9 @@
                     </div>
                 </div>
             </div>
-            <div class="row row-space">
+            <div class="row speaker_botm2">
                 <div class="col-md-4">
-                    <div class="bg-top left botm_space">
+                    <div class="bg-top left">
                         <img src="{% static 'images/speaker/sonam.png' %}" alt="" title=""/>
                     </div>
                 </div>
@@ -152,12 +154,11 @@
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
                         <h4 class="pb-1">Mr. Sonam Wangchuk </h4>
                         <h6 class="pb-2">Founding Director, Himalayan Institute of Alternatives, Ladakh</h6>
-                        <p>Prof. Anil Sahasrabudhe, Professor of Mechanical Engineering at the Indian Institute of Technology (IIT), Guwahati joined the All India Council for Technical Education (AICTE) as Chairman on 17th July 2015. He has been bestowed with several awards which include "; the Maha-Intrapreneur Award-2011" of Praj Industries, Jeevan Gaurav Puraskar (Life Time Achievement Award) from MIT World Peace University, Pune in 2019, Mahatma Gandhi Leadership award from Indian Achievers Forum and CSR Times (2019). He has also been conferred Ravi 
-                            J Matthai National Fellow Award by AIMS (2021).</p>
+                        <p>A mechanical engineer by training, Sonam Wangchuk has worked primarily in the field of education reform for the last 30 years. His work is directly responsible for bringing the percentage of pass grades in the crucial Ladakhi 10th-grade examinations up to 75% from 5%. His vision for the Himalayan communities to lead sustainable lives has resulted in innovations like the Ice Stupa and passive solar heated buildings.</p>
                     </div>
                 </div>
             </div>
-            <div class="row row-space">
+            <div class="row speaker_botm">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
@@ -173,9 +174,9 @@
                 </div>
             </div>
 
-            <div class="row row-space2">
+            <div class="row speaker_botm2">
                 <div class="col-md-4">
-                    <div class="bg-top left botm_space">
+                    <div class="bg-top left">
                         <img src="{% static 'images/speaker/divya.png' %}" alt="" title=""/>
                     </div>
                 </div>
@@ -189,7 +190,7 @@
                 </div>
             </div>
 
-            <div class="row row-space">
+            <div class="row speaker_botm">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
@@ -205,9 +206,9 @@
                 </div>
             </div>
 
-            <div class="row row-space2">
+            <div class="row speaker_botm2">
                 <div class="col-md-4">
-                    <div class="bg-top left botm_space">
+                    <div class="bg-top left">
                         <img src="{% static 'images/speaker/anil_bellary.png' %}" alt="" title=""/>
                     </div>
                 </div>
@@ -220,7 +221,7 @@
                 </div>
             </div>
 
-            <div class="row row-space">
+            <div class="row speaker_botm">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
@@ -236,9 +237,9 @@
                 </div>
             </div>
 
-            <div class="row row-space2">
+            <div class="row speaker_botm2">
                 <div class="col-md-4">
-                    <div class="bg-top left botm_space">
+                    <div class="bg-top left">
                         <img src="{% static 'images/speaker/aviram.png' %}" alt="" title=""/>
                     </div>
                 </div>
@@ -252,7 +253,7 @@
                 </div>
             </div>
 
-            <div class="row row-space">
+            <div class="row speaker_botm">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
@@ -268,9 +269,9 @@
                 </div>
             </div>
 
-            <div class="row row-space2">
+            <div class="row speaker_botm2">
                 <div class="col-md-4">
-                    <div class="bg-top left botm_space">
+                    <div class="bg-top left">
                         <img src="{% static 'images/speaker/shikhar.png' %}" alt="" title=""/>
                     </div>
                 </div>
@@ -284,7 +285,7 @@
                 </div>
             </div>
 
-            <div class="row row-space">
+            <div class="row">
                 <div class="col-md-8 order-md-first order-last">
                     <div class="speaker_right">
                         <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>

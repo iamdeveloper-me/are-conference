@@ -1,6 +1,7 @@
 from django import forms
 from .models import Agenda,Conference
 
+
 class ConferenceForm(forms.ModelForm):
 	class Meta:
 		model = Conference
