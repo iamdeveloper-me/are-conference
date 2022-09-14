@@ -42,25 +42,24 @@
                                 <th scope="col">Event</th>
                             </tr>
                         </thead>
-                        {{agenda_list}}
                         {% for object in agenda_list %}
                         <tbody>
                             <tr class="green_bg">
                             <td></td>
                             <td>{{object.starttime}} to {{object.endtime}} </td>
-                            <td>1 hour</td>
+                            <td>1 hour {{ object.starttime|mytimesince:object.endtime }}</td>
                             <td>Registration and High Tea</td>
                         </tr>
                         <tr class="light-pink">
                             <td>session-1</td>
-                            <td>10 to 11:30</td>
-                            <td>90 min</td>
+                            <td>{{object.starttime}} to {{object.endtime}} </td>
+                            <td>1 hour {{ object.starttime|mytimesince:object.endtime }}</td>
                             <td>Inauguration of the ARE conference and awards</td>
                         </tr>
                         <tr class="green_bg">
                             <td></td>
-                            <td> to 12:00</td>
-                            <td>30 min</td>
+                            <td>{{object.starttime}} to {{object.endtime}} </td>
+                            <td>1 hour {{ object.starttime|mytimesince:object.endtime }}</td>
                             <td>Tea Break</td>
                             {% with next_element=agenda|next:forloop.counter0 %}
                             <td>{{next_element.starttime}}</td>
@@ -338,7 +337,12 @@
 {% endblock extra_content %}
   
 {% block extra_js %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        var timeStart = new Date("01/01/2007 " + {{starttime}}).getHours();
+        var timeEnd = new Date("01/01/2007 " + valuestop).getHours();
 
-
-
+        var hourDiff = timeEnd - timeStart;  
+    });
+</script>
 {% endblock extra_js %}

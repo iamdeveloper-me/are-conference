@@ -55,6 +55,7 @@ class AgendaView(ListView):
 		return context
 
 	def get_queryset(self):
+	 
 		conference = self.queryset[0]
 		agenda_list=conference.agenda.all()
 		return agenda_list
