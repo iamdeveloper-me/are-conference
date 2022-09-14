@@ -6,23 +6,6 @@ body {
     color: #1c1e21;
 }
 
-footer {
-    height: 10vh;
-    background-color: #ffffff;
-}
-
-.row {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    max-width: 1000px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .colm-logo {
     flex: 0 0 50%;
     text-align: left;
@@ -38,7 +21,9 @@ footer {
     padding: 0 30px;
     line-height: 32px;
 }
-
+.colm-form{
+    margin-top: 60px;
+}
 .colm-form .form-container {
     background-color: #ffffff;
     border: none;
@@ -216,3 +201,113 @@ a.forgot-pass {
     margin-top: 15px;
 }
 
+
+h1, h2, h3, h4, h5, h6, ul, p{
+    margin: 0px;
+    padding:0px;
+  }
+  a{
+      text-decoration:none !important;
+  }
+  button:focus{
+      outline:none;
+  }
+  header{
+      width: 100%;
+      background:#fff;
+      box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
+      border-bottom: 1px solid #cccccc4a;
+ }
+ a.navbar-brand img {
+    height: 45px;
+}
+  header nav{
+      height: 80px;
+  }
+  
+  .register_btn{
+      display:none;
+  }
+  header nav a{
+      font-size: 14px;
+      line-height: 21px;
+      color: #FFFFFF;
+      font-family: 'Poppins';
+      font-style: normal;
+      padding-left: 40px !important;
+      padding-right: 0 !important;
+      transition:all 0.3s;
+  }
+  
+  header nav a:hover{
+      color: #00BCFF !important;
+  }
+
+  .registration-btn {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+    line-height: 41px !important;
+    text-align: center;
+    color: #FFFFFF;
+    background: transparent;
+    text-shadow: none;
+    border: 1px solid #9A1C20 !important;
+    border-radius: 50px !important;
+    margin-left: 40px;
+    height: 44px;
+    width:115px;
+    text-align: center;
+    padding: 0px !important;
+    line-height: 42px;
+}
+li{
+    list-style:none;
+}
+#sidebar {
+    background: #fff;
+    height: 100vh;
+    box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
+}
+.logout_btn {
+    text-align: right;
+    width: 100%;
+    }
+
+
+.dashboard_area .container-fluid {
+    padding-left: 0;
+}
+.card_custom{
+    padding:20px;
+    border-radius: 10px;
+    background:#fff;
+    box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
+}
+.dashboard_right {
+   background: #f1f4f6;
+   padding: 20px;
+   height:100%;
+}
+.card_custom h4 {
+    color: #252123;
+    font-weight: 600;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+.card_custom p {
+    margin: 0px;
+    font-size: 20px;
+}
+.logout_btn a {
+    color: #000;
+    font-weight: 500 !important;
+}
+div#sidebar a {
+    padding: 13px 15px;
+    font-size: 14px;
+    line-height: 21px;
+    color: #252123;
+    border-bottom: 1px solid #cccccc61;
+}

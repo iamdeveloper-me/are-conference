@@ -69,6 +69,9 @@ class Privacypolicy(TemplateView):
 class Termsservices(TemplateView):
 	template_name = 'term_services.html'
 
+class dashboard(TemplateView):
+	template_name = 'dashboard.html'
+
 class ClimateTable(TemplateView):
 	template_name = 'climate_table.html'
 
