@@ -1,20 +1,9 @@
-{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
            
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f2f5;
     color: #1c1e21;
-}
-
-main {
-    height: 90vh;
-    width: 100vw;
-    position: relative;
-    margin: 0 auto;
 }
 
 footer {
@@ -39,11 +28,6 @@ footer {
     text-align: left;
 }
 
-.colm-form {
-    flex: 0 0 40%;
-    text-align: center;
-}
-
 .colm-logo img {
     max-width: 400px;
 }
@@ -60,11 +44,35 @@ footer {
     border: none;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    padding: 20px;
-    max-width: 400px;
+    padding: 45px 30px;
+ }
+ .admin_logo img {
+    height: 50px;
+    margin-bottom: 25px;
+}
+.colm-form label {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 16px;
+    color: #252123;
+    text-transform: capitalize;
 }
 
+.colm-form input {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+    color: #828282;
+    border: 1px solid #BDBDBD;
+    border-radius: 6px;
+    height: 50px;
+    text-indent: 10px;
+    max-width: 100%;
+}
 .colm-form .form-container input, .colm-form .form-container .btn-login {
     width: 100%;
     margin: 5px 0;
@@ -179,3 +187,32 @@ footer ol li a:hover {
 footer small {
     font-size: 11px;
 }
+
+.admin_logo {
+    text-align: center;
+}
+
+.login_btn{
+    display: inline-block;
+    background: #9A1C20;
+    color: #fff;
+    width: 220px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 50px;
+    border:none;
+    display: block;
+    margin: 0px auto;
+
+}
+
+a.forgot-pass {
+    margin-top: -26px !important;
+    border-bottom: none !important; 
+    text-decoration:none !important;
+    margin-top: 15px;
+}
+
