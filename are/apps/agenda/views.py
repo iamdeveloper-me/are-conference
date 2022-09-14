@@ -28,7 +28,7 @@ class MyFormView(CreateView):
 	template_name = 'agenda.html'
 
 	def post(self, request, *args, **kwargs):
-		
+		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
 		form = AgendaForm(request.POST)
 		if form.is_valid():
 			agenda = form.save(commit=False)
@@ -36,7 +36,7 @@ class MyFormView(CreateView):
 			return redirect('/agenda')
 		else:
 			form = AgendaForm(pk=conf.id)
-		return render(request, 'agenda.html', {'form': form})
+		return render(request, 'agenda.html', {'form': form,'conf.id': objs})
 
 
 class AgendaView(ListView):
@@ -55,6 +55,6 @@ class AgendaView(ListView):
 
 	def get_queryset(self):
 		conference = self.queryset[0]
-		agenda_list=conference.agenda.all()
+		agenda_list = conference.agenda.all()
 		return agenda_list
 

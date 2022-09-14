@@ -19,15 +19,13 @@
                         <input type="text" name="conference"  hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">                           
                         <input type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
                         <label for="">session</label>
-                        <input type="choice" name="session" class="form-control" id="" placeholder="session" required="true">
+                        <input type="choice" name="session" class="form-control" id="" placeholder="session">
                         <label for="">Start Time</label>
                         <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
                         <label for="">End Time</label>
                         <input type="time" name="endtime" class="form-control" id="" placeholder="time" required="true">
-                        <label for="">Date</label>
-                        <input type="date" name="daterange" class="form-control" id="date" placeholder="date" required="true">
                         <label for="">Duration</label>
-                        <input type="Duration" name="duration" class="form-control" id="" placeholder="duration" required="">
+                        <input type="time" name="duration" class="form-control" id="" placeholder="duration" required="">
                         <label for="">Event</label>
                         <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
                         <input type="submit" class="btn btn-primary" value="add">
