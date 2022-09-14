@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from django.shortcuts import redirect
-from .models import AmgAward, Award
-from .forms import AmgApplicationForm
+from .models import AmgAward, Award, ClimateAward
+from .forms import AmgApplicationForm, ChallengeForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -72,6 +72,43 @@ class Termsservices(TemplateView):
 class ClimateTable(TemplateView):
 	template_name = 'climate_table.html'
 
-class ClimateApplicationForm(TemplateView):
+class ClimateApplicationForm(CreateView):
+	model = ClimateAward
 	template_name = 'application_form.html'
+	form_class = ChallengeForm
+
+	def post(self, request, *args, **kwargs):
+		form = self.get_form()
+		if form.is_valid():
+			form.save()
+			return redirect('awards:thanks')
+		else:
+			return self.form_invalid(form)
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context = self.kwargs['pk']
+		context = {'context':context}
+		return context
+
+
+class AdminViewClimateApplicant(TemplateView):
+	model = ClimateAward
+	template_name = 'admin/admin_view_climate_applicants.html'
+
+	def get_context_data(self, **kwargs):
+		context = super().get_context_data(**kwargs)
+		context = ClimateAward.objects.filter(challenge_number=1)
+		challenge_number = 1
+		return {'context':context, 'challenge_number':challenge_number}
+
+	def post(self, request, *args, **kwargs):
+		challenge_number = int(request.POST.get('challenge_number'))
+		context = ClimateAward.objects.filter(challenge_number=challenge_number)
+		return render(request, 'admin/admin_view_climate_applicants.html', {'context':context, 'challenge_number':challenge_number})
+
+
+class AdminDetailViewClimateApplicant(DetailView):
+	model = ClimateAward
+	template_name = 'admin/admin_detail_view_climate_applicants.html'
 

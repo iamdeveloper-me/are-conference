@@ -19,9 +19,11 @@ urlpatterns = [
 	path('thanks/',views.ThanksEnergyView.as_view(),name='thanks'),
 	path('amg_applicants/',views.AdminViewAmgApplicant.as_view(), name='amg_applicants'),
 	path('amg_applicants/<int:pk>',views.AdminDetailViewAmgApplicant.as_view(), name='amg_applicant_detail'),
-	path('application_form/',views.ClimateApplicationForm.as_view(),name='climate_application_form'),
+	path('application_form/<int:pk>',views.ClimateApplicationForm.as_view(),name='climate_application_form'),
 	path('privacy_policy/',views.Privacypolicy.as_view(),name='privacy_policy'),
 	path('climate_table/',views.ClimateTable.as_view(),name='climate_table'),
 	path('terms_services/',views.Termsservices.as_view(),name='terms_services'),
+	path('climate_applicants/',views.AdminViewClimateApplicant.as_view(),name='climate_applicants'),
+	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
 	
 ]

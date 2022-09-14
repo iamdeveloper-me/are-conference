@@ -1,0 +1,149 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/applicatin2.css' %}">
+{% endblock extra_css %}
+{% block content %}
+<!-- banner start -->
+<section class="application_banner_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="application_head">
+                    <h2>Climate Hachathon Challange</h2>
+                    <h3>Application Form</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner close -->
+<!-- form area -->
+<section class="appform-section">
+    <div class="container">
+        <div class="indiviual-register application-form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-head">
+                        <h2>Enter Hackathon Challenge 8</h2>
+                        <p><span>*</span> Mandatory fields</p>
+                    </div>
+                </div>
+            </div>
+            <form method="post" action="{% url 'awards:climate_8' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Full Name <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your name..." name="full_name" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Email <span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Contact Number<span>*</span></label>
+                            <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Organisation name or College name<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Organisation name or College name..." name="org_college_name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_inner">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Address<span>*</span></label>
+                                <textarea class="form-control height-textarea" placeholder="Address line 1" name="address_line_one" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Address line 2" name="address_line_two" required></textarea>
+                                <textarea class="form-control height-textarea" placeholder="Landmark" name="address_landmark" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="">City<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your City..." name="city" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">State<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Your State..." name="state" required>
+                                </div>
+                                <div class="col-md-12 top_spc">
+                                    <label for="">Pin Code<span>*</span></label>
+                                    <input type="text" class="form-control" id="" placeholder="Enter Pin code..." name="pincode" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Designation<span>*</span></label>
+                            <input type="text" class="form-control" id="" placeholder="Enter Designation..." name="designation" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Your view on Climate Change</label>
+                            <input type="text" class="form-control" id="" placeholder="Your View On Climate Change..." name="your_view">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Send the Tshirt on the mentioned address <span>*</span></label>
+                            <select name="send_tshirt" required>
+                                <option>Yes</option>
+                                <option>No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Upload a photo of your hand-painted T-shirt<span>*</span></label>
+                            <div class="file-upload">
+                                <div class="file-select file_up">
+                                    <div class="file-select-name" id="noFile">No file chosen...</div>
+                                    <div class="file-select-button" id="fileName">Choose File</div>
+                                    <input type="file" name="file" required id="chooseFile">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-inline-block">
+                            <button class="btn without-bgbtn">Cancel</button>
+                            <button class="btn with-bgbtn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+<!-- form area end-->
+{% endblock content %}
+{% block extra_js %}
+<script>
+$('#chooseFile').bind('change', function() {
+    var filename = $("#chooseFile").val();
+    if (/^\s*$/.test(filename)) {
+        $(".file-upload").removeClass('active');
+        $("#noFile").text("No file chosen...");
+    } else {
+        $(".file-upload").addClass('active');
+        $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+    }
+});
+</script>
+{% endblock extra_js %}

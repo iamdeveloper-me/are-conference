@@ -1,6 +1,5 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -32,17 +31,8 @@ class Award(models.Model):
 	image = models.ImageField(upload_to='images/awards_forms/', blank=True, null=True)
 
 
-class AwardSubCategory(models.Model):
-	award_type = models.ForeignKey(Award, related_name='award_type', on_delete=models.CASCADE)
-	title = models.CharField(max_length=255)
-	participants = models.CharField(max_length=255)
-	description = RichTextField(blank=True, null=True)
-	submit_by_participants = RichTextField(blank=True, null=True)
-	evaluation = RichTextField(blank=True, null=True)
-	reward = RichTextField(blank=True, null=True)
-	guidelines = RichTextField(blank=True, null=True)
-
 class AmgAward(models.Model):
+	# award_type = models.ForeignKey(Award, related_name='award_type_amg', on_delete=models.CASCADE)
 	is_admin = models.BooleanField(default=False)
 	email = models.EmailField(unique=True, blank=True)
 	work_status = models.CharField(max_length=255,choices=WORK_CHOICES,null=True, blank=True)
@@ -60,7 +50,7 @@ class AmgAward(models.Model):
 	org_person_email = models.EmailField(null=True, blank=True)
 	org_person_mobile = PhoneNumberField(blank=True, help_text='Contact phone number')
 	org_address = models.CharField(max_length=255,null=True, blank=True)
-	org_web = models.TextField(max_length=255,null=True, blank=True)
+	org_web = models.CharField(max_length=255,null=True, blank=True)
 	work_exp = models.TextField(null=True, blank=True)
 	interpretation = models.TextField(max_length=300, null=True, blank=True)
 	climate_change_challenge = models.TextField(null=True, blank=True)
@@ -76,10 +66,11 @@ class AmgAward(models.Model):
 
 
 class ClimateAward(models.Model):
-	participant = models.CharField(max_length=255,null=True, blank=True)
-	full_name = models.CharField(max_length=255,null=True, blank=True)
-	email = models.EmailField(unique=True, blank=True)
-	phone_number = PhoneNumberField(blank=True, unique=True, help_text='Contact phone number')
+	challenge_number = models.IntegerField()
+	participant = models.CharField(max_length=255, null=True, blank=True)
+	full_name = models.CharField(max_length=255, null=True, blank=True)
+	email = models.EmailField(blank=True, null=True)
+	phone_number = PhoneNumberField(blank=True, null=True, help_text='Contact phone number')
 	org_college_name = models.CharField(max_length=255,null=True, blank=True)
 	designation = models.CharField(max_length=255,null=True, blank=True)
 	address_line_one = models.TextField(null=True, blank=True)
@@ -89,6 +80,12 @@ class ClimateAward(models.Model):
 	state = models.CharField(max_length=255,null=True, blank=True)
 	pincode = models.IntegerField()
 	brief_description = models.TextField(null=True, blank=True, max_length=100)
-	working_video = models.FileField(upload_to="images/awards_forms/")
 	major_climate_challenge = models.TextField(null=True, blank=True)
 	steps = models.TextField(null=True, blank=True)
+	your_view = models.CharField(max_length=255, null=True, blank=True)
+	title_song = models.CharField(max_length=255, null=True, blank=True)
+	title_drama = models.CharField(max_length=255, null=True, blank=True)
+	send_tshirt = models.CharField(max_length=255, null=True, blank=True)
+	file = models.FileField(upload_to="images/awards_forms/", blank=True, null=True)
+	working_video = models.FileField(upload_to="images/awards_forms/", blank=True, null=True)
+
