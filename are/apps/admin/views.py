@@ -38,7 +38,7 @@ class AdminLogout(LogoutView):
 
 class AdminViewSpeaker(ListView):
 	model = Speaker
-	template_name = "admin/admin_speaker.html"
+	template_name = "admin_speaker.html"
 
 class SpeakerCreateView(CreateView):
 	model = Speaker
@@ -69,12 +69,13 @@ class SpeakerDeleteView(DeleteView):
     	return self.object.get_absolute_url()
 
 class SpeakerUpdateView(UpdateView):
-    model = Speaker
-    template_name = 'speaker_update.html'
-    fields = ['name','designation','detail','profile_image']
+	# import pdb; pdb.set_trace()
+	model = Speaker
+	template_name = 'admin_speaker.html'
+	fields = ['name','designation','detail','profile_image']
 
-    def get_success_url(self, **kwargs):
-    	return self.object.get_absolute_url()
+	def get_success_url(self, **kwargs):
+		return self.object.get_absolute_url()
 
 
 

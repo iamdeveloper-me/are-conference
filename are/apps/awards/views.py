@@ -27,7 +27,7 @@ class DashboardView(TemplateView):
 			'total_climate':total_climate,
 		}
 
-		return {'data':data}
+		return {'data':data} 
 
 
 class AdminAgendaView(TemplateView):

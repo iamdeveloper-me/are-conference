@@ -313,6 +313,11 @@ div#sidebar a {
     border-bottom: 1px solid #cccccc61;
 }
 
+
+#sidebar li.nav-item.active {
+    background: #9A1C21;
+    color: #fff;
+}
 .card_pannel a {
     color: #000;
 }
@@ -385,6 +390,7 @@ button:focus {
 }
 
 .add_speakermodal .modal-content{
+<<<<<<< HEAD
     padding: 30px 25px;
 }
 td.action_btn span img {
