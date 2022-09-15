@@ -40,24 +40,23 @@ class AdminViewSpeaker(ListView):
 	model = Speaker
 	template_name = "admin_speaker.html"
 
-class SpeakerCreateView(CreateView):
+class AdminSpeakerCreateView(CreateView):
+	import pdb; pdb.set_trace()
 	model = Speaker
 	form_class = SpeakerForm
-	template_name = 'admin/admin_home.html'
+	template_name = 'admin_speaker.html'
 
-	def AddSpeaker(request):
+	def post(self, request, *args, **kwargs):
 		if request.method == 'POST' :
 			name = request.POST.get("name")
 			designation = request.POST.get("designation")
 			detail = request.POST.get("detail")
-			profile_image = request.POST.get("profile_image")
+			profile_image = request.POST.get("images")
 			speaker_register = Speaker(name=name,designation=designation,detail=detail,profile_image=profile_image)
 			speaker_register.save()
 
-		return redirect("speakers/speaker")
+		return redirect("/admin_login/adminspeaker")
 
-	def get_success_url(self, **kwargs):
-		return self.object.get_absolute_url()
 
 
 class SpeakerDeleteView(DeleteView):
