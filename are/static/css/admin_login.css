@@ -365,9 +365,10 @@ div#sidebar a {
     text-align: left;
     vertical-align: middle;
 }
-button:focus{
-    outline:none;
+button:focus {
+    outline: none !important;
 }
+
 .modal-dialog .add_speakermodal{
    max-width:800px;
 }
@@ -380,7 +381,7 @@ button:focus{
 }
 
 .add_speakermodal .modal-content{
-    padding:25px 20px;
+    padding: 30px 25px;
 }
 td.action_btn span img {
     width: 14px;
@@ -428,4 +429,8 @@ td.action_btn span img {
     .add_speakermodal button.close {
         opacity: 1;
         text-shadow: none;
+    }
+
+    .add_speakermodal .modal-body {
+        padding: 0px;
     }
