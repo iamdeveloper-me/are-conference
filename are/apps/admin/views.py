@@ -41,7 +41,6 @@ class AdminViewSpeaker(ListView):
 	template_name = "admin_speaker.html"
 
 class AdminSpeakerCreateView(CreateView):
-	import pdb; pdb.set_trace()
 	model = Speaker
 	form_class = SpeakerForm
 	template_name = 'admin_speaker.html'
