@@ -311,3 +311,7 @@ div#sidebar a {
     color: #252123;
     border-bottom: 1px solid #cccccc61;
 }
+
+#sidebar li.nav-item.active {
+    background: #9A1C21;
+    color: #fff;

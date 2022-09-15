@@ -38,7 +38,7 @@ class AdminLogout(LogoutView):
 
 class AdminViewSpeaker(ListView):
 	model = Speaker
-	template_name = "admin/admin_speaker.html"
+	template_name = "dashboard.html"
 
 class SpeakerCreateView(CreateView):
 	model = Speaker
