@@ -1,20 +1,19 @@
 {% load static %}
-
 <footer>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <div class="contact-part">
-                    <img class="logo-img" src="{% static 'images/Logo.png' %}"/>
+                    <img class="logo-img" src="{% static 'images/logo.svg' %}" />
                     <h4 class="contact-us pb-3">Contact us :</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
-                            <img src="{% static 'images/footer/1.png' %}"/>
+                            <img src="{% static 'images/footer/1.png' %}" />
                             +91 8291055825
                         </li>
                         <li>
-                            <img src="{% static 'images/footer/2.png' %}"/>
-                            conference@energyswaraj.org 
+                            <img src="{% static 'images/footer/2.png' %}" />
+                            conference@energyswaraj.org
                         </li>
                     </ul>
                 </div>
@@ -26,17 +25,16 @@
                         <a href="{% url 'awards:home' %}">Home</a></li>
                     <li>
                     <li>
-                        <a href="{% url 'awards:context' %}">Context</a></li>
+                        <a href="#">Context</a></li>
                     <li>
                         <a href="{% url 'awards:partner' %}">Partners</a></li>
-                    
                 </ul>
             </div>
             <div class="col-md-2 menu-list">
                 <!-- <h4 class="pl-0">Column Two</h4> -->
                 <ul class="list-unstyled footer_top">
                     <li>
-                        <a href="{% url 'awards:agenda' %}">Agenda</a></li>
+                        <a href="{% url 'agenda:agenda_list' %}">Agenda</a></li>
                     <li>
                         <a href="{% url 'speakers:speaker_list' %}">Speakers</a></li>
                     <li>
@@ -45,25 +43,29 @@
             </div>
             <div class="col-md-5  menu-list subscribe-div">
                 <h4 class="pl-0">Subscribe</h4>
-                <input class="form-control" placeholder="Enter your email"/>
-                <button class="btn home-button">Submit</button>
-                <p>By subscribing you agree to with our Privacy Policy</p>
-                <ul class="list-unstyled list-inline">
-                    <li class="list-inline-item">
-                        <a href="https://www.facebook.com/EnergySwarajFoundation/" target="_blank"><img src="{% static 'images/footer/fb.png' %}"/></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.instagram.com/energy_swaraj/" target="_blank"><img src="{% static 'images/footer/insta.png' %}"/></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://twitter.com/Energy_Swaraj" target="_blank"><img src="{% static 'images/footer/twitter.png' %}"/></a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="https://www.linkedin.com/company/14529468/" target="_blank"><img src="{% static 'images/footer/linkd.png' %}"/></a>
-                    </li>
-                </ul>
+                <form role="form" method="post" action="{% url 'awards:email' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input class="form-control" type="email" name="recipient" id="email" placeholder="Enter your email" />
+                    <button for="email" class="btn home-button">Submit</button>
+                </form>
             </div>
+            <p>By subscribing you agree to with our Privacy Policy</p>
+            <ul class="list-unstyled list-inline">
+                <li class="list-inline-item">
+                    <a href="https://www.facebook.com/EnergySwarajFoundation/" target="_blank"><img src="{% static 'images/footer/fb.png' %}" /></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.instagram.com/energy_swaraj/" target="_blank"><img src="{% static 'images/footer/insta.png' %}" /></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/Energy_Swaraj" target="_blank"><img src="{% static 'images/footer/twitter.png' %}" /></a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://www.linkedin.com/company/14529468/" target="_blank"><img src="{% static 'images/footer/linkd.png' %}" /></a>
+                </li>
+            </ul>
         </div>
+    </div>
     </div>
     <hr class="horizontal-line">
     <div class="container">
@@ -80,8 +82,11 @@
                             <a href="{% url 'awards:privacy_policy' %}">Privacy Policy</a>
                         </li>
                         <li class="list-inline-item">
-                            <a href="">Terms of Service</a>
+                            <a href="{% url 'awards:terms_services' %}">Terms of Service</a>
                         </li>
+                        <!-- <li class="list-inline-item">
+                            <a href="">Cookies Settings</a>
+                        </li> -->
                     </ul>
                 </div>
             </div>

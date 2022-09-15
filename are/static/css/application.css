@@ -334,26 +334,24 @@ h2.top_padd{
         text-align: center;
     }
     .appform-section .form-head h2{
-        font-size: 20px;
+        font-size: 19px;
         line-height: 27px;
         padding-top: 18px;
-        padding-bottom: 10px;
+        padding-bottom:5px;
         display: inline-block;
         width: 100%;
     }
     .appform-section .application-form {
-        margin-top: 25px;
+        margin-top: 20px;
     }
     .form-head p {
-        padding-top: 15px;
-        font-size: 20px !important;
+        padding-top:8px;
+        font-size: 18px !important;
     }
     .appform-section .application-form input{
         height:44px;
     }
-    .appform-section {
-        padding: 18% 0px 40px;
-    }
+  
     h4.section-bghead.pt-3 {
         font-size: 22px;
         line-height: 30px;
@@ -375,6 +373,60 @@ h2.top_padd{
         width: 160px;
         height: 44px;
         line-height: 44px !important;
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    .application_banner_area{
+        background-size: cover;
+    }
+    .application_head h2{
+        font-size:27px;
+        line-height:30px;
+     }
+
+     .application_head h3{
+        font-size: 30px;
+        line-height: 52px;
+     }
+     .application_head {
+        padding: 27% 0px 7%;
+    }
+    .appform-section {
+        padding: 20px 0px 25px;
+    }
+    .appform-section .application-form h4.section-bghead{
+        font-size: 16px;
+        line-height: 22px;
+        padding: 0px !important;
+    }
+    .checkbox-section p {
+        padding-top: 10px;
+    }
+    .col-md-12.mb-4 {
+        margin-bottom: 15px !important;
+    }
+    button.btn.without-bgbtn {
+        margin-bottom: 7px;
+    }
+    .with-bgbtn {
+        width: 160px;
+        height: 44px;
+        line-height: 30px;
+    }
+    .button-footer{
+        padding-top: 20px;
+        margin-top: 20px;
+    }
+
+    .attach-filehead {
+        margin-top: 15px;
+    }
+
+}
+
+@media (max-width:767px){
+    footer .subscribe-div input {
+        width: 154px;
     }
 
 }

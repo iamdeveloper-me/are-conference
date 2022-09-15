@@ -1,13 +1,20 @@
 from django.contrib import admin
-from .models import AmgAward, Award, AwardSubCategory
+from .models import AmgAward, Award, ClimateAward
 from django import forms
 from phonenumber_field.widgets import PhoneNumberPrefixWidget
 
 class AmgAwardForm(forms.ModelForm):
     class Meta:
-        widgets = {                          # Here
+        widgets = {                       
             'phone_number': PhoneNumberPrefixWidget(initial='IN'),
             'org_person_mobile': PhoneNumberPrefixWidget(initial='IN'),
+        }
+
+
+class ClimateAwardForm(forms.ModelForm):
+    class Meta:
+        widgets = {                         
+            'phone_number': PhoneNumberPrefixWidget(initial='IN'),
         }
 
 
@@ -17,10 +24,13 @@ class AmgAwardAdmin(admin.ModelAdmin):
 	form = AmgAwardForm
 	model = AmgAward
 
-# admin.site.register(Award)
-admin.site.register(AwardSubCategory)
-
 @admin.register(Award)
 class AwardAdmin(admin.ModelAdmin):
 	model = Award
+
+
+@admin.register(ClimateAward)
+class ClimateAwardAdmin(admin.ModelAdmin):
+    form = ClimateAwardForm
+    model = ClimateAward
 

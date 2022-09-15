@@ -1,278 +1,407 @@
 {% extends "layout/base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
+<link rel="stylesheet" href="{% static 'css/agenda.css' %}">
 {% endblock extra_css %}
-
-
 {% block content %}
-    <!-- agenda banner start-->
-    <section class="agenda_banner">
-        <div class="container">
-              <div class="row">
-                  <div class="col-md-12">
-                      <div class="agenda_banner_text">
-                           <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
-                           <h3>Conference and Awards</h3>
-                           <h4>Tentative Agenda 24-26th November 2022</h4>
-                      </div>
-                  </div>
-              </div>
-        </div>
-         
-    </section>
-    <!-- agenda banner close-->
-
-    <!-- table section start -->
-<section class="table_section">
+<!-- agenda banner start-->
+<section class="agenda_banner">
     <div class="container">
-          <div class="row">
-              <div class="col-md-12">
-                  <div class="table_main_box">
-                     <h4>Day 1, Thursday | 24/11/2022</h4>
-                      <table class="table table-bordered custom_table">
-                        <thead class="head_top">
-                          <tr>
-                            <th class="session_width">session</th>
-                            <th class="session_2">Time</th>
-                            <th class="session_2">Duration</th>
-                            <th scope="col">Event</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr class="green_bg">
-                            <td></td>
-                            <td>9 to 10</td>
-                            <td>1 hour</td>
-                            <td>Registration and High Tea</td>
-                          </tr>
-                          <tr class="light-pink">
-                            <td>session-1</td>
-                            <td>10 to 11:30</td>
-                            <td>90 min</td>
-                            <td>Inauguration of the ARE conference and awards</td>
-                          </tr>
-                          <tr class="green_bg">
-                            <td></td>
-                            <td>11:30 to 12:00</td>
-                            <td>30 min</td>
-                            <td>Tea Break</td>
-                          </tr>
-                           <tr class="dark_bg">
-                            <td rowspan="2">Session-2</td>
-                            <td rowspan="2">12 to 1:30</td>
-                            
-                            <td>70 min</td>
-                            <td>The Cascading Cycle: Warming world — Rising energy demand — Warming World - ARE We heading the Right Direction?
-                            </td>
-                          </tr>
-                          <tr class="dark_bg">
-                            <td>20 min</td>
-                            <td>Institutions/ People taking enough actions</td>
-                          </tr>
-                          <tr class="green_bg">
-                            <td></td>
-                            <td>1:30 to 2:30</td>
-                            <td>1 hour</td>
-                            <td>Lunch</td>
-                           
-                          </tr>
-                          <tr class="light_bg">
-                            <td rowspan="2">Session-3</td>
-                            <td rowspan="2">2:30 to 4</td>
-                            <td>70 min</td>
-                            <td>Policies and Programmes to Secure Climate and Energy security to the nation —ARE the Government initiatives pragmatic enough?</td>
-                          </tr>
-                          <tr class="light_bg">
-                            <td>20 min</td>
-                            <td>Institutions/ People taking enough actions</td>
-                          </tr>
-                          <tr class="green_bg">
-                            <td></td>
-                            <td>4:00 to 4:30</td>
-                            <td>30 min</td>
-                            <td>High Tea</td>
-                             
-                          </tr>
-                          <tr class="light_bg">
-                            <td rowspan="2">Session-4</td>
-                            <td rowspan="2">4:30 to 6</td>
-                            <td>70 min</td>
-                            <td>Enhancing awareness and preparedness of the climate change to the grassroot level - ARE the NGOs sensitizing the communities enough?</td>
-                          </tr>
-                          <tr class="light_bg">
-                            
-                            <td>20 min</td>
-                            <td>Institutions/ People taking enough actions</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                  </div>
-
-                  <div class="table_main_box">
-                    <h4>Day 2, Friday | 25/11/2022</h4>
-                     <table class="table table-bordered custom_table">
-                       <thead class="head_top">
-                         <tr>
-                           <th class="session_width">session</th>
-                           <th class="session_2">Time</th>
-                           <th class="session_2">Duration</th>
-                           <th scope="col"></th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                        <tr class="green_bg">
-                            <td></td>
-                            <td>9 to 10</td>
-                            <td>1 hour</td>
-                            <td>Registration</td>
-                          </tr>
-                          <tr class="light-pink">
-                            <td rowspan="2">Session-5</td>
-                            <td rowspan="2">10 to 11:30</td>
-                            <td>70 min</td>
-                            <td>Mobilizing masses towards Sustainable Actions through Spiritual Sensitization - ARE the Spiritual Organizations doing enought?
-                            </td>
-                          </tr>
-                          <tr class="light-pink">
-                           <td>20 min</td>
-                            <td>Institutions/ People taking enough actions</td>
-                          </tr>
-                          <tr class="green_bg">
-                            <td></td>
-                            <td>11:30 to 12:00</td>
-                            <td>30 min</td>
-                            <td>High Tea</td>
-                          </tr>
-                          <tr class="dark_bg">
-                            <td rowspan="2">Session-6</td>
-                           <td rowspan="2">12 to 1:30</td>
-                           <td>70 min</td>
-                           <td>Political Vision, Messaging and Bold Actions for climate correction - ARE leaders on it?
-                           </td>
-                         </tr>
-                         <tr class="dark_bg">
-                           <td>20 min</td>
-                           <td>Institutions/ People taking enough actions</td>
-                         </tr>
-                         <tr class="green_bg">
-                           <td></td>
-                           <td>1:30 to 2:30</td>
-                           <td>1 hour</td>
-                           <td></td>
-                          </tr>
-                         <tr class="light_bg">
-                          <td rowspan="2">Session-7</td>
-                           <td rowspan="2">2:30 to 4</td>
-                           <td>70 min</td>
-                           <td>Sustainability, environmental goals and outcomes of
-                            industries - ARE they enough?</td>
-                         </tr>
-                         <tr class="light_bg">
-                           <td>20 min</td>
-                           <td>Speaker + Shell Powering Lives challenge award</td>
-                         </tr>
-                         <tr class="green_bg">
-                           <td></td>
-                           <td>4:00 to 4:30</td>
-                           <td>30 min</td>
-                           <td>Lunch</td>
-                         </tr>
-                         <tr class="light_bg">
-                          <td rowspan="3">Session-8</td>
-                           <td rowspan="2">4:30 to 6</td>
-                           <td>70 min</td>
-                           <td>Education and Research for Climate Change Mitigation and Management - ARE the Academic Institutions prepared?</td>
-                         </tr>
-                         <tr class="light_bg">
-                           <td>20 min</td>
-                           <td>Institutions/ People taking enough actions</td>
-                         </tr>
-                       </tbody>
-                     </table>
-                 </div>
-
-                <div class="table_main_box botm_space">
-                    <h4>Day 3, Saturday | 26/11/2022</h4>
-                     <table class="table table-bordered custom_table">
-                       <thead class="head_top">
-                         <tr>
-                           <th class="session_width">session</th>
-                           <th class="session_2">Time</th>
-                           <th class="session_2">Duration</th>
-                           <th scope="col"></th>
-                         </tr>
-                       </thead>
-                       <tbody>
-                        <tr class="green_bg">
-                            <td></td>
-                            <td>9 to 10</td>
-                            <td>1 hour</td>
-                            <td>High Tea</td>
-                          </tr>
-                          <tr class="light-pink">
-                            <td rowspan="2">Session-9</td>
-                            <td rowspan="2">10 to 11:30</td>
-                            <td>70 min</td>
-                            <td>Media's effectiveness in informaing and influencing societies in climate correction -ARE media giving enough space?
-                            </td>
-                          </tr>
-                          <tr class="light-pink">
-                            <td>20 min</td>
-                            <td>Institutions/ People taking enough actions</td>
-                          </tr>
-                          <tr class="green_bg">
-                            <td></td>
-                            <td>11:30 to 12:00</td>
-                            <td>1 hour</td>
-                            <td>Tea  Break</td>
-                          </tr>
-                          <tr class="dark_bg">
-                            <td rowspan="2">Session-10</td>
-                           <td rowspan="2">12 to 1:30</td>
-                           <td>70 min</td>
-                           <td>Concluding the Actions for Restoring Environment Conference? ARE we taking enough actions?</td>
-                         </tr>
-                         <tr class="dark_bg">
-                           <td>20 min</td>
-                           <td>Institutions/ People taking enough actions</td>
-                         </tr>
-                         <tr class="green_bg">
-                          <td></td>
-                           <td>1:30 to 2:30</td>
-                           <td>1 hour</td>
-                           <td>Lunch</td>
-                         </tr>
-                         <tr class="light_bg">
-                          <td rowspan="2">Session-11</td>
-                          <td rowspan="2">2:30 to 4</td>
-                           <td>30 min</td>
-                           <td>Address by Chief Guest</td>
-                         </tr>
-                         <tr class="light_bg">
-                           <td>1 hour</td>
-                           <td>Energy Swaraj Awards - 2022</td>
-                         </tr>
-                         <tr class="green_bg">
-                           <td></td>
-                           <td>4:00 to 4:30</td>
-                           <td>30 min</td>
-                           <td>Tea Break</td>
-                         </tr>
-                         <tr class="light_bg">
-                           <td>Session-12</td>
-                           <td>4:30 to 5:00</td>
-                           <td>30 min</td>
-                           <td>Closing Ceremony</td>
-                         </tr>
-                        
-                       </tbody>
-                     </table>
-                 </div>
-
-              </div>
-          </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="agenda_banner_text">
+                    <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
+                    <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conference</a>
+                    <h3>{{ conf.title }}</h3>
+                    <h4>Tentative Agenda {{ conf.startdate }}-{{ conf.enddate }}</h4>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
-{% endblock content %}
+<!-- agenda banner close-->
+<!--Popup for Add Agenda Start-->
+{% if conf %}
+<a href="#add_session" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
+{% endif %}
+<!-- dynamic table section start -->
+<section class="table_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for key,value in agenda.items %}
+                <div class="table_main_box">
+                    <h4>Day {{ key }} | {{ value.date }}</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Duration</th>
+                                <th scope="col">Event</th>
+                                <th scope="col">speakers</th>
+                                <th>Edit</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for object in value.data %}
+                            {% if object.session == None %}
+                            <tr class="green_bg">
+                                <td>{{ object.session }}</td>
+                                <td>{{ object.starttime }} to {{ object.endtime }}</td>
+                                <td>{{ object.duration }}</td>
+                                <td>{{ object.event }}</td>
+                                <td> unknown</td>
+                                <td><button class="edit_btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
+                            </tr>
+                            {% else %}
+                            <tr class="light-pink">
+                                <td>{{ object.session }}</td>
+                                <td>{{ object.starttime }} to {{ object.endtime }}</td>
+                                <td>{{ object.duration }}</td>
+                                <td>{{ object.event }}</td>
+                                <td>unknown</td>
+                                <td><button class="edit_btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
+                            </tr>
+                            {% endif %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom_modal" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table_main_box">
+                            <h4>Day 1, Thursday | 24/11/2022</h4>
+                            <table class="table table-bordered custom_table popup_cs">
+                                <thead class="head_top">
+                                    <tr>
+                                        <th class="session_width">session</th>
+                                        <th class="session_2">Time</th>
+                                        <th class="session_2">Duration</th>
+                                        <th>Event</th>
+                                        <th>Speaker</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>9 to 10</td>
+                                        <td class="session_input"> <input type="text" value="" placeholder="1 hour"></td>
+                                        <td><input type="text" value="" placeholder="Registration and High Tea"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light-pink">
+                                        <td class="session_input"> <input type="text" value="" placeholder="session-1"></td>
+                                        <td>10 to 11:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="90 min"></td>
+                                        <td><input type="text" value="" placeholder="Inauguration of the ARE conference and awards"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>11:30 to 12:00</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td><input type="text" value="" placeholder="Tea Break"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="dark_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="session-2"></td>
+                                        <td rowspan="2">12 to 1:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td><input type="text" value="" placeholder="The Cascading Cycle: Warming world — Rising energy demand — Warming World - ARE We heading the Right Direction?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="dark_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td><input type="text" value="" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>1:30 to 2:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td><input type="text" value="" placeholder="Lunch"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-3"></td>
+                                        <td rowspan="2">2:30 to 4</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td><input type="text" value="" placeholder="Policies and Programmes to Secure Climate and Energy security to the nation —ARE the Government initiatives pragmatic enough?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td><input type="text" value="" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>4:00 to 4:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td><input type="text" value="" placeholder="High Tea"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-4"></td>
+                                        <td rowspan="2">4:30 to 6</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td><input type="text" value="" placeholder=" awareness and preparedness of the climate change to the grassroot level - ARE the NGOs sensitizing the communities enough?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td><input type="text" value="" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="data_submit_btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal 2-->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom_modal" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table_main_box">
+                            <h4>Day 2, Friday | 25/11/2022</h4>
+                            <table class="table table-bordered custom_table">
+                                <thead class="head_top">
+                                    <tr>
+                                        <th class="session_width">session</th>
+                                        <th class="session_2">Time</th>
+                                        <th class="session_2">Duration</th>
+                                        <th>Event</th>
+                                        <th class="speaker_name">Speaker</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>9 to 10</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td> <input type="text" value="" placeholder="Registration"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light-pink">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-5"></td>
+                                        <td rowspan="2">10 to 11:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td> <input type="text" value="" placeholder="Mobilizing masses towards Sustainable Actions through Spiritual Sensitization - ARE the Spiritual Organizations doing enought?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light-pink">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td> <input type="text" value="" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>11:30 to 12:00</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td> <input type="text" value="" placeholder="High Tea"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="dark_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-6"></td>
+                                        <td rowspan="2">12 to 1:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td> <input type="text" value="" placeholder="Political Vision, Messaging and Bold Actions for climate correction - ARE leaders on it?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="dark_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td> <input type="text" value="" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>1:30 to 2:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td> <input type="text" value="" placeholder="High Tea"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-7"></td>
+                                        <td rowspan="2">2:30 to 4</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td> <input type="text" value="" placeholder="Sustainability, environmental goals and outcomes of industries - ARE they enough?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td> <input type="text" value="" placeholder="Speaker + Shell Powering Lives challenge award"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>4:00 to 4:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td> <input type="text" value="" placeholder="Lunch"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td rowspan="3" class="session_input"><input type="text" value="" placeholder="Session-8"></td>
+                                        <td rowspan="2">4:30 to 6</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td> <input type="text" value="" placeholder="Education and Research for Climate Change Mitigation and Management - ARE the Academic Institutions prepared?"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td> <input type="text" value="" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" value="" placeholder="Speaker Name"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="data_submit_btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal 3-->
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered custom_modal" role="document">
+        <div class="modal-content">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="table_main_box">
+                            <h4>Day 3, Saturday | 26/11/2022</h4>
+                            <table class="table table-bordered custom_table">
+                                <thead class="head_top">
+                                    <tr>
+                                        <th class="session_width">session</th>
+                                        <th class="session_2">Time</th>
+                                        <th class="session_2">Duration</th>
+                                        <th>Event</th>
+                                        <th class="speaker_name">Speaker</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>9 to 10</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td><input type="text" placeholder="Tea"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light-pink">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-9"></td>
+                                        <td rowspan="2">10 to 11:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td><input type="text" placeholder="Media's effectiveness in informaing and influencing societies in climate correction -ARE media giving enough space?"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light-pink">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td><input type="text" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>11:30 to 12:00</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td><input type="text" placeholder="Tea  Break"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="dark_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-10"></td>
+                                        <td rowspan="2">12 to 1:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="70 min"></td>
+                                        <td><input type="text" placeholder="Concluding the Actions for Restoring Environment Conference? ARE we taking enough actions?"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="dark_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="20 min"></td>
+                                        <td><input type="text" placeholder="Institutions/ People taking enough actions"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>1:30 to 2:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td><input type="text" placeholder="Lunch"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td rowspan="2" class="session_input"><input type="text" value="" placeholder="Session-11"></td>
+                                        <td rowspan="2">2:30 to 4</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td><input type="text" placeholder="Address by Chief Guest"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="1 hour"></td>
+                                        <td><input type="text" placeholder="Energy Swaraj Awards - 2022"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="green_bg">
+                                        <td></td>
+                                        <td>4:00 to 4:30</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td><input type="text" placeholder="Tea Break"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                    <tr class="light_bg">
+                                        <td class="session_input"><input type="text" value="" placeholder="Session-12"></td>
+                                        <td>4:30 to 5:00</td>
+                                        <td class="session_input"><input type="text" value="" placeholder="30 min"></td>
+                                        <td><input type="text" placeholder="Closing Ceremony"></td>
+                                        <td><input type="text" placeholder="Speaker Name"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <button class="data_submit_btn">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function getDayName(dateStr, locale) {
+    var date = new Date(dateStr);
+    return date.toLocaleDateString(locale, { weekday: 'long' });
+}
 
+var dateStr = `{{object.date|date:"Y-m-d"}}`;
+day = dateStr;
+var day = getDayName(dateStr, "nl-NL");
+</script>
+<!-- end dynamic table section -->
+{% endblock content %}
+{% block extra_content %}
+{% include 'add_agenda_popup.html' %}
+{% include 'add_conference_popup.html' %}
+{% endblock extra_content %}

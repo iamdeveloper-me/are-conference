@@ -13,15 +13,15 @@ from django.contrib.auth import login, logout
 from django.http import Http404
 
 
-
-
 # Create your views here.
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
 
 	def post(self, request, *args, **kwargs):
+		
 		form = self.get_form()
 		if form.is_valid():
+			
 			username = request.POST['username']
 			password = request.POST['password']
 			user = auth.authenticate(username = username, password = password)

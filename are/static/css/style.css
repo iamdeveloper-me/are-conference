@@ -26,9 +26,7 @@ header{
 header nav{
     height: 80px;
 }
-header nav a:first-child{
-    font-weight: 600;
-}
+
 .register_btn{
     display:none;
 }
@@ -286,6 +284,7 @@ section.about_energy_area {
     font-size: 32px;
     line-height: 48px;
     color:#fff;
+    
 }
 
 .energy_content p {
@@ -702,7 +701,7 @@ a.knowmore span {
          margin-bottom: 18px;
     }
     img.logo-img {
-        max-width: 220px !important;
+        height: 46px !important;
     }
     .copy-right li.list-inline-item {
         padding-left: 0px;
@@ -736,11 +735,12 @@ a.knowmore span {
         width: 95px;
     }
     .organized_text {
-        padding-bottom: 25px;
+        padding-bottom: 30px;
     }
     .organized_text h3 {
         font-size: 18px;
         line-height: 26px;
+        text-align: center;
     }
     .organized_text {
         text-align: center;
@@ -926,7 +926,7 @@ a.knowmore span {
         font-size: 20px;
     }
     footer{
-        padding-top:15px !important;
+        padding-top:40px !important;
     }
     
 
@@ -936,3 +936,26 @@ a.knowmore span {
 
 
 
+@media screen and (max-width: 320px) {
+    .cd__unit {
+        width: 55px;
+    }
+    .cd__unit-label{
+        font-size:11px;
+    }
+    .timer-UI .cd__digits {
+        font-size: 18px;
+    }
+    .organized_text h3 {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+    }
+    .organized_img img {
+        width: 80px;
+    }
+    .cd__unit-group {
+        padding: 11px 0px 0px;
+    }
+
+}
