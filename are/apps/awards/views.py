@@ -78,3 +78,5 @@ class ClimateTable(TemplateView):
 class ClimateApplicationForm(TemplateView):
 	template_name = 'application_form.html'
 
+class Climateaward(TemplateView):
+	template_name = 'climate_award.html'
