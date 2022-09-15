@@ -25,5 +25,7 @@ urlpatterns = [
 	path('terms_services/',views.Termsservices.as_view(),name='terms_services'),
 	path('climate_applicants/',views.AdminViewClimateApplicant.as_view(),name='climate_applicants'),
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
+	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
+
 	
 ]
