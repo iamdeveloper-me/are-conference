@@ -24,4 +24,5 @@ urlpatterns = [
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
 	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('sendmail/',views.sendMail,name='email'),
+	path('climate_award/',views.Climateaward.as_view(),name='climate_award'),
 ]
