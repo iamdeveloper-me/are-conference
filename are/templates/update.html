@@ -1,50 +1,6 @@
-{% extends "layout/base.html" %}
-{% load static %}
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/thank.css' %}">
-{% endblock extra_css %}
-
-{% block content %}
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     {{ form.media }}
     {{ form.as_p }}
   <input class="btn btn-outline-info" type="submit" style="background-color:lightblue" value="Update" />
 </form>
-{% endblock content %}
-
-
-
- <!--Popup for Add Agenda Start
-    
-    <div id="myModal1" class="modal fade">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <form action="{% url 'agenda:add_agenda' %}" method="post" enctype='multipart/form-data'>
-                    {% csrf_token %}
-                    <div class="modal-header">              
-                        <h4>Add Agenda</h4>
-                    </div>
-                    <div class="modal-body">                
-                        <div class="form-group">
-
-                            <label for="">session</label>
-                            <input type="text" name="session" class="form-control" id="" placeholder="session" required="true">
-                            <label for="">Start Time</label>
-                            <input type="time" name="time" class="form-control" id="" placeholder="time" required="true"> 
-                            <label for="">End Time</label>
-                            <input type="Time" name="time" class="form-control" id="" placeholder="Time" required="true"> 
-                            <label for="">Duration</label>
-                            <input type="Date-Time" name="duration" class="form-control" id="" placeholder="duration" required="">
-                            <label for="">Event</label>
-                            <textarea name="event"  class="form-control" id="" placeholder="Detail" required=""> </textarea> 
-                            <input type="submit" class="btn btn-primary" value="add">     
-                        </div>
-                    </div>
-            </div>
-            <div class="modal-footer justify-content-between">
-            </div>
-            </form>
-            </div>
-        </div>
-    </div> -->
