@@ -11,6 +11,10 @@ from django.conf import settings
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
 
+class DashboardView(TemplateView):
+	template_name = "dashboard.html"
+
+
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
