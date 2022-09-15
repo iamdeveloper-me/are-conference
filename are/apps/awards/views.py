@@ -84,4 +84,10 @@ class Climateaward(TemplateView):
 class Adminspeker(TemplateView):
 	template_name = 'admin_speaker.html'
 
+class Adminaward(TemplateView):
+	template_name = 'admin_award.html'
+
+class Adminagenda(TemplateView):
+	template_name = 'admin-agenda.html'
+
 	

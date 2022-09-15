@@ -38,8 +38,8 @@
                  <ul>
                     <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'awards:speaker' %}">Speakers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'awards:awards' %}">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'awards:agenda_detail' %}">Agenda</a></li>
                 </ul>
              </div>
           </div>
@@ -130,9 +130,28 @@
 
 <!-- footer start -->
 <footer>
-    footer is here
+  <div class="container">
+      <div class="row copy-right">
+          <div class="col-md-4">
+              <div class="">
+                  <p>©2022, All right reserved.</p>
+              </div>
+          </div>
+          <div class="col-md-8">
+              <div class="text-xl-right text-lg-right text-md-right text-left">
+                  <ul class="list-unstyled list-inline">
+                      <li class="list-inline-item">
+                          <a href="{% url 'awards:privacy_policy' %}">Privacy Policy</a>
+                      </li>
+                      <li class="list-inline-item">
+                          <a href="{% url 'awards:terms_services' %}">Terms of Service</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </div>
 </footer>
-
 
 
 <!-- Modal -->
@@ -188,6 +207,7 @@
       </div>
     </div>
   </div>
+  
 {% block js %}
    
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

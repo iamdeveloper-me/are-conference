@@ -299,6 +299,7 @@ li{
 .card_custom p {
     margin: 0px;
     font-size: 20px;
+    color: #000;
 }
 .logout_btn a {
     color: #000;
@@ -332,6 +333,9 @@ div#sidebar a {
     color: #252123;
     font-weight: 500;
     font-size: 28px;
+    text-align: right;
+    padding-bottom: 5px;
+    padding-top: 10px;
 }
 .add_newspeak {
     text-align: right;
@@ -434,3 +438,73 @@ td.action_btn span img {
     .add_speakermodal .modal-body {
         padding: 0px;
     }
+
+    /* award page css start */
+
+    .award_head h2 {
+        color: #252123;
+        font-weight: 500;
+        font-size: 28px;
+         padding-bottom: 5px;
+        padding-top: 10px;
+    }
+    .more a {
+        color: #9A1C20;
+        font-weight: 500;
+        font-size: 17px;
+    }
+    .more a:hover{
+        color: #9A1C20;
+    }
+
+    .card_custom >a{
+        color: #000;
+    }
+    .award_card .card_custom{
+        min-height:138px;
+    }
+    .card_custom select {
+        border: 1px solid #ced4da;
+        width: 100%;
+        height: 34px;
+        border-radius: 4px;
+        background: #fff;
+    }
+
+    section.table_section {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
+    }
+
+    .dashboard_right .table_main_box {
+        padding-top: 15px;
+    }
+
+/* footer css */
+.copy-right p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #252123;
+    padding-top: 2px;
+
+}
+
+.copy-right li a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-decoration-line: underline !important;
+    color: #252123;
+}
+
+footer {
+    padding-top: 18px;
+}
