@@ -7,6 +7,8 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.utils.timezone import now
 from datetime import timedelta, date
+import pandas as pd
+
 
 
 # Create your views here.
@@ -44,13 +46,25 @@ class AgendaView(ListView):
 	queryset = Conference.objects.all().order_by('startdate')
 
 	def get_context_data(self, **kwargs):
-		context = super(AgendaView, self).get_context_data(**kwargs)
+		
+		context = {}
+		# context = super(AgendaView, self).get_context_data(**kwargs)
 		if len(self.queryset)>0:
 			context['conf'] = self.queryset[0]
 		else:
 			context['conf'] = None
+		datelist = pd.date_range(start=context['conf'].startdate,end=context['conf'].enddate)
+		indexlist = [i+1 for i in range(len(datelist))]
+		# context['agenda'] = Agenda.objects.all()
+		agenda = Agenda.objects.all().filter(conference_id = context['conf'].id).order_by('starttime').order_by('date')
 
-		context['agenda'] = Agenda.objects.all()
+		data = {}
+		for index, item in zip(indexlist, datelist):
+			data[str(index)] = {
+				'date':item.date(),
+				'data':agenda.filter(date=item.date())
+			}
+		context['agenda'] = data
 		return context
 
 	def get_queryset(self):
