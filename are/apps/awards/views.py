@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
-from django.shortcuts import redirect
 from .models import AmgAward, Award, ClimateAward
-from .forms import AmgApplicationForm, ChallengeForm
+from .forms import AmgApplicationForm, ChallengeForm, EmailForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.mail import send_mail
+from django.conf import settings
 
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
@@ -13,8 +14,8 @@ class HomePageView(TemplateView):
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
-class AgendaView(TemplateView): 
-	template_name = "agenda.html"
+# class AgendaView(TemplateView): 
+# 	template_name = "agenda.html"
 
 class ContextView(TemplateView):
 	template_name = "context.html"
@@ -114,4 +115,18 @@ class AdminViewClimateApplicant(TemplateView):
 class AdminDetailViewClimateApplicant(DetailView):
 	model = ClimateAward
 	template_name = 'admin/admin_detail_view_climate_applicants.html'
+
+def sendMail(request):
+    if request.method == 'POST':
+        form = EmailForm(request.POST)
+        if form.is_valid():
+            cd = form.cleaned_data
+            subject = "Sending an email with Django"
+            message = "Thank YOu for suscribing as Are"
+            send_mail(subject, message,
+                      settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
+    else:
+        form = EmailForm()
+
+    return render(request, 'homepage.html')
 

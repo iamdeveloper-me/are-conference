@@ -25,9 +25,9 @@ AWARD_CATE = (
 
 
 class Award(models.Model):
-	name = models.CharField(max_length=255)
-	title = models.CharField(max_length=255)
-	description = models.TextField()
+	name = models.CharField(blank=True, max_length=255)
+	title = models.CharField(blank=True,max_length=255)
+	description = models.TextField(default=False)
 	image = models.ImageField(upload_to='images/awards_forms/', blank=True, null=True)
 
 
