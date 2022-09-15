@@ -80,3 +80,8 @@ class ClimateApplicationForm(TemplateView):
 
 class Climateaward(TemplateView):
 	template_name = 'climate_award.html'
+
+class Adminspeker(TemplateView):
+	template_name = 'admin_speaker.html'
+
+	

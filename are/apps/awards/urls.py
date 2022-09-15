@@ -25,5 +25,6 @@ urlpatterns = [
 	path('terms_services/',views.Termsservices.as_view(),name='terms_services'),
 	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('climate_award/',views.Climateaward.as_view(),name='climate_award'),
+	path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 	
 ]
