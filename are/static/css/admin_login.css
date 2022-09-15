@@ -337,27 +337,27 @@ div#sidebar a {
     text-align: right;
     margin-bottom: 18px;
 }
-.common_btn{
+.common_btn {
     display: inline-block;
     background: #9A1C20;
     color: #fff;
-    width: 220px;
-    height: 50px;
+    padding: 0px 30px;
+    height: 44px;
     font-weight: 600;
     font-size: 14px;
     text-align: center;
     border-radius: 50px;
-    line-height: 50px;
-    border:none;
+    line-height: 44px;
+    border: none;
 }
 
 .speaker_table th {
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     padding: 10px;
     text-align: left;
+    white-space: nowrap;
 }
-
 .speaker_table td {
     font-size: 13px;
     font-weight: 400;
@@ -382,3 +382,50 @@ button:focus{
 .add_speakermodal .modal-content{
     padding:25px 20px;
 }
+td.action_btn span img {
+    width: 14px;
+    }
+
+td.action_btn span {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #9a1c21;
+        justify-content: center;
+        align-items: center;
+    }
+    td.action_btn {
+        width: 92px;
+    }
+td.action_btn span img {
+        width: 16px;
+        height: 16px;
+    }
+
+.add_speakermodal button.close {
+        display: inline-block;
+        width: 100%;
+        float: right;
+        text-align: right;
+    }
+    .add_speakermodal button.close span {
+        float: right;
+        padding: 10px;
+        background: #ccc;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 12px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+        color: #000 !important;
+    }
+
+    .add_speakermodal button.close {
+        opacity: 1;
+        text-shadow: none;
+    }

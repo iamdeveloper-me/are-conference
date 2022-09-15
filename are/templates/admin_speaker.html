@@ -72,7 +72,10 @@
                                     <td>Padma Vibhushan Awardee
                                     </td>
                                     <td>Dr. Anil Kakodkar was the Director of BARC and the Chairman of the Atomic Energy Commission, and Secretary to the Government of India, Department of Atomic Energy....</td>
-                                    <td>Edit Delete</td>
+                                    <td class="action_btn">
+                                        <span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title=""/></span> 
+                                        <span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title=""/></span>
+                                    </td>
                                   </tr>
                                   <tr>
                                     <td>1</td>
@@ -82,7 +85,10 @@
                                     <td>Padma Vibhushan Awardee
                                     </td>
                                     <td>Dr. Anil Kakodkar was the Director of BARC and the Chairman of the Atomic Energy Commission, and Secretary to the Government of India, Department of Atomic Energy....</td>
-                                    <td>Edit Delete</td>
+                                    <td class="action_btn">
+                                        <span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title=""/></span> 
+                                        <span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title=""/></span>
+                                    </td>
                                   </tr>
                                   <tr>
                                     <td>1</td>
@@ -92,7 +98,10 @@
                                     <td>Padma Vibhushan Awardee
                                     </td>
                                     <td>Dr. Anil Kakodkar was the Director of BARC and the Chairman of the Atomic Energy Commission, and Secretary to the Government of India, Department of Atomic Energy....</td>
-                                    <td>Edit Delete</td>
+                                    <td class="action_btn">
+                                        <span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title=""/></span> 
+                                        <span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title=""/></span>
+                                    </td>
                                   </tr>
                                   <tr>
                                     <td>1</td>
@@ -102,7 +111,10 @@
                                     <td>Padma Vibhushan Awardee
                                     </td>
                                     <td>Dr. Anil Kakodkar was the Director of BARC and the Chairman of the Atomic Energy Commission, and Secretary to the Government of India, Department of Atomic Energy....</td>
-                                    <td>Edit Delete</td>
+                                    <td class="action_btn">
+                                        <span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title=""/></span> 
+                                        <span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title=""/></span>
+                                    </td>
                                   </tr>
                                 
                               </tbody>
@@ -133,21 +145,38 @@
           </button>
    
         <div class="modal-body">
-            <div class="form-group">
-                <input type="text" name="conference"  hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
-                <input type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
-                <label for="">session</label>
-                <input type="choice" name="session" class="form-control" id="" placeholder="session">
-                <label for="">Start Time</label>
-                <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
-                <label for="">End Time</label>
-                <input type="time" name="endtime" class="form-control" id="" placeholder="time" required="true">
-                <label for="">Duration</label>
-                <input type="time" name="duration" class="form-control" id="" placeholder="duration" required="">
-                <label for="">Event</label>
-                <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
-                <input type="submit" class="btn btn-primary" value="add">
-            </div>
+            <form>
+              
+              
+                    <input type="text" name="conference"  hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
+              
+                <div class="form-group">
+                    <label for="">Date</label>
+                    <input type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
+                </div>
+                <div class="form-group">
+                    <label>session</label>
+                    <input type="choice" name="session" class="form-control" id="" placeholder="session">
+                </div>
+                <div class="form-group">
+                    <label for="">Start Time</label>
+                    <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="">End Time</label>
+                    <input type="time" name="endtime" class="form-control" id="" placeholder="time" required="true">
+                </div>
+                <div class="form-group">
+                    <label for="">Duration</label>
+                    <input type="time" name="duration" class="form-control" id="" placeholder="duration" required="">
+                </div>
+                <div class="form-group">
+                    <label for="">Event</label>
+                   <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
+                </div>
+                <input type="submit" class="common_btn" value="Add">
+                  
+             </form>
         </div>
        
       </div>
