@@ -63,14 +63,14 @@ class SpeakerCreateView(CreateView):
 class SpeakerDeleteView(DeleteView):
     model = Speaker
     # success_url = reverse_lazy("admin:speaker_admin")
-    template_name = 'speaker_confirm_delete.html'
+    template_name = 'delete.html'
 
     def get_success_url(self, **kwargs):
     	return self.object.get_absolute_url()
 
 class SpeakerUpdateView(UpdateView):
     model = Speaker
-    template_name = 'speaker_update.html'
+    template_name = 'update.html'
     fields = ['name','designation','detail','profile_image']
 
     def get_success_url(self, **kwargs):

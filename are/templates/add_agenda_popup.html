@@ -17,7 +17,8 @@
                     <div class="form-group">
 
                         <input type="text" name="conference"  hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">                           
-                        <input type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
+                        <input type="text" name="name"  hidden class="form-control" placeholder="" value="{{ speaker }}">                           
+                        <input name="date" type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
                         <label for="">session</label>
                         <input type="choice" name="session" class="form-control" id="" placeholder="session">
                         <label for="">Start Time</label>
@@ -28,8 +29,12 @@
                         <input type="time" name="duration" class="form-control" id="" placeholder="duration" required="">
                         <label for="">Event</label>
                         <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
-                        <label for="">Speaker</label>
-                        <input type="text" name="speaker" class="form-control" id="" placeholder="speaker">
+                        <select name="speaker" value="Speaker_Name">
+                            <option id="" selected disabled>Select Speaker</option>
+                            {% for speaker in all_speakers %}
+                                <option id="{{speaker.id}}" value="{{speaker.id}}">{{ speaker.name }}</option>
+                            {% endfor %}
+                        </select>
                         <input type="submit" class="btn btn-primary" value="add">
                     </div>
                 </div>

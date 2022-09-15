@@ -303,4 +303,56 @@
         </div>
     </section>
     <!-- speaker details  end-->
+<!-- speaker details -->
+    <section class="speaker-details">
+        <div class="container">
+            {% for speaker in object_list %}
+            {% if forloop.counter|divisibleby:2 %}
+            
+            <div class="row row-space">
+                <div class="col-md-8 ">
+                       <div class="speaker_right">
+                        <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
+                        <h4 class="pb-1">{{ speaker.name }}</h4>
+                        <h6 class="pb-2">{{ speaker.designation }}</h6>
+                        <p>{{ speaker.detail }}</p>
+                        <a  href="{% url 'speaker_update' speaker.pk %}" class="btn btn-outline-info">Update</a>
+                        <a  href="{% url 'speaker_delete' speaker.pk %}" class="btn btn-outline-danger">Delete</a>
+
+                       </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="bg-top right">
+                        <img src="{{ speaker.profile_image.url  }}" alt="" title=""/>
+                    </div>
+                </div>
+            </div>
+
+            {% else %}
+
+            <div class="row row-space">
+                <div class="col-md-4 ">
+                    <div class="bg-top right">
+                        <img src="{{ speaker.profile_image.url }}" alt="" title=""/>
+                    </div>
+                </div>
+                <div class="col-md-8 ">
+                       <div class="speaker_right">
+                        <img src="{% static 'images/speaker/quote.png' %}" alt="" title="" class=""/>
+                        <h4 class="pb-1">{{ speaker.name }}</h4>
+                        <h6 class="pb-2">{{ speaker.designation }}</h6>
+                        <p>{{ speaker.detail }}</p>
+                        <a  href="{% url 'speaker_update' speaker.pk %}" class="btn btn-outline-info">Update</a>
+                        <a  href="{% url 'speaker_delete' speaker.pk %}" class="btn btn-outline-danger">Delete</a>
+                       </div>
+                </div>
+            </div>
+            
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+    <!-- speaker details  end-->
+
+    
 {% endblock content %}
