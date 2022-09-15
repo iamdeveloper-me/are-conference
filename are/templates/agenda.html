@@ -73,23 +73,6 @@
                                 {% endif %}
                                 {% endcomment %}
                             </tr>
-                            {% elif else.counter == 2 %}
-                            <tr class="blue-bg">
-                                <td>{{ object.session }}</td>
-                                <td>{{ object.starttime }} to {{ object.endtime }}</td>
-                                <td>{{ object.duration }}</td>
-                                <td>{{ object.event }}</td>
-                                <td>unknown</td>
-                            </tr>
-                            {% elif else.counter == 3 %}
-                            <tr class="dark-bg">
-                                <td>{{ object.session }}</td>
-                                <td>{{ object.starttime }} to {{ object.endtime }}</td>
-                                <td>{{ object.duration }}</td>
-                                <td>{{ object.event }}</td>
-                                <td>unknown</td>
-                            </tr>
-                            {% endif %}
                             {% endif %}
                             {% endfor %}
                         </tbody>
