@@ -79,7 +79,40 @@
 .head_top {
     background-color: #fff2cc;
 }
+.modal-dialog.custom_modal {
+    max-width: 900px !important;
+}
 
+.custom_modal button.close span {
+    float: right;
+    padding: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    line-height: 12px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: normal;
+    color: #000 !important;
+ }
+ .custom_modal button.close{
+    opacity:1;
+    text-shadow:none;
+ }
+
+ .custom_modal button.close {
+    margin-right: 10px;
+    margin-top: 10px;
+}
+.custom_modal .table_main_box{
+    padding-top:0px;
+}
+.custom_modal .custom_table {
+    margin-bottom: 0px;
+}
 .light_bg {
     background-color: #cfe2f3;
 }
@@ -95,6 +128,65 @@
 .light-pink{
     background-color: #ead1dc;
 }
+button.edit_btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+input:focus{
+  outline:none;
+}
+.speaker_name{
+    width:200px;
+}
+.custom_table input{
+    border-radius:4px;
+    border:1px solid #ccc;
+    padding:5px;
+    color: #212529;
+    background: #ffffffbd;
+}
+button.edit_btn img{
+    width:30px;
+}
+td.session_input input {
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: #212529;
+    background: #ffffffbd;
+    width: 80px;
+    text-align: center;
+}
+
+.custom_modal .table_main_box {
+    width: 100%;
+    overflow: auto;
+    height: 500px;
+}
+
+.data_submit_btn{
+    display: inline-block;
+    width: 126px;
+    height: 44px;
+    background: #9A1C20;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 31px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-top:15px;
+    
+}
+.table_main_box button {
+    float: right;
+    }
+
+
 @media (max-width:767px){
 .agenda_banner{
     background-size: cover;

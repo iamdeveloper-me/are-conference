@@ -1,20 +1,17 @@
 from django.urls import path
 from .models import AmgAward
 from . import views
-# from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 
 app_name = 'awards'
 
 urlpatterns = [
-
-	path('agenda/',views.AdminAgendaView.as_view(),name='admin_agenda'),
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
 	path('award/',views.AwardView.as_view(),name='award'),
 	path('application/',views.AmgApplicationFormView.as_view(),name='application'),
 	path('',views.HomePageView.as_view(),name='home'),
 	path('ourpartner/',views.PartnerView.as_view(),name='partner'),
-	path('agenda/',views.AgendaView.as_view(),name='agenda'),
 	path('context/',views.ContextView.as_view(),name='context'),
 	path('thanks/',views.ThanksEnergyView.as_view(),name='thanks'),
 	path('amg_applicants/',views.AdminViewAmgApplicant.as_view(), name='amg_applicants'),
@@ -25,5 +22,6 @@ urlpatterns = [
 	path('terms_services/',views.Termsservices.as_view(),name='terms_services'),
 	path('climate_applicants/',views.AdminViewClimateApplicant.as_view(),name='climate_applicants'),
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
-	
+	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
+	path('sendmail/',views.sendMail,name='email'),
 ]

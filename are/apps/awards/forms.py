@@ -1,6 +1,10 @@
 from django import forms
 from .models import AmgAward, ClimateAward
 
+class EmailForm(forms.Form):
+    recipient = forms.EmailField()
+
+
 class AmgApplicationForm(forms.ModelForm):
 	class Meta:
 		model = AmgAward
@@ -21,4 +25,5 @@ class ChallengeForm(forms.ModelForm):
 					'address_landmark','city', 'state', 'pincode', 'brief_description',
 					'working_video', 'steps','major_climate_challenge', 'your_view', 
 					'title_song', 'title_drama', 'send_tshirt', 'file' ]
+
 
