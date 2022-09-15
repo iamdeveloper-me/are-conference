@@ -299,6 +299,7 @@ li{
 .card_custom p {
     margin: 0px;
     font-size: 20px;
+    color: #000;
 }
 .logout_btn a {
     color: #000;
@@ -337,32 +338,35 @@ div#sidebar a {
     color: #252123;
     font-weight: 500;
     font-size: 28px;
+    text-align: right;
+    padding-bottom: 5px;
+    padding-top: 10px;
 }
 .add_newspeak {
     text-align: right;
     margin-bottom: 18px;
 }
-.common_btn{
+.common_btn {
     display: inline-block;
     background: #9A1C20;
     color: #fff;
-    width: 220px;
-    height: 50px;
+    padding: 0px 30px;
+    height: 44px;
     font-weight: 600;
     font-size: 14px;
     text-align: center;
     border-radius: 50px;
-    line-height: 50px;
-    border:none;
+    line-height: 44px;
+    border: none;
 }
 
 .speaker_table th {
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
     padding: 10px;
     text-align: left;
+    white-space: nowrap;
 }
-
 .speaker_table td {
     font-size: 13px;
     font-weight: 400;
@@ -370,9 +374,10 @@ div#sidebar a {
     text-align: left;
     vertical-align: middle;
 }
-button:focus{
-    outline:none;
+button:focus {
+    outline: none !important;
 }
+
 .modal-dialog .add_speakermodal{
    max-width:800px;
 }
@@ -385,6 +390,131 @@ button:focus{
 }
 
 .add_speakermodal .modal-content{
-    padding:25px 20px;
+<<<<<<< HEAD
+    padding: 30px 25px;
+}
+td.action_btn span img {
+    width: 14px;
+    }
+
+td.action_btn span {
+        display: inline-flex;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #9a1c21;
+        justify-content: center;
+        align-items: center;
+    }
+    td.action_btn {
+        width: 92px;
+    }
+td.action_btn span img {
+        width: 16px;
+        height: 16px;
+    }
+
+.add_speakermodal button.close {
+        display: inline-block;
+        width: 100%;
+        float: right;
+        text-align: right;
+    }
+    .add_speakermodal button.close span {
+        float: right;
+        padding: 10px;
+        background: #ccc;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        line-height: 12px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: normal;
+        color: #000 !important;
+    }
+
+    .add_speakermodal button.close {
+        opacity: 1;
+        text-shadow: none;
+    }
+
+    .add_speakermodal .modal-body {
+        padding: 0px;
+    }
+
+    /* award page css start */
+
+    .award_head h2 {
+        color: #252123;
+        font-weight: 500;
+        font-size: 28px;
+         padding-bottom: 5px;
+        padding-top: 10px;
+    }
+    .more a {
+        color: #9A1C20;
+        font-weight: 500;
+        font-size: 17px;
+    }
+    .more a:hover{
+        color: #9A1C20;
+    }
+
+    .card_custom >a{
+        color: #000;
+    }
+    .award_card .card_custom{
+        min-height:138px;
+    }
+    .card_custom select {
+        border: 1px solid #ced4da;
+        width: 100%;
+        height: 34px;
+        border-radius: 4px;
+        background: #fff;
+    }
+
+    section.table_section {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        background: #fff;
+        box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
+    }
+
+    .dashboard_right .table_main_box {
+        padding-top: 15px;
+    }
+
+/* footer css */
+.copy-right p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #252123;
+    padding-top: 2px;
+
 }
 
+.copy-right li a {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    text-decoration-line: underline !important;
+    color: #252123;
+}
+
+footer {
+    padding-top: 18px;
+}
+
+.right_di img {
+    width: 70px;
+}

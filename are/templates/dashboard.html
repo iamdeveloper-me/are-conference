@@ -3,44 +3,91 @@
 {% block content %}
 <section class="dashboard_area">
     <div class="container-fluid">
-       <div class="row no-gutters">
-          <div class="col-md-2">
-             <div id="sidebar" role="navigation">
-                 <ul>
-                    <li class="nav-item active"><a class="nav-link" href="#">dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
-                </ul>
-             </div>
-          </div>
-          <div class="col-md-10">
-             <div class="dashboard_right">
-                <div class="card_pannel">
-                    <div class="row">
-                        <div class="col-md-4">
-                             <div class="card_custom">
-                                 <h4>Total Speakers</h4>
-                                 <p>{{data.total_speaker}}</p>
-                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card_custom">
-                                <h4>Energy Award</h4>
-                                <p>{{data.total_awards}}</p>
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div id="sidebar" role="navigation">
+                    <ul>
+                        <li class="nav-item active"><a class="nav-link" href="#">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="dashboard_right">
+                    <div class="card_pannel">
+                        <div class="row">
+                            {% comment %}
+                            <div class="col-md-4">
+                                <div class="card_custom">
+                                    <h4>Total Speakers</h4>
+                                    <p>{{data.total_speaker}}</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card_custom">
-                                <h4>Climate Hackathon</h4>
-                                <p>{{data.total_climate}}</p>
+                            <div class="col-md-4">
+                                <div class="card_custom">
+                                    <h4>Energy Award</h4>
+                                    <p>{{data.total_awards}}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card_custom">
+                                    <h4>Climate Hackathon</h4>
+                                    <p>{{data.total_climate}}</p>
+                                </div>
+                            </div>
+                            {% endcomment %}
+                            <div class="col-md-4">
+                                <a href="{% url 'awards:speaker' %}">
+                                    <div class="card_custom">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h4>Total Speakers</h4>
+                                                <p>14</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="right_di"><img src="{% static 'images/voice.png' %}" alt="" title="" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="{% url 'awards:awards' %}">
+                                    <div class="card_custom">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h4>Energy Award</h4>
+                                                <p>2</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="right_di"><img src="{% static 'images/trophy.png' %}" alt="" title="" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#!">
+                                    <div class="card_custom">
+                                        <div class="row">
+                                            <div class="col-md-8">
+                                                <h4>Climate Hackathon</h4>
+                                                <p>14</p>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="right_di"><img src="{% static 'images/climate.png' %}" alt="" title="" /></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
-             </div>
-          </div>
-       </div>
-  </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock content %}
