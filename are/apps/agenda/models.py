@@ -21,6 +21,7 @@ class Agenda(models.Model):
 	endtime = models.TimeField(null=True,blank=True)
 	duration = models.DurationField(null=True,blank=True)
 	event = models.CharField(max_length=255,null=True,blank=True)
+	speaker = models.CharField(max_length=255,null=True,blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
