@@ -120,15 +120,12 @@ class AdminViewClimateApplicant(TemplateView):
 	template_name = 'admin/admin_view_climate_applicants.html'
 
 	def get_context_data(self, **kwargs):
-		context = super().get_context_data(**kwargs)
-		context = ClimateAward.objects.filter(challenge_number=1)
-		challenge_number = 1
-		return {'context':context, 'challenge_number':challenge_number}
-
-	def post(self, request, *args, **kwargs):
-		challenge_number = int(request.POST.get('challenge_number'))
-		context = ClimateAward.objects.filter(challenge_number=challenge_number)
-		return render(request, 'admin/admin_view_climate_applicants.html', {'context':context, 'challenge_number':challenge_number})
+		context = {}
+		for i in range(1,9):
+			context[i]= {
+				"data":ClimateAward.objects.filter(challenge_number=i)
+			}
+		return {'context':context}
 
 
 class AdminDetailViewClimateApplicant(DetailView):
