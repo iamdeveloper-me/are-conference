@@ -47,22 +47,21 @@
                             <tr class="green_bg">
                             <td></td>
                             <td>{{object.starttime}} to {{object.endtime}} </td>
-                            <td>1 hour {{ object.starttime|mytimesince:object.endtime }}</td>
+                            <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                             <td>Registration and High Tea</td>
                         </tr>
                         <tr class="light-pink">
                             <td>session-1</td>
                             <td>{{object.starttime}} to {{object.endtime}} </td>
-                            <td>1 hour {{ object.starttime|mytimesince:object.endtime }}</td>
+                            <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                             <td>Inauguration of the ARE conference and awards</td>
                         </tr>
                         <tr class="green_bg">
                             <td></td>
                             <td>{{object.starttime}} to {{object.endtime}} </td>
-                            <td>1 hour {{ object.starttime|mytimesince:object.endtime }}</td>
+                            <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                             <td>Tea Break</td>
                             {% with next_element=agenda|next:forloop.counter0 %}
-                            <td>{{next_element.starttime}}</td>
 
                             {% endwith %}
                         </tr>
