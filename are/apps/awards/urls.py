@@ -9,6 +9,7 @@ urlpatterns = [
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
 	path('award/',views.AwardView.as_view(),name='award'),
+	path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
 	path('application/',views.AmgApplicationFormView.as_view(),name='application'),
 	path('',views.HomePageView.as_view(),name='home'),
 	path('ourpartner/',views.PartnerView.as_view(),name='partner'),
