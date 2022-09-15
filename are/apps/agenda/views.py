@@ -44,7 +44,6 @@ class AgendaView(ListView):
 	queryset = Conference.objects.all().order_by('startdate')
 	
 	def get_context_data(self, **kwargs):
-		import pdb; pdb.set_trace()
 		context = {}
 		if self.queryset:
 			# context = super(AgendaView, self).get_context_data(**kwargs)

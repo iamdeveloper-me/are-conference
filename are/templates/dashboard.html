@@ -35,7 +35,7 @@
           <div class="col-md-2">
              <div id="sidebar" role="navigation">
                  <ul>
-                    <li class="nav-item"><a class="nav-link" href="#!">dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Speakers</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
@@ -49,19 +49,19 @@
                         <div class="col-md-4">
                              <div class="card_custom">
                                  <h4>Total Speakers</h4>
-                                 <p>14 {{speaker.total_speaker}}</p>
+                                 <p>{{data.total_speaker}}</p>
                              </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card_custom">
                                 <h4>Energy Award</h4>
-                                <p>2</p>
+                                <p>{{data.total_awards}}</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card_custom">
                                 <h4>Climate Hackathon</h4>
-                                <p>14</p>
+                                <p>{{data.total_climate}}</p>
                             </div>
                         </div>
                     </div>
