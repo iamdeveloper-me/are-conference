@@ -9,8 +9,6 @@ from django.utils.timezone import now
 from datetime import timedelta, date
 import pandas as pd
 
-
-
 # Create your views here.
 
 

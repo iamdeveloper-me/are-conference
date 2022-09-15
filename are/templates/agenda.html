@@ -31,7 +31,7 @@
             <div class="col-md-12">
                 {% for key,value in agenda.items %}
                 <div class="table_main_box">
-                    <h4>Day {{ key }} | {{ value.date }}</h4>
+                    <h4>Day {{ key }} | {{ value.date }}</h4> <p id="dayname"></p>
                     <table class="table table-bordered custom_table">
                         <thead class="head_top">
                             <tr>
@@ -73,6 +73,23 @@
                                 {% endif %}
                                 {% endcomment %}
                             </tr>
+                            {% elif else.counter == 2 %}
+                            <tr class="blue-bg">
+                                <td>{{ object.session }}</td>
+                                <td>{{ object.starttime }} to {{ object.endtime }}</td>
+                                <td>{{ object.duration }}</td>
+                                <td>{{ object.event }}</td>
+                                <td>unknown</td>
+                            </tr>
+                            {% elif else.counter == 3 %}
+                            <tr class="dark-bg">
+                                <td>{{ object.session }}</td>
+                                <td>{{ object.starttime }} to {{ object.endtime }}</td>
+                                <td>{{ object.duration }}</td>
+                                <td>{{ object.event }}</td>
+                                <td>unknown</td>
+                            </tr>
+                            {% endif %}
                             {% endif %}
                             {% endfor %}
                         </tbody>
@@ -400,14 +417,11 @@
     </div>
 </div>
 <script type="text/javascript">
-function getDayName(dateStr, locale) {
-    var date = new Date(dateStr);
-    return date.toLocaleDateString(locale, { weekday: 'long' });
-}
-
-var dateStr = `{{object.date|date:"Y-m-d"}}`;
-day = dateStr;
-var day = getDayName(dateStr, "nl-NL");
+var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+var dayStr = '{{context.date|date:"Y-m-d"}}'; 
+const d = new Date(dayStr);
+var day = days[d.getDay()];
+document.getElementById("dayname").innerHTML = day;
 </script>
 <!-- end dynamic table section -->
 {% endblock content %}
