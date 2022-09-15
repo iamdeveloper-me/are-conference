@@ -33,8 +33,8 @@ class DashboardView(TemplateView):
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
-# class AgendaView(TemplateView): 
-# 	template_name = "agenda.html"
+class DashboardView(TemplateView): 
+	template_name = "dashboard.html"
 
 class ContextView(TemplateView):
 	template_name = "context.html"
@@ -120,15 +120,12 @@ class AdminViewClimateApplicant(TemplateView):
 	template_name = 'admin/admin_view_climate_applicants.html'
 
 	def get_context_data(self, **kwargs):
-		context = super().get_context_data(**kwargs)
-		context = ClimateAward.objects.filter(challenge_number=1)
-		challenge_number = 1
-		return {'context':context, 'challenge_number':challenge_number}
-
-	def post(self, request, *args, **kwargs):
-		challenge_number = int(request.POST.get('challenge_number'))
-		context = ClimateAward.objects.filter(challenge_number=challenge_number)
-		return render(request, 'admin/admin_view_climate_applicants.html', {'context':context, 'challenge_number':challenge_number})
+		context = {}
+		for i in range(1,9):
+			context[i]= {
+				"data":ClimateAward.objects.filter(challenge_number=i)
+			}
+		return {'context':context}
 
 
 class AdminDetailViewClimateApplicant(DetailView):
@@ -149,3 +146,10 @@ def sendMail(request):
 
     return render(request, 'homepage.html')
 
+class Climateaward(TemplateView):
+	template_name = 'climate_award.html'
+
+class Adminspeker(TemplateView):
+	template_name = 'admin_speaker.html'
+
+	

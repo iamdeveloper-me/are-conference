@@ -214,7 +214,7 @@ h1, h2, h3, h4, h5, h6, ul, p{
   }
   header{
       width: 100%;
-      background:#fff;
+      background: rgba(0, 0, 0, 0.3);
       box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
       border-bottom: 1px solid #cccccc4a;
  }
@@ -312,6 +312,79 @@ div#sidebar a {
     border-bottom: 1px solid #cccccc61;
 }
 
+
 #sidebar li.nav-item.active {
     background: #9A1C21;
     color: #fff;
+}
+.card_pannel a {
+    color: #000;
+}
+.card_pannel a:hover {
+    color: #000;
+}
+
+
+/* admin speaker css start */
+
+.speaker_area{
+    background-color:#fff;
+    border-radius:10px;
+    padding:20px;
+}
+
+.speaker_area h2 {
+    color: #252123;
+    font-weight: 500;
+    font-size: 28px;
+}
+.add_newspeak {
+    text-align: right;
+    margin-bottom: 18px;
+}
+.common_btn{
+    display: inline-block;
+    background: #9A1C20;
+    color: #fff;
+    width: 220px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 50px;
+    border:none;
+}
+
+.speaker_table th {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px;
+    text-align: left;
+}
+
+.speaker_table td {
+    font-size: 13px;
+    font-weight: 400;
+    padding: 10px;
+    text-align: left;
+    vertical-align: middle;
+}
+button:focus{
+    outline:none;
+}
+.modal-dialog .add_speakermodal{
+   max-width:800px;
+}
+.speaker_table tr:nth-child(even) {background-color: #f2f2f2;}
+
+
+.modal-dialog.add_speakermodal{
+    max-width: 580px;
+    padding:25px 20px;
+}
+
+.add_speakermodal .modal-content{
+    padding:25px 20px;
+}
+

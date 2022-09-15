@@ -6,199 +6,304 @@
 
 {% block content %}
 <div style="padding:120px;">
-    <form method="post">
-        {% csrf_token %}
-        <select name="challenge_number">
-            <option value="1">Climate Hackathon Challenge 1</option>
-            <option value="2">Climate Hackathon Challenge 2</option>
-            <option value="3">Climate Hackathon Challenge 3</option>
-            <option value="4">Climate Hackathon Challenge 4</option>
-            <option value="5">Climate Hackathon Challenge 5</option>
-            <option value="6">Climate Hackathon Challenge 6</option>
-            <option value="7">Climate Hackathon Challenge 7</option>
-            <option value="8">Climate Hackathon Challenge 8</option>
-        </select>
-        <input type="submit" name="" value="View">
-    </form>
+    <select name="challenge_number" id="selected-challenge">
+        <option value="0" selected>ALL</option>
+        {% for key, value in context.items %}
+            <option value={{ key }}>Climate Hackathon Challenge {{ key }}</option>
+        {% endfor %}
+    </select>
     <div style="padding-top:2rem">
-        {% if challenge_number == 1 %}
-            <h2>Climate Hackathon Challenge 1</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Organization</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.participant}}</td>
-                            <td>{{applicant.full_name}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+        {% for key,value in context.items %}
+        {% if key == 1 %}
+            <div class="all_form" id="1">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="1">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Organization</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">View Details</th>
                         </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
-        {% elif challenge_number == 2 %}
-            <h2>Climate Hackathon Challenge 2</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.participant}}</td>
+                                <td>{{applicant.full_name}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>
+                    {% endif %}                   
+                </table>
+            </div>
+        {% elif key == 2 %}
+            <div class="all_form" id="2">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="2">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
                         </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
-        {% elif challenge_number == 3 %}
-            <h2>Climate Hackathon Challenge 3</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>                    
+                    {% endif %}
+                </table>
+            </div>
+        {% elif key == 3 %}
+            <div class="all_form" id="3">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="3">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
                         </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
-        {% elif challenge_number == 4 %}
-            <h2>Climate Hackathon Challenge 4</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
                     <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
-                        </tr>
+                        <td colspan="7">
+                            <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                <h4>No record found</h4>
+                            </div>
+                        </td>
                     </tbody>
-                {% endfor %}
-            </table>
-        {% elif challenge_number == 5 %}
-            <h2>Climate Hackathon Challenge 5</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                    {% endif %}
+                </table>
+            </div>
+        {% elif key == 4 %}
+            <div class="all_form" id="4">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="4">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
                         </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
-        {% elif challenge_number == 6 %}
-            <h2>Climate Hackathon Challenge 6</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>                    
+                    {% endif %}
+                </table>
+            </div>
+        {% elif key == 5 %}
+            <div class="all_form" id="5">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="5">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
                         </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
-        {% elif challenge_number == 7 %}
-            <h2>Climate Hackathon Challenge 7</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>                    
+                    {% endif %}
+                </table>
+            </div>
+        {% elif key == 6 %}
+            <div class="all_form" id="6">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="6">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
                         </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>                    
+                    {% endif %}
+                </table>
+            </div>
+        {% elif key == 7 %}
+            <div class="all_form" id="7">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="7">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
+                        </tr>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>                    
+                    {% endif %}
+                </table>
+            </div>
+        {% elif key == 8 %}
+            <div class="all_form" id="8">
+                <h2>Climate Hackathon Challenge {{ key }}</h2>
+                <table class="table" id="8">
+                    <thead>
+                        <tr class="table-secondary">
+                            <th scope="col">ID</th>
+                            <th scope="col">Full Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">View Details</th>
+                        </tr>
+                    </thead>
+                    {% if value.data %}
+                    {% for applicant in value.data %}
+                        <tbody>
+                            <tr>
+                                <th scope="row">{{applicant.id}}</th>
+                                <td>{{applicant.full_name}}</td>
+                                <td>{{applicant.email}}</td>
+                                <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
+                            </tr>
+                        </tbody>
+                    {% endfor %}
+                    {% else %}
+                        <tbody>
+                            <td colspan="7">
+                                <div class="d-flex align-items-center justify-content-center no-recors-caption">
+                                    <h4>No record found</h4>
+                                </div>
+                            </td>
+                        </tbody>                    
+                    {% endif %}
+                </table>
+            </div>
         {% else %}
-            <h2>Climate Hackathon Challenge 8</h2>
-            <table class="table">
-                <thead>
-                    <tr class="table-secondary">
-                        <th scope="col">ID</th>
-                        <th scope="col">Full Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">View Details</th>
-                    </tr>
-                </thead>
-                {% for applicant in context %}
-                    <tbody>
-                        <tr>
-                            <th scope="row">{{applicant.id}}</th>
-                            <td>{{applicant.full_name}}</td>
-                            <td>{{applicant.email}}</td>
-                            <td><a href="{% url 'awards:climate_applicants_detail' applicant.id %}">View</a></td>
-                        </tr>
-                    </tbody>
-                {% endfor %}
-            </table>
         {% endif %}
+        {% endfor %}
     </div>
 </div>
 {% endblock content %}
+{% block extra_js %}
+<script type="text/javascript">
+    $('#selected-challenge').change(function(e) {
+        var id = this.value;
+        if(id == 0){
+            $('.all_form').show();
+        }
+        else {
+            $('.all_form').hide();
+            $(`#${id}`).show();
+        }
+    });
+</script>
+{% endblock extra_js %}
 

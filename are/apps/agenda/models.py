@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from speakers.models import Speaker
 
 # Create your models here
 
@@ -21,6 +22,7 @@ class Agenda(models.Model):
 	endtime = models.TimeField(null=True,blank=True)
 	duration = models.DurationField(null=True,blank=True)
 	event = models.CharField(max_length=255,null=True,blank=True)
+	speaker = models.ForeignKey(Speaker,on_delete=models.CASCADE, related_name='speaker')
 	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:

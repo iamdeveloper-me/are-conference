@@ -11,6 +11,7 @@ urlpatterns = [
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
 	path('award/',views.AwardView.as_view(),name='award'),
+	path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
 	path('application/',views.AmgApplicationFormView.as_view(),name='application'),
 	path('',views.HomePageView.as_view(),name='home'),
 	path('ourpartner/',views.PartnerView.as_view(),name='partner'),
@@ -26,4 +27,6 @@ urlpatterns = [
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
 	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('sendmail/',views.sendMail,name='email'),
+	path('climate_award/',views.Climateaward.as_view(),name='climate_award'),
+	path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 ]
