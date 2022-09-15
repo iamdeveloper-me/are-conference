@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from .models import AmgAward, Award, ClimateAward
+from speakers.models import Speaker
 from .forms import AmgApplicationForm, ChallengeForm, EmailForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
@@ -10,6 +11,24 @@ from django.conf import settings
 
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
+
+class DashboardView(TemplateView):
+	modal = Speaker,AmgAward,ClimateAward
+	template_name = "dashboard.html"
+
+	def get_context_data(self, **kwargs):
+		total_speaker = Speaker.objects.all().count()
+		total_awards = AmgAward.objects.all().count()
+		total_climate = ClimateAward.objects.all().count()
+
+		data = {
+			'total_speaker':total_speaker,
+			'total_awards':total_awards,
+			'total_climate':total_climate,
+		}
+
+		return {'data':data}
+
 
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
@@ -101,15 +120,12 @@ class AdminViewClimateApplicant(TemplateView):
 	template_name = 'admin/admin_view_climate_applicants.html'
 
 	def get_context_data(self, **kwargs):
-		context = super().get_context_data(**kwargs)
-		context = ClimateAward.objects.filter(challenge_number=1)
-		challenge_number = 1
-		return {'context':context, 'challenge_number':challenge_number}
-
-	def post(self, request, *args, **kwargs):
-		challenge_number = int(request.POST.get('challenge_number'))
-		context = ClimateAward.objects.filter(challenge_number=challenge_number)
-		return render(request, 'admin/admin_view_climate_applicants.html', {'context':context, 'challenge_number':challenge_number})
+		context = {}
+		for i in range(1,9):
+			context[i]= {
+				"data":ClimateAward.objects.filter(challenge_number=i)
+			}
+		return {'context':context}
 
 
 class AdminDetailViewClimateApplicant(DetailView):
@@ -132,3 +148,8 @@ def sendMail(request):
 
 class Climateaward(TemplateView):
 	template_name = 'climate_award.html'
+
+class Adminspeker(TemplateView):
+	template_name = 'admin_speaker.html'
+
+	

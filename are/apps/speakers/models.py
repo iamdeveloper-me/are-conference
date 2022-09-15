@@ -12,4 +12,5 @@ class Speaker(models.Model):
 		return reverse('speakers:speaker_list')
 
 
+
 	

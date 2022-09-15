@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 app_name = 'awards'
 
 urlpatterns = [
+
+	path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
 	path('award/',views.AwardView.as_view(),name='award'),
@@ -26,4 +28,5 @@ urlpatterns = [
 	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('sendmail/',views.sendMail,name='email'),
 	path('climate_award/',views.Climateaward.as_view(),name='climate_award'),
+	path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 ]

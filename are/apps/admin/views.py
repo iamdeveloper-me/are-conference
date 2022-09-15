@@ -10,7 +10,7 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from django.contrib import auth, messages
 from django.contrib.auth import login, logout
-
+from django.http import Http404
 
 
 # Create your views here.
@@ -25,12 +25,12 @@ class AdminLogin(LoginView):
 			username = request.POST['username']
 			password = request.POST['password']
 			user = auth.authenticate(username = username, password = password)
-			
 			if user is not None and user.is_staff == True:
 				login(request, user)
 				return redirect('awards:home')
-			else:
-				return redirect('/admin_login')
+				# return redirect('/admin_login')
+		else:
+			return self.form_invalid(form)
 
 class AdminLogout(LogoutView):
 	success_url = '/'
