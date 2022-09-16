@@ -37,13 +37,14 @@
                                     {% for data in object_list %}
                                     <tr>
                                         <td>{{data.id}}</td>
-                                        <td><img src="{{data.profile_image.url}}" width="60rem" height="50rem"></td>
+                                        <td></td>
                                         <td>{{ data.name }}</td>
                                         <td>{{ data.designation }}</td>
                                         <td>{{ data.detail }}</td>
                                         <td class="action_btn">
-                                            <a href="#" ><span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span></a>
-                                            <a href="{% url 'speaker_delete' pk=data.pk %}" ><span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
+                                            <a href="#Editspeaker"  data-toggle="modal"><span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span></a>
+
+                                            <a href="{% url 'speaker_delete' data.id %}"><span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
                                         </td>
                                         {% comment %}
                                         <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
@@ -59,9 +60,6 @@
         </div>
     </div>
 </section>
-<!-- footer start -->
-<!-- Modal -->
-</div>
 {% endblock content %}
 {% block extra_content %}
 {% include 'popup/add_speaker_popup.html' %}
