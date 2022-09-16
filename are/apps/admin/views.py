@@ -61,7 +61,7 @@ class AdminSpeakerCreateView(CreateView):
 
 		return redirect("/admin_login/adminspeaker")
 
-class AdminViewawards(ListView,):
+class AdminViewawards(ListView):
 	model = Speaker
 	template_name = "admin_awards.html"
 
