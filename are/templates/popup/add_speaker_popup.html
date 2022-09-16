@@ -7,7 +7,7 @@
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <form action="{% url 'admin_add_speaker' %}" method="post" enctype='multipart/form-data'>
+                    <form action="{% url 'speakers:add_speaker' %}" method="post" enctype='multipart/form-data'>
                         {% csrf_token %}
                         <label for="">Name</label>
                         <input type="text" name="name" class="form-control" id="" placeholder="Name" required="">

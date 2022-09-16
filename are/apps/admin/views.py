@@ -40,31 +40,30 @@ class AdminViewSpeaker(ListView):
 	model = Speaker
 	template_name = "admin_speaker.html"
 
-class AdminSpeakerCreateView(CreateView):
-	model = Speaker
-	form_class = SpeakerForm
-	template_name = 'admin_speaker.html'
+# class AdminSpeakerCreateView(CreateView):
+# 	model = Speaker
+# 	form_class = SpeakerForm
+# 	template_name = 'admin_speaker.html'
 
-	def post(self, request, *args, **kwargs):
-		if request.method == 'POST' :
-			name = request.POST.get("name")
-			designation = request.POST.get("designation")
-			detail = request.POST.get("detail")
-			profile_image = request.POST.get("images")
-			speaker_register = Speaker(name=name,designation=designation,detail=detail,profile_image=profile_image)
-			speaker_register.save()
+# 	def post(self, request, *args, **kwargs):
+# 		if request.method == 'POST' :
+# 			name = request.POST.get("name")
+# 			designation = request.POST.get("designation")
+# 			detail = request.POST.get("detail")
+# 			profile_image = request.POST.get("images")
+# 			speaker_register = Speaker(name=name,designation=designation,detail=detail,profile_image=profile_image)
+# 			speaker_register.save()
 
-		return redirect("/admin_login/adminspeaker")
+# 		return redirect("/admin_login/adminspeaker")
 
 
 
 class SpeakerDeleteView(DeleteView):
     model = Speaker
-    # success_url = reverse_lazy("admin:speaker_admin")
-    template_name = 'speaker_confirm_delete.html'
+    success_url = reverse_lazy("speaker_admin")
+    template_name = 'delete.html'
 
-    def get_success_url(self, **kwargs):
-    	return self.object.get_absolute_url()
+
 
 class SpeakerUpdateView(UpdateView):
 	# import pdb; pdb.set_trace()
