@@ -283,6 +283,10 @@ span.note{
         background-size: cover;
         background-position: center top !important;
     }
+    .appform-section .application-form label {
+        font-size: 14px;
+        line-height: 20px;
+        }
     .application_head h2{
         font-size: 30px;
         line-height: 35px;
@@ -316,7 +320,7 @@ span.note{
         margin-bottom: 20px;
     }
     .without-bgbtn {
-        width: 160px;
+        width: 150px;
         height:44px;
         line-height: 30px;
     }
@@ -324,7 +328,7 @@ span.note{
         margin-bottom: 12px;
     }
     .with-bgbtn{
-        width: 160px;
+        width: 150px;
         height:44px;
         line-height: 30px;
     }

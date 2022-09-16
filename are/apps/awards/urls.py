@@ -7,7 +7,7 @@ app_name = 'awards'
 
 urlpatterns = [
 
-	path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
+	# path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
 	path('award/',views.AwardView.as_view(),name='award'),
