@@ -45,8 +45,11 @@
             </div>
             <div class="col-md-5  menu-list subscribe-div">
                 <h4 class="pl-0">Subscribe</h4>
-                <input class="form-control" placeholder="Enter your email"/>
-                <button class="btn home-button">Submit</button>
+                 <form role="form" method="post" action="{% url 'awards:email' %}" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input class="form-control" type="email" name="recipient" id="email" placeholder="Enter your email" />
+                    <button for="email" class="btn home-button">Submit</button>
+                </form>
                 <p>By subscribing you agree to with our Privacy Policy</p>
                 <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
