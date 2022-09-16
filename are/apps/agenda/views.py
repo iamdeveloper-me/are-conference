@@ -1,11 +1,13 @@
 from django.shortcuts import render ,redirect,get_object_or_404
 from django.views.generic import TemplateView
 from agenda.models import Agenda,Conference
+from speakers.models import Speaker
 from agenda.forms import AgendaForm, ConferenceForm
 from django.views.generic import ListView,View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.utils.timezone import now
+from django.http import JsonResponse
 from datetime import timedelta, date
 import pandas as pd
 
@@ -34,9 +36,6 @@ class MyFormView(CreateView):
 			agenda = form.save(commit=False)
 			agenda.save()
 			return redirect('/agenda')
-		else:
-			form = AgendaForm(pk=conf.id)
-		return render(request, 'agenda.html', {'form': form,'conf.id': objs})
 
 
 class AgendaView(ListView):
@@ -70,12 +69,26 @@ class AgendaView(ListView):
 					}
 
 			context['agenda'] = data
+			context['speakers'] = Speaker.objects.all()
 			return context
 		else:
 			context = {
 				'conf':None,
-				'agenda':{}
+				'agenda':{},
+				'speakers': Speaker.objects.all()
 			}
 			return context
+
+def edit_session_popup(request):
+	import pdb; pdb.set_trace()	
+	session_id = request.GET.get('session_id')
+	selected_session = Agenda.objects.all().filter(id=int(session_id))
+	speakers = Speaker.objects.all()
+	response = {
+		"session":selected_session,
+		"speakers":speakers
+	}
+	return JsonResponse(response)
+
 
 

@@ -8,7 +8,7 @@
                 <div id="sidebar" role="navigation">
                     <ul>
                         <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a><li>
                         <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
                     </ul>
@@ -42,8 +42,8 @@
                                         <td>{{ data.designation }}</td>
                                         <td>{{ data.detail }}</td>
                                         <td class="action_btn">
-                                            <span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span>
-                                            <span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span>
+                                            <a href="#" ><span class="edit_icon"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span></a>
+                                            <a href="{% url 'speaker_delete' pk=data.pk %}" ><span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
                                         </td>
                                         {% comment %}
                                         <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
@@ -61,50 +61,6 @@
 </section>
 <!-- footer start -->
 <!-- Modal -->
-<div class="modal fade" id="add_speaker" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered add_speakermodal" role="document">
-        <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="modal-body">
-                <form>
-                    <input type="text" name="conference" hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
-                    <div class="form-group">
-                        <label for="">Date</label>
-                        <input type="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
-                    </div>
-                    <div class="form-group">
-                        <label>session</label>
-                        <input type="choice" name="session" class="form-control" id="" placeholder="session">
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">Start Time</label>
-                                <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="">End Time</label>
-                                <input type="time" name="endtime" class="form-control" id="" placeholder="time" required="true">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="">Duration</label>
-                        <input type="time" name="duration" class="form-control" id="" placeholder="duration" required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="">Event</label>
-                        <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
-                    </div>
-                    <input type="submit" class="common_btn" value="Add">
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
 {% endblock content %}
 {% block extra_content %}
