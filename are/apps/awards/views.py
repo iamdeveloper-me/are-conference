@@ -74,11 +74,14 @@ class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		context = AmgAward.objects.all().order_by('id')
+		context = {
+			"individual":AmgAward.objects.filter(org_name=None),
+			"organization":AmgAward.objects.filter(full_name=None)
+		}
 		return {'context':context}
 
 
-class AdminDetailViewAmgApplicant(DetailView):
+class AdminDetailViewAmgApplicant(LoginRequiredMixin, DetailView):
 	model = AmgAward
 	template_name = 'admin/admin_detail_view_amg_applicants.html'
 
@@ -115,7 +118,7 @@ class ClimateApplicationForm(CreateView):
 		return context
 
 
-class AdminViewClimateApplicant(TemplateView):
+class AdminViewClimateApplicant(LoginRequiredMixin, TemplateView):
 	model = ClimateAward
 	template_name = 'admin/admin_view_climate_applicants.html'
 
@@ -128,7 +131,7 @@ class AdminViewClimateApplicant(TemplateView):
 		return {'context':context}
 
 
-class AdminDetailViewClimateApplicant(DetailView):
+class AdminDetailViewClimateApplicant(LoginRequiredMixin, DetailView):
 	model = ClimateAward
 	template_name = 'admin/admin_detail_view_climate_applicants.html'
 
