@@ -1,7 +1,11 @@
 #ignore specific files
 
 *~
+<<<<<<< HEAD
 **/*.pyc
+=======
+*.pyc
+>>>>>>> 67344f7 (gitignore)
 *.bak
 *.swo
 *.swp
@@ -10,6 +14,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+<<<<<<< HEAD
+=======
+# C extensions
+*.so
+>>>>>>> 67344f7 (gitignore)
 
 */media/
 **/migrations/
@@ -27,5 +36,46 @@ ENV/
 db.sqlite3
 
 
+<<<<<<< HEAD
 *.sublime-project
 *.sublime-workspace
+=======
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+.project
+.pydevproject
+.idea/*
+.settings/*
+*.vscode
+*.log
+/venv/
+logs/*
+.DS_Store
+/config/cov.coverage
+/config/.env
+/config/cov.syspath.txt
+/config/coverage.xml
+/config/.coverage
+/.coverage
+.scannerwork/.sonar_lock
+.scannerwork/report-task.txt
+coverage_report/coverage.xml
+static/*
+/media/ddata/*
+/.scannerwork/pylint/
+/Dore-JQuery-Admin-Dashboard-2.3.0 2/
+/.scannerwork/
+
+google-alps-sit.json
+setup.sh
+/config/static/
+>>>>>>> 67344f7 (gitignore)
