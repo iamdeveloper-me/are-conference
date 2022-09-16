@@ -171,7 +171,39 @@ def edit_speaker_popup(request):
 		return redirect("/admin_login/adminspeaker")
 		
 
- 
+def edit_agenda_popup(request):
+	if request.method =='GET':
+		import pdb; pdb.set_trace()	
+		speaker_id = request.GET.get('speaker_id')
+		speaker=Speaker.objects.get(id=speaker_id)
+
+		context = {
+			'speaker_id':speaker.id,
+			'speaker_name':speaker.name,
+			'speaker_desig':speaker.designation,
+			'speaker_detail':speaker.detail,
+			'speaker_profile':speaker.profile_image.url,
+		}
+
+		return JsonResponse(context)
+
+	if request.method =='POST':
+
+		speaker_id = request.POST.get('speaker_id')
+		speaker_name = request.POST.get('name')
+		speaker_desig = request.POST.get('designation')
+		speaker_detail = request.POST.get('detail')
+		speaker_profile = request.FILES['profile_image']
+
+		speaker = Speaker.objects.get(id=int(speaker_id))
+		speaker.name=speaker_name
+		speaker.designation=speaker_desig
+		speaker.detail=speaker_detail
+		speaker.profile_image=speaker_profile
+
+		speaker.save()
+
+		return redirect("/admin_login/adminspeaker") 
 
 
 

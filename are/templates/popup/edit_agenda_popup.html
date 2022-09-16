@@ -1,21 +1,14 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-</head>
-
-<body>
-    <div id="add_session" class="modal fade">
-        <div class="modal-dialog modal-login">
-            <div class="modal-content">
-                <form action="{% url 'agenda:agenda_add' %}" method="post" enctype='multipart/form-data'>
-                    {% csrf_token %}
-                    <div class="modal-header">
-                        <h4>Add Agenda</h4>
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
+<!--Popup for Add Speaker Start-->
+<div id="Editagenda" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Edit Speaker</h4>
+            </div>
+            <div class="modal-body">
                         <div class="form-group">
+                            <form action="{% url 'admin_agenda_edit' %}" method="post" enctype='multipart/form-data'>
+                            {% csrf_token %}
                             <input type="text" name="conference" hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
                             <input type="date" name="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
                             <label for="">session</label>
@@ -33,7 +26,7 @@
                                     <option value="{{ speaker.id }}">{{ speaker.name }}</option>
                                 {% endfor %}
                             </select>
-                            <input type="submit" class="btn btn-primary" value="add">
+                            <input type="submit" class="btn btn-primary" value="Update">
                         </div>
                     </div>
                 </form>
@@ -59,6 +52,4 @@
         // });
     });
     </script>
-</body>
-
-</html>
+<!--Popup Add Speaker End-->

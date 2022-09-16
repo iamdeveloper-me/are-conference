@@ -14,5 +14,6 @@ urlpatterns = [
 	path('deletespeaker/<int:pk>', views.SpeakerDeleteView.as_view(), name='speaker_delete'),
 	path('updatespeaker/<int:pk>', views.SpeakerUpdateView.as_view(), name='speaker_update'),
     path('logout/', views.AdminLogout.as_view(), name='admin_logout'),
-    path('editpopup/', views.edit_speaker_popup, name='admin_speaker_edit'),
+    path('editspeakerpopup/', views.edit_speaker_popup, name='admin_speaker_edit'),
+    path('editagendapopup/', views.edit_agenda_popup, name='admin_agenda_edit'),
 ]

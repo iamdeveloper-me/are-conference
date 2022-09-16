@@ -1,5 +1,6 @@
 {% extends "layout/base.html" %}
 {% load static %}
+{% load filter %}
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/agenda.css' %}">
 {% endblock extra_css %}
@@ -50,7 +51,7 @@
                             <tr class="green_bg">
                                 <td></td>
                                 <td>{{ object.starttime }} to {{ object.endtime }}</td>
-                                <td>{{ object.duration }}</td>
+                                <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                                 <td>{{ object.event }}</td>
                                 <td></td>
                                 <td class="text-center"><button data-sessionid="{{ object.id }}" id="editbtn" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
@@ -64,7 +65,7 @@
                             <tr class="dark_bg">
                                 <td>{{ object.session }}</td>
                                 <td>{{ object.starttime }} to {{ object.endtime }}</td>
-                                <td>{{ object.duration }}</td>
+                                <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                                 <td>{{ object.event }}</td>
                                 <td>unknown</td>
                                 <td class="text-center"><button data-sessionid="{{ object.id }}" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
