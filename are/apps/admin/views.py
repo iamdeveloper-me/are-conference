@@ -67,7 +67,6 @@ class SpeakerDeleteView(DeleteView):
 
 
 class SpeakerUpdateView(UpdateView):
-	# import pdb; pdb.set_trace()
 	model = Speaker
 	form_class = SpeakerForm
 	template_name = 'admin_speaker.html'
@@ -77,7 +76,6 @@ class SpeakerUpdateView(UpdateView):
 		return self.object.get_absolute_url()
 
 def edit_speaker_popup(request):
-	# import pdb;pdb.set_trace()
 	if request.method =='GET':
 
 		speaker_id = request.GET.get('speaker_id')
@@ -95,7 +93,6 @@ def edit_speaker_popup(request):
 		return JsonResponse(context)
 
 	if request.method =='POST':
-		import pdb; pdb.set_trace()
 
 		speaker_id = request.POST.get('speaker_id')
 		speaker_name = request.POST.get('name')
