@@ -10,15 +10,12 @@ from django.utils.timezone import now
 from django.http import JsonResponse
 from datetime import timedelta, date
 import pandas as pd
-
-# Create your views here.
+from speakers.models import Speaker
 
 
 class ConferenceCreateView(CreateView):
 	model = Conference 
-	fields = ['title', 'startdate','enddate']
-	template_name="agenda.html"
-
+	form_class = ConferenceForm
 
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
@@ -28,6 +25,7 @@ class MyFormView(CreateView):
 	model = Agenda 
 	form_class = AgendaForm
 	template_name = 'agenda.html'
+	# success_url = reverse('agenda:agenda_list')
 
 	def post(self, request, *args, **kwargs):
 		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
@@ -69,7 +67,9 @@ class AgendaView(ListView):
 					}
 
 			context['agenda'] = data
-			context['speakers'] = Speaker.objects.all()
+
+			context['all_speakers'] = Speaker.objects.all()
+
 			return context
 		else:
 			context = {
@@ -77,6 +77,8 @@ class AgendaView(ListView):
 				'agenda':{},
 				'speakers': Speaker.objects.all()
 			}
+
+			context['all_speakers'] = Speaker.objects.all()
 			return context
 
 def edit_session_popup(request):
@@ -88,6 +90,8 @@ def edit_session_popup(request):
 		"speakers":speakers
 	}
 	return JsonResponse(response)
+
+
 
 
 
