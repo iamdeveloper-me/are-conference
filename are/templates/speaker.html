@@ -10,7 +10,7 @@
     <div id="myModal" class="modal fade">
         <div class="modal-dialog modal-login">
             <div class="modal-content">
-                <form action="{% url 'speaker_add' %}" method="post" enctype='multipart/form-data'>
+                <form action="{% url 'speakers:add_speaker' %}" method="post" enctype='multipart/form-data'>
                     {% csrf_token %}
                     <div class="modal-header">              
                         <h4>Add Speaker</h4>
@@ -29,13 +29,13 @@
                             <input type="submit" class="btn btn-primary" value="Add">     
                         </div>
                     </div>
+                </form>
             </div>
             <div class="modal-footer justify-content-between">
             </div>
-            </form>
-            </div>
         </div>
     </div>
+</div>
      <!--Popup for Add Speaker End-->
     <!-- banner -->
     <section class="speaker-section">

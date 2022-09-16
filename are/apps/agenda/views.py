@@ -12,14 +12,10 @@ from datetime import timedelta, date
 import pandas as pd
 from speakers.models import Speaker
 
-# Create your views here.
-
 
 class ConferenceCreateView(CreateView):
 	model = Conference 
-	fields = ['title', 'startdate','enddate']
-	template_name="agenda.html"
-
+	form_class = ConferenceForm
 
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
@@ -86,7 +82,6 @@ class AgendaView(ListView):
 			return context
 
 def edit_session_popup(request):
-	import pdb; pdb.set_trace()	
 	session_id = request.GET.get('session_id')
 	selected_session = Agenda.objects.all().filter(id=int(session_id))
 	speakers = Speaker.objects.all()

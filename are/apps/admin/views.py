@@ -66,7 +66,6 @@ class SpeakerDeleteView(DeleteView):
 
 
 class SpeakerUpdateView(UpdateView):
-	# import pdb; pdb.set_trace()
 	model = Speaker
 	template_name = 'admin_speaker.html'
 	fields = ['name','designation','detail','profile_image']

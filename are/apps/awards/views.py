@@ -34,8 +34,6 @@ class DashboardView(TemplateView):
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
-class DashboardView(TemplateView): 
-	template_name = "dashboard.html"
 
 class ContextView(TemplateView):
 	template_name = "context.html"
