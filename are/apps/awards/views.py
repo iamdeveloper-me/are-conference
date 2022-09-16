@@ -7,8 +7,9 @@ from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponse
 
-class HomePageView(TemplateView):
+class HomePage(TemplateView):
 	template_name = "homepage.html"
 
 class AdminAgendaView(TemplateView):
@@ -129,4 +130,5 @@ def sendMail(request):
         form = EmailForm()
 
     return render(request, 'homepage.html')
+
 
