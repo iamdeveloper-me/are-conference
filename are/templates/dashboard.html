@@ -7,9 +7,9 @@
             <div class="col-md-2">
                 <div id="sidebar" role="navigation">
                     <ul>
-                        <li class="nav-item active"><a class="nav-link" href="#">dashboard</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
                     </ul>
                 </div>
@@ -44,7 +44,7 @@
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <h4>Total Speakers</h4>
-                                                <p>{{data.total_speaker}}</p>
+                                                <p>{{ data.total_speaker }}</p>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="right_di"><img src="{% static 'images/voice.png' %}" alt="" title="" /></div>
@@ -59,7 +59,7 @@
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <h4>Energy Award</h4>
-                                                <p>{{data.total_awards}}</p>
+                                                <p>{{ data.total_awards }}</p>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="right_di"><img src="{% static 'images/trophy.png' %}" alt="" title="" /></div>
@@ -74,7 +74,7 @@
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <h4>Climate Hackathon</h4>
-                                                <p>{{data.total_climate}}</p>
+                                                <p>{{ data.total_climate }}</p>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="right_di"><img src="{% static 'images/climate.png' %}" alt="" title="" /></div>
