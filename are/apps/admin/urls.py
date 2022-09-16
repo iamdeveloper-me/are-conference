@@ -5,6 +5,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth import views as auth_views
 # from django.urls import path, reverse_lazy
 
+
 urlpatterns = [
 	path('', views.AdminLogin.as_view(), name='admin_login'),
 	path('adminaddspeaker/', views.AdminSpeakerCreateView.as_view(), name='admin_add_speaker'),
