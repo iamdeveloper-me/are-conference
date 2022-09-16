@@ -146,7 +146,7 @@ def sendMail(request):
 
     return render(request, 'homepage.html')
 
-class Climateaward(TemplateView):
+class Shellgamechanger(TemplateView):
 	template_name = 'climate_award.html'
 
 class Adminspeker(TemplateView):
