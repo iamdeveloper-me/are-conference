@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'registration',
     'speakers',
+    'agenda',
     'awards',
     'phonenumber_field',
     'ckeditor',
@@ -131,9 +132,9 @@ USE_TZ = True
 
 #STATIC_URL = '/static/'
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-#STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 #MEDIA_URL = '/media/'
 
@@ -152,9 +153,16 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
+#Send Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'test958949@gmail.com'
+EMAIL_HOST_PASSWORD = 'cbmn atso cvkp viza'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 LOGIN_REDIRECT_URL = 'awards:home'
 
 LOGOUT_REDIRECT_URL = 'awards:home'
+
 

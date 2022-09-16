@@ -1,0 +1,54 @@
+{% extends "layout/admin_base.html" %}
+{% load static %}
+{% block content %}
+<section class="dashboard_area">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div id="sidebar" role="navigation">
+                    <ul>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="dashboard_right">
+                    <div class="award_head">
+                        <h2>Awards</h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="award_card">
+                                    <a href="{% url 'awards:amg_applicants' %}">
+                                        <div class="card_custom">
+                                            <h4>Energy Swaraj Awards</h4>
+                                            <p>{{ data.total_awards }}</p>
+                                            <p class="more"><a href="#!">More</a></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="award_card">
+                                    <a href="{% url 'awards:climate_applicants' %}">
+                                        <div class="card_custom">
+                                            <h4>Climate Hackathon Challenge Award</h4>
+                                            <p>{{ data.total_climate }}</p>
+                                            <p class="more"><a href="#!">More</a></p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+{% endblock content %}
+{% block extra_content %}
+{% include 'popup/add_speaker_popup.html' %}
+{% include 'popup/edit_speaker_popup.html' %}
+{% endblock extra_content %}

@@ -74,6 +74,11 @@
     text-transform: capitalize;
     margin-left: 15px;
     margin-top:20px;
+    transition: all 0.3s;
+}
+.challenge_box a:hover{
+    background: #9A1C20;
+    color: #fff;
 
 }
 

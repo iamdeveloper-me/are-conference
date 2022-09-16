@@ -24,11 +24,38 @@ section.privacy_content {
     padding-bottom: 20px;
     padding-top: 6px;
 }
+.privacy_text h3 {
+    text-align: left;
+    font-size: 28px;
+    font-weight: 600;
+    padding-bottom: 30px;
+    color: #00BCFF;
+}
+section.privacy_content h4 {
+    font-weight: normal;
+    font-size: 22px;
+    padding-bottom: 12px;
+}
+ul.terms_list {
+    padding-left: 15px;
+    margin-bottom:20px;
+}
+ul.terms_list li {
+    margin-bottom: 10px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4B4B4B;
+}
+
 
 @media screen and (max-width: 767px) {
 
 section.privacy_content {
-    padding: 24% 0px 35px;
+    padding: 24% 0px 20px;
+}
+.privacy_text h3{
+   padding-bottom: 0px;
 }
 
 .privacy_text h2 {
@@ -40,6 +67,9 @@ section.privacy_content {
     font-size: 20px;
     line-height: 16px;
     padding-top: 2px;
+}
+.privacy_text {
+    padding: 20px 0px 0px;
 }
 
 }

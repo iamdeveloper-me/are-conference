@@ -1,5 +1,7 @@
 from django import forms
+from speakers.model import Speaker
 from django.contrib.auth.models import User
+
 
 class LoginForm(forms.ModelForm):
     class Meta:
@@ -9,3 +11,10 @@ class LoginForm(forms.ModelForm):
                 'password',
         ]
 
+class UpdateSpeakerForm(forms.ModelForm):
+    class Meta:
+        model = Speaker
+        fields = [
+                'name','profile_image',
+                'designation','detail'
+        ]

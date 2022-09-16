@@ -156,8 +156,14 @@
     text-align: center;
     border-radius:50px;
     line-height:50px;
+    transition: all 0.3s;
+    border:1px solid #9A1C20;
 }
-
+.category_text a:hover, .saveworld_text a:hover{
+    background: transparent;
+    color: #252123;
+    border:1px solid #252123;
+}
 /* save the world */
 
 .saveworld_section_area{
