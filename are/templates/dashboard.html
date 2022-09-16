@@ -29,16 +29,17 @@
             </div>
         </div>
     </header>
+<!-- header close -->
 <section class="dashboard_area">
     <div class="container-fluid">
        <div class="row no-gutters">
           <div class="col-md-2">
              <div id="sidebar" role="navigation">
                  <ul>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'speakers:speaker_list' %}">Speakers</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'awards:award' %}">Awards</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'agenda:agenda_list' %}">Agenda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Speakers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Awards</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
                 </ul>
              </div>
           </div>
@@ -49,19 +50,19 @@
                         <div class="col-md-4">
                              <div class="card_custom">
                                  <h4>Total Speakers</h4>
-                                 <p>14</p>
+                                 <p>{{data.total_speaker}}</p>
                              </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card_custom">
                                 <h4>Energy Award</h4>
-                                <p>2</p>
+                                <p>{{data.total_awards}}</p>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="card_custom">
                                 <h4>Climate Hackathon</h4>
-                                <p>14</p>
+                                <p>{{data.total_climate}}</p>
                             </div>
                         </div>
                     </div>

@@ -54,6 +54,7 @@ class AgendaView(ListView):
 			indexlist = [i+1 for i in range(len(datelist))]
 			# context['agenda'] = Agenda.objects.all()
 			agenda = Agenda.objects.all().filter(conference_id = context['conf'].id).order_by('starttime').order_by('date')
+
 			data = {}
 			for index, item in zip(indexlist, datelist):
 				if agenda:
@@ -69,11 +70,17 @@ class AgendaView(ListView):
 
 			context['agenda'] = data
 			context['all_speakers'] = Speaker.objects.all()
+
 			return context
 		else:
 			context = {
 				'conf':None,
 				'agenda':{}
 			}
+
 			context['all_speakers'] = Speaker.objects.all()
 			return context
+
+
+
+
