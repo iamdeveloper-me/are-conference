@@ -318,6 +318,9 @@ div#sidebar a {
     background: #9A1C21;
     color: #fff;
 }
+#sidebar li.nav-item.active a{
+    color:#fff;
+}
 .card_pannel a {
     color: #000;
 }
