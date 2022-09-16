@@ -14,9 +14,10 @@ class HomePageView(TemplateView):
 	template_name = "homepage.html"
 
 
-class DashboardView(TemplateView):
+class DashboardView(LoginRequiredMixin,TemplateView):
 	modal = Speaker
 	template_name = "dashboard.html"
+	login_url='/admin_login/'
 
 	def get_context_data(self, **kwargs):
 		total_speaker = Speaker.objects.all().count()
@@ -47,11 +48,12 @@ class AmgAwardView(TemplateView):
 class AwardView(TemplateView):
 	template_name = "award.html"
 
-class AmgApplicationFormView(CreateView):
+class AmgApplicationFormView(LoginRequiredMixin,CreateView):
 	model = AmgAward
 	form_class = AmgApplicationForm
 	template_name = "applicationform.html"
 	success_url = '/thanks'
+	login_url='/admin_login/'
 
 	def post(self, request, *args, **kwargs):
 		form = self.get_form()
@@ -70,6 +72,7 @@ class ThanksEnergyView(TemplateView):
 class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 	model = AmgAward
 	template_name = 'admin/admin_view_amg_applicants.html'
+	login_url='/admin_login/'
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
@@ -83,6 +86,8 @@ class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 class AdminDetailViewAmgApplicant(LoginRequiredMixin, DetailView):
 	model = AmgAward
 	template_name = 'admin/admin_detail_view_amg_applicants.html'
+	login_url='/admin_login/'
+
 
 
 class Privacypolicy(TemplateView):
