@@ -303,8 +303,14 @@ li{
     color: #000;
 }
 .logout_btn a {
-    color: #000;
+    color: #991b30;
     font-weight: 500 !important;
+    transition: all 0.3s;
+}
+.logout_btn a:hover{
+    color:#252123 !important;
+    border:1px solid #ffffff !important;
+    background:#fff;
 }
 div#sidebar a {
     padding: 13px 15px;

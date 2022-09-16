@@ -34,6 +34,10 @@ footer .menu-list li a{
     line-height: 150%;
     color: #4B4B4B;
     margin-bottom: 8px;
+    transition: all 0.3s;
+}
+footer .menu-list li a:hover{
+    color: #9A1C20;
 }
 footer .contact-us{
     font-style: normal;
@@ -92,6 +96,12 @@ footer .subscribe-div button{
     text-align: center;
     color: #FFFFFF;
     float: right;
+    transition: all 0.3s;
+}
+footer .subscribe-div button:hover{
+    background: transparent;
+    color: #252123;
+    border:1px solid #252123;
 }
 footer .subscribe-div p{
     font-family: 'Poppins';
@@ -127,6 +137,10 @@ footer .subscribe-div li{
     line-height: 150%;
     text-decoration-line: underline !important;
     color: #252123;
+    transition: all 0.3s;
+}
+.copy-right li a:hover{
+    color: #9A1C20;
 }
 ul.list-unstyled.footer_top {
     padding-top: 39px;
@@ -142,7 +156,7 @@ img.logo-img {
         padding-right: 20px !important;
     }
     footer .subscribe-div input{
-        width: 65%;
+        width: 60%;
     }
     footer .menu-list h4{
         padding-left: 0 !important;

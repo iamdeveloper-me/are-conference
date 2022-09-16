@@ -191,6 +191,11 @@ p.required-text{
     background: transparent;
     text-transform: capitalize;
     margin-right: 30px;
+    transition: all 0.3s;
+}
+.without-bgbtn:hover{
+    background: #9A1C20;
+    color:#fff;
 }
 .with-bgbtn {
     width: 220px;
@@ -205,6 +210,12 @@ p.required-text{
     text-align: center;
     color: #FFFFFF !important;
     text-transform: capitalize;
+    transition: all 0.3s;
+}
+.with-bgbtn:hover{
+    background: transparent;
+    border:1px solid #9A1C20;
+    color:#9A1C20 !important;
 }
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before{
     background: #9A1C20;
