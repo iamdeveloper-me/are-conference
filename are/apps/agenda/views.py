@@ -80,7 +80,6 @@ class AgendaView(ListView):
 			return context
 
 def edit_session_popup(request):
-	import pdb; pdb.set_trace()	
 	session_id = request.GET.get('session_id')
 	selected_session = Agenda.objects.all().filter(id=int(session_id))
 	speakers = Speaker.objects.all()

@@ -412,14 +412,12 @@
 
 <script type="  ">
     $('body').on('click', "#editbtn", function(e) {
-    debugger
     var session_id = e.target.value
     $.ajax({
         type: "GET",
         url: "/edit-session-popup/",
         data: { session_id:session_id, },
         success: function(response) {
-                debugger
         }
     });
 });

@@ -16,6 +16,7 @@ import json
 
 
 # Create your views here.
+
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
 
@@ -59,7 +60,7 @@ class AdminSpeakerCreateView(CreateView):
 		return redirect("/admin_login/adminspeaker")
 
 class AdminViewawards(ListView):
-	model = Award
+	model = Speaker
 	template_name = "admin_awards.html"
 
 	def get_context_data(self, **kwargs):
@@ -74,6 +75,7 @@ class AdminViewawards(ListView):
 		}
 
 		return {'data':data} 
+
 
 class SpeakerDeleteView(DeleteView):
     model = Speaker
@@ -111,7 +113,6 @@ def edit_speaker_popup(request):
 		return JsonResponse(context)
 
 	if request.method =='POST':
-		import pdb; pdb.set_trace()
 
 		speaker_id = request.POST.get('speaker_id')
 		speaker_name = request.POST.get('name')

@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from .models import AmgAward, Award, ClimateAward
 from speakers.models import Speaker
+from awards.models import Award,AmgAward,ClimateAward
 from .forms import AmgApplicationForm, ChallengeForm, EmailForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
@@ -12,12 +13,11 @@ from django.conf import settings
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
 
-class DashboardView(ListView):
-	modal = Speaker,AmgAward,ClimateAward
+class DashboardView(TemplateView):
+	modal = Speaker
 	template_name = "dashboard.html"
 
 	def get_context_data(self, **kwargs):
-		import pdb; pdb.set_trace()	
 		total_speaker = Speaker.objects.all().count()
 		total_awards = AmgAward.objects.all().count()
 		total_climate = ClimateAward.objects.all().count()
@@ -33,8 +33,7 @@ class DashboardView(ListView):
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
-class DashboardView(TemplateView): 
-	template_name = "dashboard.html"
+
 
 class ContextView(TemplateView):
 	template_name = "context.html"
