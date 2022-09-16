@@ -1,498 +1,544 @@
-{% extends "layout/base.html" %}
+{% extends "layout/admin_base.html" %}
 {% load static %}
-
 {% block content %}
-
-<div style="padding:120px;">
-	{% if climateaward.challenge_number == 1 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organization</th>
-                    <td>{{climateaward.participant}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Brief Description Of Your Hardware And Software</th>
-                    <td>{{climateaward.brief_description}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">What Are The Major Climate Change Issues You Want To Address?</th>
-                    <td>{{climateaward.major_climate_challenge}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">What Steps Should An Individual Or Any Type Of Institution Or Organisation Take To Mitigate Climate Change?</th>
-                    <td>{{climateaward.steps}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Working Video Of Hardware And Software</th>
-                    <td><video width="320" height="240" controls><source src="{{climateaward.working_video.url}}" type="video/mp4"></video></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-	{% elif climateaward.challenge_number == 2 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Uploaded Submission Here</th>
-                    <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% elif climateaward.challenge_number == 3 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Uploaded Submission Here</th>
-                    <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% elif climateaward.challenge_number == 4 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Uploaded Submission Here</th>
-                    <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% elif climateaward.challenge_number == 5 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Uploaded Submission Here</th>
-                    <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% elif climateaward.challenge_number == 6 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Your View On Climate Change</th>
-                    <td>{{climateaward.your_view}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Title Of The Song</th>
-                    <td>{{climateaward.title_song}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Uploaded Submission Here</th>
-                    <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% elif climateaward.challenge_number == 7 %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Your View On Climate Change</th>
-                    <td>{{climateaward.your_view}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Title Of The Drama</th>
-                    <td>{{climateaward.title_drama}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Uploaded Submission Here</th>
-                    <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% else %}
-		<table class="table">
-            <thead>
-                <tr class="table-secondary">
-                    <th scope="col">Fields</th>
-                    <th scope="col">Details</th>
-                </tr>
-            </thead>
-            <tbody>
-            	<tr>
-                    <th scope="row">Id</th>
-                    <td>{{climateaward.id}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Full Name</th>
-                    <td>{{climateaward.full_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Email</th>
-                    <td>{{climateaward.email}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Contact Number</th>
-                    <td>{{climateaward.phone_number}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Organisation Name Or College Name</th>
-                    <td>{{climateaward.org_college_name}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Designation</th>
-                    <td>{{climateaward.designation}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Address</th>
-                    <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">City</th>
-                    <td>{{climateaward.city}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">State</th>
-                    <td>{{climateaward.state}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Pincode</th>
-                    <td>{{climateaward.pincode}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Your View On Climate Change</th>
-                    <td>{{climateaward.your_view}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Send The Tshirt On The Mentioned Address</th>
-                    <td>{{climateaward.send_tshirt}}</td>
-                </tr>
-                <tr>
-                    <th scope="row">Photo of your hand-painted T-shirt</th>
-                    <td><img src="{{climateaward.file.url}}"></td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
-    {% endif %}
-</div>
-
+<section class="dashboard_area">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div id="sidebar" role="navigation">
+                    <ul>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Agenda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding:50px;" class="col-md-10">
+                <h2>Climate Hackathon Challenge Award Applicant Details</h2><br>
+            	{% if climateaward.challenge_number == 1 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organization</th>
+                                <td>{{climateaward.participant}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Brief Description Of Your Hardware And Software</th>
+                                <td>{{climateaward.brief_description}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">What Are The Major Climate Change Issues You Want To Address?</th>
+                                <td>{{climateaward.major_climate_challenge}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">What Steps Should An Individual Or Any Type Of Institution Or Organisation Take To Mitigate Climate Change?</th>
+                                <td>{{climateaward.steps}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Working Video Of Hardware And Software</th>
+                                <td><video width="320" height="240" controls><source src="{{climateaward.working_video.url}}" type="video/mp4"></video></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+            	{% elif climateaward.challenge_number == 2 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Uploaded Submission Here</th>
+                                <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% elif climateaward.challenge_number == 3 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Uploaded Submission Here</th>
+                                <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% elif climateaward.challenge_number == 4 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Uploaded Submission Here</th>
+                                <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% elif climateaward.challenge_number == 5 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Uploaded Submission Here</th>
+                                <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% elif climateaward.challenge_number == 6 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Your View On Climate Change</th>
+                                <td>{{climateaward.your_view}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Title Of The Song</th>
+                                <td>{{climateaward.title_song}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Uploaded Submission Here</th>
+                                <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% elif climateaward.challenge_number == 7 %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Your View On Climate Change</th>
+                                <td>{{climateaward.your_view}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Title Of The Drama</th>
+                                <td>{{climateaward.title_drama}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Uploaded Submission Here</th>
+                                <td><object data="{{climateaward.file.url}}" type="application/pdf/doc"><a href="{{climateaward.file.url}}">Click Here</a></object></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% else %}
+            		<table class="table">
+                        <thead>
+                            <tr class="table-secondary">
+                                <th scope="col">Fields</th>
+                                <th scope="col">Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <th scope="row">Id</th>
+                                <td>{{climateaward.id}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Challenge Number</th>
+                                <td>{{climateaward.challenge_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Full Name</th>
+                                <td>{{climateaward.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Email</th>
+                                <td>{{climateaward.email}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Contact Number</th>
+                                <td>{{climateaward.phone_number}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Organisation Name Or College Name</th>
+                                <td>{{climateaward.org_college_name}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Designation</th>
+                                <td>{{climateaward.designation}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Address</th>
+                                <td>{{climateaward.address_line_one}}, {{climateaward.address_line_two}}, {{climateaward.address_landmark}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">City</th>
+                                <td>{{climateaward.city}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">State</th>
+                                <td>{{climateaward.state}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Pincode</th>
+                                <td>{{climateaward.pincode}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Your View On Climate Change</th>
+                                <td>{{climateaward.your_view}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Send The Tshirt On The Mentioned Address</th>
+                                <td>{{climateaward.send_tshirt}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Photo of your hand-painted T-shirt</th>
+                                <td><img src="{{climateaward.file.url}}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <a href="{% url 'awards:climate_applicants' %}" class="btn btn-outline-info">Back</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}

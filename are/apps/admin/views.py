@@ -53,7 +53,7 @@ class AdminSpeakerCreateView(CreateView):
 			name = request.POST.get("name")
 			designation = request.POST.get("designation")
 			detail = request.POST.get("detail")
-			profile_image = request.POST.get("images")
+			profile_image = request.FILES["profile_image"]
 			speaker_register = Speaker(name=name,designation=designation,detail=detail,profile_image=profile_image)
 			speaker_register.save()
 
