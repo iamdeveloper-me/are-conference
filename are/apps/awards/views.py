@@ -12,11 +12,12 @@ from django.conf import settings
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
 
-class DashboardView(TemplateView):
+class DashboardView(ListView):
 	modal = Speaker,AmgAward,ClimateAward
 	template_name = "dashboard.html"
 
 	def get_context_data(self, **kwargs):
+		import pdb; pdb.set_trace()	
 		total_speaker = Speaker.objects.all().count()
 		total_awards = AmgAward.objects.all().count()
 		total_climate = ClimateAward.objects.all().count()
@@ -26,7 +27,6 @@ class DashboardView(TemplateView):
 			'total_awards':total_awards,
 			'total_climate':total_climate,
 		}
-
 		return {'data':data} 
 
 

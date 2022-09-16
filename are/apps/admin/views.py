@@ -4,6 +4,7 @@ from django.views.generic import TemplateView, CreateView, ListView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.contrib.auth.views import LoginView,LogoutView
 from speakers.models import Speaker
+from awards.models import Award,AmgAward,ClimateAward
 from speakers.forms import SpeakerForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
@@ -56,7 +57,22 @@ class AdminViewSpeaker(ListView):
 
 # 		return redirect("/admin_login/adminspeaker")
 
+class AdminViewawards(ListView):
+	model = Award
+	template_name = "admin_awards.html"
 
+	def get_context_data(self, **kwargs):
+		total_speaker = Speaker.objects.all().count()
+		total_awards = AmgAward.objects.all().count()
+		total_climate = ClimateAward.objects.all().count()
+
+		data = {
+			'total_speaker':total_speaker,
+			'total_awards':total_awards,
+			'total_climate':total_climate,
+		}
+
+		return {'data':data} 
 
 class SpeakerDeleteView(DeleteView):
     model = Speaker

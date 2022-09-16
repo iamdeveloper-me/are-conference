@@ -9,6 +9,7 @@ urlpatterns = [
 	path('', views.AdminLogin.as_view(), name='admin_login'),
 	# path('adminaddspeaker/', views.AdminSpeakerCreateView.as_view(), name='admin_add_speaker'),
 	path('adminspeaker/', views.AdminViewSpeaker.as_view(), name='speaker_admin'),
+	path('adminawards/', views.AdminViewawards.as_view(), name='awards_admin'),
 	path('deletespeaker/<int:pk>', views.SpeakerDeleteView.as_view(), name='speaker_delete'),
 	path('updatespeaker/<int:pk>', views.SpeakerUpdateView.as_view(), name='speaker_update'),
     path('logout/', views.AdminLogout.as_view(), name='admin_logout'),
