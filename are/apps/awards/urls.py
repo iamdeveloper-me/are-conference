@@ -27,8 +27,9 @@ urlpatterns = [
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
 	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('sendmail/',views.sendMail,name='email'),
-	path('climate_award/',views.Climateaward.as_view(),name='climate_award'),
+	path('shell-gamechanger/',views.Shellgamechanger.as_view(),name='shell-gamechanger'),
 	path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 	path('awards/',views.Adminaward.as_view(),name='awards'),
 	path('agenda_detail/',views.Adminagenda.as_view(),name='agenda_detail'),
 ]
+path('shell-gamechanger/',views.DashboardView.as_view(),name='dashboard'),

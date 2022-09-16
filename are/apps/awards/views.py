@@ -28,12 +28,12 @@ class DashboardView(TemplateView):
 			'total_awards':total_awards,
 			'total_climate':total_climate,
 		}
-		return {'data':data} 
 
+		return {'data':data} 
+		
 
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
-
 
 class ContextView(TemplateView):
 	template_name = "context.html"
@@ -148,7 +148,7 @@ def sendMail(request):
 
     return render(request, 'homepage.html')
 
-class Climateaward(TemplateView):
+class Shellgamechanger(TemplateView):
 	template_name = 'climate_award.html'
 
 class Adminspeker(TemplateView):
