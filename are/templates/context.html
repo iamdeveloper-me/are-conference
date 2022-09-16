@@ -237,36 +237,22 @@ class UnixEpochalypseCountdown {
 		};
 
 		if (typeof moment === "function") {
-		 const later = moment({
-              year: 2029,
-              month: 5,
-              day: 5,
-              hour: 21,
-              minute: 29,
-              second: 59,
-            });
+
+         moment.locale();
+            const later = moment(new Date("2029-07-22T16:00:00+00:00"));
             const now = moment();
             const diff = moment.duration(later.diff(now));
+            const moment_diff = moment(later.diff(now));
+            const days = moment_diff.dayOfYear() - 2;
 
-            // console.log(diff, "diff");
+            if (diff.valueOf() >= 0) {
+              timeLeft.y += diff.years();
+              timeLeft.d += days;
+              timeLeft.h += diff.hours();
+              timeLeft.m += diff.minutes();
+              timeLeft.s += diff.seconds();
+            }
 
-            let extraDays = moment({
-              year: moment().year() + 1,
-              month: 5,
-              day: 27,
-              // hour: 23,
-              minute: 59,
-              second: 2,
-            }).diff(moment(), "days"); // 1
-
-			if (diff.valueOf() >= 0) {
-				timeLeft.y += diff.years();
-				// timeLeft.mo += diff.months();
-				timeLeft.d += diff.days() + extraDays;
-				timeLeft.h += diff.hours();
-				timeLeft.m += diff.minutes();
-				timeLeft.s += diff.seconds();
-			}
 		}
 
 		return timeLeft;
