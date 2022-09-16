@@ -10,9 +10,9 @@
                 <div id="sidebar" role="navigation">
                     <ul>
                         <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'awards:speaker' %}">Speakers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'awards:awards' %}">Awards</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="{% url 'awards:agenda_detail' %}">Agenda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
                     </ul>
                 </div>
             </div>
@@ -22,6 +22,10 @@
                     <!-- table section start -->
                     <section class="table_section">
                         <div class="container">
+                            <h2>Agenda</h2>
+                            <div class="add_newspeak">
+                                <button type="button" class="common_btn" data-toggle="modal" data-target="#Addspeaker">Add New Agenda</button>
+                            </div>
                             <div class="row">
                                 <div class="col-md-12">
                                     {% for key,value in agenda.items %}

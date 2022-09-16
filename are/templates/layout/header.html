@@ -23,9 +23,11 @@
                             {% endcomment %}
                             <a class="nav-item nav-link" href="{% url 'awards:award' %}">Awards</a>
                             <a class="nav-item nav-link" href="{% url 'awards:shell-gamechanger' %}">Game Changer</a>
+                            {% comment %}
                             {% if user.is_authenticated %}
                             <a href="#Addspeaker" class="trigger-btn nav-item nav-link" data-toggle="modal">Add_Speaker</a>
                             {% endif %}
+                            {% endcomment %}
                             {% if user.is_authenticated %}
                             <a href="{% url 'admin_logout' %}" target="_blank" class="btn registration-btn">
                                 <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-1" />
