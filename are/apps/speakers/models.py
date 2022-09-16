@@ -5,7 +5,7 @@ from django.urls import reverse
 class Speaker(models.Model):
 	name = models.CharField(max_length=155)
 	profile_image = models.ImageField(null=True, blank=True,upload_to="images")
-	designation = models.CharField(max_length=255)
+	designation = models.CharField(max_length=255,null=True)
 	detail = models.TextField()
 
 	def get_absolute_url(self):

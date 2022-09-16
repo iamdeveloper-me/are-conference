@@ -28,7 +28,7 @@ class DashboardView(TemplateView):
 			'total_climate':total_climate,
 		}
 
-		return {'data':data}
+		return {'data':data} 
 
 
 class AdminAgendaView(TemplateView):
@@ -154,4 +154,10 @@ class Climateaward(TemplateView):
 class Adminspeker(TemplateView):
 	template_name = 'admin_speaker.html'
 
+
+class Adminaward(TemplateView):
+	template_name = 'admin_award.html'
+
+class Adminagenda(TemplateView):
+	template_name = 'admin-agenda.html'
 
