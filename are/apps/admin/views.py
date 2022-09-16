@@ -172,17 +172,17 @@ def edit_speaker_popup(request):
 		
 
 def edit_agenda_popup(request):
-	if request.method =='GET':
-		import pdb; pdb.set_trace()	
-		speaker_id = request.GET.get('speaker_id')
-		speaker=Speaker.objects.get(id=speaker_id)
+	if request.method =='GET':	
+		agenda_id = request.GET.get('agenda_id')
+		agenda = Agenda.objects.get(id=agenda_id)
 
 		context = {
-			'speaker_id':speaker.id,
-			'speaker_name':speaker.name,
-			'speaker_desig':speaker.designation,
-			'speaker_detail':speaker.detail,
-			'speaker_profile':speaker.profile_image.url,
+			'agenda_id':agenda.id,
+			'agenda_session':agenda.session,
+			'agenda_start':agenda.starttime,
+			'agenda_end':agenda.endtime,
+			'agenda_event':agenda.event,
+			'agenda_speaker':agenda.speaker,
 		}
 
 		return JsonResponse(context)
