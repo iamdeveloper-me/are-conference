@@ -5,6 +5,7 @@ from django.views.generic.edit import DeleteView, UpdateView
 from django.contrib.auth.views import LoginView,LogoutView
 from speakers.models import Speaker
 from awards.models import Award,AmgAward,ClimateAward
+from agenda.models import Conference,Agenda
 from speakers.forms import SpeakerForm
 from django.http import HttpResponseRedirect,JsonResponse,HttpResponse
 from django.shortcuts import redirect
@@ -13,6 +14,7 @@ from django.contrib import auth, messages
 from django.contrib.auth import login, logout
 from django.http import Http404
 import json
+import pandas as pd
 
 
 # Create your views here.
@@ -74,6 +76,48 @@ class AdminViewawards(ListView):
 		}
 
 		return {'data':data} 
+
+
+class AdminViewagenda(ListView):
+	template_name = 'admin_agendas.html'	
+	queryset = Conference.objects.all().order_by('startdate')
+	
+	def get_context_data(self, **kwargs):
+		context = {}
+		if self.queryset:
+			# context = super(AgendaView, self).get_context_data(**kwargs)
+			if len(self.queryset)>0:
+				context['conf'] = self.queryset[0]
+			else:
+				context['conf'] = None
+			datelist = pd.date_range(start=context['conf'].startdate,end=context['conf'].enddate)
+			indexlist = [i+1 for i in range(len(datelist))]
+			# context['agenda'] = Agenda.objects.all()
+			agenda = Agenda.objects.all().filter(conference_id = context['conf'].id).order_by('starttime').order_by('date')
+
+			data = {}
+			for index, item in zip(indexlist, datelist):
+				if agenda:
+					data[str(index)] = {
+						'date':item.date(),
+						'data':agenda.filter(date=item.date())
+					}
+				else:
+					data[str(index)] = {
+						'date':item.date(),
+						'data':[]
+					}
+
+			context['agenda'] = data
+			context['speakers'] = Speaker.objects.all()
+			return context
+		else:
+			context = {
+				'conf':None,
+				'agenda':{},
+				'speakers': Speaker.objects.all()
+			}
+			return context
 
 
 class SpeakerDeleteView(DeleteView):
