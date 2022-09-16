@@ -27,8 +27,8 @@ class AdminLogin(LoginView):
 			user = auth.authenticate(username = username, password = password)
 			if user is not None and user.is_staff == True:
 				login(request, user)
-				return redirect('awards:home')
-				# return redirect('/admin_login')
+				return redirect('awards:dashboard')
+				# return redirect('awards:dashboard')
 		else:
 			return self.form_invalid(form)
 
