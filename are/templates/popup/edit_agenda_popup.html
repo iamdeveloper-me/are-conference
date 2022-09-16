@@ -13,18 +13,18 @@
                         <input type="text" name="agenda_id" hidden id="agenda_id" class=" invisible btn btn-outline-success">
                         <input type="date" name="date" class="editdate form-control" id="datepicker1" placeholder="yyyy-mm-dd">
                         <label for="">session</label>
-                        <input type="choice" name="session" class="form-control" id="editsession" placeholder="session">
+                        <input type="choice" name="edit-session" class="form-control" id="editssession" placeholder="session">
                         <label for="">Start Time</label>
                         <input type="time" name="starttime" class="form-control" id="editstarttime" placeholder="time" required="true">
                         <label for="">End Time</label>
                         <input type="time" name="endtime" class="form-control" id="editendtime" placeholder="time" required="true">
                         <label for="">Event</label>
-                        <textarea name="event" class="form-control" id="editevent" placeholder="Detail" required=""> </textarea>
+                        <textarea name="edit-event" class="form-control" id="editevent" placeholder="Detail" required=""> </textarea>
                         <label for="">Speaker</label>
-                        <select name="speaker" class="form-control" id="editspeaker" required>
+                        <select name="speaker" class="form-control" id="editspeakeroptions" required>
                             <option value="">Select Speaker</option>
                             {% for speaker in speakers %}
-                                <option value="{{ speaker.id }}">{{ speaker.name }}</option>
+                                <option  value="{{ speaker.id }}">{{ speaker.name }}</option>
                             {% endfor %}
                         </select>
                         <input type="submit" class="btn btn-primary" value="Update">

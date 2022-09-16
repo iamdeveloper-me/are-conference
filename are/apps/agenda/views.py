@@ -30,12 +30,13 @@ class MyFormView(CreateView):
 	template_name = 'agenda.html'
 
 	def post(self, request, *args, **kwargs):
+
 		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
 		form = AgendaForm(request.POST)
 		if form.is_valid():
 			agenda = form.save(commit=False)
 			agenda.save()
-			return redirect('/agenda')
+			return redirect('/admin_login/agenda')
 
 
 class AgendaView(ListView):

@@ -15,6 +15,7 @@ from django.contrib.auth import login, logout
 from django.http import Http404
 import json
 import pandas as pd
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # Create your views here.
@@ -60,7 +61,7 @@ class AdminSpeakerCreateView(CreateView):
 
 		return redirect("/admin_login/adminspeaker")
 
-class AdminViewawards(ListView):
+class AdminViewawards(ListView,):
 	model = Speaker
 	template_name = "admin_awards.html"
 
@@ -109,7 +110,7 @@ class AdminViewagenda(ListView):
 					}
 
 			context['agenda'] = data
-			context['speakers'] = Speaker.objects.all()
+			context['speakers'] = Speaker.objects.all()	
 			return context
 		else:
 			context = {
@@ -172,38 +173,57 @@ def edit_speaker_popup(request):
 		
 
 def edit_agenda_popup(request):
-	if request.method =='GET':	
+	if request.method =='GET':
 		agenda_id = request.GET.get('agenda_id')
 		agenda = Agenda.objects.get(id=agenda_id)
+		speaker = Speaker.objects.all()
+		data = speaker.values_list('pk','name')
+		data1 = list(data)
+		all_speakers = []
+		for items in data1:
+			res_dct = {
+				'id':items[0],
+				'name':items[1]
+			}
+			# res_dct = {item[i]: item[i + 1] for i in range(0, len(item), 2)}
+			all_speakers.append(res_dct)
 
 		context = {
 			'agenda_id':agenda.id,
+			'agenda_date':agenda.date,
 			'agenda_session':agenda.session,
 			'agenda_start':agenda.starttime,
 			'agenda_end':agenda.endtime,
 			'agenda_event':agenda.event,
-			'agenda_speaker':agenda.speaker,
+			'agenda_speaker_id':agenda.speaker.id,
+			'agenda_speaker_name':agenda.speaker.name,
+			'speakers':all_speakers
 		}
 
 		return JsonResponse(context)
 
 	if request.method =='POST':
-
-		speaker_id = request.POST.get('speaker_id')
-		speaker_name = request.POST.get('name')
-		speaker_desig = request.POST.get('designation')
-		speaker_detail = request.POST.get('detail')
-		speaker_profile = request.FILES['profile_image']
-
+		agenda_id = request.POST.get('agenda_id')
+		agenda_date = request.POST.get('date')
+		agenda_session = request.POST.get('edit-session')
+		agenda_start = request.POST.get('starttime')
+		agenda_end = request.POST.get('endtime')
+		agenda_event = request.POST.get('edit-event')
+		speaker_id = request.POST.get('speaker')
 		speaker = Speaker.objects.get(id=int(speaker_id))
-		speaker.name=speaker_name
-		speaker.designation=speaker_desig
-		speaker.detail=speaker_detail
-		speaker.profile_image=speaker_profile
 
-		speaker.save()
+		agenda = Agenda.objects.get(id=int(agenda_id))
+		agenda.session = agenda_session
+		agenda.date = agenda_date
+		agenda.starttime = agenda_start
+		agenda.endtime = agenda_end
+		# agenda.duration = 
+		agenda.event = agenda_event
+		agenda.speaker = speaker
 
-		return redirect("/admin_login/adminspeaker") 
+		agenda.save()
+
+		return redirect("/admin_login/adminagendas/") 
 
 
 
