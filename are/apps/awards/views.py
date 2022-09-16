@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from .models import AmgAward, Award, ClimateAward
 from speakers.models import Speaker
+from awards.models import Award,AmgAward,ClimateAward
 from .forms import AmgApplicationForm, ChallengeForm, EmailForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
@@ -12,12 +13,12 @@ from django.conf import settings
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
 
-class DashboardView(ListView):
-	model = Speaker
+
+class DashboardView(TemplateView):
+	modal = Speaker
 	template_name = "dashboard.html"
 
 	def get_context_data(self, **kwargs):
-		context = super().get_context_data(**kwargs)
 		total_speaker = Speaker.objects.all().count()
 		total_awards = AmgAward.objects.all().count()
 		total_climate = ClimateAward.objects.all().count()
@@ -27,7 +28,6 @@ class DashboardView(ListView):
 			'total_awards':total_awards,
 			'total_climate':total_climate,
 		}
-
 		return {'data':data} 
 
 
@@ -73,11 +73,14 @@ class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
-		context = AmgAward.objects.all().order_by('id')
+		context = {
+			"individual":AmgAward.objects.filter(org_name=None),
+			"organization":AmgAward.objects.filter(full_name=None)
+		}
 		return {'context':context}
 
 
-class AdminDetailViewAmgApplicant(DetailView):
+class AdminDetailViewAmgApplicant(LoginRequiredMixin, DetailView):
 	model = AmgAward
 	template_name = 'admin/admin_detail_view_amg_applicants.html'
 
@@ -114,7 +117,7 @@ class ClimateApplicationForm(CreateView):
 		return context
 
 
-class AdminViewClimateApplicant(TemplateView):
+class AdminViewClimateApplicant(LoginRequiredMixin, TemplateView):
 	model = ClimateAward
 	template_name = 'admin/admin_view_climate_applicants.html'
 
@@ -127,7 +130,7 @@ class AdminViewClimateApplicant(TemplateView):
 		return {'context':context}
 
 
-class AdminDetailViewClimateApplicant(DetailView):
+class AdminDetailViewClimateApplicant(LoginRequiredMixin, DetailView):
 	model = ClimateAward
 	template_name = 'admin/admin_detail_view_climate_applicants.html'
 

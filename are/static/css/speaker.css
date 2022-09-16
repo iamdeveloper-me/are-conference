@@ -101,7 +101,7 @@
     width: 225px;
     background: linear-gradient(96.72deg, #FAD0C4 6.25%, #9A1C20 103.39%);
     border-radius: 20px;
-    right: 30px;
+    right: 35px;
     top: -15px;
     z-index: -1;
 }
@@ -114,7 +114,7 @@
     background: linear-gradient(96.72deg, #FAD0C4 6.25%, #9A1C20 103.39%);
     border-radius: 20px;
     transform: matrix(-1, 0, 0, 1, 0, 0);
-    left: -18px;
+    left: -15px;
     top: -15px;
     z-index: -1;
 }
@@ -178,7 +178,7 @@
     }
     
     .speaker-section .speaker-head{
-        margin-top:18%;
+        margin-top:23%;
     }
     .speaker-img{
         width: 100%;
