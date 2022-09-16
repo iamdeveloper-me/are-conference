@@ -160,7 +160,7 @@ header nav a:hover{
 /* banner css start */
 
 section.about_section_area {
-  padding: 80px 0px 50px;
+  padding: 80px 0px 70px;
 }
 
 .about_content{
@@ -171,7 +171,7 @@ section.about_section_area {
     content:'';
     display: block;
     position: absolute;
-    bottom: -100px;
+    bottom: -12px;
     right: 0;
     width:213px;
     height:99px;
