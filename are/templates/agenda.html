@@ -12,7 +12,9 @@
             <div class="col-md-12">
                 <div class="agenda_banner_text">
                     <h1>Action for Restoring Environment - <span>ARE we taking enough actions?</span></h1>
-                    <a href="#" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conference</a>
+                    
+                    <a href="#add_conference" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Conference</a>
+                    
                     <h3>{{ conf.title }}</h3>
                     <h4>Tentative Agenda {{ conf.startdate }}-{{ conf.enddate }}</h4>
                 </div>
@@ -22,9 +24,11 @@
 </section>
 <!-- agenda banner close-->
 <!--Popup for Add Agenda Start-->
+{% comment %}
 {% if conf %}
 <a href="#add_session" class="trigger-btn nav-item nav-link" data-toggle="modal">Add Agenda</a>
 {% endif %}
+{% endcomment %}
 <!-- dynamic table section start -->
 <section class="table_section">
     <div class="container">
@@ -41,7 +45,7 @@
                                 <th class="session_2">Duration</th>
                                 <th scope="col">Event</th>
                                 <th scope="col">speakers</th>
-                                <th>Edit</th>
+                                
                             </tr>
                         </thead>
                         {% if value.data %}
@@ -54,8 +58,9 @@
                                 <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                                 <td>{{ object.event }}</td>
                                 <td></td>
-                                <td class="text-center"><button data-sessionid="{{ object.id }}" id="editbtn" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
                                 {% comment %}
+                                <td class="text-center"><button data-sessionid="{{ object.id }}" id="editbtn" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
+                                
                                 {% if forloop.counter == 1 %}
                                 <td rowspan="11"><button type="button" class="edit_btn" data-toggle="modal" data-target="#exampleModalCenter"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button> </td>
                                 {% endif %}
@@ -67,9 +72,10 @@
                                 <td>{{ object.starttime }} to {{ object.endtime }}</td>
                                 <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                                 <td>{{ object.event }}</td>
-                                <td>unknown</td>
-                                <td class="text-center"><button data-sessionid="{{ object.id }}" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
+                                <td>{{ object.speaker.name }}</td>
                                 {% comment %}
+                                <td class="text-center"><button data-sessionid="{{ object.id }}" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
+                                
                                 {% if forloop.counter == 1 %}
                                 <td rowspan="11"><button type="button" class="edit_btn" data-toggle="modal" data-target="#exampleModalCenter"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button> </td>
                                 {% endif %}
@@ -426,6 +432,6 @@
 <!-- end dynamic table section -->
 {% endblock content %}
 {% block extra_content %}
-{% include 'add_agenda_popup.html' %}
-{% include 'add_conference_popup.html' %}
+{% include 'popup/add_agenda_popup.html' %}
+{% include 'popup/add_conference_popup.html' %}
 {% endblock extra_content %}

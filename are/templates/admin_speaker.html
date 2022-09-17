@@ -7,7 +7,7 @@
             <div class="col-md-2">
                 <div id="sidebar" role="navigation">
                     <ul>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
                         <li class="nav-item active"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a><li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
@@ -36,7 +36,7 @@
                                 <tbody>
                                     {% for data in object_list %}
                                     <tr>
-                                        <td>{{data.id}}</td>
+                                        <td>{{ forloop.counter }}</td>
                                         <td><img src="{{data.profile_image.url}}" width="60rem" height="70rem"></td>
                                         <td>{{ data.name }}</td>
                                         <td>{{ data.designation }}</td>
@@ -45,7 +45,7 @@
 
                                             <a href="#Editspeaker" data-toggle="modal"><span class="speakeredit edit_icon" data-form="{{ data.id }}"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span></a>
 
-                                            <a href="{% url 'speaker_delete' data.id %}"><span class="delete_icon"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
+                                            <a href="#deletepopup" data-toggle="modal"><span class="delete_icon confirm-delete" data-type="speaker_delete" data-id="{{ data.id }}"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
                                         </td>
                                         {% comment %}
                                         <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
@@ -65,6 +65,7 @@
 {% block extra_content %}   
 {% include 'popup/add_speaker_popup.html' %}
 {% include 'popup/edit_speaker_popup.html' %}
+{% include 'delete.html' %}
 {% endblock extra_content %}
 {% block extra_js %}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -76,7 +77,7 @@
             
         $.ajax({
             type: "GET",
-            url: "/admin_login/editspeakerpopup/",
+            url: "/admin/editspeakerpopup/",
             data: { speaker_id: speaker_id,},
             success: function(context) {  
                 console.log(context)
@@ -88,7 +89,15 @@
 
             }
         });
-    });  
+    });
+    $('body').on('click', ".confirm-delete", function(e) {
+        var id = $(this).data('id');
+        var type = $(this).data('type');
+        if (type == "speaker_delete") {
+            url = '/admin/deletespeaker/'+id;
+            $('form[name=form-delete-c]').attr('action',url);
+        }
+    });    
 </script>
 
 {% endblock extra_js %}

@@ -27,7 +27,7 @@
                             <label for="">Event</label>
                             <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
                             <label for="">Speaker</label>
-                            <select name="speaker" class="form-control" id="" required>
+                            <select name="speaker" class="form-control" id="">
                                 <option value="">Select Speaker</option>
                                 {% for speaker in speakers %}
                                     <option value="{{ speaker.id }}">{{ speaker.name }}</option>
@@ -53,6 +53,8 @@
 
         $('#datepicker1').attr('min', min_date);
         $('#datepicker1').attr('max', max_date);
+        $('#datepicker2').attr('min', min_date);
+        $('#datepicker2').attr('max', max_date);
         // $('#datepicker1').datepicker({
         //     minDate:min_date,
         //     maxDate:max_date,
