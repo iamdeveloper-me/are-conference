@@ -29,8 +29,7 @@ class MyFormView(CreateView):
 	form_class = AgendaForm
 	template_name = 'agenda.html'
 
-	def post(self, request, *args, **kwargs):
-		import pdb; pdb.set_trace()	
+	def post(self, request, *args, **kwargs):	
 		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
 		form = AgendaForm(request.POST)
 		if form.is_valid():
