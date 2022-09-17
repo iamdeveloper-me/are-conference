@@ -28,6 +28,6 @@ class Agenda(models.Model):
 	class Meta:
 		ordering = ('created',)
 
-	def get_absolute_url(self):
-		return reverse('agenda:agenda_list') 
+	# def get_absolute_url(self):
+	# 	return reverse('agenda:agenda_list') 
 

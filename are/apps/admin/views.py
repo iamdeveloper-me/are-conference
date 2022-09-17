@@ -33,13 +33,31 @@ class AdminLogin(LoginView):
 			user = auth.authenticate(username = username, password = password)
 			if user is not None and user.is_staff == True:
 				login(request, user)
-				return redirect('awards:dashboard')
-				# return redirect('awards:dashboard')
+				return redirect('admin_dashboard')
 		else:
 			return self.form_invalid(form)
 
+
 class AdminLogout(LogoutView):
 	success_url = '/'
+
+
+class DashboardView(LoginRequiredMixin,TemplateView):
+	modal = Speaker
+	template_name = "dashboard.html"
+	login_url='/admin_login/'
+
+	def get_context_data(self, **kwargs):
+		total_speaker = Speaker.objects.all().count()
+		total_awards = AmgAward.objects.all().count()
+		total_climate = ClimateAward.objects.all().count()
+
+		data = {
+			'total_speaker':total_speaker,
+			'total_awards':total_awards,
+			'total_climate':total_climate,
+		}
+		return {'data':data} 
 
 
 class AdminViewSpeaker(ListView):
@@ -59,7 +77,7 @@ class AdminSpeakerCreateView(CreateView):
 		speaker_register = Speaker(name=name,designation=designation,detail=detail,profile_image=profile_image)
 		speaker_register.save()
 
-		return redirect("/admin_login/adminspeaker")
+		return redirect("/admin/speakers/")
 
 class AdminViewawards(ListView):
 	model = Speaker
@@ -169,7 +187,7 @@ def edit_speaker_popup(request):
 
 		speaker.save()
 
-		return redirect("/admin_login/adminspeaker")
+		return redirect("/admin/speakers/")
 		
 
 def edit_agenda_popup(request):
@@ -223,7 +241,7 @@ def edit_agenda_popup(request):
 
 		agenda.save()
 
-		return redirect("/admin_login/adminagendas/") 
+		return redirect("/admin/agenda/") 
 
 
 

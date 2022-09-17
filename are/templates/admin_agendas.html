@@ -9,7 +9,7 @@
             <div class="col-md-2">
                 <div id="sidebar" role="navigation">
                     <ul>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'awards:dashboard' %}">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
                         <li class="nav-item active"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
@@ -24,7 +24,7 @@
                         <div class="container">
                             <h2>Agenda</h2>
                             <div class="add_newspeak">
-                                <a href="#"  data-toggle="modal"><button type="button" class="common_btn" >Add New Agenda</button></a>
+                                <a href="#add_session" data-toggle="modal"><button type="button" class="common_btn">Add New Agenda</button></a>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
@@ -52,7 +52,9 @@
                                                     <td>{{ object.duration }}</td>
                                                     <td>{{ object.event }}</td>
                                                     <td></td>
-                                                    <td class="text-center"><button data-sessionid="{{ object.id }}" id="editbtn" class="edit_btn edit-speaker-btn"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button></td>
+                                                    <td class="text-center">
+                                                        <a href="#Editagenda" data-toggle="modal"><span class="agendaedit edit_btn edit-speaker-btn" data-form="{{ object.id }}"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span></a>
+                                                    </td>
                                                     {% comment %}
                                                     {% if forloop.counter == 1 %}
                                                     <td rowspan="11"><button type="button" class="edit_btn" data-toggle="modal" data-target="#exampleModalCenter"> <img src="{% static 'images/edit_icon.svg' %}" alt="" title="" /></button> </td>
@@ -104,7 +106,7 @@
 {% include 'popup/add_speaker_popup.html' %}
 {% include 'popup/edit_speaker_popup.html' %}
 {% include 'popup/edit_agenda_popup.html' %}
-{% include 'add_agenda_popup.html' %}
+{% include 'popup/add_agenda_popup.html' %}
 {% endblock extra_content %}
 {% block extra_js %}
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -114,7 +116,7 @@ $('body').on('click', ".agendaedit", function(e) {
     var agenda_id = $(this).data('form');
     $.ajax({
         type: "GET",
-        url: "/admin_login/editagendapopup/",
+        url: "/admin/editagendapopup/",
         data: { agenda_id: agenda_id, },
         success: function(context) {
             var s_name = context.agenda_speaker_name
