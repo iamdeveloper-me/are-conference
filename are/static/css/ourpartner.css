@@ -106,6 +106,7 @@
     .partner-section .our-partnerhead h1{
         font-size: 30px;
     }
+    
     .partner-section .our-partnerhead {
         margin-top: 25%;
     }
@@ -132,7 +133,7 @@
     .content-section .partner-card p{
         padding: 5px 0px 5px 0px;
     }
-    
+  
     
 }
 
@@ -185,8 +186,12 @@ h3.second_head {
     text-align: center;
     color: #9A1C20;
     margin-top:25px;
+    transition: all 0.3s;
   }
-
+  .climate_banner a:hover{
+    background: #9A1C20;
+    color:#fff;
+}
   section.climate_content {
     padding: 70px 0px;
 }
@@ -221,6 +226,7 @@ h3.second_head {
 .highlight_text a{
     display: inline-block;
     background: #9A1C20;
+    border:1px solid #9A1C20;
     color: #fff;
     width: 220px;
     height: 50px;
@@ -230,8 +236,13 @@ h3.second_head {
     border-radius: 50px;
     line-height: 50px;
     margin-top:20px;
+    transition: all 0.3s;
 }
-
+.highlight_text a:hover{
+    background: transparent;
+    color: #252123;
+    border: 1px solid #252123;
+}
 .hightlight_img {
     position: relative;
     padding-right: 27px;
@@ -305,4 +316,72 @@ h3.second_head {
     padding: 20px;
     position: absolute;
     top: -43%;
+}
+
+@media (max-width:767px){
+
+    .climate_banner h2{
+        font-size:30px;
+        line-height: 16px;
+    }
+    .climate_banner h3{
+        font-size:28px;
+    }
+    .climate_banner a{
+        margin-top: 12px;
+    }
+    .climate_banner a{
+        width: 160px;
+        height: 44px;
+        line-height: 44px;
+    }
+    .climate-section{
+        background-size: cover;
+    }
+
+    .partner_box{
+        position:static;
+        margin-top: 20px;
+    }
+    .climate_banner {
+        padding-top: 50px;
+    }
+    .inner_logo img:first-child {
+        width: 25px;
+    }
+    .inner_logo img:last-child {
+        width: 100px;
+    }
+    .inner_logo::after {
+        height: 32px;
+    }
+    .partner_box{
+        padding:15px;
+    }
+    section.climate_content {
+        padding: 40px 0px 15px;
+    }
+    .climate_inner h3{
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 10px;
+    }
+    .climate_inner {
+        margin-bottom: 25px;
+    }
+    .climate_inner p{
+        margin-bottom: 8px;
+    }
+    .hightlight_img{
+        padding-right: 0px;
+        margin-bottom: 25px;
+    }
+    .hightlight_img::after{
+        right: -12px;
+    }
+    .highlight_text a{
+        width: 160px;
+        height: 44px;
+        line-height: 44px;
+    }
 }

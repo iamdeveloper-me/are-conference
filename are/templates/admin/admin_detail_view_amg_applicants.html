@@ -99,11 +99,20 @@
 		    </tr>
 		    <tr>
 		      	<th scope="row">Please attach the images before applying AMG Principle</th>
+		      	{% if amgaward.amg_image_before %}
 		      	<td><img src="{{amgaward.amg_image_before.url}}"></td>
+		      	{% else %}
+		      	<td></td>
+		      	{% endif %}
 		    </tr>
 		    <tr>
 		      	<th scope="row">Please attach the images after applying AMG Principle</th>
+		      	{% if amgaward.amg_image_after %}
 		      	<td><img src="{{amgaward.amg_image_after.url}}"></td>
+		      	{% else %}
+		      	<td></td>
+		      	{% endif %}
+		      	
 		    </tr>
 	  	</tbody>
 	</table>
@@ -215,11 +224,20 @@
 		    </tr>
 		    <tr>
 		      	<th scope="row">Please attach the images before applying AMG Principle</th>
+		      	{% if amgaward.amg_image_before %}
 		      	<td><img src="{{amgaward.amg_image_before.url}}"></td>
+		      	{% else %}
+		      	<td></td>
+		      	{% endif %}
+		      	
 		    </tr>
 		    <tr>
 		      	<th scope="row">Please attach the images after applying AMG Principle</th>
+		      	{% if amgaward.amg_image_after %}
 		      	<td><img src="{{amgaward.amg_image_after.url}}"></td>
+		      	{% else %}
+		      	<td></td>
+		      	{% endif %}
 		    </tr>
 	  	</tbody>
 	</table>

@@ -6,12 +6,10 @@ from django.contrib.auth.decorators import login_required
 app_name = 'awards'
 
 urlpatterns = [
-
-	# path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
+	# path('admin/dashboard/',views.DashboardView.as_view(),name='dashboard'),
 	path('challange_award/',views.ChallengeAwardView.as_view(),name='challenge_award'),
 	path('amg_awards/',views.AmgAwardView.as_view(),name='amg_award'),
 	path('award/',views.AwardView.as_view(),name='award'),
-	path('dashboard/',views.DashboardView.as_view(),name='dashboard'),
 	path('application/',views.AmgApplicationFormView.as_view(),name='application'),
 	path('',views.HomePageView.as_view(),name='home'),
 	path('ourpartner/',views.PartnerView.as_view(),name='partner'),
@@ -25,10 +23,13 @@ urlpatterns = [
 	path('terms_services/',views.Termsservices.as_view(),name='terms_services'),
 	path('climate_applicants/',views.AdminViewClimateApplicant.as_view(),name='climate_applicants'),
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
-	path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('sendmail/',views.sendMail,name='email'),
 	path('shell-gamechanger/',views.Shellgamechanger.as_view(),name='shell-gamechanger'),
 	path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 	path('awards/',views.Adminaward.as_view(),name='awards'),
 	path('agenda_detail/',views.Adminagenda.as_view(),name='agenda_detail'),
 ]
+	# path('agenda_detail/',views.Adminagenda.as_view(),name='agenda_detail'),
+	# path('speaker/',views.Adminspeker.as_view(),name='speaker'),
+	# path('awards/',views.Adminaward.as_view(),name='awards'),
+	# path('dashboard/',views.dashboard.as_view(),name='dashboard'),

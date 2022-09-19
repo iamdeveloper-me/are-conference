@@ -149,8 +149,14 @@ li{
     text-align: center;
     border-radius: 50px;
     line-height: 50px;
+    transition: all 0.3s;
+    border:1px solid #9A1C20;
 }
-
+.swaraj_text a:hover{
+    background: transparent;
+    border: 1px solid #252123;
+    color: #252123;
+}
 section.swaraj_awards {
     padding: 50px 0px;
     background: #F2F2F2;

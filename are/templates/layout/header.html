@@ -29,7 +29,7 @@
                             {% endif %}
                             {% endcomment %}
                             {% if user.is_authenticated %}
-                            <a href="{% url 'admin_logout' %}" target="_blank" class="btn registration-btn">
+                            <a href="{% url 'logout' %}" target="_blank" class="btn registration-btn">
                                 <img src="{% static 'images/registration.png' %}" alt="" title="" class="mr-1" />
                                 Logout</a>
                             {% endif %}

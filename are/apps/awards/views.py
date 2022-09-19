@@ -14,25 +14,7 @@ from awards.forms import EmailForm
 
 
 class HomePageView(TemplateView):
-	template_name = "homepage.html"
-
-class DashboardView(TemplateView):
-	modal = Speaker
-	template_name = "dashboard.html"
-
-	def get_context_data(self, **kwargs):
-		total_speaker = Speaker.objects.all().count()
-		total_awards = AmgAward.objects.all().count()
-		total_climate = ClimateAward.objects.all().count()
-
-		data = {
-			'total_speaker':total_speaker,
-			'total_awards':total_awards,
-			'total_climate':total_climate,
-		}
-
-		return {'data':data} 
-		
+	template_name = "homepage.html"		
 
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
@@ -53,7 +35,7 @@ class AmgApplicationFormView(CreateView):
 	model = AmgAward
 	form_class = AmgApplicationForm
 	template_name = "applicationform.html"
-	success_url = '/thanks'
+	success_url = '/thanks/'
 
 	def post(self, request, *args, **kwargs):
 		form = self.get_form()
@@ -72,6 +54,7 @@ class ThanksEnergyView(TemplateView):
 class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 	model = AmgAward
 	template_name = 'admin/admin_view_amg_applicants.html'
+	login_url='/admin/login/'
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
@@ -85,6 +68,8 @@ class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 class AdminDetailViewAmgApplicant(LoginRequiredMixin, DetailView):
 	model = AmgAward
 	template_name = 'admin/admin_detail_view_amg_applicants.html'
+	login_url='/admin/login/'
+
 
 
 class Privacypolicy(TemplateView):
@@ -93,8 +78,6 @@ class Privacypolicy(TemplateView):
 class Termsservices(TemplateView):
 	template_name = 'term_services.html'
 
-class dashboard(TemplateView):
-	template_name = 'dashboard.html'
 
 class ClimateTable(TemplateView):
 	template_name = 'climate_table.html'
@@ -122,6 +105,7 @@ class ClimateApplicationForm(CreateView):
 class AdminViewClimateApplicant(LoginRequiredMixin, TemplateView):
 	model = ClimateAward
 	template_name = 'admin/admin_view_climate_applicants.html'
+	login_url='/admin/login/'
 
 	def get_context_data(self, **kwargs):
 		context = {}
@@ -135,6 +119,7 @@ class AdminViewClimateApplicant(LoginRequiredMixin, TemplateView):
 class AdminDetailViewClimateApplicant(LoginRequiredMixin, DetailView):
 	model = ClimateAward
 	template_name = 'admin/admin_detail_view_climate_applicants.html'
+	login_url='/admin/login/'
 
 def sendMail(request):
     if request.method == 'POST':
@@ -150,13 +135,15 @@ def sendMail(request):
 class Shellgamechanger(TemplateView):
 	template_name = 'climate_award.html'
 
-class Adminspeker(TemplateView):
-	template_name = 'admin_speaker.html'
+# class Adminspeker(TemplateView):
+# 	template_name = 'admin_speaker.html'
 
-class Adminaward(TemplateView):
-	template_name = 'admin_award.html'
+# class Adminaward(TemplateView):
+# 	template_name = 'admin_award.html'
 
-class Adminagenda(TemplateView):
-	template_name = 'admin-agenda.html'
+# class Adminagenda(TemplateView):
+# 	template_name = 'admin-agenda.html'
 
+# class dashboard(TemplateView):
+# 	template_name = 'dashboard.html'
 	

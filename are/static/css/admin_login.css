@@ -267,7 +267,8 @@ li{
 }
 #sidebar {
     background: #fff;
-    height: 100vh;
+    min-height: 100vh;
+    height:100%;
     box-shadow: 7px 0 60px rgb(0 0 0 / 5%);
 }
 .logout_btn {
@@ -293,7 +294,7 @@ li{
 .card_custom h4 {
     color: #252123;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 17px;
     padding-bottom: 10px;
 }
 .card_custom p {
@@ -302,8 +303,14 @@ li{
     color: #000;
 }
 .logout_btn a {
-    color: #000;
+    color: #991b30;
     font-weight: 500 !important;
+    transition: all 0.3s;
+}
+.logout_btn a:hover{
+    color:#252123 !important;
+    border:1px solid #ffffff !important;
+    background:#fff;
 }
 div#sidebar a {
     padding: 13px 15px;
@@ -341,9 +348,10 @@ div#sidebar a {
     color: #252123;
     font-weight: 500;
     font-size: 28px;
-    text-align: right;
+    text-align: left;
     padding-bottom: 5px;
     padding-top: 10px;
+    display: inline-block;
 }
 .add_newspeak {
     text-align: right;
@@ -574,4 +582,9 @@ section.applicat_area h2 {
 
 .custom_table h4 {
     font-size: 18px;
+}
+
+.add_newspeak {
+    display: inline-block;
+    float: right;
 }
