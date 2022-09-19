@@ -33,6 +33,43 @@
                 {% for key,value in agenda.items %}
                 <div class="table_main_box">
                     <h4>Day {{ key }} | {{ value.date }}</h4> 
+                    <h4>{{ agenda.date }}</h4>
+                    <table class="table table-bordered custom_table">
+                        <thead class="head_top">
+                            <tr>
+                                <th class="session_width">Session</th>
+                                <th class="session_2">Time</th>
+                                <th class="session_2">Durations</th>
+                                <th scope="col">Event</th>
+                            </tr>
+                        </thead>
+                        {% for object in object_list %}                            <tbody>
+                        {{ object }}
+                            <td rowspan="3">{{ object.session }}</td>
+                            <td>{{ object.starttime }} to {{ object.endtime }} </td>
+                            <td>{{ object.duration }}</td>
+                            <td>{{ object.event }}</td>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end dynamic table section -->
+
+
+
+
+{% comment %}
+<section class="table_section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table_main_box">
+                    <h4>Day 1, Thursday | 24/11/2022</h4>
+>>>>>>> f340b38 (agenda list show)
                     <table class="table table-bordered custom_table">
                         <thead class="head_top">
                             <tr>
