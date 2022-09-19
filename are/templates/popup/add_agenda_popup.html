@@ -16,7 +16,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="text" name="conference" hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
+                            <input type="text" name="conference" hidden class="form-control" id="conf_id_input" placeholder="time" value="{{ conf.pk }}">
                             <input type="date" name="date" class="form-control" id="datepicker1" placeholder="yyyy-mm-dd">
                             <label for="">session</label>
                             <input type="choice" name="session" class="form-control" id="" placeholder="session">
@@ -24,12 +24,10 @@
                             <input type="time" name="starttime" class="form-control" id="" placeholder="time" required="true">
                             <label for="">End Time</label>
                             <input type="time" name="endtime" class="form-control" id="" placeholder="time" required="true">
-                            <label for="">Duration</label>
-                            <input type="time" name="duration" class="form-control" id="" placeholder="duration" required="">
                             <label for="">Event</label>
                             <textarea name="event" class="form-control" id="" placeholder="Detail" required=""> </textarea>
                             <label for="">Speaker</label>
-                            <select name="speaker" class="form-control" id="" required>
+                            <select name="speaker" class="form-control" id="">
                                 <option value="">Select Speaker</option>
                                 {% for speaker in speakers %}
                                     <option value="{{ speaker.id }}">{{ speaker.name }}</option>
@@ -55,6 +53,8 @@
 
         $('#datepicker1').attr('min', min_date);
         $('#datepicker1').attr('max', max_date);
+        $('#datepicker2').attr('min', min_date);
+        $('#datepicker2').attr('max', max_date);
         // $('#datepicker1').datepicker({
         //     minDate:min_date,
         //     maxDate:max_date,

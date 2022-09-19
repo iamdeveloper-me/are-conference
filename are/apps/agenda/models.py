@@ -22,12 +22,12 @@ class Agenda(models.Model):
 	endtime = models.TimeField(null=True,blank=True)
 	duration = models.DurationField(null=True,blank=True)
 	event = models.CharField(max_length=255,null=True,blank=True)
-	speaker = models.ForeignKey(Speaker,on_delete=models.CASCADE, related_name='speaker')
+	speaker = models.ForeignKey(Speaker,on_delete=models.CASCADE, related_name='speaker',null=True,blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 
 	class Meta:
 		ordering = ('created',)
 
-	def get_absolute_url(self):
-		return reverse('agenda:agenda_list') 
+	# def get_absolute_url(self):
+	# 	return reverse('agenda:agenda_list') 
 
