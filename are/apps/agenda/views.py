@@ -6,26 +6,21 @@ from agenda.forms import AgendaForm, ConferenceForm
 from django.views.generic import ListView,View
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-<<<<<<< HEAD
 from django.utils.timezone import now
 from django.http import JsonResponse
 from datetime import timedelta, date
 import pandas as pd
-from speakers.models import Speaker
 
 
 class ConferenceCreateView(CreateView):
 	model = Conference 
 	form_class = ConferenceForm
-=======
-# Create your views here.
 
 
 class ConferenceCreateView(CreateView):
 	# import pdb;pdb.set_trace()
 	model = Conference 
 	fields = ['title', 'startdate','enddate']
->>>>>>> f340b38 (agenda list show)
 
 
 class ConferenceListView(ListView):
@@ -58,7 +53,6 @@ class MyFormView(CreateView):
 			return redirect('/agenda')
 
 
-<<<<<<< HEAD
 class AgendaView(ListView):
 	template_name = 'agenda.html'	
 	queryset = Conference.objects.all().order_by('startdate')
@@ -88,7 +82,20 @@ class AgendaView(ListView):
 						'date':item.date(),
 						'data':[]
 					}
-=======
+			context['agenda'] = data
+
+			context['all_speakers'] = Speaker.objects.all()
+
+			return context
+		else:
+			context = {
+				'conf':None,
+				'agenda':{},
+				'speakers': Speaker.objects.all()
+			}
+
+			context['all_speakers'] = Speaker.objects.all()
+			return context
 
 
 # class ConferenceView(ListView):
@@ -127,24 +134,7 @@ class AgendaView(ListView):
 # 		context = super().get_context_data(**kwargs)
 # 		context = Agenda.objects.all().order_by('id')
 # 		return {'context':context}
->>>>>>> f340b38 (agenda list show)
 
-			context['agenda'] = data
-
-<<<<<<< HEAD
-			context['all_speakers'] = Speaker.objects.all()
-
-			return context
-		else:
-			context = {
-				'conf':None,
-				'agenda':{},
-				'speakers': Speaker.objects.all()
-			}
-
-			context['all_speakers'] = Speaker.objects.all()
-			return context
-=======
 # def AddAgenda(request):
 # 	if request.method == 'POST' :
 # 		# import pdb;pdb.set_trace()
@@ -160,7 +150,6 @@ class AgendaView(ListView):
 
 	# def get_success_url(self, **kwargs):
 	# 	return self.object.get_absolute_url()
->>>>>>> f340b38 (agenda list show)
 
 def edit_session_popup(request):
 	session_id = request.GET.get('session_id')

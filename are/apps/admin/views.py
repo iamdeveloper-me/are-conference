@@ -129,15 +129,3 @@ def edit_speaker_popup(request):
 
 		return redirect("/admin_login/adminspeaker")
 		
-
- 
-
-
-
-
-
-
-
-
-
->>>>>>> 7601ce22af1b1d93b44ffa0081ebefb9dc6dc943
