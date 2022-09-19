@@ -32,6 +32,7 @@ class AgendaCreateView(CreateView):
 	model = Agenda 
 	fields = ['session', 'starttime','endtime','duration','event']
 
+<<<<<<< HEAD
 
 class AgendaListView(ListView):
     model = Agenda
@@ -51,6 +52,10 @@ class MyFormView(CreateView):
 			agenda = form.save(commit=False)
 			agenda.save()
 			return redirect('/agenda')
+=======
+	def get_success_url(self, **kwargs):
+		return self.object.get_absolute_url()
+>>>>>>> caecfa2 (send email code)
 
 
 class AgendaView(ListView):

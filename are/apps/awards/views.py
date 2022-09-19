@@ -145,10 +145,15 @@ def sendMail(request):
                       settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
     else:
         form = EmailForm()
+<<<<<<< HEAD
+
+    return render(request, 'homepage.html')
+=======
+>>>>>>> caecfa2 (send email code)
 
     return render(request, 'homepage.html')
 
-
+<<<<<<< HEAD
 class Shellgamechanger(TemplateView):
 	template_name = 'climate_award.html'
 
@@ -162,3 +167,5 @@ class Adminaward(TemplateView):
 class Adminagenda(TemplateView):
 	template_name = 'admin-agenda.html'
 
+=======
+>>>>>>> caecfa2 (send email code)
