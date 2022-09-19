@@ -3,75 +3,76 @@
 
 {% block content %}
 
-<div style="padding:120px;">
-{% for key,value in context.items %}
-	{% if key == 'individual' %}
-		<h4>Individual</h4>
-		<table class="table">
-		  	<thead>
-			    <tr class="table-secondary">
-			      	<th scope="col">ID</th>
-			      	<th scope="col">Full Name</th>
-			      	<th scope="col">Email</th>
-			      	<th scope="col">View Details</th>
-			    </tr>
-			</thead>
-			{% if value %}
-				<tbody>
-					{% for applicant in value %}
-					    <tr>
-					      	<th scope="row">{{applicant.id}}</th>
-					      	<td>{{applicant.full_name}}</td>
-					      	<td>{{applicant.email}}</td>
-					      	<td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
-					    </tr>
-		  			{% endfor %}
-				  </tbody>
-			{% else %}
-		  		<tbody>
-                    <td colspan="7">
-                        <div class="d-flex align-items-center justify-content-center no-recors-caption">
-                            <h4>No record found</h4>
-                        </div>
-                    </td>
-                </tbody>
-		  	{% endif %}
-		</table>
-	{% elif key == 'organization' %}
-		<h4>Organization</h4>
-		<table class="table">
-
-		  	<thead>
-			    <tr class="table-secondary">
-			      	<th scope="col">ID</th>
-			      	<th scope="col">Org Name</th>
-			      	<th scope="col">Contact Person Name</th>
-			      	<th scope="col">View Details</th>
-			    </tr>
-			</thead>
-			{% if value %}
-				<tbody>
-					{% for applicant in value %}
-					    <tr>
-					      	<th scope="row">{{applicant.id}}</th>
-					      	<td>{{applicant.org_name}}</td>
-					      	<td>{{applicant.org_person_name}}</td>
-					      	<td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
-					    </tr>
-		  			{% endfor %}
-				  </tbody>
-		  	{% else %}
-		  		<tbody>
-                    <td colspan="7">
-                        <div class="d-flex align-items-center justify-content-center no-recors-caption">
-                            <h4>No record found</h4>
-                        </div>
-                    </td>
-                </tbody>
-		  	{% endif %}
-		</table>
-	{% endif %}
-{% endfor %}
+<div class="container">
+	<div class="amg_applicant_top">
+		{% for key,value in context.items %}
+			{% if key == 'individual' %}
+				<h4>Individual</h4>
+				<table class="table table-bordered custom_table cs_table">
+					  <thead class="head_top">
+						<tr>
+							  <th scope="col">ID</th>
+							  <th scope="col">Full Name</th>
+							  <th scope="col">Email</th>
+							  <th scope="col">View Details</th>
+						</tr>
+					</thead>
+					{% if value %}
+						<tbody>
+							{% for applicant in value %}
+								<tr>
+									  <th scope="row">{{applicant.id}}</th>
+									  <td>{{applicant.full_name}}</td>
+									  <td>{{applicant.email}}</td>
+									  <td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+								</tr>
+							  {% endfor %}
+						  </tbody>
+					{% else %}
+						  <tbody>
+							<td colspan="7">
+								<div class="d-flex align-items-center justify-content-center no-recors-caption">
+									<h4>No record found</h4>
+								</div>
+							</td>
+						</tbody>
+					  {% endif %}
+				</table>
+			{% elif key == 'organization' %}
+				<h4>Organization</h4>
+				<table class="table table-bordered custom_table">
+					<thead class="head_top">
+						<tr>
+							  <th scope="col">ID</th>
+							  <th scope="col">Org Name</th>
+							  <th scope="col">Contact Person Name</th>
+							  <th scope="col">View Details</th>
+						</tr>
+					</thead>
+					{% if value %}
+						<tbody>
+							{% for applicant in value %}
+								<tr>
+									  <th scope="row">{{applicant.id}}</th>
+									  <td>{{applicant.org_name}}</td>
+									  <td>{{applicant.org_person_name}}</td>
+									  <td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+								</tr>
+							  {% endfor %}
+						  </tbody>
+					  {% else %}
+						  <tbody>
+							<td colspan="7">
+								<div class="d-flex align-items-center justify-content-center no-recors-caption">
+									<h4>No record found</h4>
+								</div>
+							</td>
+						</tbody>
+					  {% endif %}
+				</table>
+			{% endif %}
+		{% endfor %}
+		</div>
 </div>
 
 {% endblock content %}
