@@ -9,6 +9,9 @@ from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.conf import settings
+from django.shortcuts import redirect
+from awards.forms import EmailForm
+
 
 class HomePageView(TemplateView):
 	template_name = "homepage.html"
@@ -142,9 +145,6 @@ def sendMail(request):
             message = "Thank YOu for suscribing as Are"
             send_mail(subject, message,
                       settings.DEFAULT_FROM_EMAIL, [cd['recipient']])
-    else:
-        form = EmailForm()
-
     return render(request, 'homepage.html')
 
 class Shellgamechanger(TemplateView):

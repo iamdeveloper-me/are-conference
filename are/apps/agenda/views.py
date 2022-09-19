@@ -13,8 +13,14 @@ import pandas as pd
 from speakers.models import Speaker
 
 
+class ConferenceView(ListView):
+	form_class = AgendaForm
+	template_name = 'agenda.html'
+	# success_url = reverse_lazy('agenda:agenda')
+
+
 class ConferenceCreateView(CreateView):
-	model = Conference 
+	model = Conference
 	form_class = ConferenceForm
 
 	def get_success_url(self, **kwargs):
@@ -90,8 +96,4 @@ def edit_session_popup(request):
 		"speakers":speakers
 	}
 	return JsonResponse(response)
-
-
-
-
 

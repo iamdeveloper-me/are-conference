@@ -32,4 +32,3 @@ urlpatterns = [
 	path('awards/',views.Adminaward.as_view(),name='awards'),
 	path('agenda_detail/',views.Adminagenda.as_view(),name='agenda_detail'),
 ]
-path('shell-gamechanger/',views.DashboardView.as_view(),name='dashboard'),

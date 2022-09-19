@@ -4,7 +4,7 @@ from speakers.models import Speaker
 
 # Create your models here
 
-class Conference(models.Model):	
+class Conference(models.Model):
 	title = models.CharField(max_length=155,null=True,blank=True)
 	startdate = models.DateField(null=True,blank=True)
 	enddate = models.DateField(null=True,blank=True)
@@ -31,3 +31,13 @@ class Agenda(models.Model):
 	def get_absolute_url(self):
 		return reverse('agenda:agenda_list') 
 
+
+class Agenda(models.Model):
+	session = models.CharField(max_length=55,choices=SESSION_CHOICES,null=True,blank=True)
+	starttime = models.TimeField(null=True,blank=True)
+	endtime = models.TimeField(null=True,blank=True)
+	duration = models.DurationField()
+	event = models.CharField(max_length=255,null=True,blank=True)
+
+	def get_absolute_url(self):
+		return reverse('agenda:agenda_list') 
