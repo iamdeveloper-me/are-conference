@@ -107,14 +107,18 @@
 						      	<th scope="row">What Are The Best Practices Used For The Implementing The Intervention?</th>
 						      	<td>{{amgaward.implement_invitation}}</td>
 						    </tr>
+						    {% if amgaward.amg_image_before %}
 						    <tr>
 						      	<th scope="row">Please attach the images before applying AMG Principle</th>
 						      	<td><img src="{{amgaward.amg_image_before.url}}"></td>
 						    </tr>
+						    {% endif %}
+						    {% if amgaward.amg_image_after %}
 						    <tr>
 						      	<th scope="row">Please attach the images after applying AMG Principle</th>
 						      	<td><img src="{{amgaward.amg_image_after.url}}"></td>
 						    </tr>
+						    {% endif %}
 					  	</tbody>
 					</table>
 				{% endif %}
@@ -221,14 +225,18 @@
 						      	<th scope="row">What Are The Best Practices Used For The Implementing The Intervention?</th>
 						      	<td>{{amgaward.implement_invitation}}</td>
 						    </tr>
+						    {% if amgaward.amg_image_before %}
 						    <tr>
 						      	<th scope="row">Please attach the images before applying AMG Principle</th>
 						      	<td><img src="{{amgaward.amg_image_before.url}}"></td>
 						    </tr>
+						    {% endif %}
+						    {% if amgaward.amg_image_after %}
 						    <tr>
 						      	<th scope="row">Please attach the images after applying AMG Principle</th>
 						      	<td><img src="{{amgaward.amg_image_after.url}}"></td>
 						    </tr>
+							{% endif %}
 					  	</tbody>
 					</table>
 				{% endif %}
