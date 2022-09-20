@@ -341,22 +341,37 @@ div#sidebar a {
 .speaker_area{
     background-color:#fff;
     border-radius:10px;
-    padding:20px;
+    padding:45px 20px 20px;
 }
-
+#Addspeaker .modal-dialog {
+    min-width: 600px !important;
+}
+#Addspeaker .modal-content {
+    padding: 25px 25px 5px;
+}
+#Addspeaker .modal-header {
+    padding: 10px 15px 10px;
+    border: none;
+}
 .speaker_area h2 {
     color: #252123;
     font-weight: 500;
     font-size: 28px;
     text-align: left;
-    padding-bottom: 5px;
-    padding-top: 10px;
     display: inline-block;
+}
+#add_session .modal-dialog {
+    min-width: 600px !important;
+}
+#add_session .modal-content {
+    padding: 25px 25px 10px;
+}
+#add_session .modal-header {
+    border: none;
 }
 .add_newspeak {
     text-align: right;
-    margin-bottom: 18px;
-}
+   }
 .common_btn {
     display: inline-block;
     background: #9A1C20;
@@ -522,7 +537,8 @@ td.action_btn span img {
 }
 
 footer {
-    padding-top: 18px;
+    padding: 18px 0px 14px;
+    background: #fff;
 }
 
 .right_di img {
@@ -587,4 +603,38 @@ section.applicat_area h2 {
 .add_newspeak {
     display: inline-block;
     float: right;
+    margin-bottom: 15px;
+}
+
+.add_newspeak {
+    width: 100%;
+}
+.add_newspeak h2 {
+    float: left;
+}
+section.agenda.table_section {
+    padding-top: 45px;
+}
+
+#add_session input.btn.btn-primary {
+    display: inline-block;
+    background: #9A1C20;
+    color: #fff;
+    padding: 0px 35px;
+    height: 44px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border-radius: 50px;
+    line-height: 44px;
+    border: none;
+    text-transform: capitalize;
+    margin-top: 20px;
+}
+#add_session .modal-footer{
+  border:none;
+}
+
+input.common_btn.agenda_add {
+    margin-top: 20px;
 }

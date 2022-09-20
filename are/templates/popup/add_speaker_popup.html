@@ -9,21 +9,30 @@
                 <div class="form-group">
                     <form action="{% url 'admin_add_speaker' %}" method="post" enctype='multipart/form-data'>
                         {% csrf_token %}
-                        <label for="">Name</label>
-                        <input type="text" name="name" class="form-control" id="" placeholder="Name" required="">
-                        <label for="">Designation</label>
-                        <input type="text" name="designation" class="form-control" id="" placeholder="Designation" required="">
-                        <label for="">Detail</label>
-                        <textarea name="detail" class="form-control" id="" placeholder="Detail" required=""> </textarea>
-                        <label for="">Profile Image</label>
-                        <input type="file" name="profile_image" class="form-control" id="" required="">
-                        <input type="submit" class="btn btn-primary" value="Add">
-                    </form>
+                        <div class="form-group">
+                            <label for="">Name</label>
+                            <input type="text" name="name" class="form-control" id="" placeholder="Name" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Designation</label>
+                             <input type="text" name="designation" class="form-control" id="" placeholder="Designation" required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Detail</label>
+                            <textarea name="detail" class="form-control" id="" placeholder="Detail" required=""> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Profile Image</label>
+                            <input type="file" name="profile_image" class="form-control" id="" required="">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="common_btn" value="Add">
+                        </div>
+                      </form>
                 </div>
             </div>
         </div>
-        <div class="modal-footer justify-content-between">
-        </div>
+       
     </div>
 </div>
 </div>

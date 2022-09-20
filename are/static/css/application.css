@@ -331,6 +331,7 @@ h2.top_padd{
         width: 160px;
         height: 44px;
         line-height: 42px;
+        margin-bottom: 10px;
     }
     .botm_spc {
         margin-bottom: 15px;
@@ -423,6 +424,7 @@ h2.top_padd{
         width: 160px;
         height: 44px;
         line-height: 30px;
+        margin-top: -8px !important;
     }
     .button-footer{
         padding-top: 20px;
@@ -435,9 +437,3 @@ h2.top_padd{
 
 }
 
-@media (max-width:767px){
-    footer .subscribe-div input {
-        width: 154px;
-    }
-
-}
