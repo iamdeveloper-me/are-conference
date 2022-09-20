@@ -1,4 +1,4 @@
-{% extends "layout/base.html" %}
+{% extends "layout/admin_base.html" %}
 {% load static %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/thank.css' %}">
@@ -6,17 +6,27 @@
 {% endblock extra_css %}
 
 {% block content %}
-<section class="applicat_area">
-     <div class="container">
-          <div class="row">
-               <div class="col-md-12">
+<section class="dashboard_area">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div id="sidebar" role="navigation">
+                    <ul>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="padding:2rem" class="col-md-10">
                 <select name="challenge_number" id="selected-challenge">
                     <option value="0" selected>ALL</option>
                     {% for key, value in context.items %}
                         <option value={{ key }}>Climate Hackathon Challenge {{ key }}</option>
                     {% endfor %}
                 </select>
-                <div style="padding-top:2rem">
+                <div style="padding-top:2rem;">
                     {% for key,value in context.items %}
                     {% if key == 1 %}
                         <div class="all_form" id="1">
@@ -294,9 +304,9 @@
                     {% endif %}
                     {% endfor %}
                 </div>
-               </div>
-          </div>
-     </div>
+            </div>
+        </div>
+    </div>
 </section>
 {% endblock content %}
 {% block extra_js %}
