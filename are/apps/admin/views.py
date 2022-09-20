@@ -111,15 +111,15 @@ class AdminViewagenda(ListView):
 				context['conf'] = None
 			datelist = pd.date_range(start=context['conf'].startdate,end=context['conf'].enddate)
 			indexlist = [i+1 for i in range(len(datelist))]
-			# context['agenda'] = Agenda.objects.all()
-			agenda = Agenda.objects.all().filter(conference_id = context['conf'].id).order_by('starttime').order_by('date')
+			# context['agenda'] = Agenda.objects.all()	
+			agenda = Agenda.objects.all().filter(conference_id = context['conf'].id)
 
 			data = {}
 			for index, item in zip(indexlist, datelist):
 				if agenda:
 					data[str(index)] = {
 						'date':item.date(),
-						'data':agenda.filter(date=item.date())
+						'data':agenda.filter(date=item.date()).order_by('starttime')
 					}
 				else:
 					data[str(index)] = {
