@@ -60,7 +60,7 @@ class AgendaView(ListView):
 				if agenda:
 					data[str(index)] = {
 						'date':item.date(),
-						'data':agenda.filter(date=item.date()).order_by('startitme')
+						'data':agenda.filter(date=item.date()).order_by('starttime')
 					}
 				else:
 					data[str(index)] = {
