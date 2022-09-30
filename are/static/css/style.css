@@ -36,7 +36,7 @@ header nav a{
     color: #FFFFFF;
     font-family: 'Poppins';
     font-style: normal;
-    padding-left: 40px !important;
+    padding-left: 25px !important;
     padding-right: 0 !important;
     transition:all 0.3s;
 }
