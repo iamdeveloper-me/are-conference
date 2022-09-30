@@ -14,7 +14,7 @@
     line-height: 75px;
 }
 .climate_banner {
-    padding: 11% 0px 64px;
+    padding: 9% 0px 64px;
 }
 
 .climate_banner h3 {
@@ -81,7 +81,12 @@
     color: #fff;
 
 }
-
+.climate_banner h4 {
+    color: #00BCFF;
+    font-weight: 700;
+    font-size: 33px;
+    line-height: 54px;
+}
 
 .climate_description li span img {
     width: 15px;
@@ -111,6 +116,7 @@
     padding: 0px;
 }
 
+
 @media screen and (max-width:767px) {
 
     .climate_banner h2{
@@ -120,11 +126,15 @@
     .climate_banner_area{
         background-size:cover;
     }
+    .climate_banner h4{
+        font-size: 22px;
+        line-height: 30px;
+    }
     .climate_banner h3{
         font-size:28px;
     }
     .climate_banner {
-        padding: 25% 0px 25px;
+        padding: 21% 0px 25px;
     }
     .challenges_area {
         padding-top: 38px;
