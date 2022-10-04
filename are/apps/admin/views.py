@@ -213,10 +213,13 @@ def edit_agenda_popup(request):
 			'agenda_start':agenda.starttime,
 			'agenda_end':agenda.endtime,
 			'agenda_event':agenda.event,
-			'agenda_speaker_id':agenda.speaker.id,
-			'agenda_speaker_name':agenda.speaker.name,
+			# 'agenda_speaker_id':agenda.speaker.id,
+			# 'agenda_speaker_name':agenda.speaker.name,
 			'speakers':all_speakers
 		}
+		if agenda.speaker:
+			context['agenda_speaker_id'] = agenda.speaker.id
+			context['agenda_speaker_name'] = agenda.speaker.name
 
 		return JsonResponse(context)
 
