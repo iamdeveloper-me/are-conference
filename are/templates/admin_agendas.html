@@ -72,7 +72,7 @@
                                                 <tr class="dark_bg">
                                                     <td>{{ object.session }}</td>
                                                     <td>{{ object.starttime }} to {{ object.endtime }}</td>
-                                                    <td>{{ object.duration }}</td>
+                                                    <td>{{ object.starttime|mytimesince:object.endtime }}</td>
                                                     <td>{{ object.event }}</td>
                                                     <td>{{ object.speaker.name }}</td>
                                                     <td class="text-center">
