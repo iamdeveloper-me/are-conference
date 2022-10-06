@@ -37,6 +37,7 @@
                                     {% for key,value in agenda.items %}
                                     {% if value.data %}
                                     <div class="table_main_box">
+                                        <h4>Day {{ key }} | {{ value.date }}</h4>
                                         <table class="table table-bordered custom_table">
                                             <thead class="head_top">
                                                 <tr>
@@ -51,7 +52,6 @@
                                             {% if value.data %}
                                             <tbody>
                                                 {% for object in value.data %}
-                                                <h4>{{ object.session }} hello</h4>
                                                 {% if not object.session  %}
                                                 <tr class="green_bg">
                                                     <td></td>
