@@ -231,14 +231,15 @@ def edit_agenda_popup(request):
 		agenda_end = request.POST.get('endtime')
 		agenda_event = request.POST.get('edit-event')
 		speaker_id = request.POST.get('speaker')
-		speaker = Speaker.objects.get(id=int(speaker_id))
-
+		if speaker_id:
+			speaker = Speaker.objects.get(id=int(speaker_id))
+		else:
+			speaker = None
 		agenda = Agenda.objects.get(id=int(agenda_id))
 		agenda.session = agenda_session
 		agenda.date = agenda_date
 		agenda.starttime = agenda_start
 		agenda.endtime = agenda_end
-		# agenda.duration = 
 		agenda.event = agenda_event
 		agenda.speaker = speaker
 
