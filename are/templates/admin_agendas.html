@@ -52,7 +52,8 @@
                                             {% if value.data %}
                                             <tbody>
                                                 {% for object in value.data %}
-                                                {% if object.session == None %}
+                                                <h4>{{ object.session }} hello</h4>
+                                                {% if not object.session  %}
                                                 <tr class="green_bg">
                                                     <td></td>
                                                     <td>{{ object.starttime }} to {{ object.endtime }}</td>

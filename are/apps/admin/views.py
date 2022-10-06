@@ -227,6 +227,10 @@ def edit_agenda_popup(request):
 		agenda_id = request.POST.get('agenda_id')
 		agenda_date = request.POST.get('date')
 		agenda_session = request.POST.get('edit-session')
+		if agenda_session:
+			pass
+		else :
+			agenda_session = None
 		agenda_start = request.POST.get('starttime')
 		agenda_end = request.POST.get('endtime')
 		agenda_event = request.POST.get('edit-event')
