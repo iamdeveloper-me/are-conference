@@ -18,7 +18,7 @@ import pandas as pd
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
-# Create your views here.
+# Create your views here
 
 class AdminLogin(LoginView):
 	template_name = 'admin/admin_login.html'
