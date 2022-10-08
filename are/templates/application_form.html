@@ -59,7 +59,7 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Contact Number<span>*</span></label>
-                                    <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                                    <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -178,7 +178,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -274,7 +274,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -370,7 +370,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -466,7 +466,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -562,7 +562,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -670,7 +670,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -778,7 +778,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="">Contact Number<span>*</span></label>
-                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -884,5 +884,15 @@ $('.challenge_one').hide();
 var id = "{{context}}";
 $(`.${id}`).show();
 
+</script>
+<script>
+function onlyNumberKey(evt) {
+
+    // Only ASCII character in that range allowed
+    var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+    if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+        return false;
+    return true;
+}
 </script>
 {% endblock extra_js %}

@@ -19,6 +19,7 @@
 <!-- form area -->
 <section class="appform-section">
     <div class="container">
+    {% include 'messages.html' %}
         <div class="row">
             <div class="col-md-12">
                 <div class="form-head">
@@ -89,7 +90,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Phone No.* <span>*</span></label>
-                                <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                                <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
                             </div>
                         </div>
                         <div class="col-md-6">
@@ -148,7 +149,7 @@
                         <div class="col-md-6 organization">
                             <div class="form-group">
                                 <label for="">Key Contact Person Phone No<span>*</span></label>
-                                <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="org_person_mobile" required>
+                                <input type="text" class="form-control" id="" placeholder="911234567890" name="org_person_mobile">
                             </div>
                         </div>
                         <div class="col-md-6 organization">
@@ -257,20 +258,13 @@
         </div>
     </div>
 </section>
+
+
+
 <!-- form area end-->
 {% block extra_js %}
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script>
-function onlyNumberKey(evt) {
-
-    // Only ASCII character in that range allowed
-    var ASCIICode = (evt.which) ? evt.which : evt.keyCode
-    if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
-        return false;
-    return true;
-}
-</script>
 <script type="text/javascript">
 $('.organization').hide();
 $('#select-radio-check input:radio').change(function() {
@@ -291,6 +285,16 @@ $('#select-radio-check input:radio').change(function() {
         $('.individual').hide();
     }
 });
+
+function onlyNumberKey(evt) {
+
+    // Only ASCII character in that range allowed
+    var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+    if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+        return false;
+    return true;
+}
 </script>
 {% endblock extra_js %}
+
 {% endblock content %}
