@@ -36,7 +36,6 @@ class AmgApplicationFormView(CreateView):
 
 	def post(self, request, *args, **kwargs):
 		form = self.get_form()
-		import pdb; pdb.set_trace()
 		if form.is_valid():
 			form.save()
 			return redirect('awards:thanks')
