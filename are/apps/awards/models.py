@@ -61,8 +61,8 @@ class AmgAward(models.Model):
 	invitation_summary = models.TextField(null=True, blank=True)
 	challenge_in_invitation = models.TextField(null=True, blank=True)
 	implement_invitation = models.TextField(null=True, blank=True)
-	amg_image_before = models.ImageField(null=True, blank=True,upload_to="images/awards_forms/")
-	amg_image_after = models.ImageField(null=True, blank=True,upload_to="images/awards_forms/")
+	amg_image_before = models.FileField(null=True, blank=True,upload_to="images/awards_forms/")
+	amg_image_after = models.FileField(null=True, blank=True,upload_to="images/awards_forms/")
 
 
 class ClimateAward(models.Model):
