@@ -37,10 +37,29 @@ class AmgApplicationFormView(CreateView):
 	def post(self, request, *args, **kwargs):
 		form = self.get_form()
 		if form.is_valid():
-			form.save()
+			data = form.save(commit=False)
+			data.save()
 			return redirect('awards:thanks')
 		else:
-			return self.form_invalid(form)
+			amg_email = form.data.get('email')
+			amg_mobile = form.data.get('phone_number')
+			if AmgAward.objects.filter(email=amg_email).exists():
+				messages.warning(request, "Email already exists")
+			else:
+				pass
+			if AmgAward.objects.filter(phone_number=amg_mobile).exists():
+				messages.warning(request, "Number already exists")
+
+			return render(request, 'applicationform.html')
+			# return redirect('application/')
+
+
+		# else:
+		# 	return self.form_invalid(form)
+			
+	# def form_invalid(self, form):
+	#     """If the form is invalid, render the invalid form."""
+	#     return self.render_to_response(self.get_context_data(form=form))
 
 class PartnerView(TemplateView):
 	template_name = "ourpartner.html"

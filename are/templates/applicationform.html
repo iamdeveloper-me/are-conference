@@ -19,6 +19,7 @@
 <!-- form area -->
 <section class="appform-section">
     <div class="container">
+    {% include 'messages.html' %}
         <div class="row">
             <div class="col-md-12">
                 <div class="form-head">
@@ -257,6 +258,9 @@
         </div>
     </div>
 </section>
+
+
+
 <!-- form area end-->
 {% block extra_js %}
 <!-- Optional JavaScript -->
@@ -281,8 +285,7 @@ $('#select-radio-check input:radio').change(function() {
         $('.individual').hide();
     }
 });
-</script>
-<script>
+
 function onlyNumberKey(evt) {
 
     // Only ASCII character in that range allowed
@@ -293,4 +296,5 @@ function onlyNumberKey(evt) {
 }
 </script>
 {% endblock extra_js %}
+
 {% endblock content %}
