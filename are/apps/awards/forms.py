@@ -17,6 +17,13 @@ class AmgApplicationForm(forms.ModelForm):
 					'challenge_in_invitation', 'implement_invitation', 'amg_image_before',
 					'amg_image_after' ]
 
+	def check_duplicate_email(self):
+	 	import pdb; pdb.set_trace()
+	 	data = self.cleaned_data['email']
+	 	if AmgAward.objects.filter(email=data).exists():
+	 		raise forms.ValidationError('Your email is already in our list of users to be notified.Try a new email')
+
+
 class ChallengeForm(forms.ModelForm):
 	class Meta:
 		model = ClimateAward
