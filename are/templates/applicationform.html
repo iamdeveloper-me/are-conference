@@ -1,190 +1,188 @@
 {% extends "layout/base.html" %}
 {% load static %}
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/application.css' %}">
+<link rel="stylesheet" href="{% static 'css/application.css' %}">
 {% endblock extra_css %}
-
-{% block content %}    
+{% block content %}
 <section class="application_banner_area">
     <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="application_head">
-            <h2>Energy Swaraj Award</h2>
-            <h3>Application Form</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-    <!-- form area -->
-    <section class="appform-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="form-head">
-                        <h2>Enter registration information</h2>
-                        <p><span>*</span> Mandatory fields</p>
-                    </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="application_head">
+                    <h2>Energy Swaraj Award</h2>
+                    <h3>Application Form</h3>
                 </div>
-                <div class="col-md-12">
-                    <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {% if request.user.is_authenticated %}
-                                <input type="hidden" name="is_admin" value="True">
-                            {% endif %}
-                            <label for="">email <span>*</span></label>
-                            <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- form area -->
+<section class="appform-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-head">
+                    <h2>Enter registration information</h2>
+                    <p><span>*</span> Mandatory fields</p>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {% if request.user.is_authenticated %}
+                        <input type="hidden" name="is_admin" value="True">
+                        {% endif %}
+                        <label for="">email <span>*</span></label>
+                        <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
+                    </div>
+                    <h4 class="section-bghead pt-3">Section A – Background of the Applicant</h4>
+                    <div class="form-group checkbox-section">
+                        <p class="mb-3">Type of Work <span>*</span></p>
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="radio" class="custom-control-input" id="customCheck1" checked name="work_status" value="Completed: Application for work already done">
+                            <label class="custom-control-label" for="customCheck1">Completed: Application for work already done</label>
                         </div>
-                        <h4 class="section-bghead pt-3">Section A – Background of the Applicant</h4>
-                        <div class="form-group checkbox-section">
-                            <p class="mb-3">Type of Work <span>*</span></p>
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck1" checked name="work_status" value="Completed: Application for work already done">
-                                <label class="custom-control-label" for="customCheck1">Completed: Application for work already done</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck2" name="work_status" value="In Progress: Application for work in progress or is planned in the immediate future">
-                                <label class="custom-control-label" for="customCheck2">In Progress: Application for work in progress or is planned in the immediate future</label>
-                            </div>
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="radio" class="custom-control-input" id="customCheck2" name="work_status" value="In Progress: Application for work in progress or is planned in the immediate future">
+                            <label class="custom-control-label" for="customCheck2">In Progress: Application for work in progress or is planned in the immediate future</label>
                         </div>
-                        <div class="form-group checkbox-section" id="select-radio-check">
-                            <p class="mb-3">Are you applying as an individual or organization? <span>*</span></p>
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck3" name="apply_type" checked value="Individual">
-                                <label class="custom-control-label" for="customCheck3">Individual</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck4" name="apply_type" value="Organization">
-                                <label class="custom-control-label" for="customCheck4">Organization</label>
-                            </div>
+                    </div>
+                    <div class="form-group checkbox-section" id="select-radio-check">
+                        <p class="mb-3">Are you applying as an individual or organization? <span>*</span></p>
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="radio" class="custom-control-input" id="customCheck3" name="apply_type" checked value="Individual">
+                            <label class="custom-control-label" for="customCheck3">Individual</label>
                         </div>
-                        <div class="form-group checkbox-section">
-                            <p class="mb-3">Nomination Type</p>
-                               <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck5" name="nomination_type" checked value="Self">
-                                <label class="custom-control-label" for="customCheck5">Self</label>
-                            </div>
-                            <div class="custom-control custom-checkbox mb-2">
-                                <input type="radio" class="custom-control-input" id="customCheck6" name="nomination_type" value="Nominating Others">
-                                <label class="custom-control-label" for="customCheck6">Nominating Others</label>
-                            </div>
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="radio" class="custom-control-input" id="customCheck4" name="apply_type" value="Organization">
+                            <label class="custom-control-label" for="customCheck4">Organization</label>
                         </div>
-                        <div class="row indiviual-register application-form individual">
-                            <div class="col-md-12 mb-4">
-                                <h2>Individual Registration</h2>
-                            </div>
-                            <div class="col-md-6 individual">
-                                <div class="form-group">
-                                    <label for="">Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">          
-                                <div class="form-group">
-                                    <label for="">Designation <span>*</span></label>
-                                    <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Phone No.* <span>*</span></label>
-                                    <input type="tel" class="form-control" id="" placeholder="+911234567890" name="phone_number">
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label for="">Website (If any)</label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter website..." name="website">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="">Address*</label>
-                                    <textarea class="form-control" placeholder="Enter your Address..." name="address"></textarea>
-                                </div>
-                            </div>  
+                    </div>
+                    <div class="form-group checkbox-section">
+                        <p class="mb-3">Nomination Type</p>
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="radio" class="custom-control-input" id="customCheck5" name="nomination_type" checked value="Self">
+                            <label class="custom-control-label" for="customCheck5">Self</label>
                         </div>
-                        <div class="row indiviual-register application-form">
-                            <div class="col-md-12 mb-4">
-                                <h2>Organization Registration</h2>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Type of Organization <span>*</span></label>
-                                    <select name="org_type" id="type_of_org">
-                                        <option></option>
-                                        <option>Academic Institutions</option>
-                                        <option>Government</option>
-                                        <option>Corporations</option>
-                                        <option>Corporations</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Name of Organization</label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name" >
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Key Contact Person Full Name <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name">
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Key Contact Person Designation<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation">
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Key Contact Person Email ID<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email" >
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Key Contact Person Phone No<span>*</span></label>
-                                    <input type="tel" class="form-control" id="" placeholder="+911234567890" name="org_person_mobile">
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Organization’s Registered Address<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address">
-                                </div>
-                            </div>
-                            <div class="col-md-6 organization">
-                                <div class="form-group">
-                                    <label for="">Organization’s Website<span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <h4 class="section-bghead pt-3">Section B – Award related details</h4>
-                                <label class="award-detailslabel">How long have you (individual)/ organization been working towards<br> mitigating climate change?Website<span>*</span></label>
-                                <textarea class="form-control height-textarea" name="work_exp" required></textarea>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="award-detailslabel">What is your interpretation of Avoid-Minimize-Generate Principle? * <br> (not more than 300 words)*</label>
-                                <textarea class="form-control height-textarea" name="interpretation" required></textarea>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="award-detailslabel">What are the major climate change challenges that you/<br>organization is addressing?*</label>
-                                <textarea class="form-control height-textarea" name="climate_change_challenge" required></textarea>
+                        <div class="custom-control custom-checkbox mb-2">
+                            <input type="radio" class="custom-control-input" id="customCheck6" name="nomination_type" value="Nominating Others">
+                            <label class="custom-control-label" for="customCheck6">Nominating Others</label>
+                        </div>
+                    </div>
+                    <div class="row indiviual-register application-form individual">
+                        <div class="col-md-12 mb-4">
+                            <h2>Individual Registration</h2>
+                        </div>
+                        <div class="col-md-6 individual">
+                            <div class="form-group">
+                                <label for="">Full Name <span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Enter your name..." name="full_name" id="">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Designation <span>*</span></label>
+                                <input type="text" class="form-control" placeholder="Enter your Designation..." name="designation" id="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Phone No.* <span>*</span></label>
+                                <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="">Website (If any)</label>
+                                <input type="text" class="form-control" id="" placeholder="Enter website..." name="website">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="">Address*</label>
+                                <textarea class="form-control" placeholder="Enter your Address..." name="address"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row indiviual-register application-form">
+                        <div class="col-md-12 mb-4">
+                            <h2>Organization Registration</h2>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Type of Organization <span>*</span></label>
+                                <select name="org_type" id="type_of_org">
+                                    <option></option>
+                                    <option>Academic Institutions</option>
+                                    <option>Government</option>
+                                    <option>Corporations</option>
+                                    <option>Corporations</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Name of Organization</label>
+                                <input type="text" class="form-control" id="" placeholder="Enter your Organization Name..." name="org_name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Key Contact Person Full Name <span>*</span></label>
+                                <input type="text" class="form-control" id="" placeholder="Enter Contact Person Full Name..." name="org_person_name">
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Key Contact Person Designation<span>*</span></label>
+                                <input type="text" class="form-control" id="" placeholder="Enter Contact Person Designation.." name="org_person_designation">
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Key Contact Person Email ID<span>*</span></label>
+                                <input type="text" class="form-control" id="" placeholder="Enter Contact Person Email ID..." name="org_person_email">
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Key Contact Person Phone No<span>*</span></label>
+                                <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="org_person_mobile" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Organization’s Registered Address<span>*</span></label>
+                                <input type="text" class="form-control" id="" placeholder="Enter Organization’s Registered Address ..." name="org_address">
+                            </div>
+                        </div>
+                        <div class="col-md-6 organization">
+                            <div class="form-group">
+                                <label for="">Organization’s Website<span>*</span></label>
+                                <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <h4 class="section-bghead pt-3">Section B – Award related details</h4>
+                            <label class="award-detailslabel">How long have you (individual)/ organization been working towards<br> mitigating climate change?Website<span>*</span></label>
+                            <textarea class="form-control height-textarea" name="work_exp" required></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="award-detailslabel">What is your interpretation of Avoid-Minimize-Generate Principle? * <br> (not more than 300 words)*</label>
+                            <textarea class="form-control height-textarea" name="interpretation" required></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="award-detailslabel">What are the major climate change challenges that you/<br>organization is addressing?*</label>
+                            <textarea class="form-control height-textarea" name="climate_change_challenge" required></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-12">
                             <div class="form-group checkbox-section">
                                 <p class="mb-3">Nomination Type</p>
                                 <div class="custom-control custom-checkbox mb-2">
-                                    <input type="radio" class="custom-control-input" id="one" name="award_category" checked value="Only avoid" >
+                                    <input type="radio" class="custom-control-input" id="one" name="award_category" checked value="Only avoid">
                                     <label class="custom-control-label" for="one">Only avoid</label>
                                 </div>
                                 <div class="custom-control custom-checkbox mb-2">
@@ -232,9 +230,9 @@
                         </div>
                         <div class="col-md-12 attach-filehead">
                             <h3 class="">Please attach the images before applying AMG Principle</h3>
-                            <input type="file" id="file" name="amg_image_before" multiple/>
+                            <input type="file" id="file" name="amg_image_before" multiple />
                             <label for="file">Choose File</label>
-                           <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
+                            <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
                         </div>
                         <div class="col-md-12 attach-filehead">
                             <h3 class="">Please attach the images after applying AMG Principle</h3>
@@ -254,37 +252,45 @@
                             </div>
                         </div>
                     </div>
-                    </form>
-                    
-                </div>
+                </form>
             </div>
         </div>
-    </section>
-    <!-- form area end-->
-    {% block extra_js %}
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script type="text/javascript">
-        $('.organization').hide();
-        $('#select-radio-check input:radio').change(function () {
-            if ($("#customCheck3").is(":checked")) {
-                $('.organization').hide()
-                $('.organization').find('*').prop('disabled', true);
-                $('.organization').find('input').removeAttr('required');
-                $('.individual').find('input').prop('required',true);
-                $('.individual').find('*').prop('disabled', false);
-                $('.individual').show();
-            }
-            if ($("#customCheck4").is(":checked")) {
-                $('.organization').show();
-                $('.organization').find('*').prop('disabled', false);
-                $('.organization').find('input').prop('required',true);
-                $('.individual').find('input').removeAttr('required');
-                $('.individual').find('*').prop('disabled', true);
-                $('.individual').hide();
-            }
-        });
+    </div>
+</section>
+<!-- form area end-->
+{% block extra_js %}
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script>
+function onlyNumberKey(evt) {
 
-    </script>
-    {% endblock extra_js %}
+    // Only ASCII character in that range allowed
+    var ASCIICode = (evt.which) ? evt.which : evt.keyCode
+    if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57))
+        return false;
+    return true;
+}
+</script>
+<script type="text/javascript">
+$('.organization').hide();
+$('#select-radio-check input:radio').change(function() {
+    if ($("#customCheck3").is(":checked")) {
+        $('.organization').hide()
+        $('.organization').find('*').prop('disabled', true);
+        $('.organization').find('input').removeAttr('required');
+        $('.individual').find('input').prop('required', true);
+        $('.individual').find('*').prop('disabled', false);
+        $('.individual').show();
+    }
+    if ($("#customCheck4").is(":checked")) {
+        $('.organization').show();
+        $('.organization').find('*').prop('disabled', false);
+        $('.organization').find('input').prop('required', true);
+        $('.individual').find('input').removeAttr('required');
+        $('.individual').find('*').prop('disabled', true);
+        $('.individual').hide();
+    }
+});
+</script>
+{% endblock extra_js %}
 {% endblock content %}
