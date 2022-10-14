@@ -49,6 +49,7 @@ class AmgApplicationFormView(CreateView):
 			return JsonResponse(status)
 			# return redirect('awards:thanks')
 		else:
+
 			errors = form.errors
 			error = {}
 			for key,value in errors.items():
