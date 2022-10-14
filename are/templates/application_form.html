@@ -19,6 +19,7 @@
 </section>
 <!-- banner close -->
 <!-- form area -->
+
 <section class="appform-section">
     <div class="container">
         <div class="row">
@@ -29,13 +30,14 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="indiviual-register application-form 1">
-                    <form method="post" action="{% url 'awards:climate_application_form' 1 %}" enctype="multipart/form-data">
+                <div class="indiviual-register application-form 1"> 
+                    <form method="post" action="{% url 'awards:climate_application_form' context %}"  id="form1" enctype="multipart/form-data" 
+                    class="climate_form">
                         {% csrf_token %}
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="hidden" name="challenge_number" value="1">
+                                    <input type="hidden" name="challenge_number" value="1" >
                                     <label for="">Organizations<span>*</span></label>
                                     <select name="participant" required>
                                         <option></option>
@@ -53,13 +55,15 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Email <span>*</span></label>
-                                    <input type="text" class="form-control" id="" placeholder="Enter your Email Id..." name="email" required>
+                                    <input type="text" class="form-control"  placeholder="Enter your Email Id..." name="email" required>
+                                    <div id="form1-email-error" class="invalid-feedback">email cannot be blank!</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Contact Number<span>*</span></label>
                                     <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
+                                    <div id="phone_number-error" class="invalid-feedback">email cannot be blank!</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -141,7 +145,7 @@
                             <div class="col-md-6">
                                 <div class="d-inline-block">
                                     <button class="btn without-bgbtn">Cancel</button>
-                                    <button class="btn with-bgbtn">Submit</button>
+                                    <button type="submit" value="{{context}}"  id="btnSubmit" class="btn with-bgbtn">Submit</button>    
                                 </div>
                             </div>
                         </div>
@@ -159,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 2 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 2 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -255,7 +259,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 3 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 3 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -351,7 +355,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 4 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 4 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -447,7 +451,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 5 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 5 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -543,7 +547,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 6 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 6 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -651,7 +655,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 7 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 7 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -759,7 +763,7 @@
                     </div>
                 </div>
             </div>
-            <form method="post" action="{% url 'awards:climate_application_form' 8 %}" enctype="multipart/form-data">
+            <form method="post" action="{% url 'awards:climate_application_form' 8 %}" enctype="multipart/form-data" class="climate_form">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-md-6">
@@ -868,6 +872,7 @@
 <!-- form area end-->
 {% endblock content %}
 {% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <script>
 $('#chooseFile').bind('change', function() {
     var filename = $("#chooseFile").val();
@@ -884,8 +889,7 @@ $('.challenge_one').hide();
 var id = "{{context}}";
 $(`.${id}`).show();
 
-</script>
-<script>
+
 function onlyNumberKey(evt) {
 
     // Only ASCII character in that range allowed
@@ -894,5 +898,60 @@ function onlyNumberKey(evt) {
         return false;
     return true;
 }
+
+$('body').on('submit', ".climate_form", function(event) {
+    debugger
+    //stop submit the form, we will post it manually.
+    event.preventDefault();
+    
+    // Get form
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    var form = $('.climate_form')[0];
+
+    // Create an FormData object 
+    var data = new FormData(form);
+    var id = $(this).attr("id");
+
+    data=id
+    value=data.toString().split('');
+    value1 = value[4]
+    main_id = parseInt(value1);
+
+    // disabled the submit button
+    $("#btnSubmit").prop("disabled", true);
+
+    $.ajax({
+        type: "POST",
+        enctype: 'multipart/form-data',
+        headers: { 'X-CSRFToken': csrftoken },
+        url: "/application_form/" + main_id,
+        data: data,
+        processData: false,
+        contentType: false,
+        cache: false,
+        timeout: 800000,
+        success: function(data) {
+            
+            if (data.status == "success") {
+                window.location.href = '/thanks/'
+                $("#btnSubmit").prop("disabled",false);
+            } else if (data.status == "error") {
+                
+                $.each(data.errors, function(key, value) {
+                    
+                    $(`#${key}-error`).text(value)
+                    $(`#${key}-error`).addClass('d-block');
+                    // alert(key + " " + value);
+                });
+                $("#btnSubmit").prop("disabled", false);
+                $(window).scrollTop(0);
+                // $('#amg_form').find('.invalid-feedback').removeClass('d-block');
+            }
+        }
+    });
+
+});
+
+
 </script>
 {% endblock extra_js %}

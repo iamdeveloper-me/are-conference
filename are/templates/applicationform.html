@@ -299,8 +299,7 @@ function onlyNumberKey(evt) {
         return false;
     return true;
 }
-</script>
-<script type="text/javascript">
+
 $('body').on('submit', "#amg_form", function(event) {
     //stop submit the form, we will post it manually.
     event.preventDefault();
@@ -311,8 +310,6 @@ $('body').on('submit', "#amg_form", function(event) {
 
     // Create an FormData object 
     var data = new FormData(form);
-
-
 
     // disabled the submit button
     $("#btnSubmit").prop("disabled", true);
