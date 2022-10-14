@@ -44,7 +44,7 @@ class AmgAward(models.Model):
 	website = models.TextField(max_length=255,null=True, blank=True)
 	address = models.TextField(null=True, blank=True)
 	org_type = models.CharField(max_length=255,null=True, blank=True)
-	org_name = models.CharField(max_length=255,null=True, blank=True)
+	org_name = models.CharField(unique = True,max_length=255,null=True, blank=True)
 	org_person_name = models.CharField(max_length=255,null=True,	 blank=True)
 	org_person_designation = models.CharField(max_length=255,null=True, blank=True)
 	org_person_email = models.EmailField(null=True, blank=True)

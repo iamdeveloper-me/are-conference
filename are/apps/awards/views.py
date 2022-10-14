@@ -36,7 +36,6 @@ class AmgApplicationFormView(CreateView):
 	success_url = '/thanks/'
 
 	def post(self, request, *args, **kwargs):
-		# import pdb; pdb.set_trace()
 		# form = self.get_form()
 		form_class = self.get_form_class()
 		form = form_class(request.POST, request.FILES)
