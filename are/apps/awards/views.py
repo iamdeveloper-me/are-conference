@@ -9,6 +9,7 @@ from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponse, JsonResponse
 
 class HomePageView(TemplateView):
 	template_name = "homepage.html"		
@@ -35,22 +36,44 @@ class AmgApplicationFormView(CreateView):
 	success_url = '/thanks/'
 
 	def post(self, request, *args, **kwargs):
-		form = self.get_form()
+		# import pdb; pdb.set_trace()
+		# form = self.get_form()
+		form_class = self.get_form_class()
+		form = form_class(request.POST, request.FILES)
 		if form.is_valid():
 			data = form.save(commit=False)
 			data.save()
-			return redirect('awards:thanks')
+			status = {
+				'status':'success',
+			}
+			return JsonResponse(status)
+			# return redirect('awards:thanks')
 		else:
-			amg_email = form.data.get('email')
-			amg_mobile = form.data.get('phone_number')
-			if AmgAward.objects.filter(email=amg_email).exists():
-				messages.warning(request, "Email already exists")
-			else:
-				pass
-			if AmgAward.objects.filter(phone_number=amg_mobile).exists():
-				messages.warning(request, "Number already exists")
+			errors = form.errors
+			error = {}
+			for key,value in errors.items():
+				error[key]= value[0]
+			status = {
+				'status':'error',
+				'errors':error
+			}
+			return JsonResponse(status)
 
-			return render(request, 'applicationform.html')
+		# else:
+		# 	amg_email = form.data.get('email')
+		# 	amg_mobile = form.data.get('phone_number')
+		# 	if AmgAward.objects.filter(email=amg_email).exists():
+		# 		messages.warning(request, "Email already exists")
+		# 	else:
+		# 		pass
+		# 	if AmgAward.objects.filter(phone_number=amg_mobile).exists():
+		# 		messages.warning(request, "Number already exists")
+
+		# 	status = {
+		# 		'status':'error'
+
+		# 	}
+		# 	return JsonResponse(status)
 			# return redirect('application/')
 
 

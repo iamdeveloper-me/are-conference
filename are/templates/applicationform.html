@@ -19,7 +19,7 @@
 <!-- form area -->
 <section class="appform-section">
     <div class="container">
-    {% include 'messages.html' %}
+        {% include 'messages.html' %}
         <div class="row">
             <div class="col-md-12">
                 <div class="form-head">
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <form class="application-form" action="{% url 'awards:application' %}" method="post" enctype="multipart/form-data">
+                <form class="application-form" id="amg_form" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
                         {% if request.user.is_authenticated %}
@@ -36,6 +36,7 @@
                         {% endif %}
                         <label for="">email <span>*</span></label>
                         <input type="email" class="form-control email-input" id="" placeholder="Enter your email" name="email" required>
+                        <div id="email-error" class="invalid-feedback">Last name cannot be blank!</div>
                     </div>
                     <h4 class="section-bghead pt-3">Section A – Background of the Applicant</h4>
                     <div class="form-group checkbox-section">
@@ -91,12 +92,14 @@
                             <div class="form-group">
                                 <label for="">Phone No.* <span>*</span></label>
                                 <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="phone_number">
+                                <div id="phone_number-error" class="invalid-feedback">Last name cannot be blank!</div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Website (If any)</label>
                                 <input type="text" class="form-control" id="" placeholder="Enter website..." name="website">
+                                <div id="website-error" class="invalid-feedback">Last name cannot be blank!</div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -150,6 +153,7 @@
                             <div class="form-group">
                                 <label for="">Key Contact Person Phone No<span>*</span></label>
                                 <input type="text" class="form-control" id="" placeholder="911234567890" name="org_person_mobile">
+                                <div id="org_person_mobile-error" class="invalid-feedback">Last name cannot be blank!</div>
                             </div>
                         </div>
                         <div class="col-md-6 organization">
@@ -162,6 +166,7 @@
                             <div class="form-group">
                                 <label for="">Organization’s Website<span>*</span></label>
                                 <input type="text" class="form-control" id="" placeholder="Enter Organization’s Website..." name="org_web">
+                                <div id="org_web-error" class="invalid-feedback">Last name cannot be blank!</div>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -248,7 +253,7 @@
                                 </div>
                                 <div class="float-right d-inline-block">
                                     <button class="btn without-bgbtn">back</button>
-                                    <button type="submit" class="btn with-bgbtn">Submit</button>
+                                    <button type="submit" id="btnSubmit" class="btn with-bgbtn">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -258,15 +263,15 @@
         </div>
     </div>
 </section>
-
-
-
 <!-- form area end-->
 {% block extra_js %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script type="text/javascript">
 $('.organization').hide();
+
+
 $('#select-radio-check input:radio').change(function() {
     if ($("#customCheck3").is(":checked")) {
         $('.organization').hide()
@@ -295,6 +300,54 @@ function onlyNumberKey(evt) {
     return true;
 }
 </script>
-{% endblock extra_js %}
+<script type="text/javascript">
+$('body').on('submit', "#amg_form", function(event) {
+    //stop submit the form, we will post it manually.
+    event.preventDefault();
+    
+    // Get form
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+    var form = $('#amg_form')[0];
 
+    // Create an FormData object 
+    var data = new FormData(form);
+
+
+
+    // disabled the submit button
+    $("#btnSubmit").prop("disabled", true);
+
+    $.ajax({
+        type: "POST",
+        enctype: 'multipart/form-data',
+        headers: { 'X-CSRFToken': csrftoken },
+        url: "/application/",
+        data: data,
+        processData: false,
+        contentType: false,
+        cache: false,
+        timeout: 800000,
+        success: function(data) {
+            
+            if (data.status == "success") {
+                window.location.href = '/thanks/'
+                $("#btnSubmit").prop("disabled",false);
+            } else if (data.status == "error") {
+                
+                $.each(data.errors, function(key, value) {
+                    
+                    $(`#${key}-error`).text(value)
+                    $(`#${key}-error`).addClass('d-block');
+                    // alert(key + " " + value);
+                });
+                $("#btnSubmit").prop("disabled", false);
+                $(window).scrollTop(0);
+                // $('#amg_form').find('.invalid-feedback').removeClass('d-block');
+            }
+        }
+    });
+
+});
+</script>
+{% endblock extra_js %}
 {% endblock content %}

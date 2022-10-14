@@ -41,6 +41,15 @@
     {% block extra_js %}
     {% endblock extra_js %}
     {% block fb_pixel_js %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEDWB82JL0"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-JEDWB82JL0');
+    </script>
     <!-- Facebook Pixel Code -->
     <script>
     ! function(f, b, e, v, n, t, s) {
