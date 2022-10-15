@@ -127,12 +127,35 @@ class ClimateApplicationForm(CreateView):
 	form_class = ChallengeForm
 
 	def post(self, request, *args, **kwargs):
-		form = self.get_form()
+		# form = self.get_form()
+		form_class = self.get_form_class()
+		form = form_class(request.POST, request.FILES)
 		if form.is_valid():
-			form.save()
-			return redirect('awards:thanks')
+			data = form.save(commit=False)
+			data.save()
+			status = {
+				'status':'success',
+			}
+			return JsonResponse(status)
+			# return redirect('awards:thanks')
 		else:
-			return self.form_invalid(form)
+			errors = form.errors
+			error = {}
+			for key,value in errors.items():
+				error[key]= value[0]
+			status = {
+				'status':'error',
+				'errors':error
+			}
+			return JsonResponse(status)
+
+	# def post(self, request, *args, **kwargs):
+	# 	form = self.get_form()
+	# 	if form.is_valid():
+	# 		form.save()
+	# 		return redirect('awards:thanks')
+	# 	else:
+	# 		return self.form_invalid(form)
 
 	def get_context_data(self, **kwargs):
 		context = super().get_context_data(**kwargs)
