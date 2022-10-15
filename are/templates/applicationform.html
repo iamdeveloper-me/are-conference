@@ -152,7 +152,7 @@
                         <div class="col-md-6 organization">
                             <div class="form-group">
                                 <label for="">Key Contact Person Phone No<span>*</span></label>
-                                <input type="text" class="form-control" id="" placeholder="911234567890" name="org_person_mobile">
+                                <input type="text" maxlength="12" class="form-control" onkeypress="return onlyNumberKey(event)" id="" placeholder="911234567890" name="org_person_mobile">
                                 <div id="org_person_mobile-error" class="invalid-feedback">Last name cannot be blank!</div>
                             </div>
                         </div>

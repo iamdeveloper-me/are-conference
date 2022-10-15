@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#submit-comment").click(function(event) {
-        debugger
+        
         event.preventDefault();
         var id = `{{data}}`
         console.log(data)
@@ -11,7 +11,7 @@ $(document).ready(function() {
             url: url,
             data: dataPosted,
             success: function(data) {
-                debugger
+                
                 console.log(data)
                 $('#comments-' + data.post).prepend(`<div class="col-lg-6 offset-lg-3">
                                                         <div class="card p-2">
