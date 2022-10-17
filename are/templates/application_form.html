@@ -980,6 +980,7 @@ $(document).ready(function() {
 
     $('body').on('submit',".climate_form", function(event) {
         //stop submit the form, we will post it manually.
+        $(".invalid-feedback").removeClass('d-block');
         event.preventDefault();
         // Get form
         const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
@@ -1016,11 +1017,10 @@ $(document).ready(function() {
 
                     // $("#btnSubmit").prop("disabled", false);
                 } else if (data.status == "error") {
-
                     $.each(data.errors, function(key, value) {
 
-                        $(`#${id}-${key}-error`).text(value)
-                        $(`#${id}-${key}-error`).addClass('d-block');
+                        $(`#form${id}-${key}-error`).text(value)
+                        $(`#form${id}-${key}-error`).addClass('d-block');
                         // alert(key + " " + value);
                     });
                     $(`#form${id}-btnSubmit`).prop("disabled", false);
