@@ -128,6 +128,12 @@ footer .subscribe-div li{
 }
 .copy-right li{
     padding-left: 10px;
+    display: inline-block;
+      font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+
 }
 .copy-right li a{
     font-family: 'Poppins';
@@ -202,11 +208,16 @@ img.logo-img {
 }
 
 .right_powerd span{
-    margin-right: 5px
+    margin-right: 5px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
 }
 .right_powerd p img {
-    width: 160px;
+    width: 82px;
 }
 .right_powerd p {
     display: inline-block;
+
 }
