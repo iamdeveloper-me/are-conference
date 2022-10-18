@@ -1,5 +1,4 @@
 {% load static %}
-
 <footer>
     <div class="container">
         <div class="row">
@@ -10,7 +9,7 @@
                     <ul class="list-unstyled">
                         <li class="mb-1">
                             <img src="{% static 'images/footer/1.png' %}"/>
-                            +91 8291055825
+                            +91 8657438867
                         </li>
                         <li>
                             <img src="{% static 'images/footer/2.png' %}"/>
@@ -68,13 +67,9 @@
     <hr class="horizontal-line">
     <div class="container">
         <div class="row copy-right">
-            <div class="col-md-4">
-                <div class="">
-                    <p>©2022, All right reserved.</p>
-                </div>
-            </div>
+           
             <div class="col-md-8">
-                <div class="text-xl-right text-lg-right text-md-right text-left">
+                <div class="text-xl-left text-lg-left text-md-left text-left">
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
                             <a href="{% url 'awards:privacy_policy' %}">Privacy Policy</a>
@@ -83,6 +78,12 @@
                             <a href="{% url 'awards:terms_services' %}">Terms of Service</a>
                         </li>
                     </ul>
+                </div>
+            </div>
+             <div class="col-md-4">
+                <div class="right_powerd">
+                    <span>Website build by</span>
+                    <p><a href="https://thoughtwin.com" target="_blank"><img src="{% static 'images/Logo2.svg' %}" alt=" " title=""></a></p>
                 </div>
             </div>
         </div>

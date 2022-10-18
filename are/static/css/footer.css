@@ -164,6 +164,10 @@ img.logo-img {
     footer .menu-list ul.my-first{
         padding-left: 0 !important;
     }
+    .right_powerd {
+    text-align: left !important;
+    margin-top: 15px;
+}
    
 }
 @media (min-width:768px) and (max-width: 1024px) {
@@ -192,4 +196,17 @@ img.logo-img {
         width: 151px;
     }
     
+}
+.right_powerd {
+    text-align: right;
+}
+
+.right_powerd span{
+    margin-right: 5px
+}
+.right_powerd p img {
+    width: 160px;
+}
+.right_powerd p {
+    display: inline-block;
 }
