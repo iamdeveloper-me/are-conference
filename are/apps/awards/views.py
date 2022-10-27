@@ -3,6 +3,7 @@ from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from .models import AmgAward, Award, ClimateAward
 from speakers.models import Speaker
 from awards.models import Award,AmgAward,ClimateAward
+from agenda.models import Seats
 from .forms import AmgApplicationForm, ChallengeForm, EmailForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
@@ -12,7 +13,17 @@ from django.conf import settings
 from django.http import HttpResponse, JsonResponse
 
 class HomePageView(TemplateView):
-	template_name = "homepage.html"		
+	model = Seats
+	template_name = "homepage.html"
+
+	def get_context_data(self, **kwargs):
+		context = None
+		# import pdb; pdb.set_trace()	
+		data = Seats.objects.all().order_by('-created')
+		for item in data:
+			context = item
+			break
+		return {'context':context}	
 
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"

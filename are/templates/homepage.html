@@ -14,7 +14,7 @@
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
                             <img src="{% static 'images/homepage/1.png' %}" alt="" title="" class="mr-2" />
-                            24th - 26th November 2022
+                            24th - 25th November 2022
                         </li>
                         <li class="list-inline-item">
                             <img src="{% static 'images/homepage/2.png' %}" alt="" title="" class="mr-2" />
@@ -22,9 +22,12 @@
                         </li>
                     </ul>
                     <div class="register-area mt-5 mb-3">
-                        <a href="https://energyswaraj.org/event-4659534/Registration" target="_blank" class="btn  register-nowbtn mr-2"> Register Now</a>
+                        <a href="https://energyswaraj.org/Registration-Form-for-Academic-Institutions" target="_blank" class="btn  register-nowbtn mr-2"> Register Now</a>
+                        <a href="https://esf.wildapricot.org/event-5022056" target="_blank" class="btn  register-nowbtn exhibit_btn mr-2"> Exhibit</a>
                         <a href="{% url 'awards:award' %}" class="btn apply-awardbtn"> Apply for Award</a>
-                        <p>NOTE : Register Now for free !! </p>
+                       
+                        <p>FREE Registration for ALL . Limited Seats available . Register Now !! <span>(Seats Left: {{ context.remaining_seats }})</span></p>
+                        
                     </div>
                     <div class="counter_box">
                         <div class="row">

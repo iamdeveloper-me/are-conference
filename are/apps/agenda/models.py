@@ -12,6 +12,12 @@ class Conference(models.Model):
 	def get_absolute_url(self):
 		return reverse('agenda:agenda_list')  
 
+class Seats(models.Model):
+	remaining_seats = models.PositiveIntegerField(null=True,blank=True,)
+	created = models.DateTimeField(auto_now_add=True)
+	
+	class Meta:
+		ordering = ('created',)
 
 class Agenda(models.Model):
 

@@ -118,7 +118,9 @@ header nav a:hover{
     color: #FFFFFF;
 }
 .register-area a.register-nowbtn {
-    width: 280px;
+      /* width: 240px; */
+    padding: 0px 65px;
+    line-height: 50px;
     height: 50px;
     background: #FFFFFF;
     border-radius: 50px;
@@ -126,7 +128,7 @@ header nav a:hover{
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
-    line-height: 38px;
+    /* line-height: 38px; */
     text-align: center;
     color: #9A1C20 !important;
     transition: all 0.3s;
@@ -136,24 +138,32 @@ header nav a:hover{
     border: 1px solid #fff;
     color: #fff !important;
 }
+/*.register-area a.register-nowbtn span:hover{
+     color:#fff;
+}*/
+a.btn.register-nowbtn.exhibit_btn.mr-2 {
+    padding: 0px 88px;
+}
 .register-area a.apply-awardbtn{
-    width: 280px;
+  /*  width: 280px;*/
     height: 50px;
+    color: #fff !important;
     border: 1px solid #FFFFFF;
     border-radius: 50px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
-    line-height: 38px;
+    padding:0px 60px;
+    line-height: 50px;
     text-align: center;
     color: #FFFFFF;
-    background: transparent;
+    background:transparent;
     text-transform: capitalize;
     transition: all 0.3s;
 }
 .register-area a.apply-awardbtn:hover{
-    color:#9A1C20;
+    color:#9A1C20 !important;
     background-color:#fff;
 }
 .registration-btn img {
@@ -1004,4 +1014,25 @@ a.knowmore span {
     margin-top: 20px;
     text-align: left;
     padding-left: 88px;  
+}
+.register-area p span{
+    font-weight:600;
+
+}
+.register-area h6{
+    background-color: white;
+    color: #00BCFF;
+    display:inline-block;
+    margin: 15px auto 25px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.register-area a.register-nowbtn span {
+    font-weight: 700;
+    color: #000;
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 13px;
 }

@@ -152,6 +152,7 @@ class SpeakerUpdateView(UpdateView):
 	template_name = 'admin_speaker.html'
 	fields = ['name','designation','detail','profile_image']
 
+
 	def get_success_url(self, **kwargs):
 		return self.object.get_absolute_url()
 
@@ -189,6 +190,22 @@ def edit_speaker_popup(request):
 
 		return redirect("/admin/speakers/")
 		
+
+# def edit_seats(request):
+# 	if request.method =='GET':
+# 		seat_id = request.GET.get('seat_id')
+# 		seat_obj = Seats.objects.get(id=seat_id)
+# 		context = {}
+# 		context = {
+# 		    'seat_obj_id': seat_obj.id,
+# 		    'seat_no': seat_obj.remaining_seats
+# 		}
+# 		return JsonResponse(context)
+# 	if request.method =='POST':
+# 		seat_id = request.POST.get('seat_id')
+# 		seat_obj = Seats.objects.get(id=seat_id)
+# 		remaining_seat = request.POST.get('remaining_seat')
+
 
 def edit_agenda_popup(request):
 	if request.method =='GET':

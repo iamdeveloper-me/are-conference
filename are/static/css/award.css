@@ -111,8 +111,12 @@
 .category_section_area{
     padding-top:80px;
     padding-bottom:80px;
+    background: #F2F2F2;
 }
-
+.category_section2_area{
+ padding-top:80px;
+    padding-bottom:80px;
+}
 .category_text h4 {
     font-weight: 400;
     font-size: 30px;
@@ -168,6 +172,7 @@
 
 .saveworld_section_area{
   padding-bottom: 80px;
+   padding-top: 80px;
 }
 
 .saveworld_text h2{
