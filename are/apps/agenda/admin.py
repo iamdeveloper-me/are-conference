@@ -5,4 +5,8 @@ from django import forms
 
 admin.site.register(Conference)
 admin.site.register(Agenda)
-admin.site.register(Seats)
+# admin.site.register(Seats)
+
+@admin.register(Seats)
+class SeatsAdmin(admin.ModelAdmin):
+    ordering = ['-created']
