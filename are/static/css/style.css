@@ -1036,3 +1036,21 @@ a.knowmore span {
     margin-left: 5px;
     font-size: 13px;
 }
+
+.blue_box {
+    background: #00BCFF;
+    text-align: center;
+    padding:8px;
+}
+.blue_box h3 {
+    font-size: 26px;
+    color: #ffff;
+}
+
+.blue_box h3 span {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 800;
+    vertical-align: middle;
+    padding-left: 10px;
+}

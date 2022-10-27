@@ -25,9 +25,7 @@
                         <a href="https://energyswaraj.org/Registration-Form-for-Academic-Institutions" target="_blank" class="btn  register-nowbtn mr-2"> Register Now</a>
                         <a href="https://esf.wildapricot.org/event-5022056" target="_blank" class="btn  register-nowbtn exhibit_btn mr-2"> Exhibit</a>
                         <a href="{% url 'awards:award' %}" class="btn apply-awardbtn"> Apply for Award</a>
-                       
-                        <p>FREE Registration for ALL . Limited Seats available . Register Now !! <span>(Seats Left: {{ context.remaining_seats }})</span></p>
-                        
+                        <p>FREE Registration for ALL . Limited Seats available . Register Now !!</p>
                     </div>
                     <div class="counter_box">
                         <div class="row">
@@ -189,6 +187,9 @@
             </div>
         </div>
     </div>
+    <div class="blue_box">
+        <h3>Number of Seats left : <span>{{ context.remaining_seats }}</span></h3>
+    </div>
 </section>
 <!-- banner end -->
 <!-- about start -->
@@ -310,28 +311,24 @@
 <!-- Organized section start-->
 <section class="section_organized">
     <div class="container">
-       <div class="border_box">
-        <div class="row no-gutters">
-            <div class="col-md-12">
-                  <div class="row align-items-center">
-                  
+        <div class="border_box">
+            <div class="row no-gutters">
+                <div class="col-md-12">
+                    <div class="row align-items-center">
                         <div class="organized_img2 col-md-3"><img src="{% static 'images/homepage/Energy_logo2.png' %}" alt="" title=""></div>
-                       
                         <div class="organized_text text-left col-md-3">
                             <h3>Organized by Energy Swaraj Foundation</h3>
                         </div>
                         <div class="organized_img col-md-2"><img src="{% static 'images/homepage/aicte-logo.png' %}" alt="" title=""></div>
-                          <div class="organized_text text-left col-md-4">
-                              <h3>Jointly with All India Council for Technical Education (AICTE)</h3>
-                          </div>
-                  </div>
+                        <div class="organized_text text-left col-md-4">
+                            <h3>Jointly with All India Council for Technical Education (AICTE)</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
-          
-        </div> 
-       </div>
+        </div>
     </div>
 </section>
-
 <!-- Organized section close-->
 {% endblock content %}
 <!-- Optional JavaScript -->
@@ -395,11 +392,11 @@ class UnixEpochalypseCountdown {
             const days = moment_diff.dayOfYear() - 2;
 
             if (diff.valueOf() >= 0) {
-              timeLeft.y += diff.years();
-              timeLeft.d += days;
-              timeLeft.h += diff.hours();
-              timeLeft.m += diff.minutes();
-              timeLeft.s += diff.seconds();
+                timeLeft.y += diff.years();
+                timeLeft.d += days;
+                timeLeft.h += diff.hours();
+                timeLeft.m += diff.minutes();
+                timeLeft.s += diff.seconds();
             }
         }
         return timeLeft;
@@ -526,7 +523,7 @@ class UnixEpochalypseCountdown1 {
         };
 
         if (typeof moment === "function") {
-    moment.locale();
+            moment.locale();
             const later = moment(new Date("2022-11-23T09:00:00"));
             const now = moment();
             const diff = moment.duration(later.diff(now));
@@ -534,14 +531,14 @@ class UnixEpochalypseCountdown1 {
             const days = moment_diff.dayOfYear() - 2;
 
             if (diff.valueOf() >= 0) {
-              //   timeLeft.y += diff.years();
-              //   timeLeft.mo += diff.months();
-              timeLeft.d += days;
-              timeLeft.h += diff.hours();
-              timeLeft.m += diff.minutes();
-              //   timeLeft.s += diff.seconds();
+                //   timeLeft.y += diff.years();
+                //   timeLeft.mo += diff.months();
+                timeLeft.d += days;
+                timeLeft.h += diff.hours();
+                timeLeft.m += diff.minutes();
+                //   timeLeft.s += diff.seconds();
             }
-          }
+        }
 
         return timeLeft;
     }
