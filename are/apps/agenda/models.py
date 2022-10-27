@@ -14,10 +14,16 @@ class Conference(models.Model):
 
 class Seats(models.Model):
 	remaining_seats = models.PositiveIntegerField(null=True,blank=True,)
-	created = models.DateTimeField(auto_now_add=True)
 	
-	class Meta:
-		ordering = ('created',)
+	def object(cls):
+		return cls._default_manager.all().first()
+
+	def save(self, *args, **kwargs):
+		self.pk = self.id = 1
+		return super().save(*args, **kwargs) 
+
+	# class Meta:
+	# 	ordering = ('created',)
 
 class Agenda(models.Model):
 

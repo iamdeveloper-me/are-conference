@@ -19,7 +19,7 @@ class HomePageView(TemplateView):
 	def get_context_data(self, **kwargs):
 		context = None
 		# import pdb; pdb.set_trace()	
-		data = Seats.objects.all().order_by('-created')
+		data = Seats.objects.all()
 		for item in data:
 			context = item
 			break
