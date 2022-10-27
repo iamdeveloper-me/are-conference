@@ -45,7 +45,7 @@ class AdminLogout(LogoutView):
 class DashboardView(LoginRequiredMixin,TemplateView):
 	modal = Speaker
 	template_name = "dashboard.html"
-	login_url='/admin_login/'
+	login_url='/admin/login/'
 
 	def get_context_data(self, **kwargs):
 		total_speaker = Speaker.objects.all().count()
@@ -60,9 +60,10 @@ class DashboardView(LoginRequiredMixin,TemplateView):
 		return {'data':data} 
 
 
-class AdminViewSpeaker(ListView):
+class AdminViewSpeaker(LoginRequiredMixin,ListView):
 	model = Speaker
 	template_name = "admin_speaker.html"
+	login_url='/admin/login/'
 
 class AdminSpeakerCreateView(CreateView):
 	model = Speaker
@@ -79,9 +80,10 @@ class AdminSpeakerCreateView(CreateView):
 
 		return redirect("/admin/speakers/")
 
-class AdminViewawards(ListView):
+class AdminViewawards(LoginRequiredMixin,ListView):
 	model = Speaker
 	template_name = "admin_awards.html"
+	login_url='/admin/login/'
 
 	def get_context_data(self, **kwargs):
 		total_speaker = Speaker.objects.all().count()
@@ -97,9 +99,10 @@ class AdminViewawards(ListView):
 		return {'data':data} 
 
 
-class AdminViewagenda(ListView):
+class AdminViewagenda(LoginRequiredMixin,ListView):
 	template_name = 'admin_agendas.html'	
 	queryset = Conference.objects.all().order_by('startdate')
+	login_url='/admin/login/'
 	
 	def get_context_data(self, **kwargs):
 		context = {}
