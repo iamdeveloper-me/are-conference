@@ -33,7 +33,7 @@ class Agenda(models.Model):
 	starttime = models.TimeField(null=True,blank=True)
 	endtime = models.TimeField(null=True,blank=True)
 	duration = models.DurationField(null=True,blank=True)
-	event = models.CharField(max_length=255,null=True,blank=True)
+	event = models.CharField(max_length=5000,null=True,blank=True)
 	speaker = models.ForeignKey(Speaker,on_delete=models.CASCADE, related_name='speaker',null=True,blank=True)
 	created = models.DateTimeField(auto_now_add=True)
 

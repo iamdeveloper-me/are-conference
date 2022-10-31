@@ -235,17 +235,20 @@
                             <label class="award-detailslabel">What are the best practices used for the implementing the intervention?</label>
                             <textarea class="form-control height-textarea" name="implement_invitation"></textarea>
                         </div>
-                        <div class="col-md-12 attach-filehead">
+
+                        <div class="col-md-12 attach-filehead file-upload">
                             <h3 class="">Please attach the images before applying AMG Principle</h3>
-                            <input type="file" id="file" name="amg_image_before" multiple />
+                            <input type="file" id="file" name="amg_image_before" multiple onChange='getoutput()'/>
                             <label for="file">Choose File</label>
-                            <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
+                            <p id="outputfile" style="color: grey;" ></p>
+                            <p>Each file should be less than 20 MB.</p>
                         </div>
                         <div class="col-md-12 attach-filehead">
                             <h3 class="">Please attach the images after applying AMG Principle</h3>
-                            <input type="file" id="file2" name="amg_image_after" />
+                            <input type="file" id="file2" name="amg_image_after" onChange='getoutput2()' />
                             <label for="file2">Choose File</label>
-                            <p>User can upload up to 20 files. Each file should be less than 20 MB.</p>
+                            <p id="outputfile2" style="color: grey;" ></p>
+                            <p>Each file should be less than 20 MB.</p>
                         </div>
                         <div class="col-md-12">
                             <div class="button-footer">
@@ -292,6 +295,17 @@ $('#select-radio-check input:radio').change(function() {
     }
 });
 
+$('.chooseFile').bind('change', function() {
+    var filename = $(".chooseFile").val();
+    if (/^\s*$/.test(filename)) {
+        $(".file-upload").removeClass('active');
+        $("#noFile").text("No file chosen...");
+    } else {
+        $(".file-upload").addClass('active');
+        $("#noFile").text(filename.replace("C:\\fakepath\\", ""));
+    }
+});
+
 function onlyNumberKey(evt) {
 
     // Only ASCII character in that range allowed
@@ -300,6 +314,20 @@ function onlyNumberKey(evt) {
         return false;
     return true;
 }
+
+// """FILE PATH"""
+
+function getFile(filePath) {
+        return filePath.substr(filePath.lastIndexOf('\\') + 1).split('.')[0];
+    }
+
+    function getoutput() {
+        outputfile.innerHTML = "Uploaded File : " + getFile(file.value);
+    }
+
+    function getoutput2() {
+        outputfile2.innerHTML = "Uploaded File : " + getFile(file2.value);
+    }
 
 $('body').on('submit', "#amg_form", function(event) {
     //stop submit the form, we will post it manually.

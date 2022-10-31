@@ -131,7 +131,9 @@
                                         <div class="file-select">
                                             <div class="file-select-name" id="noFile">No file chosen...</div>
                                             <div class="file-select-button" id="fileName">Choose File</div>
-                                            <input type="file" accept="video/*" id="chooseFile" name="working_video" required>
+                                            <input type="file" accept="video/*" id="file1" name="working_video" 
+                                            onChange='getoutput1()' required>
+                                            <p id="outputfile1" style="color: ;" ></p>
                                             <div id="form1-working_video-error" class="invalid-feedback">email cannot be blank!</div>
                                             <span>( Video length should not exceed 30 seconds, and file size should not
                                                 exceed 5 MB. )</span>
@@ -257,7 +259,8 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="file2" onChange='getoutput2()'>
+                                    <p id="outputfile2" style="color: grey;" ></p>
                                     <div id="form2-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                     <span>The submission must be in Word or PDF format. </span>
                                 </div>
@@ -365,7 +368,8 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="file3" onChange='getoutput3()'>
+                                    <p id="outputfile3" style="color: grey;" ></p>
                                     <div id="form3-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
@@ -473,7 +477,8 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="file4" onChange='getoutput4()' >
+                                    <p id="outputfile4" style="color: grey;" ></p>
                                     <div id="form4-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
@@ -581,7 +586,8 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="file5" onChange='getoutput5()'>
+                                    <p id="outputfile5" style="color: grey;" ></p>
                                     <div id="form5-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
@@ -703,7 +709,8 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="file6" onChange='getoutput6()'>
+                                    <p id="outputfile6" style="color: grey;" ></p>
                                     <div id="form6-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
@@ -825,7 +832,8 @@
                                 <div class="file-select">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="chooseFile">
+                                    <input type="file" accept=".doc,.docx,.pdf" name="file" required id="file7" onChange='getoutput7()'>
+                                    <p id="outputfile7" style="color: grey;" ></p>
                                     <div id="form7-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                     <span>The submission must be in Word or PDF format.</span>
                                 </div>
@@ -950,7 +958,8 @@
                                 <div class="file-select file_up">
                                     <div class="file-select-name" id="noFile">No file chosen...</div>
                                     <div class="file-select-button" id="fileName">Choose File</div>
-                                    <input type="file" accept="image/*" name="file" required id="chooseFile">
+                                    <input type="file" accept="image/*" name="file" required id="file8" onChange='getoutput8()'>
+                                    <p id="outputfile8" style="color: grey;" ></p>
                                     <div id="form8-file-error" class="invalid-feedback">Last name cannot be blank!</div>
                                 </div>
                             </div>
@@ -1035,8 +1044,46 @@ $(document).ready(function() {
 
     });
 });
-</script>
-<script>
+
+// """FILE PATH"""
+
+function getFile(filePath) {
+        return filePath.substr(filePath.lastIndexOf('\\') + 1).split('.')[0];
+    }
+
+    function getoutput1() {
+        outputfile1.innerHTML = "Uploaded File : " + getFile(file1.value);
+    }
+
+    function getoutput2() {
+        outputfile2.innerHTML = "Uploaded File : " + getFile(file2.value);
+    }
+
+    function getoutput3() {
+        outputfile3.innerHTML = "Uploaded File : " + getFile(file3.value);
+    }
+
+    function getoutput4() {
+        outputfile4.innerHTML = "Uploaded File : " + getFile(file4.value);
+    }
+
+    function getoutput5() {
+        outputfile5.innerHTML = "Uploaded File : " + getFile(file5.value);
+    }
+
+    function getoutput6() {
+        outputfile6.innerHTML = "Uploaded File : " + getFile(file6.value);
+    }
+
+    function getoutput7() {
+        outputfile7.innerHTML = "Uploaded File : " + getFile(file7.value);
+    }
+
+    function getoutput8() {
+        outputfile8.innerHTML = "Uploaded File : " + getFile(file8.value);
+    }
+
+
 $('#chooseFile').bind('change', function() {
     var filename = $("#chooseFile").val();
     if (/^\s*$/.test(filename)) {
