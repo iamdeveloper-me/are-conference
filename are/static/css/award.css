@@ -17,7 +17,6 @@
 }
 
 .award_text {
-    display: flex;
     justify-content: center;
     padding: 20% 0px 12%;
 }
