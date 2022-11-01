@@ -420,21 +420,38 @@ a.knowmore span {
     font-size: 18px;
     line-height: 18px;
     color: #252123;
+
 }
 .sponser_head p {
     margin-bottom: 15px;
 }
-
+.sponser_outbox h4 {
+    /*text-align: center;*/
+    font-size: 24px;
+    padding-bottom: 12px;
+}
+.sponser_outbox h4{
+    margin-bottom: 10px;
+}
 .sponser_box{
     border: 1px solid #E0E0E0;
     background:#fafafa;
     border-radius: 10px;
     padding: 25px 40px;
-    margin-bottom: 50px;
+   /* margin-bottom: 50px;*/
+    text-align: center;
 }
-
+.sponser_outbox p{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 18px;
+}
+.sponser_area{
+    padding: 50px 0px;
+}
 .sponser_box img {
-    height: 54px;
+   height: 70px;
+   width: auto;
 }
 
 .owl-theme .owl-nav [class*='owl-']:hover {
