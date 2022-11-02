@@ -742,11 +742,54 @@ a.knowmore span {
     .banner-section .inner-content {
         margin: 100px auto 0px;
     }
+    .register-area a.register-nowbtn{
+        padding: 0px 18px;
+        line-height: 45px !important;
+        height: 45px !important;
+        font-size: 13px;
+    }
+   
+    a.btn.register-nowbtn.exhibit_btn.mr-2 {
+        padding: 0px 15px;
+    }
+    .register-area.mt-5.mb-3 {
+        margin-top: 25px !important;
+    }
+    .inner-content .register-area p {
+        font-size: 14px;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .timer-UI{
+        margin-bottom: 20px;
+    }
+    .sponser_box img {
+        height: 40px;
+    }
+    .sponser_outbox p{
+        padding-top: 7px;
+        font-size: 14px;
+    }
     .custom_collapse{
         background-color:#fff;
     }
     .amg_applicant_top {
         padding: 22% 0px 8%;
+    }
+    .sponser_area {
+        padding: 35px 0px 25px;
+    }
+    .banner-section .blue_box h3 {
+        font-size: 20px;
+    }
+    .organized_img2 img {
+        width: 80%;
+    }
+    .sponser_outbox h4 {
+        font-size: 17px;
+        padding-bottom: 0px;
+        margin-bottom: 10px;
     }
     .border_box::after{
         display:none;
@@ -755,7 +798,7 @@ a.knowmore span {
         margin-bottom:15px;
     }
     .border_box {
-        padding: 55px 30px 30px;
+        padding:30px 30px 0px;
     }
     .section_organized::before{
         left: 2%;
@@ -803,12 +846,15 @@ a.knowmore span {
         width: 95px;
     }
     .organized_text {
-        padding-bottom: 30px;
+        padding-bottom: 35px;
+    }
+    .organized_img img {
+        width: 60px;
     }
     .organized_text h3 {
-        font-size: 18px;
-        line-height: 26px;
-        text-align: center;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;    
     }
     .organized_text {
         text-align: center;
@@ -838,9 +884,11 @@ a.knowmore span {
         width: 65px;
     }
     .register-area a.apply-awardbtn{
-        width:135px;
-        height: 44px;
-        line-height: 34px;
+        width: 152px;
+        height: 45px;
+        line-height: 45px;
+        padding: 0px;
+        margin-top: 15px;
     }
     .register_btn a {
         background: #9A1C20;
@@ -916,7 +964,7 @@ a.knowmore span {
     
     .banner-section{
         background-size: cover;
-        padding-bottom: 35px;
+        /* padding-bottom: 35px; */
     }
     .about_content {
         padding-top: 0;
@@ -972,8 +1020,9 @@ a.knowmore span {
         padding-right: 0px;
     }   
     .sponser_head h3{
-        font-size:26px;
-        padding-bottom: 6px;
+        font-size: 26px;
+        padding-bottom: 20px;
+        line-height: 35px;
     }
     .sponser_box{
         margin-bottom: 15px;
@@ -988,7 +1037,10 @@ a.knowmore span {
         width: 180px;
     }
     .sponser_box{
-        padding: 20px 25px;
+        padding: 15px 15px;
+    }
+    .sponser_outbox p{
+        font-size:10px;
     }
     .timer-UI .cd__digits{
         font-size: 20px;

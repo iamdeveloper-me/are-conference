@@ -158,8 +158,12 @@ img.logo-img {
 }
 
 @media (max-width:767px){
+    .futer_list{
+      text-align: center;
+    }
     .copy-right li {
-        padding-right: 20px !important;
+        padding-right: 5px !important;
+        font-size:12px !important;
     }
     footer .subscribe-div input{
         width: 60%;
@@ -171,10 +175,20 @@ img.logo-img {
         padding-left: 0 !important;
     }
     .right_powerd {
-    text-align: left !important;
+    text-align: center !important;
     margin-top: 15px;
 }
-   
+.col-md-2.menu-list li {
+    width: 31% !important;
+    display: inline-block;
+    margin-bottom: 4px;
+}
+.copy-right li {
+    padding-left: 0px;
+}
+.copy-right li a{
+font-size: 11px;
+}
 }
 @media (min-width:768px) and (max-width: 1024px) {
     footer .contact-part .logo-img{
