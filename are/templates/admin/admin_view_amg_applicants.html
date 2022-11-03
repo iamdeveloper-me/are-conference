@@ -26,6 +26,7 @@
                             <th scope="col">Full Name</th>
                             <th scope="col">Email</th>
                             <th scope="col">View Details</th>
+                            <th scope="col">Download Details</th>
                         </tr>
                     </thead>
                     {% if value %}
@@ -36,6 +37,8 @@
                             <td>{{applicant.full_name}}</td>
                             <td>{{applicant.email}}</td>
                             <td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+                            <td><a href="{% url 'awards:text-file' applicant.id %}">Download</a></td>
+                            
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -58,6 +61,7 @@
                             <th scope="col">Org Name</th>
                             <th scope="col">Contact Person Name</th>
                             <th scope="col">View Details</th>
+                            <th scope="col">Download Details</th>
                         </tr>
                     </thead>
                     {% if value %}
@@ -68,6 +72,7 @@
                             <td>{{applicant.org_name}}</td>
                             <td>{{applicant.org_person_name}}</td>
                             <td><a href="{% url 'awards:amg_applicant_detail' applicant.id %}">View</a></td>
+                            <td><a href="{% url 'awards:text-file' applicant.id %}">Download</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>

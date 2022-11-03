@@ -32,6 +32,7 @@
                                         <th>Designation</th>
                                         <th>Detail</th>
                                         <th>Actions</th>
+                                        <th>download</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,6 +49,7 @@
 
                                             <a href="#deletepopup" data-toggle="modal"><span class="delete_icon confirm-delete" data-type="speaker_delete" data-id="{{ data.id }}"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
                                         </td>
+                                    </tr>
                                         {% comment %}
                                         <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
                                         {% endcomment %}
