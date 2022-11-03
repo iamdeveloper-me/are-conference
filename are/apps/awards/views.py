@@ -11,6 +11,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse, JsonResponse
+from reportlab.pdfgen import canvas
+from tabulate import tabulate
+from prettytable import PrettyTable
+import csv
 
 class HomePageView(TemplateView):
 	model = Seats
@@ -18,7 +22,6 @@ class HomePageView(TemplateView):
 
 	def get_context_data(self, **kwargs):
 		context = None
-		# import pdb; pdb.set_trace()	
 		data = Seats.objects.all()
 		for item in data:
 			context = item
@@ -101,6 +104,44 @@ class PartnerView(TemplateView):
 class ThanksEnergyView(TemplateView):
 	template_name = "thank.html"
 
+def text_file(request, pk):
+	response = HttpResponse(content_type='text/csv')
+
+	response['Content-Disposition'] = 'attachment; data.csv'
+	data = AmgAward.objects.filter(id=pk).values()
+	data1 = list(data)	
+	lines = [['field', 'values']]	
+
+	for key,value in data1[0].items():
+		lines.append([f"{key}" , f"{value}"])
+	# c = canvas.Canvas("data.pdf")
+
+	writer = csv.writer(response)
+	writer.writerow(["fields","value"])
+	for key,value in data1[0].items():
+		writer.writerow([f"{key}" , f"{value}"])
+
+	return response
+
+def text_file1(request, pk):
+	response = HttpResponse(content_type='text/csv')
+	response['Content-Disposition'] = 'attachment; data.csv'
+	data = ClimateAward.objects.filter(id=pk).values()
+	data1 = list(data)	
+	lines = [['field', 'values']]	
+
+	for key,value in data1[0].items():
+		lines.append([f"{key}" , f"{value}"])
+	# c = canvas.Canvas("data.pdf")
+
+	writer = csv.writer(response)
+	writer.writerow(["fields","value"])
+	for key,value in data1[0].items():
+		writer.writerow([f"{key}" , f"{value}"])
+
+	return response
+
+
 class AdminViewAmgApplicant(LoginRequiredMixin, ListView):
 	model = AmgAward
 	template_name = 'admin/admin_view_amg_applicants.html'
@@ -179,6 +220,7 @@ class AdminViewClimateApplicant(LoginRequiredMixin, TemplateView):
 	model = ClimateAward
 	template_name = 'admin/admin_view_climate_applicants.html'
 	login_url='/admin/login/'
+
 
 	def get_context_data(self, **kwargs):
 		context = {}

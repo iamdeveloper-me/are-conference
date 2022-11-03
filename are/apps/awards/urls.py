@@ -29,4 +29,6 @@ urlpatterns = [
 	# path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 	# path('awards/',views.Adminaward.as_view(),name='awards'),
 	# path('dashboard/',views.dashboard.as_view(),name='dashboard'),
+	path('text-file/<int:pk>', views.text_file, name='text-file'),
+	path('text-file1/<int:pk>', views.text_file1, name='text-file1'),
 ]
