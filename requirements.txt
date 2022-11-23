@@ -1,6 +1,6 @@
 asgiref==3.5.2
 aspose-words==22.10.0
-Babel==2.10.3
+#Babel==2.10.3
 backports.zoneinfo==0.2.1
 Django==4.1
 django-ckeditor==6.5.1
@@ -10,8 +10,8 @@ django-phonenumber-field==6.4.0
 numpy==1.23.3
 pandas==1.4.4
 pdfkit==0.6.1
-phonenumbers==8.12.54
-phonenumberslite==8.12.54
+#phonenumbers==8.12.54
+#phonenumberslite==8.12.54
 Pillow==9.2.0
 postgres==4.0
 prettytable==3.5.0

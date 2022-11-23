@@ -11,6 +11,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 class SpeakerView(ListView):
 	model = Speaker
 	template_name = "speaker.html"
+	ordering = ['id']
 
 
 class SpeakerCreateView(CreateView):

@@ -64,6 +64,7 @@ class AdminViewSpeaker(LoginRequiredMixin,ListView):
 	model = Speaker
 	template_name = "admin_speaker.html"
 	login_url='/admin/login/'
+	ordering = ['id']
 
 class AdminSpeakerCreateView(CreateView):
 	model = Speaker
