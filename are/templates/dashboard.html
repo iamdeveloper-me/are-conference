@@ -10,9 +10,9 @@
                         <li class="nav-item active"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
                         {% comment %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
-                        {% endcomment %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
+                        {% endcomment %}
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
                     </ul>
                 </div>
             </div>
@@ -41,6 +41,7 @@
                                 </div>
                             </div>
                             {% endcomment %}
+                            {% comment %}
                             <div class="col-md-4">
                                 <a href="{% url 'speaker_admin' %}">
                                     <div class="card_custom">
@@ -57,6 +58,7 @@
                                     </div>
                                 </a>
                             </div>
+                            {% endcomment %}
                             <div class="col-md-4">
                                 <a href="{% url 'awards:amg_applicants' %}">
                                     <div class="card_custom">
