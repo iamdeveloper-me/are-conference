@@ -14,17 +14,17 @@
                     <ul class="list-unstyled list-inline">
                         <li class="list-inline-item">
                             <img src="{% static 'images/homepage/1.png' %}" alt="" title="" class="mr-2" />
-                            24th - 25th November 2022
+                            24<sup>th</sup> - 25<sup>th</sup> November 2023
                         </li>
-                        <li class="list-inline-item">
+                        <!-- <li class="list-inline-item">
                             <img src="{% static 'images/homepage/2.png' %}" alt="" title="" class="mr-2" />
                             AICTE Headquarter, New Delhi
-                        </li>
+                        </li> -->
                     </ul>
-                    <div class="register-area mt-5 mb-3">
-                        <a href="https://energyswaraj.org/Registration-Form-for-Academic-Institutions" target="_blank" class="btn  register-nowbtn mr-2"> Register Now</a>
-                        <a href="https://esf.wildapricot.org/event-5022056" target="_blank" class="btn  register-nowbtn exhibit_btn mr-2"> Exhibit</a>
-                        <a href="{% url 'awards:award' %}" class="btn apply-awardbtn"> Apply for Award</a>
+                    <div class="register-area mt-4 mb-3">
+                        <a href="https://energyswaraj.org/Registration-Form-for-Academic-Institutions" target="_blank" class="btn  register-nowbtn mr-2" style="pointer-events: none"> Register Now</a>
+                        <!-- <a href="https://esf.wildapricot.org/event-5022056" target="_blank" class="btn  register-nowbtn exhibit_btn mr-2"> Exhibit</a>
+                        <a href="{% url 'awards:award' %}" class="btn apply-awardbtn"> Apply for Award</a> -->
                         <p>FREE Registration for ALL . Limited Seats available . Register Now !!</p>
                     </div>
                     <div class="counter_box">
@@ -99,6 +99,7 @@
                         </div>
                     </div>
                 </div>
+            
                 <!-- time first end-->
                 <!-- time second -->
                 <div class="intro timer-UI">
@@ -183,29 +184,36 @@
                         </div>
                     </div>
                 </div>
+                <h2>ARE Conference 2023 coming soon</h2>
                 <!-- time second end-->
             </div>
         </div>
     </div>
-    <div class="blue_box">
+    <!-- <div class="blue_box">
         <h3>Number of Seats left : <span>{{ context.remaining_seats }}</span></h3>
-    </div>
+    </div> -->
 </section>
 <!-- banner end -->
 <!-- about start -->
 <section class="about_section_area">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6">
+        <div class="row align-items-center">
+            <div class="col-md-7">
                 <div class="about_content">
-                    <h3>About</h3>
-                    <h2><span>ARE</span> Conference</h2>
-                    <p>The climate is not changing, it has changed. The rate of global warming (climate change) and associated events like rising sea levels, heatwaves, cyclones, floods, droughts, forest fires are ever-increasing, resulting in ever-increasing troubles for humans.</p>
-                    <p>Despite COP meetings every year, despite the PARIS agreement, despite governments implementing renewable energy projects and making policies, despite thousands of NGO working on the issue, climate change is worsening. ARE we taking enough actions? Is the question that needs to be posed to every citizen and leaders from all walks of life be it industrial, political, scientific, academic or even spiritual.</p>
-                    <a href="https://are-conference-staging.s3.us-east-2.amazonaws.com/files/Action+for+Restoring+Environment+Brochure+Single+page_compressed.pdf" target="_blank" class="download">Download Brochure</a>
+                    <!-- <h3>About</h3> -->
+                    <h2><span>ARE</span> Conference 2022</h2>
+                    <!-- <p>The climate is not changing, it has changed. The rate of global warming (climate change) and associated events like rising sea levels, heatwaves, cyclones, floods, droughts, forest fires are ever-increasing, resulting in ever-increasing troubles for humans.</p>
+                    <p>Despite COP meetings every year, despite the PARIS agreement, despite governments implementing renewable energy projects and making policies, despite thousands of NGO working on the issue, climate change is worsening. ARE we taking enough actions? Is the question that needs to be posed to every citizen and leaders from all walks of life be it industrial, political, scientific, academic or even spiritual.</p> -->
+                    <!-- <a href="https://are-conference-staging.s3.us-east-2.amazonaws.com/files/Action+for+Restoring+Environment+Brochure+Single+page_compressed.pdf" target="_blank" class="download">Download Brochure</a> -->
+                    <p>The Energy Swaraj Foundation has launched Action for Restoring the Environment (ARE) – Are we taking enough actions? Conference to encourage quantifiable actions. Actions for Restoring Environment (ARE) Conference, organised in collaboration with All India Council for Technical Education, one-of-its-kind conference, was organised on 24th – 25th November 2022 at Vasant Kunj, New Delhi. ARE Conference comes as a timely action to bring concerted actions by stakeholders from various walks of life to take consolidated action to mitigate climate change, amidst inconclusive and mixed outcomes of COP27. 
+                    </p>
+                    <p>The conference saw 8 intensive sessions - each representing one sector of the society followed by the Energy Swaraj Awards which applauded the exemplary efforts by individuals to mitigate climate change, With 21 Partners and over 40+ speakers on-board, the ARE Conference engaged 350+ lives who attended the conference physically and many more who watched the conference in the online mode.</p>
+                    <p>The purpose of the ARE conference was to ask tough questions to everyone that ARE we taking enough actions? All the speakers in the sessions conducted so far have been more or less unanimous in accepting that No, we are NOT taking enough action. 
+                    </p>
+              
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <div class="about_img">
                     <img src="{% static 'images/homepage/about_img.png' %}" alt="" title="" />
                 </div>
@@ -214,8 +222,105 @@
     </div>
 </section>
 <!-- about close -->
+
+<!-- start Highlights -->
+<section class="Highlight_secArea">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-5 second">
+                <div class="about_img">
+                    <img src="{% static 'images/homepage/about_img.png' %}" alt="" title="" />
+                </div>
+            </div>
+            <div class="col-md-7 first">
+                <div class="textHighlight">
+                    <h2>Highlights of the Conference</h2>
+                    <ul>
+                        <li>The conference also saw a special message from Honorable Prime Minister Shri. Narendra ModiJi congratulating Prof. Chetan Singh Solanki, Team of Energy Swaraj Foundation and AICTE on taking forward the climate discussions</li>
+                        <li>40+ eminent leaders from the industry, government, academia, spiritual, media and the youth in one platform to deliberate on the climate corrective actions which are required on a drastic and immediate basis.</li>
+                        <li>The 200kgs sacks were an eye-opener for the speakers and audiences alike to understand and create awareness on the carbon dioxide (CO2) emitted per capita per month.</li>
+                        <li>Climate Clock showing the time left for reach 1.5 degree Celsius of global warming was unveiled, which was then referred in all panel discussions</li>
+                        <li>Atal innovation mission of NITI Aayog, GoI announced that over 10000 climate clocks will be assembled across the Atal Tinkering Labs across the country on 24th April 2023 in collaboration with Energy Swaraj Foundation.
+                        </li>
+                        <li>Winners of Shell GameChanger, AMG Challenge and Climate Hackathon challenge with prize money of about Rs 1.75 Crore were announced.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>  
+    </div>
+</section>
+<!-- close Highlights -->
+
+<!-- session summary start -->
+<section class="session_summaryArea">
+    <div class="container">
+         <div class="summary_text">
+             <h2>Session-wise summary</h2>
+             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <a href="#!">Read More</a>
+         </div>
+    </div>
+</section>
+<!-- session summary close -->
+
+<!-- Our number start -->
+<section class="OurNumber_area">
+    <div class="container">
+        <div class="OurNumber_inner">
+            <h2>Our numbers</h2>
+            <h3>We are super proud of our numbers</h3>
+        </div>
+         <div class="row">
+              
+              <div class="col">
+                 <div class="NumberBox">
+                     <h3>20+</h3>
+                     <h4>Our Partners</h4>
+                 </div>
+              </div>
+             <div class="col">
+                <div class="NumberBox">
+                    <h3>45+</h3>
+                    <h4>Our Speakers</h4>
+                </div>
+             </div>
+             <div class="col">
+                <div class="NumberBox">
+                    <h3>300+</h3>
+                    <h4>ARE Conference Participants</h4>
+                </div>
+             </div>
+             <div class="col">
+                <div class="NumberBox">
+                    <h3>20+</h3>
+                    <h4>Awardees Winning</h4>
+                </div>
+             </div>
+             <div class="col">
+                <div class="NumberBox">
+                    <h3>3.50 Lac</h3>
+                    <h4>Award Money</h4>
+                </div>
+             </div>
+         </div>
+    </div>
+</section>
+<!-- Our number close -->
+
+<!-- downlod section start -->
+    <section class="download_area">
+          <div class="container">
+             <h2>Ways Academic Institutions Invest in Our Planet?</h2>
+             <a href="#!" target="_blank"><span class="whiteicon"><img src="{% static 'images/download.svg' %}" alt="" title="" ></span> <span class="blackicon"><img src="{%static 'images/blakdownloas.svg' %}" alt="" title="" ></span>Download</a>
+             
+          </div>
+    </section>
+<!-- downlod section close -->
+
+
 <!-- About Energy start -->
-<section class="about_energy_area">
+<!-- <section class="about_energy_area">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -250,7 +355,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 <!-- About Energy close -->
 <!-- sponser section start -->
 <section class="sponser_area">
@@ -263,7 +368,7 @@
                  </div>
               </div>
           </div>
-             <div class="row align-items-center">
+             <div class="row align-items-center justify-content-center">
                  <div class="col-md-4 col-6">
                       <div class="sponser_outbox">
                         <h4>Platinum Sponsor</h4>
