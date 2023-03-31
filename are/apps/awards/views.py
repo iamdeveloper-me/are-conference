@@ -28,6 +28,17 @@ class HomePageView(TemplateView):
 			break
 		return {'context':context}	
 
+class SessionDetail(TemplateView):
+	template_name = "session_detail.html"
+
+class AreConference2022(TemplateView):
+	template_name = "are_conference2022.html"
+
+class AreConference2023(TemplateView):
+	template_name = "are_conference2023.html"
+
+
+
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 

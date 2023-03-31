@@ -21,21 +21,21 @@
                                     <a class="nav-link dropdown-toggle" href="#!" role="button" data-toggle="dropdown"
                                         aria-expanded="false">Are Conference</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#!">Are Conference 2022</a>
-                                        <a class="dropdown-item" href="#!">Are Conference 2023</a>
+                                        <a class="dropdown-item" href="{% url 'awards:are_conference2022' %}">Are Conference 2022</a>
+                                        <a class="dropdown-item" href="{% url 'awards:are_conference2022' %}">Are Conference 2023</a>
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#!" role="button" data-toggle="dropdown"
                                     aria-expanded="false">Energy Swaraj Award</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">2022</a>
-                                        <a class="dropdown-item" href="#">2023</a>
+                                        <a class="dropdown-item" href="{% url 'awards:home' %}">2022</a>
+                                        <a class="dropdown-item" href="{% url 'awards:home' %}">2023</a>
                                     </div>
                                 </li>
                                 <li><a class="nav-item nav-link" href="{% url 'awards:partner' %}">Partners</a></li>
-                                <li><a class="nav-item nav-link" href="#!">Sponsors</a></li>
-                                <li><a class="nav-item nav-link" href="#!">Media</a></li>
+                                <li><a class="nav-item nav-link" href="{% url 'awards:home' %}">Sponsors</a></li>
+                                <li><a class="nav-item nav-link" href="{% url 'awards:home' %}">Media</a></li>
                             </ul>
 
                             <!-- <a class="nav-item nav-link" href="{% url 'awards:context' %}">Context</a> -->

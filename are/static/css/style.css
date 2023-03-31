@@ -74,7 +74,7 @@ header nav a:hover {
     color: #FFFFFF;
     background: transparent;
     text-shadow: none;
-    border: 1px solid #9A1C20;
+    border: 1px solid #ffffff;
     border-radius: 50px;
     margin-left: 40px;
     height: 44px;
@@ -84,15 +84,20 @@ header nav a:hover {
     line-height: 42px;
 }
 
-.banner-section h2 {
+.blueBox {
+    background: #00BCFF;
+    padding: 16px 0px;
+}
+
+.blueBox h2 {
     color: #fff;
     font-weight: 600;
     font-size: 32px;
     line-height: 48px;
     text-align: center;
-    padding-bottom: 60px;
 }
 
+/* 
 .banner-section::after {
     content: '';
     display: block;
@@ -104,10 +109,10 @@ header nav a:hover {
     left: 0;
     z-index: -1;
     opacity: 0.7;
-}
+} */
 
 .banner-section {
-    background: url(../images/homepage/banner.svg)no-repeat;
+    background: url(../images/banner.png)no-repeat;
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center top;
@@ -121,7 +126,7 @@ header nav a:hover {
 
 .banner-section .inner-content {
     max-width: 758px;
-    margin:150px auto 0px;
+    margin: 125px auto 0px;
     text-align: center;
 }
 
@@ -155,7 +160,7 @@ header nav a:hover {
     color: #FFFFFF;
 }
 
-.register-area a.register-nowbtn {
+a.register-nowbtn {
     /* width: 240px; */
     padding: 0px 65px;
     line-height: 50px;
@@ -168,11 +173,17 @@ header nav a:hover {
     font-size: 14px;
     /* line-height: 38px; */
     text-align: center;
-    color: #9A1C20 !important;
+    color: #000 !important;
     transition: all 0.3s;
 }
 
-.register-area a.register-nowbtn:hover {
+a.register-nowbtn :hover {
+    background: transparent !important;
+    border: 1px solid #fff;
+    color: #fff !important;
+}
+
+.register-nowbtn:hover {
     background: transparent;
     border: 1px solid #fff;
     color: #fff !important;
@@ -214,7 +225,7 @@ a.btn.register-nowbtn.exhibit_btn.mr-2 {
 }
 
 .inner-content li.list-inline-item img {
-    width: 40px;
+    width: 45px;
 }
 
 
@@ -301,20 +312,20 @@ section.about_section_area::before {
 
 .textHighlight h2 {
     color: #252123;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 32px;
-    line-height: 48px;
+    line-height: 42px;
     padding-bottom: 25px;
 }
 
 .textHighlight li {
-    display: inline-block;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #4B4B4B;
     padding-bottom: 15px;
     padding-left: 25px;
+    list-style: none;
     position: relative;
 }
 
@@ -322,11 +333,12 @@ section.about_section_area::before {
     content: '';
     position: absolute;
     display: inline-block;
-    width: 21px;
-    height: 21px;
+    width: 11px;
+    height: 11px;
     left: 0;
-    top: 2px;
-    background: url(../images/amg/check-circle.svg);
+    top: 6px;
+    border-radius: 50%;
+    background-color: #4B4B4B;
 }
 
 .about_content h2 span {
@@ -374,7 +386,7 @@ section.about_energy_area,
 }
 
 .session_summaryArea {
-    background-color: #FFF8F2;
+    background: #FFF4F5;
     position: relative;
 }
 
@@ -748,7 +760,7 @@ a.knowmore span {
 
 .timerfirst {
     width: 472px;
-    margin: 0px 30px 25px 0px;
+    margin: 0px 30px 70px 0px;
     max-width: 100%;
 }
 
@@ -932,6 +944,7 @@ a.knowmore span {
     line-height: 21px;
     color: #4B4B4B;
     padding-right: 35px;
+    padding-bottom: 10px;
 }
 
 .session_summaryArea a {
@@ -946,7 +959,7 @@ a.knowmore span {
     text-align: center;
     border-radius: 50px;
     line-height: 50px;
-    margin-top: 20px;
+    margin-top: 10px;
     transition: all 0.3s;
 }
 
@@ -1027,12 +1040,12 @@ a.knowmore span {
 
 .download_area {
     padding: 50px 0px;
-    background-color: #FFF8F2;
+    background-color: #252123;
     text-align: center;
     position: relative;
 }
 
-.download_area::after {
+/* .download_area::after {
     content: '';
     position: absolute;
     display: block;
@@ -1052,14 +1065,14 @@ a.knowmore span {
     width: 57px;
     height: 62px;
     background: url(../images/award/brown_circle.png);
-}
+} */
 
 .download_area a {
     margin-top: 20px;
     display: inline-block;
-    background: #9A1C20;
-    border: 1px solid #9A1C20;
-    color: #fff;
+    background: #fff;
+    border: 1px solid #fff;
+    color: #000;
     width: 160px;
     height: 50px;
     font-weight: 600;
@@ -1072,20 +1085,20 @@ a.knowmore span {
 
 .download_area a:hover {
     background: transparent;
-    color: #252123;
-    border: 1px solid #252123;
+    color: #fff;
+    border: 1px solid #fff;
 }
 
-.blackicon {
+.whiteicon {
     display: none;
 }
 
 .download_area a:hover .whiteicon {
-    display: none;
+    display: inline-block;
 }
 
 .download_area a:hover .blackicon {
-    display: inline-block;
+    display: none;
 }
 
 span.blackicon {
@@ -1093,11 +1106,11 @@ span.blackicon {
 }
 
 .download_area h2 {
-    color: #252123;
+    color: #fff;
     font-weight: 700;
     font-size: 32px;
     line-height: 32px;
-    padding-bottom: 20px;
+    padding-bottom: 5px;
 }
 
 .download_area span {
@@ -1115,15 +1128,16 @@ span.blackicon {
     border-radius: 10px;
     border: 1px solid #cccccc29;
     padding: 30px 20px 20px;
-    background: #9a1c200d;
+    background: #ffffff;
     box-shadow: 0px 0px 20px rgb(0 0 0 / 6%);
     min-height: 140px;
+    margin-bottom: 15px;
 }
 
 .NumberBox h3 {
-    color: #252123;
+    color: #9A1C20;
     font-weight: 700;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 32px;
     padding-bottom: 10px;
 }
@@ -1135,10 +1149,67 @@ span.blackicon {
     line-height: 23px;
 }
 
+.sessionSummary img {
+    width: 100%;
+}
+
+.sessionDetail {
+    padding: 50px 0px 25px;
+}
+
+.textHighlight {
+    padding-left: 40px;
+}
+
+.NumberOuter {
+    background: linear-gradient(96.72deg, #9A1C20 6.25%, #FAD0C4 103.39%);
+    border-radius: 10px;
+    padding: 50px 60px;
+}
+.sessignBox{
+    margin-bottom: 30px;
+}
+
+.sessignBox h2{
+    color: #252123;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 32px;
+    padding-bottom: 15px;
+}
+
+.sessignBox p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #4B4B4B;
+    padding-bottom: 10px;
+}
+
 @media screen and (max-width: 767px) {
 
     header nav li {
         display: block;
+    }
+    .sessionDetail{
+        padding: 40px 0px 10px;
+        text-align: center;
+    }
+    .sessionDetail h2{
+        font-size: 20px;
+        line-height: 27px;
+        padding-bottom: 8px;
+    }
+    .sessignBox {
+        margin-bottom: 20px;
+    }
+    .register-area.mt-4.mb-3 {
+        margin-top: 5px !important;
+    }
+
+    .blueBox h2 {
+        font-size: 20px;
+        line-height: 36px;
     }
 
     .banner-section h2 {
@@ -1246,7 +1317,7 @@ span.blackicon {
     }
 
     img.logo-img {
-        height: 46px !important;
+        height: 42px !important;
     }
 
     .copy-right li.list-inline-item {
@@ -1270,7 +1341,7 @@ span.blackicon {
     }
 
     ul.list-unstyled.footer_top {
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
 
     footer .subscribe-div p {
@@ -1461,8 +1532,11 @@ span.blackicon {
 
     .about_content h2 {
         font-size: 24px;
+        line-height: 36px;
     }
-
+    .textHighlight {
+        padding-left: 0;
+    }
     .about_content p {
         padding-top: 5px;
         padding-right: 0px;
@@ -1522,7 +1596,7 @@ span.blackicon {
         line-height: 35px;
     }
 
- 
+
     .register-area .apply-awardbtn {
         height: 44px;
     }
@@ -1552,100 +1626,144 @@ span.blackicon {
 
     .Highlight_secArea {
         padding: 40px 0px;
-   
+
     }
-    .textHighlight h2{
+
+    .textHighlight h2 {
         font-size: 24px;
         line-height: 32px;
         padding-bottom: 20px;
         text-align: center;
     }
-    .session_summaryArea{
+
+    .session_summaryArea {
         text-align: center;
     }
-    .session_summaryArea p{
+
+    .session_summaryArea p {
         padding-right: 0px;
     }
-    .session_summaryArea h2, .OurNumber_inner h2{
+
+    .session_summaryArea h2,
+    .OurNumber_inner h2 {
         font-size: 24px;
         padding-bottom: 10px;
     }
+
     .OurNumber_area {
         padding: 40px 0px 30px;
         text-align: center;
     }
-    .NumberBox{
+
+    .NumberBox {
         margin-bottom: 15px;
         min-height: 115px;
     }
-    .NumberBox h4{
+
+    .NumberBox h4 {
         font-size: 15px;
     }
-    .NumberBox h3{
+
+    .NumberBox h3 {
         padding-bottom: 5px;
     }
+
     .OurNumber_inner h3 {
         font-size: 18px;
         line-height: 15px;
     }
 
-    .download_area h2{
+    .download_area h2 {
         font-size: 24px;
         padding-bottom: 0px;
     }
-    .download_area a{
+
+    .download_area a {
         height: 45px;
         line-height: 45px;
     }
+
     .download_area {
         padding: 40px 0px;
-        }
-        .session_summaryArea a{
-            height: 45px;
-            line-height: 45px;
-        }
+    }
+
+    .session_summaryArea a {
+        height: 45px;
+        line-height: 45px;
+    }
 }
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
     .registration-btn {
-        margin-left:12px;
+        margin-left: 12px;
+    }
+    .NumberBox {
+        padding: 35px 20px 20px;
     }
     .custom_collapse {
         background-color: #fff;
     }
-    .session_summaryArea::before{
+    .textHighlight {
+        padding-left: 30px;
+    }
+    .textHighlight h2{
+        font-size: 31px;
+        padding-bottom: 15px;
+    }
+    .NumberOuter{
+        padding: 50px 60px 35px;
+    }
+    
+    .session_summaryArea::before {
         display: none;
     }
+    .Highlight_secArea {
+        padding: 40px 0px 30px;
+    }
+
     .register_btn a:hover {
         color: #fff !important;
     }
+
     .custom_collapse .navbar-nav.ml-auto a {
         border-bottom: 1px solid #d7d7d775;
     }
+
     .banner-section .inner-content {
-        margin: 120px auto 0px;
+        margin: 88px auto 0px;
+    }
+    .banner-section .inner-content ul {
+        margin: 5px 0px 0px;
     }
     .timerfirst {
         width: 100%;
+        margin: 0px 30px 30px 0px;
     }
-    .timer-UI{
+
+    .timer-UI {
         width: 100%;
     }
+
     .banner-section .inner-content h1 {
-        font-size: 62px;
+        font-size:38px;
     }
+
+
     .register-area.mt-5.mb-3 {
         margin-top: 15px !important;
     }
-    .banner-section h2{
+
+    .banner-section h2 {
         padding-bottom: 60px;
         padding-top: 30px;
     }
+
     a.navbar-brand img {
         width: 90px;
     }
+
     .navbar-collapse.custom_collapse {
         padding-top: 15px;
         position: absolute;
@@ -1653,11 +1771,13 @@ span.blackicon {
         top: 63px;
         padding-bottom: 15px;
     }
+
     .register_btn {
         padding-bottom: 10px;
         padding-top: 10px;
         display: block;
     }
+
     .register_btn a {
         background: #9A1C20;
     }
@@ -1666,6 +1786,7 @@ span.blackicon {
         color: #000;
         padding-left: 22px !important;
     }
+
     header nav {
         height: 62px;
     }
@@ -1685,31 +1806,36 @@ span.blackicon {
     .about_content {
         padding-top: 0;
     }
+
     .register_btn a.btn.registration-btn {
         display: block !important;
     }
-   
+
     header nav li {
         display: block;
     }
-  
-    .NumberBox{
-        min-height: 165px;
+
+    .NumberBox {
+        min-height: 145px;
         margin-bottom: 15px;
     }
-  
+
     .about_content p {
         padding-right: 0px;
     }
+
     .sponser_box img {
         height: 46px;
     }
-    .sponser_outbox h4{
+
+    .sponser_outbox h4 {
         font-size: 22px;
     }
-    .sponser_box{
+
+    .sponser_box {
         min-height: 162px;
     }
+
     .about_content::after {
         right: -286px;
         bottom: -12px;
@@ -1725,6 +1851,9 @@ span.blackicon {
 
     .enery_head_light h2 {
         font-size: 29px;
+    }
+    .download_area h2{
+        font-size: 26px;
     }
 
     .confererence_content::after {
@@ -1750,95 +1879,129 @@ span.blackicon {
 
     .banner-section {
         background-size: cover;
+        padding-bottom: 45px;
     }
 
 }
 
 @media screen and (min-width: 992px) and (max-width: 1024px) {
-    .navbar{
+    .navbar {
         padding: 0.5rem 0rem;
     }
-    header nav a{
+
+    header nav a {
         padding-left: 6px !important;
         padding-right: 6px !important;
     }
-    .registration-btn{
+
+    .registration-btn {
         margin-left: 12px;
     }
-    .banner-section .inner-content{
-        margin: 90px auto 0px;
+
+    .banner-section .inner-content {
+        margin: 105px auto 0px;
     }
-    .banner-section .inner-content h1{
+
+    .banner-section .inner-content h1 {
         font-size: 50px;
         line-height: 124%;
+    }
+    .timerfirst {
+        margin: 0px 30px 50px 0px;
     }
     .banner-section .inner-content ul {
         margin: 12px 0px 0px;
     }
-    .timer-UI .cd__digits{
+
+    .NumberOuter{
+        padding: 50px;
+    }
+    
+    .timer-UI .cd__digits {
         font-size: 32px;
     }
+
     .register-area.mt-5.mb-3 {
         margin-top: 10px !important;
         margin-bottom: 8px !important;
     }
-    .register-area p{
+
+    .register-area p {
         text-align: center;
     }
+
     .timerfirst {
         width: 424px;
     }
-    .session_summaryArea::before{
+
+    .session_summaryArea::before {
         display: none;
     }
-    .NumberBox{
-        min-height: 165px;
+
+    .NumberBox {
+       margin-bottom: 15px;
     }
-    .timer-UI{
+
+    .timer-UI {
         width: 444px;
     }
-    .cd__unit{
+
+    .cd__unit {
         width: 86px;
     }
 }
 
 @media screen and (min-width: 1025px) and (max-width: 1199px) {
 
-    .navbar{
+    .navbar {
         padding: 0.5rem 0;
     }
-    header nav a{
+    .NumberBox{
+        padding: 36px 20px 20px;
+        margin-bottom: 15px;
+    }
+    header nav a {
         padding-left: 10px !important;
         padding-right: 10px !important;
     }
-    .registration-btn{
+
+    .registration-btn {
         margin-left: 10px;
     }
-    .banner-section .inner-content{
-      margin: 100px auto 0px;
+
+    .banner-section .inner-content {
+        margin: 100px auto 0px;
     }
-    .banner-section .inner-content h1{
+
+    .banner-section .inner-content h1 {
         font-size: 50px;
     }
+
     .register-area.mt-5.mb-3 {
         margin-top: 15px !important;
     }
+
     .banner-section .inner-content ul {
         margin: 12px 0px 0px;
     }
-    .timer-UI{
+
+    .timer-UI {
         width: 422px;
     }
-    .timer-UI .cd__digits{
+
+    .timer-UI .cd__digits {
         font-size: 32px;
     }
-    .cd__unit{
+
+    .cd__unit {
         width: 83px;
     }
-    .banner-section h2{
+
+    .banner-section h2 {
         line-height: 40px;
     }
-    .NumberBox h4{
+
+    .NumberBox h4 {
         font-size: 15px;
     }
 }
@@ -1847,25 +2010,31 @@ span.blackicon {
     .register-area.mt-5.mb-3 {
         margin-top: 20px !important;
     }
-    .banner-section .inner-content h1{
+
+    .banner-section .inner-content h1 {
         font-size: 65px;
         line-height: 117%
     }
-    .banner-section .inner-content{
-      margin: 155px auto 0px;
+
+    .banner-section .inner-content {
+        margin: 155px auto 0px;
     }
-    .banner-section h2{
+
+    .banner-section h2 {
         padding-bottom: 60px;
     }
 
 }
+
 @media screen and (min-width: 1920px) {
-    .banner-section .inner-content{
+    .banner-section .inner-content {
         margin: 150px auto 0px;
-      }
-      .banner-section h2{
+    }
+
+    .banner-section h2 {
         padding-bottom: 60px;
     }
+
     .register-area.mt-5.mb-3 {
         margin-top: 25px !important;
     }

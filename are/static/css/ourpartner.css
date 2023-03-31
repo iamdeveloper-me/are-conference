@@ -1,4 +1,4 @@
-.partner-section::after{
+.partner-section::after {
     content: '';
     display: block;
     position: absolute;
@@ -11,16 +11,19 @@
     opacity: 0.7;
     bottom: 0;
 }
-.partner-section{
+
+.partner-section {
     background: url(../images/partner/banner.png)no-repeat;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center top;
     position: relative;
     z-index: 0;
-  
+
 }
-.partner-section .our-partnerhead h1{
+
+
+/* .partner-section .our-partnerhead h1{
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -29,12 +32,13 @@
     text-align: center;
     text-transform: uppercase;
     color: #F2F2F2;
-}
+} */
 .partner-section .our-partnerhead {
-    margin-top: 12%;
-    padding-bottom: 5%;
+    margin-top: 16%;
+    padding-bottom: 12%;
 }
-.partner-section .our-partnerhead p{
+
+/* .partner-section .our-partnerhead p{
     color: #00BCFF;
     font-family: 'Poppins';
     font-style: normal;
@@ -43,27 +47,74 @@
     line-height: 126%;
     text-align: center;
     text-transform: uppercase;
+} */
+
+.our-partnerhead h2 {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 51px;
+    color: #fff;
+    padding-bottom: 25px;
 }
 
-.content-section .col-xl-6.col-lg-6.col-md-6{
+.our-partnerhead button {
+    background: #FFFFFF;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 50px;
+    color: #000000;
+    height: 50px;
+    width: 280px;
+    border: none;
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.our-partnerhead button:hover {
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+}
+
+.content-section {
+    padding: 60px 0px;
+}
+
+.content-section .col-xl-6.col-lg-6.col-md-6 {
     display: flex;
 }
-.partner-content h2{
+
+.partner-content {
+    margin-bottom: 30px;
+}
+
+.partner-content h2 {
     font-family: 'Poppins';
     font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 21px;
+    color: #000000;
+    padding-bottom: 30px;
+}
+
+.partner-content p {
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
     color: #000000;
 }
-.content-section .partner-card{
+
+.content-section .partner-card {
     background: #FFFFFF;
     box-shadow: 0px 0px 20px rgb(0 0 0 / 25%);
     border-radius: 20px;
     padding: 25px;
     margin-bottom: 30px;
 }
-.content-section .partner-card h3{
+
+.content-section .partner-card h3 {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -71,12 +122,14 @@
     line-height: 24px;
     color: #000000;
 }
-.content-section .partner-card img{
+
+.content-section .partner-card img {
     height: 46px;
     width: auto;
     margin-bottom: 10px;
 }
-.content-section .partner-card p{
+
+.content-section .partner-card p {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -85,7 +138,8 @@
     color: #4B4B4B;
     padding: 12px 0px 10px 0px;
 }
-.content-section .partner-card a{
+
+.content-section .partner-card a {
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 700;
@@ -93,60 +147,172 @@
     line-height: 21px;
     color: #9A1C20;
 }
-.content-section{
-    padding-bottom:55px;
+
+.becomePartnerArea {
+    background: #252123;
+    padding: 50px 0px;
 }
 
+.insteadBecomeText {
+    text-align: center;
+    color: #ffff;
+}
+
+.insteadBecomeText h2 {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 35px;
+    padding-bottom: 20px;
+}
+
+.insteadBecomeText p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    padding-bottom: 15px;
+}
+
+.insteadBecomeText button {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 50px;
+    color: #000;
+    transition: all 0.3s;
+    border: none;
+    background: #FFFFFF;
+    border-radius: 50px;
+    width: 280px;
+    height: 50px;
+    margin-top: 15px;
+    border: 1px solid transparent;
+}
+
+.insteadBecomeText button:hover {
+    border: 1px solid #fff;
+    color: #ffff;
+    background: transparent;
+}
 
 /* responsive */
-@media (max-width:767px){
-    .partner-section .our-partnerhead p{
+@media (max-width:767px) {
+    .partner-section .our-partnerhead p {
         font-size: 30px;
     }
-    .partner-section .our-partnerhead h1{
+
+    .content-section {
+        padding: 40px 0px;
+    }
+
+    .partner-content h2 {
+        font-size: 24px;
+        text-align: center;
+        padding-bottom: 15px;
+    }
+
+    .partner-content p {
+        text-align: center;
+    }
+
+    .becomePartnerArea {
+        padding: 40px 0px;
+    }
+
+    .insteadBecomeText h2 {
+        font-size: 22px;
+        line-height: 30px;
+        padding-bottom: 10px;
+    }
+
+    .our-partnerhead button {
+        line-height: 45px;
+        height: 45px;
+        width: 180px;
+    }
+
+    .insteadBecomeText button {
+        line-height: 45px;
+        height: 45px;
+        width: 180px;
+    }
+
+    .partner-section .our-partnerhead h1 {
         font-size: 30px;
     }
-    
+
     .partner-section .our-partnerhead {
         margin-top: 25%;
+        text-align: center;
     }
-    
+
+    .our-partnerhead h2 {
+        font-size: 28px;
+        line-height: 37px;
+    }
+
     section.content-section.pt-5 {
         padding-top: 40px !important;
     }
+
     .partner-content.pb-5 {
         padding-bottom: 40px !important;
     }
-    .content-section .partner-card{
+
+    .content-section .partner-card {
         margin-bottom: 17px;
     }
-    
-    .contact-part{
+
+    .contact-part {
         padding-bottom: 10px;
     }
+
     .content-section {
         padding-bottom: 17px;
     }
-    .content-section .partner-card h3{
+
+    .content-section .partner-card h3 {
         font-size: 14px;
     }
-    .content-section .partner-card p{
+
+    .content-section .partner-card p {
         padding: 5px 0px 5px 0px;
     }
-  
-    
+
+
 }
 
-@media (min-width:768px) and (max-width: 1024px) {
-    .content-section .partner-card{
-        height: 285px;
+@media (min-width:768px) and (max-width: 991px) {
+
+    .content-section .partner-card {
+        height: auto;
     }
+
+    .content-section {
+        padding: 60px 0px 30px;
+    }
+
+    .our-partnerhead button {
+        width: 180px;
+    }
+
+    .partner-section .our-partnerhead {
+        margin-top: 17%;
+        padding-bottom: 10%;
+    }
+
+    .insteadBecomeText h2 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .insteadBecomeText p{
+        padding-bottom: 10px;
+    }
+
 }
 
 
 /* climate award css start */
 
-.climate-section{
+.climate-section {
     background: url(../images/partner/climate_banner.png)no-repeat;
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -161,8 +327,9 @@
     font-size: 58px;
     line-height: 65px;
     color: #fff;
-    padding-bottom:10px;
+    padding-bottom: 10px;
 }
+
 .climate_banner h3 {
     color: #fff;
     font-size: 45px;
@@ -172,7 +339,7 @@ h3.second_head {
     color: #00BCFF;
 }
 
-.climate_banner a{
+.climate_banner a {
     display: inline-block;
     width: 220px;
     height: 50px;
@@ -185,25 +352,29 @@ h3.second_head {
     line-height: 50px;
     text-align: center;
     color: #9A1C20;
-    margin-top:25px;
+    margin-top: 25px;
     transition: all 0.3s;
-  }
-  .climate_banner a:hover{
-    background: #9A1C20;
-    color:#fff;
 }
-  section.climate_content {
+
+.climate_banner a:hover {
+    background: #9A1C20;
+    color: #fff;
+}
+
+section.climate_content {
     padding: 70px 0px;
 }
+
 .climate_inner h3 {
     font-weight: 400;
     font-size: 30px;
     line-height: 34px;
     color: #000;
-    margin-bottom:20px;
+    margin-bottom: 20px;
 }
-.climate_inner h3 span{
-    font-weight:600;
+
+.climate_inner h3 span {
+    font-weight: 600;
 }
 
 .climate_inner p {
@@ -219,14 +390,15 @@ h3.second_head {
     display: inline-block;
     margin-right: 8px;
 }
+
 .climate_inner {
     margin-bottom: 40px;
 }
 
-.highlight_text a{
+.highlight_text a {
     display: inline-block;
     background: #9A1C20;
-    border:1px solid #9A1C20;
+    border: 1px solid #9A1C20;
     color: #fff;
     width: 220px;
     height: 50px;
@@ -235,18 +407,21 @@ h3.second_head {
     text-align: center;
     border-radius: 50px;
     line-height: 50px;
-    margin-top:20px;
+    margin-top: 20px;
     transition: all 0.3s;
 }
-.highlight_text a:hover{
+
+.highlight_text a:hover {
     background: transparent;
     color: #252123;
     border: 1px solid #252123;
 }
+
 .hightlight_img {
     position: relative;
     padding-right: 27px;
 }
+
 .hightlight_img::after {
     content: '';
     display: block;
@@ -271,9 +446,9 @@ h3.second_head {
     bottom: 0;
 }
 
-.partner_box{
+.partner_box {
     background-color: #fff;
-    padding:20px;
+    padding: 20px;
 }
 
 .inner_logo img {
@@ -285,7 +460,7 @@ h3.second_head {
     width: 38px;
 }
 
-.inner_logo img:last-child{
+.inner_logo img:last-child {
     width: 211px;
 }
 
@@ -297,7 +472,7 @@ h3.second_head {
     height: 46px;
     position: absolute;
     content: '';
-    right:0px;
+    right: 0px;
     top: 0px;
     display: block;
     width: 1px;
@@ -311,6 +486,7 @@ h3.second_head {
     color: #4B4B4B;
     padding-top: 8px;
 }
+
 .partner_box {
     background-color: #fff;
     padding: 20px;
@@ -318,68 +494,84 @@ h3.second_head {
     top: -43%;
 }
 
-@media (max-width:767px){
+@media (max-width:767px) {
 
-    .climate_banner h2{
-        font-size:30px;
+    .climate_banner h2 {
+        font-size: 30px;
         line-height: 16px;
     }
-    .climate_banner h3{
-        font-size:28px;
+
+    .climate_banner h3 {
+        font-size: 28px;
     }
-    .climate_banner a{
+
+    .climate_banner a {
         margin-top: 12px;
     }
-    .climate_banner a{
+
+    .climate_banner a {
         width: 160px;
         height: 44px;
         line-height: 44px;
     }
-    .climate-section{
+
+    .climate-section {
         background-size: cover;
     }
 
-    .partner_box{
-        position:static;
+    .partner_box {
+        position: static;
         margin-top: 20px;
     }
+
     .climate_banner {
         padding-top: 50px;
     }
+
     .inner_logo img:first-child {
         width: 25px;
     }
+
     .inner_logo img:last-child {
         width: 100px;
     }
+
     .inner_logo::after {
         height: 32px;
     }
-    .partner_box{
-        padding:15px;
+
+    .partner_box {
+        padding: 15px;
     }
+
     section.climate_content {
         padding: 40px 0px 15px;
     }
-    .climate_inner h3{
+
+    .climate_inner h3 {
         font-size: 25px;
         line-height: 30px;
         margin-bottom: 10px;
     }
+
     .climate_inner {
         margin-bottom: 25px;
     }
-    .climate_inner p{
+
+    .climate_inner p {
         margin-bottom: 8px;
     }
-    .hightlight_img{
+
+    .hightlight_img {
         padding-right: 0px;
         margin-bottom: 25px;
     }
-    .hightlight_img::after{
+
+    .hightlight_img::after {
         right: -12px;
     }
-    .highlight_text a{
+
+    .highlight_text a {
         width: 160px;
         height: 44px;
         line-height: 44px;

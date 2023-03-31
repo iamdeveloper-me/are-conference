@@ -25,10 +25,14 @@ urlpatterns = [
 	path('climate_applicants/<int:pk>',views.AdminDetailViewClimateApplicant.as_view(), name='climate_applicants_detail'),
 	path('sendmail/',views.sendMail,name='email'),
 	path('shell-gamechanger/',views.Shellgamechanger.as_view(),name='shell-gamechanger'),
+	path('session_detail/',views.SessionDetail.as_view(),name='session_detail'),
+	path('are_conference2022/',views.AreConference2022.as_view(),name='are_conference2022'),
+	path('are_conference2023/',views.AreConference2023.as_view(),name='are_conference2023'),
 	# path('agenda_detail/',views.Adminagenda.as_view(),name='agenda_detail'),
 	# path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 	# path('awards/',views.Adminaward.as_view(),name='awards'),
 	# path('dashboard/',views.dashboard.as_view(),name='dashboard'),
 	path('text-file/<int:pk>', views.text_file, name='text-file'),
 	path('text-file1/<int:pk>', views.text_file1, name='text-file1'),
+
 ]
