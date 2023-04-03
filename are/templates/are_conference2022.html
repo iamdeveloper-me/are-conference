@@ -1,0 +1,33 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/ourpartner.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+<!-- banner start -->
+<section class="sessionSummary">
+    <img src="/static/images/areConference.png" alt="" title="">
+</section>
+<!-- banner close -->
+<section class="AreConferenece2022">
+     <div class="container">
+        <div class="row">
+             <div class="col-sm-7">
+                <h2>ARE Conference 2022</h2>
+                <p>The Energy Swaraj Foundation has launched Action for Restoring the Environment (ARE) – Are we taking enough actions? Conference to encourage quantifiable actions. Actions for Restoring Environment (ARE) Conference, organised in collaboration with All India Council for Technical Education, one-of-its-kind conference, was organised on 24th – 25th November 2022 at Vasant Kunj, New Delhi. ARE Conference comes as a timely action to bring concerted actions by stakeholders from various walks of life to take consolidated action to mitigate climate change, amidst inconclusive and mixed outcomes of COP27.</p>
+                <p>The conference saw 8 intensive sessions - each representing one sector of the society followed by the Energy Swaraj Awards which applauded the exemplary efforts by individuals to mitigate climate change, With 21 Partners and over 40+ speakers on-board, the ARE Conference engaged 350+ lives who attended the conference physically and many more who watched the conference in the online mode. </p>
+                <p>The purpose of the ARE conference was to ask tough questions to everyone that ARE we taking enough actions? All the speakers in the sessions conducted so far have been more or less unanimous in accepting that No, we are NOT taking enough action. </p>
+             </div>
+             <div class="col-sm-5">
+                <img src="{% static 'images/homepage/about_img.png' %}" alt="" title="" />
+             </div>   
+        </div>
+    
+     </div>
+
+    
+</section>
+{% endblock content %}

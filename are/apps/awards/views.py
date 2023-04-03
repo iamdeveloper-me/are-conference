@@ -37,6 +37,8 @@ class AreConference2022(TemplateView):
 class AreConference2023(TemplateView):
 	template_name = "are_conference2023.html"
 
+class sponsors(TemplateView):
+	template_name = "sponsors.html"
 
 
 class AdminAgendaView(TemplateView):
