@@ -40,6 +40,11 @@ class AreConference2023(TemplateView):
 class sponsors(TemplateView):
 	template_name = "sponsors.html"
 
+class Sawrajaward(TemplateView):
+	template_name = "swaraj_award2022.html"
+
+class Media(TemplateView):
+	template_name = "media.html"
 
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"

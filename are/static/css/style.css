@@ -1355,6 +1355,9 @@ a.active.show {
         padding: 40px 0px;
         text-align: center;
     }
+    .AreConferenece2022 img{
+        padding-top: 15px;
+    }
     .tabs-left>li{
         display: inline-block;
         width: 30%;
@@ -2143,6 +2146,7 @@ a.active.show {
 
     .registration-btn {
         margin-left: 12px;
+        width: 160px;
     }
 
     .banner-section .inner-content {

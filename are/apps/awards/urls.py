@@ -29,7 +29,11 @@ urlpatterns = [
 	path('are_conference2022/',views.AreConference2022.as_view(),name='are_conference2022'),
 	path('are_conference2023/',views.AreConference2023.as_view(),name='are_conference2023'),
     path('sponsors/',views.sponsors.as_view(),name='sponsors'),
+	path('Sawraj_award2022/',views.Sawrajaward.as_view(),name='Sawraj_award2022'),
+	path('media/',views.Media.as_view(),name='media'),
 	
+
+
 	# path('agenda_detail/',views.Adminagenda.as_view(),name='agenda_detail'),
 	# path('speaker/',views.Adminspeker.as_view(),name='speaker'),
 	# path('awards/',views.Adminaward.as_view(),name='awards'),
