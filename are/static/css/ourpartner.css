@@ -57,7 +57,7 @@
     padding-bottom: 25px;
 }
 
-.our-partnerhead button {
+.our-partnerhead a {
     background: #FFFFFF;
     border-radius: 50px;
     font-weight: 600;
@@ -65,13 +65,15 @@
     line-height: 50px;
     color: #000000;
     height: 50px;
-    width: 280px;
+    width: 200px;
     border: none;
     transition: all 0.3s;
     border: 1px solid transparent;
+    display: inline-block;
+    text-align: center;
 }
 
-.our-partnerhead button:hover {
+.our-partnerhead a:hover {
     border: 1px solid #fff;
     color: #fff;
     background: transparent;

@@ -31,6 +31,7 @@ urlpatterns = [
     path('sponsors/',views.sponsors.as_view(),name='sponsors'),
 	path('Sawraj_award2022/',views.Sawrajaward.as_view(),name='Sawraj_award2022'),
 	path('media/',views.Media.as_view(),name='media'),
+	path('register/',views.Register.as_view(),name='register'),
 	
 
 

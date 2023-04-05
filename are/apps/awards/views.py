@@ -46,6 +46,9 @@ class Sawrajaward(TemplateView):
 class Media(TemplateView):
 	template_name = "media.html"
 
+class Register(TemplateView):
+	template_name = "register.html"
+
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 

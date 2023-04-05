@@ -1,0 +1,139 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/ourpartner.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+<section class="registerArea">
+    <div class="registerBanner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2>Registration Form</h2>
+                    <p>Enter your details below to Registration</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="formBox">
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Id<span>*</span></label>
+                            <input type="email" class="form-control" placeholder="Enter your email id...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Phone Number<span>*</span></label>
+                            <input type="number" class="form-control" placeholder="Enter your Phone number...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name of the organization<span>*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Type of Organization<span>*</span></label>
+                            <div class="downArrow">
+                                  <select>
+                                     <option>Academic</option>
+                                     <option>Academic</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Password<span>*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Confirm password<span>*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Name of the co-ordinator<span>*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Designation<span>*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Upload logo of organization<span>*</span></label>
+                            <input type="file" class="form-control" placeholder="Upload logo of organization">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Pin code<span>*</span></label>
+                            <input type="number" class="form-control" placeholder="Enter Pin code..">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">State<span>*</span></label>
+                            <div class="downArrow">
+                                  <select>
+                                     <option>Madhy Pradesh</option>
+                                     <option>Gujarat</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">City<span>*</span></label>
+                            <div class="downArrow">
+                                  <select>
+                                     <option>City name...</option>
+                                     <option>Indore</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">District<span>*</span></label>
+                            <div class="downArrow">
+                                  <select>
+                                     <option>District name...</option>
+                                     <option>Indore</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Country<span>*</span></label>
+                            <div class="downArrow">
+                                  <select>
+                                     <option>Country name...</option>
+                                     <option>India</option>
+                                  </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
