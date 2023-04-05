@@ -30,8 +30,11 @@ urlpatterns = [
 	path('are_conference2023/',views.AreConference2023.as_view(),name='are_conference2023'),
     path('sponsors/',views.sponsors.as_view(),name='sponsors'),
 	path('Sawraj_award2022/',views.Sawrajaward.as_view(),name='Sawraj_award2022'),
-	path('media/',views.Media.as_view(),name='media'),
+	path('media-img/',views.Media.as_view(),name='media-img'),
+	path('media/',views.MediaFront.as_view(),name='media'),
 	path('register/',views.Register.as_view(),name='register'),
+    path('media-detail/',views.Mediadetail.as_view(),name='media-detail'),   
+	
 	
 
 

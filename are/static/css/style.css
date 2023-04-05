@@ -1489,13 +1489,14 @@ input[type=number]::-webkit-outer-spin-button {
 .mediagalleryimg{
     padding: 50px 0px;
 }
-.mediagalleryimg h2{
+.mediagalleryimg h2, .mediagalleryimg h4{
     color: #252123;
     font-weight: 700;
     font-size: 32px;
     line-height: 32px;
     padding-bottom: 20px;
 }
+
 .mediaOuter{
   position: relative;
   overflow: hidden;
@@ -1509,6 +1510,7 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 15px;
     line-height: 21px;
     transition: all 0.3s;
+    color: #252123;
 }
 .textOverlay {
     position: absolute;
@@ -1611,16 +1613,14 @@ input[type=number]::-webkit-outer-spin-button {
     display: inline-block;
   }
 
-  /* sarita */
+
 
 
   :root {
-    --rect-short: 150px;
-    --rect-mid: 200px;
-    --rect-long: 250px;
+    --rect-short: 200px;
+    --rect-mid: 250px;
+    --rect-long: 300px;
     --gap: 20px;
-    --box-shadow-colour: rgba(112, 144, 112, 0.65);
-    --background-colour: rgba(64, 191, 64, 0.25);
   }
   
   * {
@@ -1631,20 +1631,21 @@ input[type=number]::-webkit-outer-spin-button {
   body {
     background-color: var(--background-colour);  
   }
-  img {
+
+  .gallery{
+    background: url(../images/media_banner.png) no-repeat;
+    background-size: cover;
+    background-position: center right;
+  }
+  .gallery img {
     object-fit: cover;
-    box-shadow:
-      -15px 15px 13px -13px var(--box-shadow-colour),
-      15px 15px 13px -13px var(--box-shadow-colour),
-      -15px 0px 13px -13px var(--box-shadow-colour),
-      15px 0px 13px -13px var(--box-shadow-colour);
   }
   /* #gallery {
     display: none;  
   } */
   section.gallery {
     display: flex;
-    height: 100vh;
+    padding: 110px 0px 60px;
     justify-content: center;
     align-items: center;
     gap: var(--gap);
@@ -1656,11 +1657,11 @@ input[type=number]::-webkit-outer-spin-button {
     max-width: calc(var(--rect-short) + var(--rect-long) + (var(--gap) * 1));
     gap: var(--gap);
   }
-  @media only screen and (max-width: 450px) {
+  /* @media only screen and (max-width: 450px) {
     .gallery > div.center {
       max-width: var(--rect-long);
     }
-  }
+  } */
   .gallery .horizontal {
     width: var(--rect-long);
     height: var(--rect-short);
@@ -1690,15 +1691,22 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 10px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+   
   }
   .back {
     transform: rotateY(180deg);
   }
-  
+  .back img{
+    border-radius: 10px;
+  }
   @media only screen and (max-width: 960px) {
     .side {
       display: none;
     }
+  }
+
+  .ImgBoxMedia2 img{
+     min-height: 291px;
   }
   
 /* Media banner css close */
@@ -1709,6 +1717,33 @@ input[type=number]::-webkit-outer-spin-button {
     }
     .AreconferenceReport{
         padding: 40px 0px;
+    }
+    .mediagalleryimg h2, .mediagalleryimg h4{
+        font-size: 24px;
+        line-height: 32px;
+        padding-bottom: 15px;
+    }
+    .mediagalleryimg {
+        padding: 40px 0px 30px;
+    }
+    .horizontal.bottom.flip-outer {
+        margin-top: -25px;
+    }
+    .vertical.bottom.flip-outer {
+        margin-top: -25px;
+    }
+    :root {
+        --rect-short: 100px;
+        --rect-mid: 125px;
+        --rect-long: 150px;
+        --gap: 20px;
+      }
+    .vertical.top.flip-outer {
+        margin-bottom: 15px;
+    }
+    .gallery{
+        background-position: center center;
+        padding: 95px 0px 40px !important;
     }
     .AreconferenceReport h2{
         font-size: 24px;

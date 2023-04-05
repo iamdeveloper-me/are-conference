@@ -44,7 +44,13 @@ class Sawrajaward(TemplateView):
 	template_name = "swaraj_award2022.html"
 
 class Media(TemplateView):
+	template_name = "media-img.html"
+
+class MediaFront(TemplateView):
 	template_name = "media.html"
+
+class Mediadetail(TemplateView):
+	template_name = "media_detail.html"
 
 class Register(TemplateView):
 	template_name = "register.html"

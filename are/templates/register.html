@@ -31,22 +31,24 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Phone Number<span>*</span></label>
-                            <input type="number" class="form-control" placeholder="Enter your Phone number...">
+                            <input type="number" class="form-control" placeholder="Enter your phone number...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name of the organization<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                            <input type="text" class="form-control" placeholder="Enter organization name...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Type of Organization<span>*</span></label>
+                            <label for="exampleInputEmail1">Type of organization<span>*</span></label>
                             <div class="downArrow">
                                   <select>
                                      <option>Academic</option>
-                                     <option>Academic</option>
+                                     <option>Government</option>
+                                     <option>Corporate</option>
+                                     <option>NGO</option>
                                   </select>
                             </div>
                         </div>
@@ -54,25 +56,26 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                            <input type="text" class="form-control" placeholder="Enter password...">
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Confirm password<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                            <input type="text" class="form-control" placeholder="Enter confirm password...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name of the co-ordinator<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                            <input type="text" class="form-control" placeholder="Enter co-ordinator name...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Designation<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter your organization name...">
+                            <input type="text" class="form-control" placeholder="Enter designation name...">
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -84,51 +87,32 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Pin code<span>*</span></label>
-                            <input type="number" class="form-control" placeholder="Enter Pin code..">
+                            <input type="number" class="form-control" placeholder="Enter pin code...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">State<span>*</span></label>
-                            <div class="downArrow">
-                                  <select>
-                                     <option>Madhy Pradesh</option>
-                                     <option>Gujarat</option>
-                                  </select>
-                            </div>
+                            <input type="number" class="form-control" placeholder="State name...">
+                           
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">City<span>*</span></label>
-                            <div class="downArrow">
-                                  <select>
-                                     <option>City name...</option>
-                                     <option>Indore</option>
-                                  </select>
-                            </div>
+                            <input type="number" class="form-control" placeholder="City name...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">District<span>*</span></label>
-                            <div class="downArrow">
-                                  <select>
-                                     <option>District name...</option>
-                                     <option>Indore</option>
-                                  </select>
-                            </div>
+                            <input type="number" class="form-control" placeholder="District name...">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Country<span>*</span></label>
-                            <div class="downArrow">
-                                  <select>
-                                     <option>Country name...</option>
-                                     <option>India</option>
-                                  </select>
-                            </div>
+                            <input type="number" class="form-control" placeholder="Country name...">
                         </div>
                     </div>
                 </div>
@@ -137,3 +121,17 @@
     </div>
 </section>
 {% endblock content %}
+{% block extra_js %}
+<script>
+$(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });
+</script>
+  {% endblock extra_js %}
