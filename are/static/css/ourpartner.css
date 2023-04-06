@@ -103,7 +103,7 @@
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 600;
-    font-size: 34px;
+    font-size: 32px;
     line-height: 21px;
     color: #000000;
     padding-bottom: 30px;
@@ -182,7 +182,7 @@
     padding-bottom: 15px;
 }
 
-.insteadBecomeText button {
+.insteadBecomeText a {
     font-weight: 600;
     font-size: 14px;
     line-height: 50px;
@@ -195,9 +195,10 @@
     height: 50px;
     margin-top: 15px;
     border: 1px solid transparent;
+    display: inline-block;
 }
 
-.insteadBecomeText button:hover {
+.insteadBecomeText a:hover {
     border: 1px solid #fff;
     color: #ffff;
     background: transparent;
@@ -239,7 +240,7 @@
         width: 180px;
     }
 
-    .insteadBecomeText button {
+    .insteadBecomeText a {
         line-height: 45px;
         height: 45px;
         width: 180px;
