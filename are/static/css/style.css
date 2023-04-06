@@ -1393,7 +1393,14 @@ a.active.show {
     background: transparent;
     padding: 6px 12px;
 }
-
+.field-icon {
+    float: right;
+    margin-top: -31px;
+    right: 11px;
+    position: relative;
+    z-index: 2;
+  }
+  
 .formBox label span {
     color: red;
 }

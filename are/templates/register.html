@@ -3,6 +3,7 @@
 {% block extra_css %}
 
 <link rel="stylesheet" href="{% static 'css/ourpartner.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 {% endblock extra_css %}
 
 
@@ -56,14 +57,15 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter password...">
+                            <input id="password-field" type="password" class="form-control" name="password"  placeholder="Enter password..." >
                             <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Confirm password<span>*</span></label>
-                            <input type="text" class="form-control" placeholder="Enter confirm password...">
+                            <input id="password-field" type="password" class="form-control" name="password"  placeholder="Enter confirm password..." >
+                            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
                     </div>
                     <div class="col-sm-6">
