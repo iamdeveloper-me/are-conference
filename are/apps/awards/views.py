@@ -52,6 +52,9 @@ class MediaFront(TemplateView):
 class Mediadetail(TemplateView):
 	template_name = "media_detail.html"
 
+class Swarajaward2023(TemplateView):
+	template_name = "swaraj_award2023.html"
+
 class Register(TemplateView):
 	template_name = "register.html"
 

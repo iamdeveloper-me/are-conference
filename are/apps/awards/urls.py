@@ -34,6 +34,9 @@ urlpatterns = [
 	path('media/',views.MediaFront.as_view(),name='media'),
 	path('register/',views.Register.as_view(),name='register'),
     path('media-detail/',views.Mediadetail.as_view(),name='media-detail'),   
+	path('swaraj_award2023/',views.Swarajaward2023.as_view(),name='swaraj_award2023'),   
+
+	
 	
 	
 
