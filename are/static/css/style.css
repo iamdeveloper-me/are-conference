@@ -120,6 +120,24 @@ header nav a:hover {
     z-index: 0;
 }
 
+.AREConference2023_area{
+    background: url(../images/areConfbanner023.png)no-repeat;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    min-height: 70vh;
+}
+.AREConference2023_area h2{
+    font-weight: 600;
+    font-size: 54px;
+    line-height: 47px;
+    text-align: center;
+    width: 100%;
+    color: #000;
+    padding-bottom: 30px;
+    padding-top: 32px;
+}
+
 .banner-section .inner-content h1 span {
     color: #00BCFF;
 }
@@ -1646,7 +1664,10 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 25px;
     transition: all 0.3s;
 }
-
+.ImgBoxMedia img {
+    min-height: 255px;
+    object-fit: cover;
+}
 .mediaOuter:hover .textOverlay {
     background: transparent;
 }
@@ -2520,7 +2541,9 @@ input[type=number]::-webkit-outer-spin-button {
     .registration-btn {
         margin-left: 12px;
     }
-
+    .AREConference2022_area{
+        min-height: 46.5vh; 
+    }
     .NumberBox {
         padding: 35px 20px 20px;
     }
@@ -2727,6 +2750,9 @@ input[type=number]::-webkit-outer-spin-button {
     header nav a {
         padding-left: 6px !important;
         padding-right: 6px !important;
+    }
+    .AREConference2022_area{
+        min-height: 52vh;
     }
 
     .registration-btn {

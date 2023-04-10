@@ -30,12 +30,30 @@ urlpatterns = [
 	path('are_conference2023/',views.AreConference2023.as_view(),name='are_conference2023'),
     path('sponsors/',views.sponsors.as_view(),name='sponsors'),
 	path('Sawraj_award2022/',views.Sawrajaward.as_view(),name='Sawraj_award2022'),
-	path('media-img/',views.Media.as_view(),name='media-img'),
+	path('media-img/',views.Mediaimg.as_view(),name='media-img'),
 	path('media/',views.MediaFront.as_view(),name='media'),
 	path('register/',views.Register.as_view(),name='register'),
     path('media-detail/',views.Mediadetail.as_view(),name='media-detail'),   
-	path('swaraj_award2023/',views.Swarajaward2023.as_view(),name='swaraj_award2023'),   
+	path('swaraj_award2023/',views.Swarajaward2023.as_view(),name='swaraj_award2023'), 
 
+	# redirection static media pages
+   	path('inauguration/',views.Inauguration.as_view(),name='inauguration'), 
+   	path('session1_images/',views.Session1_Images.as_view(),name='session1_images'), 
+   	path('session2_images/',views.Session2_Images.as_view(),name='session2_images'), 
+   	path('session3_images/',views.Session3_Images.as_view(),name='session3_images'), 
+   	path('session4_images/',views.Session4_Images.as_view(),name='session4_images'), 
+   	path('session5_images/',views.Session5_Images.as_view(),name='session5_images'), 
+   	path('session6_images/',views.Session6_Images.as_view(),name='session6_images'), 
+   	path('session7_images/',views.Session7_Images.as_view(),name='session7_images'), 
+   	path('session8_images/',views.Session8_Images.as_view(),name='session8_images'), 
+   	path('ebooklaunch/',views.Ebooklaunch.as_view(),name='ebooklaunch'), 
+   	path('esaphotos/',views.ESAphotos.as_view(),name='esaphotos'), 
+   	path('expostalls/',views.Expostalls.as_view(),name='expostalls'), 
+   	path('randomclick/',views.Randomclick.as_view(),name='randomclick'), 
+   	path('shellganechanger/',views.Shellgamechanger.as_view(),name='shellganechanger'),
+
+    # path('inauguration/',views.Mediavideo.as_view(),name='inauguration'), 
+	
 	
 	
 	
