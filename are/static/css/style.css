@@ -48,7 +48,9 @@ header nav li {
     list-style: none;
     display: inline-block;
 }
-
+.active{
+    color: #00BCFF;
+}
 header nav a {
     font-size: 14px;
     line-height: 21px;
@@ -58,6 +60,12 @@ header nav a {
     padding-left: 12px !important;
     padding-right: 12px !important;
     transition: all 0.3s;
+}
+
+header .dropdown-toggle::after{
+    top: 3px;
+    left: 4px;
+    position: relative;
 }
 
 header nav a:hover {
@@ -404,7 +412,7 @@ section.about_section_area::before {
 section.about_energy_area,
 .session_summaryArea {
     background: #252123;
-    padding: 40px 0px;
+    padding: 50px 0px;
 }
 
 .session_summaryArea {
@@ -417,10 +425,11 @@ section.about_energy_area,
     position: absolute;
     display: block;
     right: 1%;
-    top: 40px;
+    top: 16px;
     width: 57px;
     height: 62px;
     background: url(../images/award/brown_circle.png);
+    transform: rotate(190deg);
 }
 
 .session_summaryArea::before {
@@ -428,7 +437,7 @@ section.about_energy_area,
     position: absolute;
     display: block;
     left: 1%;
-    bottom: 45px;
+    bottom: 11px;
     width: 57px;
     height: 62px;
     background: url(../images/award/brown_circle.png);
@@ -1191,7 +1200,7 @@ span.blackicon {
 .AREConference2022_area {
     background: url(../images/AreConference2022bg.png)no-repeat;
     background-size: cover;
-    background-position: center right;
+    background-position: center;
     min-height: 74vh;
     display: flex;
     justify-content: left;
@@ -1301,7 +1310,7 @@ span.blackicon {
 .mediaBanner_area {
     background: url(../images/mediaBanner.png)no-repeat;
     background-size: cover;
-    background-position: center right;
+    background-position: center top;
     min-height: 62vh;
 }
 
@@ -1309,6 +1318,7 @@ span.blackicon {
     background: url(../images/energy2022.png)no-repeat;
     background-size: cover;
     background-position: center right;
+    padding: 80px 0px;
 }
 
 .swarakAward2023_area {
@@ -1551,7 +1561,31 @@ a.active.show {
     background: transparent;
     padding: 6px 12px;
 }
+span.fa.fa-fw.fa-eye.field-icon.toggle-password {
+    font-size: 17px;
+}
 
+.RegisterBtn button{
+    background: #9A1C20;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 47px;
+    height: 50px;
+    color: #fff;
+    display: block;
+    width: 30%;
+    margin: 0px auto;
+    margin-top: 15px;
+    transition: all 0.3s;
+    border:1px solid transparent
+}
+
+.RegisterBtn button:hover{
+    background: transparent;
+    color: #252123;
+    border: 1px solid #252123;
+}
 .field-icon {
     float: right;
     margin-top: -31px;
@@ -1667,6 +1701,7 @@ input[type=number]::-webkit-outer-spin-button {
 .ImgBoxMedia img {
     min-height: 255px;
     object-fit: cover;
+    height: 255px;
 }
 .mediaOuter:hover .textOverlay {
     background: transparent;
@@ -1712,6 +1747,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 99px;
     right: 0;
     transform: rotate(13deg);
+    bottom: -67px;
 }
 
 .SwarajAward_textBottom {
@@ -1723,7 +1759,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: url(../images/media_banner.png);
     background-size: cover;
     background-position: right bottom;
-    padding: 140px 0px 60px;
+    padding: 14% 0px 8%;
 }
 
 .SwarajAward_textBottom h2 {
@@ -1754,6 +1790,9 @@ input[type=number]::-webkit-outer-spin-button {
     .swarajtext2023{
         padding: 0px;
     }
+    .areLeft::after{
+        display: none;
+    }
     .swarakAward2023_area h4 {
         display: block;
         text-align: center;
@@ -1780,7 +1819,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .Swarajaward2022inner {
-        padding: 85px 0px 20px;
+        padding: 50px 0px 30px;
     }
 
     .Sponsor_area {
@@ -2533,6 +2572,9 @@ input[type=number]::-webkit-outer-spin-button {
         max-width: 100% !important;
 
     }
+    .Swarajaward2022_area{
+        padding: 50px 0px 0px;
+    }
 }
 
 
@@ -2544,10 +2586,38 @@ input[type=number]::-webkit-outer-spin-button {
     .AREConference2022_area{
         min-height: 46.5vh; 
     }
+    .insteadBecomeText a{
+        width: 200px;
+    }
+    .AreConferenece2022 {
+        padding: 45px 0px 45px;
+    }
+    .AreConferenece2022 h2{
+        font-size: 32px;
+        line-height: 40px;
+    }
+    .partner-content h2 {
+        font-size: 30px;
+    }
     .NumberBox {
         padding: 35px 20px 20px;
     }
-
+    .sessionLeftText h2{
+        font-size: 30px;
+        line-height: 48px;
+    }
+    .sessionLeftText a{
+        line-height: 45px;
+        height: 45px;
+        width: 170px;
+    }
+    .mediaBanner_area{
+        min-height: 29vh;
+    }
+    .areLeft::after{
+        right: -135px;
+        bottom: -59px;
+    }
     .custom_collapse {
         background-color: #fff;
     }
@@ -2555,12 +2625,40 @@ input[type=number]::-webkit-outer-spin-button {
     .textHighlight {
         padding-left: 30px;
     }
-
+    .sponserBox h2{
+        font-size: 30px;
+    }
+    .sponserLogo{
+        padding: 30px 12px 30px 12px;
+    }
+    .spImg img {
+        height: 40px;
+    }
+    .spright h3{
+        font-size: 15px;
+    }
+    .spright h5{
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .interestesBox h2{
+        font-size: 30px;
+    }
     .textHighlight h2 {
         font-size: 31px;
         padding-bottom: 15px;
     }
-
+    .interestesBox p{
+        width: 100%;
+    }
+    .interestesBox{
+        padding: 40px 0px;
+    }
+    .interestesBox a{
+        height: 45px;
+        line-height: 45px;
+        width: 170px;
+    }
     .NumberOuter {
         padding: 50px 60px 35px;
     }
@@ -2746,7 +2844,9 @@ input[type=number]::-webkit-outer-spin-button {
     .navbar {
         padding: 0.5rem 0rem;
     }
-
+    .mediaBanner_area{
+        min-height: 38vh;
+    }
     header nav a {
         padding-left: 6px !important;
         padding-right: 6px !important;
@@ -2754,12 +2854,19 @@ input[type=number]::-webkit-outer-spin-button {
     .AREConference2022_area{
         min-height: 52vh;
     }
+    .textOverlay h3{
+        font-size: 14px;
+        line-height: 12px;
+    }
 
     .registration-btn {
         margin-left: 12px;
         width: 160px;
     }
-
+    .areLeft::after{
+        right: 26px;
+        bottom: -64px;
+    }
     .banner-section .inner-content {
         margin: 105px auto 0px;
     }
@@ -2830,7 +2937,9 @@ input[type=number]::-webkit-outer-spin-button {
         padding: 36px 20px 20px;
         margin-bottom: 15px;
     }
-
+    .mediaBanner_area{
+        min-height: 39vh;
+    }
     .col-12.col-sm-6 {
         max-width: 50% !important;
 
@@ -2895,6 +3004,9 @@ input[type=number]::-webkit-outer-spin-button {
     .banner-section .inner-content {
         margin: 155px auto 0px;
     }
+    .areLeft::after{
+        bottom: -75px;
+    }
 
     .banner-section h2 {
         padding-bottom: 60px;
@@ -2903,6 +3015,9 @@ input[type=number]::-webkit-outer-spin-button {
     header .dropdown-menu{
         left: -15px;
     }
+    .mediaBanner_area{
+        min-height: 52vh;
+    }
 
 }
 
@@ -2910,7 +3025,9 @@ input[type=number]::-webkit-outer-spin-button {
     .banner-section .inner-content {
         margin: 150px auto 0px;
     }
-
+    .areLeft::after{
+        bottom: -66px;
+    }
     .banner-section h2 {
         padding-bottom: 60px;
     }
