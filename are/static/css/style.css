@@ -1201,7 +1201,7 @@ span.blackicon {
     background: url(../images/AreConference2022bg.png)no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 74vh;
+    min-height: 65vh;
     display: flex;
     justify-content: left;
     align-items: center;
@@ -1311,20 +1311,23 @@ span.blackicon {
     background: url(../images/mediaBanner.png)no-repeat;
     background-size: cover;
     background-position: center top;
-    min-height: 62vh;
+    min-height: 65vh;
 }
 
 .Swarajaward2022_area {
     background: url(../images/energy2022.png)no-repeat;
     background-size: cover;
-    background-position: center right;
-    padding: 80px 0px;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 65vh;
 }
 
 .swarakAward2023_area {
     background: url(../images/SwarajAward2023.png)no-repeat;
     background-size: cover;
-    background-position: center top;
+    background-position: center;
     min-height: 71vh;
     display: flex;
     justify-content: left;
@@ -1360,7 +1363,7 @@ span.blackicon {
 }
 
 .Swarajaward2022inner {
-    padding: 100px 0px 50px;
+    padding: 0px;
 }
 
 .AreConferenece2022 h2 {
@@ -1756,10 +1759,11 @@ input[type=number]::-webkit-outer-spin-button {
 
 .Sponsor_area {
     background: url(../images/media_banner.png);
-    background: url(../images/media_banner.png);
     background-size: cover;
-    background-position: right bottom;
-    padding: 14% 0px 8%;
+    background-position: center;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
 }
 
 .SwarajAward_textBottom h2 {
@@ -1824,7 +1828,8 @@ input[type=number]::-webkit-outer-spin-button {
 
     .Sponsor_area {
         text-align: center;
-        padding: 85px 0px 45px;
+        padding: 45px 0px 45px;
+        min-height: auto;
     }
 
     .AREConference2022_area {
@@ -1880,7 +1885,7 @@ input[type=number]::-webkit-outer-spin-button {
     .AREConference2022_area h1 {
         font-size: 36px;
         line-height: 40px;
-        padding-top: 40px;
+        padding-top: 0px;
         text-align: center;
     }
 
@@ -2573,7 +2578,8 @@ input[type=number]::-webkit-outer-spin-button {
 
     }
     .Swarajaward2022_area{
-        padding: 50px 0px 0px;
+        padding: 0px 0px 0px;
+        min-height: auto;
     }
 }
 
@@ -3000,6 +3006,10 @@ input[type=number]::-webkit-outer-spin-button {
         font-size: 65px;
         line-height: 117%
     }
+    .Swarajaward2022inner h1{
+        font-size: 45px;
+        line-height: 60px;
+    }
 
     .banner-section .inner-content {
         margin: 155px auto 0px;
@@ -3016,7 +3026,10 @@ input[type=number]::-webkit-outer-spin-button {
         left: -15px;
     }
     .mediaBanner_area{
-        min-height: 52vh;
+        min-height: 62vh;
+    }
+    .AREConference2022_area{
+        min-height: 62vh;
     }
 
 }
