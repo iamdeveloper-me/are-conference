@@ -42,6 +42,7 @@ footer .menu-list li a{
 }
 footer .menu-list li a:hover{
     color: #9A1C20;
+    background: transparent;
 }
 footer .contact-us{
     font-style: normal;
@@ -171,6 +172,9 @@ img.logo-img {
     .futer_list{
       text-align: center;
     }
+    footer .menu-list li a{
+        margin-bottom: 2px;
+    }
     .footerMenu {
         padding-left: 0;
     }
@@ -208,6 +212,7 @@ footer .contact-us{
 
 footer .menu-list h4{
     padding-bottom: 8px;
+    padding-top: 10px;
 }
 .contact-part ul{
 margin-bottom: 12px;

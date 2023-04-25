@@ -1,5 +1,5 @@
 section.privacy_content {
-    padding: 10% 0px 70px;
+    padding: 50px 0px 50px;
 }
 .privacy_text p {
     font-weight: 400;
@@ -52,7 +52,7 @@ ul.terms_list li {
 @media screen and (max-width: 767px) {
 
 section.privacy_content {
-    padding: 24% 0px 20px;
+  padding: 20px 0px 20px;
 }
 .privacy_text h3{
    padding-bottom: 0px;
@@ -63,13 +63,20 @@ section.privacy_content {
     padding-bottom: 10px;
     font-size: 20px;
 }
+
 .privacy_text h3{
     font-size: 20px;
     line-height: 16px;
     padding-top: 2px;
+    padding-bottom: 15px;
 }
 .privacy_text {
     padding: 20px 0px 0px;
+}
+section.privacy_content h4 {
+    font-weight: normal;
+    font-size: 18px;
+    padding-bottom: 8px;
 }
 
 }
