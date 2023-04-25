@@ -11,6 +11,7 @@ footer .menu-list h4{
     line-height: 150%;
     color: #252123;  
     padding-bottom: 15px;
+  
     font-family: 'Poppins';
 }
 footer .menu-list ul.my-first{
@@ -35,7 +36,7 @@ footer .menu-list li a{
     font-size: 14px;
     line-height: 150%;
     color: #4B4B4B;
-    margin-bottom: 8px;
+    margin-bottom: 13px;
     transition: all 0.3s;
     padding: 0;
 }
@@ -169,6 +170,9 @@ img.logo-img {
 
     .futer_list{
       text-align: center;
+    }
+    .footerMenu {
+        padding-left: 0;
     }
     .copy-right li {
         padding-right: 5px !important;

@@ -55,8 +55,8 @@ class Mediadetail(TemplateView):
 class Swarajaward2023(TemplateView):
 	template_name = "swaraj_award2023.html"
 
-class Swarajaward2023(TemplateView):
-	template_name = "media_video.html"
+# class Swarajaward2023(TemplateView):
+# 	template_name = "media_video.html"
 
 class Register(TemplateView):
 	template_name = "register.html"

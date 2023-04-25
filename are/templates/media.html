@@ -12,6 +12,78 @@
 <section class="mediaBanner_area"></section>
 <section class="mediagalleryimg">
     <div class="container">
+
+        <ul class="tabs">
+            <li class="tab-link current" data-tab="tab-1">Images</li>
+            <li class="tab-link" data-tab="tab-2">Video</li>
+           
+        </ul>
+    
+        <div id="tab-1" class="tab-content current">
+            <div class="row">
+                <div class="col-md-3">
+                    <a href="{% url 'awards:inauguration' %}">
+                     <div class="mediaOuter">
+                       <div class="ImgBoxMedia"><img src="{% static 'images/Media1.png' %}" alt="" title="" class="" /></div> 
+                       <div class="textOverlay">
+                         <h3>ARE Conference Inauguration</h3>
+                       </div>
+                     </div>
+                     </a>
+                  </div>
+                  <div class="col-md-3">
+                    <a href="{% url 'awards:session1_images' %}">
+                      <div class="mediaOuter">
+                        <div class="ImgBoxMedia"><img src="{% static 'images/Media2.png' %}" alt="" title="" class="" /></div> 
+                        <div class="textOverlay">
+                          <h3>ARE Conference Session 1</h3>
+                        </div>
+                      </div>
+                      </a>
+                   </div>
+            </div>
+        </div>
+        <div id="tab-2" class="tab-content">tab content2</div>
+
+        <!-- <div class="tabs">
+            <ul class="tabs-nav">
+              <li><a href="#Images">Images</a></li>
+              <li><a href="#Video">Video</a></li>
+            </ul>
+            <div class="tabs-stage">
+              <div id="Images">
+               <div class="ImagesBox">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="{% url 'awards:inauguration' %}">
+                             <div class="mediaOuter">
+                               <div class="ImgBoxMedia"><img src="{% static 'images/Media1.png' %}" alt="" title="" class="" /></div> 
+                               <div class="textOverlay">
+                                 <h3>ARE Conference Inauguration</h3>
+                               </div>
+                             </div>
+                             </a>
+                          </div>
+                          <div class="col-md-3">
+                            <a href="{% url 'awards:session1_images' %}">
+                              <div class="mediaOuter">
+                                <div class="ImgBoxMedia"><img src="{% static 'images/Media2.png' %}" alt="" title="" class="" /></div> 
+                                <div class="textOverlay">
+                                  <h3>ARE Conference Session 1</h3>
+                                </div>
+                              </div>
+                              </a>
+                           </div>
+                    </div>
+               </div>
+              </div>
+              <div id="Video">
+                <p>tghuyty</p>
+              </div>
+            </div>
+          </div> -->
+
+<!-- 
         <h2>Media</h2>
         <div class="row">
             <div class="col-md-3">
@@ -37,8 +109,27 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div> -->
     </div>
 </section>
 
 {% endblock content %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function(){
+	
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
+</script>
+
+{% endblock extra_js %}
