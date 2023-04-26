@@ -1351,7 +1351,7 @@ span.blackicon {
     background: url(../images/SwarajAward2023.png)no-repeat;
     background-size: cover;
     background-position: center;
-    min-height: 71vh;
+    min-height: 65vh;
     
 }
 
@@ -1362,7 +1362,7 @@ span.blackicon {
     line-height: 72px;
     color: #000;
     text-align: center;
-    padding-top: 60px;
+    padding-top: 40px;
 }
 
 .swarajtext2023 h2 {
@@ -3468,6 +3468,10 @@ input[type=number]::-webkit-outer-spin-button {
         margin-top: 20px !important;
     }
 
+    .Sponsor_area, .mediaBanner_area, .partner-section, .swarakAward2023_area, .AREConference2022_area, .Swarajaward2022_area{
+       min-height: 56vh !important;
+    }
+
     .banner-section .inner-content h1 {
         font-size: 65px;
         line-height: 117%
@@ -3491,13 +3495,14 @@ input[type=number]::-webkit-outer-spin-button {
     header .dropdown-menu{
         left: -15px;
     }
-    .mediaBanner_area{
-        min-height: 62vh;
+   
+    .partner-section{
+        min-height: 48vh !important;
     }
-    .AREConference2022_area{
-        min-height: 62vh;
+ .our-partnerhead {
+        padding-top: 14% !important;
+        padding-bottom: 14% !important;
     }
-
 }
 
 @media screen and (min-width: 1920px) {
