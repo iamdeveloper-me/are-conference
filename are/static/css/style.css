@@ -69,10 +69,9 @@ ul.tabs li.current{
 	background: #9a1c20;
     color: #fff;
 }
-
-.tab-content{
+.customTab.tab-content{
 	display: none;
-	padding: 25px 0px 0px;
+    padding: 25px 0px 0px;
 }
 
 .tab-content.current{
@@ -2182,7 +2181,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .toZoom {
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     transition: 0.3s;
   }
@@ -2230,7 +2229,7 @@ input[type=number]::-webkit-outer-spin-button {
     color: #f1f1f1;
     font-size: 40px;
     font-weight: bold;
-    transition: 0.3s;
+    transition: 0.9s ease-in-out;
   }
   
   .close:hover,
@@ -2238,6 +2237,51 @@ input[type=number]::-webkit-outer-spin-button {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;
+  }
+
+
+  .gallery {
+    width: 100%;
+    margin: 0 auto;
+    /* padding: 5px; */
+    /* background: #fff; */
+    /* box-shadow: 0 1px 2px rgb(0 0 0 / 30%); */
+}
+  .gallery > div {
+    position: relative;
+    /* float: left;
+    padding: 5px; */
+    margin-bottom: 30px;
+  }
+  
+  .gallery > div > img {
+    display: block;
+    width:100%;
+    transition: .4s ease-in-out;
+    transform: translateZ(0); /* hack */
+    min-height: 255px;
+    object-fit: cover;
+    height: 255px;
+    border-radius: 10px;
+  }
+  
+  .gallery > div:hover {
+    z-index: 1;
+  }
+  
+  .gallery > div:hover > img {
+    transform: scale(1.5,1.5);
+    transition: 0.5s transform;
+  }
+  
+  .cf:before, .cf:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  
+  .cf:after {
+    clear: both;
   }
   
   /* 100% Image Width on Smaller Screens */

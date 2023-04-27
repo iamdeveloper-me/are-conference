@@ -22,73 +22,79 @@
                 </ol>
             </nav>
         </div>
-     </section>
+    </section>
     <div class="container">
         <h4>ARE Conference Inauguration</h4>
-        <div class="row">
-            <!-- <div class="idMyModal modal">
-                <span class="close">&times;</span>
-                <img class="modal-content">
-              </div> -->
+
+        <div class="gallery cf row">
             <div class="col-md-3">
-                <div class="mediaOuter">
+              <img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0014-idIzN6hs.jpg" />
+            </div>
+            <div class="col-md-3">
+              <img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0019__1_-d1IzN6hs.jpg" />
+            </div>
+            <div class="col-md-3">
+              <img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0020-amIzN6hs.jpg" />
+            </div>
+            <div class="col-md-3">
+              <img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0030-99IzN6hs.jpg" />
+            </div>
+            <div class="col-md-3">
+              <img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0032-EYIzN6hs.jpg" />
+            </div>
+          
+          </div>
+        <!-- <div class="row">
+
+            <div class="col-md-3">
+                <div class="mediaOuter gallery cf">
                     <div class="ImgBoxMedia">
-                        <!-- <img  class="toZoom" src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0014-idIzN6hs.jpg" alt="" title="" class="" /> -->
-                        <img  src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0014-idIzN6hs.jpg" alt="" title="" class="" />
-                       
+                        <img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0014-idIzN6hs.jpg"
+                            alt="" title="" class="" />
+
                     </div>
                 </div>
-            
+
             </div>
             <div class="col-md-3">
                 <div class="mediaOuter">
-                    <div class="ImgBoxMedia"><img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0019__1_-d1IzN6hs.jpg" alt="" title="" class="" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3">
-                <div class="mediaOuter">
-                    <div class="ImgBoxMedia"><img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0020-amIzN6hs.jpg" alt="" title="" class="" />
+                    <div class="ImgBoxMedia"><img
+                            src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0019__1_-d1IzN6hs.jpg"
+                            alt="" title="" class="" />
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="mediaOuter">
-                    <div class="ImgBoxMedia"><img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0030-99IzN6hs.jpg" alt="" title="" class="" />
+                    <div class="ImgBoxMedia"><img
+                            src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0020-amIzN6hs.jpg"
+                            alt="" title="" class="" />
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="mediaOuter">
-                    <div class="ImgBoxMedia"><img src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0032-EYIzN6hs.jpg" alt="" title="" class="" />
+                    <div class="ImgBoxMedia"><img
+                            src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0030-99IzN6hs.jpg"
+                            alt="" title="" class="" />
                     </div>
                 </div>
             </div>
-        
+            <div class="col-md-3">
+                <div class="mediaOuter">
+                    <div class="ImgBoxMedia"><img
+                            src="https://are-conference-staging.s3.us-east-2.amazonaws.com/images/ARE+Conference+Inauguration/574A0032-EYIzN6hs.jpg"
+                            alt="" title="" class="" />
+                    </div>
+                </div>
             </div>
+
+        </div> -->
     </div>
 </section>
 {% endblock content %}
 
 {% block extra_js %}
 
-<script>
-    const modal = document.getElementsByClassName('idMyModal');
-    const img = document.getElementsByClassName('toZoom');
-    const modalImg = document.getElementsByClassName('modal-content');
-    for (let i = 0; i < img.length; i++) {
-        img[i].onclick = function () {
-            modal[i].style.display = "block";
-            modalImg[i].src = this.src;
-        }
-    }
-
-    var span = document.getElementsByClassName("close");
-    for (let i = 0; i < span.length; i++) {
-        span[i].onclick = function () {
-            modal[i].style.display = "none";
-        }
-    }
-</script>
 
 {% endblock extra_js %}
