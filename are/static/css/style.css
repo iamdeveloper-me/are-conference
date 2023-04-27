@@ -2254,8 +2254,17 @@ input[type=number]::-webkit-outer-spin-button {
     .swarakAward2023_area h4 {
         font-size: 30px;
     }
+    .cd-breadcrumb li, .cd-multi-steps li{
+        margin: 0px;
+    }
+    .cd-breadcrumb li > *, .cd-multi-steps li > * {
+        font-size: 16px;
+    }
+    ul.tabs li{
+        width: 49.3%;
+    }
     ul.tabs{
-        width: 100%;
+        width: 98%;
     }
     .swarajtext2023{
         padding: 0px;
@@ -2275,8 +2284,8 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .swarajtext2023 h3{
-        font-size: 27px;
-        padding-top: 24px;
+        font-size: 23px;
+        padding-top: 15px;
         line-height: 30px;
      }
     .mediaBanner_area {
@@ -2386,7 +2395,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .mediagalleryimg {
-        padding: 40px 0px 30px;
+        padding: 30px 0px 30px;
     }
 
     .horizontal.bottom.flip-outer {
