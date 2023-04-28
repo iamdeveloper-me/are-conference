@@ -69,12 +69,12 @@ ul.tabs li.current{
 	background: #9a1c20;
     color: #fff;
 }
-.customTab.tab-content{
+.Tab-content{
 	display: none;
     padding: 25px 0px 0px;
 }
 
-.tab-content.current{
+.Tab-content.current{
 	display: inherit;
 }
   
@@ -1418,10 +1418,7 @@ span.blackicon {
     line-height: 18px;
 }
 
-/* 
-  .tabs-left>li.active>a{
-    color: #9A1C20;
-  } */
+
 .tabs-left>li a {
     font-weight: 500;
     font-size: 18px;
@@ -2240,49 +2237,6 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
 
-  .gallery {
-    width: 100%;
-    margin: 0 auto;
-    /* padding: 5px; */
-    /* background: #fff; */
-    /* box-shadow: 0 1px 2px rgb(0 0 0 / 30%); */
-}
-  .gallery > div {
-    position: relative;
-    /* float: left;
-    padding: 5px; */
-    margin-bottom: 30px;
-  }
-  
-  .gallery > div > img {
-    display: block;
-    width:100%;
-    transition: .4s ease-in-out;
-    transform: translateZ(0); /* hack */
-    min-height: 255px;
-    object-fit: cover;
-    height: 255px;
-    border-radius: 10px;
-  }
-  
-  .gallery > div:hover {
-    z-index: 1;
-  }
-  
-  .gallery > div:hover > img {
-    transform: scale(1.5,1.5);
-    transition: 0.5s transform;
-  }
-  
-  .cf:before, .cf:after {
-    display: table;
-    content: "";
-    line-height: 0;
-  }
-  
-  .cf:after {
-    clear: both;
-  }
   
   /* 100% Image Width on Smaller Screens */
   @media only screen and (max-width: 700px){
@@ -3603,3 +3557,123 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
 }
+
+
+
+
+
+/* The Image Box */
+div.img {
+    margin-bottom: 20px;
+}
+#img01{
+    margin-top: 8%;
+}
+
+
+/* The Image */
+div.img img {
+    width: 100%;
+    height: 255px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Description of Image */
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Add Responsiveness */
+/* .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+} */
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+
+
+/* Modal Content (image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    max-height: 550px;
+    object-fit: cover;
+}
+
+
+/* Caption of Modal Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+
+
+/* Add Animation */
+.modal-content, #caption {    
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+
+@-webkit-keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0.1)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
