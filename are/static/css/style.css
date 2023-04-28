@@ -2252,6 +2252,9 @@ input[type=number]::-webkit-outer-spin-button {
     header nav li {
         display: block;
     }
+    #img01 {
+        margin-top: 50% !important;
+    }
     .swarakAward2023_area h4 {
         font-size: 30px;
     }
@@ -3569,6 +3572,7 @@ input[type=number]::-webkit-outer-spin-button {
 div.img {
     margin-bottom: 20px;
 }
+
 #img01{
     margin-top: 8%;
 }
@@ -3680,3 +3684,11 @@ div.desc {
     cursor: pointer;
 }
 
+
+
+@media screen and (max-width: 320px) {
+
+    #img01{
+        margin-top: 50%;
+    }
+}
