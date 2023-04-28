@@ -73,7 +73,10 @@ ul.tabs li.current{
 	display: none;
     padding: 25px 0px 0px;
 }
-
+body.overcom {
+    height: 100vh;
+    overflow: hidden;
+}
 .Tab-content.current{
 	display: inherit;
 }
