@@ -3669,8 +3669,8 @@ div.desc {
     margin: auto;
     display: block;
     width: 80%;
-    max-width: 800px;
-    max-height:450px;
+    max-width: 660px;
+    max-height:400px;
     object-fit: cover;
 }
 
