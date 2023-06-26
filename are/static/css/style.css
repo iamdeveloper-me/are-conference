@@ -24,6 +24,15 @@ p {
 .headerLogo img{
    height: 47px;
     }
+    a.navbar-brand img:first-child{
+        height: 50px;
+        width: auto;
+        margin-right: 10px;
+    }
+    a.navbar-brand img:last-child{
+        height: 47px;
+        width: auto;
+    }
 
 a {
     text-decoration: none !important;
@@ -281,6 +290,7 @@ li.list-inline-item sup {
 
 .registration-btn img {
     width: 18px;
+    height: 18px;
 }
 
 .inner-content li.list-inline-item img {
@@ -1756,6 +1766,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .ImgBoxMedia2 img {
     min-height: 291px;
+    object-fit: cover;
 }
 
 
@@ -2257,6 +2268,15 @@ input[type=number]::-webkit-outer-spin-button {
     header nav li {
         display: block;
     }
+    .row.align-items-center.pb-5 {
+        padding-bottom: 35px !important;
+    }
+    .inner-content li.list-inline-item img {
+        width: 30px;
+    }
+    span.navbar-toggler-icon img{
+        height: 30px;
+    }
     #img01 {
         margin-top: 50% !important;
     }
@@ -2579,13 +2599,13 @@ input[type=number]::-webkit-outer-spin-button {
     .banner-section .inner-content {
         margin: 100px auto 0px;
     }
-
+/* 
     .register-area a.register-nowbtn {
         padding: 0px 18px;
         line-height: 45px !important;
         height: 45px !important;
         font-size: 13px;
-    }
+    } */
 
     a.btn.register-nowbtn.exhibit_btn.mr-2 {
         padding: 0px 15px;
@@ -2750,8 +2770,10 @@ input[type=number]::-webkit-outer-spin-button {
 
     .register-area a.register-nowbtn {
         width: 135px;
-        height: 45px !important;
-        line-height: 45px !important;
+        height: 40px !important;
+        line-height: 40px !important;
+        font-size: 12px;
+        padding: 0px;
     }
 
     .register-area a.apply-awardbtn {
@@ -2798,8 +2820,17 @@ input[type=number]::-webkit-outer-spin-button {
         line-height: 29px;
     }
 
-    a.navbar-brand img {
+    /* a.navbar-brand img {
         width: 90px;
+    } */
+    a.navbar-brand img:first-child{
+        height: 30px;
+        width: auto;
+        margin-right: 5px;
+    }
+    a.navbar-brand img:last-child{
+        height: 25px;
+        width: auto;
     }
 
     header .navbar-nav .dropdown-menu {
@@ -2830,7 +2861,7 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     header nav {
-        height: 62px;
+        height:55px;
     }
 
     .register_btn a.btn.registration-btn {
@@ -2846,7 +2877,9 @@ input[type=number]::-webkit-outer-spin-button {
     }
 
     .banner-section .inner-content h1 {
-        font-size: 30px;
+            font-size: 30px;
+            margin-bottom: 0px;
+            line-height: 106%;
     }
 
     .banner-section .inner-content ul {
@@ -2876,11 +2909,12 @@ input[type=number]::-webkit-outer-spin-button {
 
     .banner-section {
         background-size: cover;
-        /* padding-bottom: 35px; */
+        padding-bottom: 25px;
     }
 
     .about_content {
         padding-top: 0;
+        padding-bottom: 25px;
     }
 
     section.about_section_area {
@@ -3636,7 +3670,7 @@ div.desc {
     display: block;
     width: 80%;
     max-width: 800px;
-    max-height: 550px;
+    max-height:450px;
     object-fit: cover;
 }
 
