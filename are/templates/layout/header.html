@@ -7,6 +7,11 @@
                     <a class="navbar-brand p-0" href="{% url 'awards:home' %}">
                         <img src="{% static 'images/Logo.png' %}" />
                     </a>
+                    <a class="navbar-brand p-0 headerLogo" href="{% url 'awards:home' %}" >
+                        <img src="{% static 'images/footer_logo.png' %}" />
+                    </a>
+
+                    
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
                         aria-label="Toggle navigation">
@@ -21,16 +26,18 @@
                                     <a class="nav-link dropdown-toggle" href="#!" role="button" data-toggle="dropdown"
                                         aria-expanded="false">Are Conference</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item " href="{% url 'awards:are_conference2022' %}">Are Conference 2022</a>
                                         <a class="dropdown-item" href="{% url 'awards:are_conference2023' %}">Are Conference 2023</a>
+                                        <a class="dropdown-item " href="{% url 'awards:are_conference2022' %}">Are Conference 2022</a>
+                                        
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#!" role="button" data-toggle="dropdown"
                                     aria-expanded="false">Energy Swaraj Award</a>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{% url 'awards:Sawraj_award2022' %}">Energy Swaraj Award 2022</a>
                                         <a class="dropdown-item" href="{% url 'awards:swaraj_award2023' %}">Energy Swaraj Award 2023</a>
+                                        <a class="dropdown-item" href="{% url 'awards:Sawraj_award2022' %}">Energy Swaraj Award 2022</a>
+                                       
                                     </div>
                                 </li>
                                 <li><a class="nav-item nav-link" href="{% url 'awards:partner' %}" >Partners</a></li>

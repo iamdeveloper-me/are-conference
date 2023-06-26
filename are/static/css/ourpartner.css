@@ -59,6 +59,7 @@
     border: 1px solid transparent;
     display: inline-block;
     text-align: center;
+    pointer-events: none;
 }
 
 .our-partnerhead a:hover {
@@ -176,6 +177,7 @@
     margin-top: 15px;
     border: 1px solid transparent;
     display: inline-block;
+    pointer-events: none;
 }
 
 .insteadBecomeText a:hover {

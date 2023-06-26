@@ -21,6 +21,10 @@ p {
     padding: 0px;
 }
 
+.headerLogo img{
+   height: 47px;
+    }
+
 a {
     text-decoration: none !important;
 }
@@ -1023,8 +1027,7 @@ a.knowmore span {
     color: #fff;
     font-size: 15px;
     margin-top: 20px;
-    text-align: left;
-    padding-left: 88px;
+    text-align: center;
 }
 
 .register-area p span {
@@ -1261,6 +1264,7 @@ span.blackicon {
     line-height: 50px;
     transition: all 0.3s;
     border: 1px solid transparent;
+    pointer-events: none;
 }
 
 .sessionSummary h1 {
@@ -1538,6 +1542,7 @@ a.active.show {
     font-size: 14px;
     display: inline-block;
     color: #252123;
+    pointer-events: none;
 }
 
 .interestesBox a:hover {
@@ -3569,9 +3574,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* The Image Box */
-div.img {
+/* div.img {
     margin-bottom: 20px;
-}
+} */
 
 #img01{
     margin-top: 8%;
@@ -3595,6 +3600,10 @@ div.desc {
 
 * {
     box-sizing: border-box;
+}
+
+.responsive .img{
+    margin-bottom: 20px;
 }
 
 /* Add Responsiveness */
