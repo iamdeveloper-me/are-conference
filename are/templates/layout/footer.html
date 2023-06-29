@@ -18,24 +18,51 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-2 menu-list">
+            <div class="col-md-4 menu-list MainMenu">
                 <h4>Menus</h4>
-                <ul class="list-unstyled my-first">
-                    <li><a href="{% url 'awards:home' %}">Home</a></li>
-                    <li><a href="{% url 'awards:context' %}">Context</a></li>
-                    <li><a href="{% url 'awards:partner' %}">Partners</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2 menu-list">
-                <!-- <h4 class="pl-0">Column Two</h4> -->
-                <ul class="list-unstyled footer_top">
-                    <li>
-                        <a href="{% url 'agenda:agenda_list' %}">Agenda</a></li>
-                    <li>
-                        <a href="{% url 'speakers:speaker_list' %}">Speakers</a></li>
-                    <li>
-                        <a href="{% url 'awards:award' %}">Awards</a></li>
-                </ul>
+                <!-- <div class=" ">
+                    <div class="navbar-nav ml-auto">
+                        <ul>
+                            <li> <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#!" role="button" data-toggle="dropdown"
+                                    aria-expanded="false">Are Conference</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item " href="{% url 'awards:are_conference2022' %}">Are Conference 2022</a>
+                                    <a class="dropdown-item" href="{% url 'awards:are_conference2023' %}">Are Conference 2023</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#!" role="button" data-toggle="dropdown"
+                                aria-expanded="false">Energy Swaraj Award</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="{% url 'awards:Sawraj_award2022' %}">Energy Swaraj Award 2022</a>
+                                    <a class="dropdown-item" href="{% url 'awards:swaraj_award2023' %}">Energy Swaraj Award 2023</a>
+                                </div>
+                            </li>
+                            <li><a class="nav-item nav-link" href="{% url 'awards:partner' %}" >Partners</a></li>
+                            <li><a class="nav-item nav-link" href="{% url 'awards:sponsors' %}">Sponsors</a></li>
+                            <li><a class="nav-item nav-link" href="{% url 'awards:media' %}">Media</a></li>
+                        </ul>
+
+                        
+                      
+                    </div>
+                </div> -->
+                    <div class="navbar-nav ml-auto footerMenu">
+                        <ul class="list-inline list-unstyled">
+                            <li> <a class="nav-item nav-link active" href="{% url 'awards:home' %}">Home</a></li>
+                            <li>
+                              <a class="dropdown-item" href="{% url 'awards:are_conference2023' %}">Are Conference</a>
+                             </li>
+                           <li><a class="dropdown-item" href="{% url 'awards:swaraj_award2023' %}">Energy Swaraj Award</a></li>
+                            <li><a class="nav-item nav-link" href="{% url 'awards:partner' %}" >Partners</a></li>
+                            <li><a class="nav-item nav-link" href="{% url 'awards:sponsors' %}">Sponsors</a></li>
+                            <li><a class="nav-item nav-link" href="{% url 'awards:media' %}">Media</a></li>
+                        </ul>
+                    </div>  
+                    
+              
             </div>
             <div class="col-md-5  menu-list subscribe-div">
                 <h4 class="pl-0">Subscribe</h4>
@@ -61,7 +88,7 @@
     </div>
     <hr class="horizontal-line">
     <div class="container">
-        <div class="row copy-right">
+        <div class="row copy-right no-gutters">
            
             <div class="col-md-8">
                 <div class="text-xl-left text-lg-left text-md-left text-left">
@@ -86,3 +113,38 @@
         </div>
     </div>
 </footer>
+
+{% block extra_js %}
+<script>
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+    modal.style.display = "none";
+    $("body").removeClass("overcom");
+}
+
+// Get all images and insert the clicked image inside the modal
+// Get the content of the image description and insert it inside the modal image caption
+var images = document.getElementsByTagName('img');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+var i;
+for (i = 0; i < images.length; i++) {
+   images[i].onclick = function(){
+    $("body").addClass("overcom");
+       modal.style.display = "block";
+       modalImg.src = this.src;
+       modalImg.alt = this.alt;
+       captionText.innerHTML = this.nextElementSibling.innerHTML;
+   }
+}
+
+</script>
+
+{% endblock extra_js %}

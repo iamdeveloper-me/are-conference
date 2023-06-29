@@ -28,6 +28,39 @@ class HomePageView(TemplateView):
 			break
 		return {'context':context}	
 
+class SessionDetail(TemplateView):
+	template_name = "session_detail.html"
+
+class AreConference2022(TemplateView):
+	template_name = "are_conference2022.html"
+
+class AreConference2023(TemplateView):
+	template_name = "are_conference2023.html"
+
+class sponsors(TemplateView):
+	template_name = "sponsors.html"
+
+class Sawrajaward(TemplateView):
+	template_name = "swaraj_award2022.html"
+
+class Mediaimg(TemplateView):
+	template_name = "media-img.html"
+
+class MediaFront(TemplateView):
+	template_name = "media.html"
+
+class Mediadetail(TemplateView):
+	template_name = "media_detail.html"
+
+class Swarajaward2023(TemplateView):
+	template_name = "swaraj_award2023.html"
+
+# class Swarajaward2023(TemplateView):
+# 	template_name = "media_video.html"
+
+class Register(TemplateView):
+	template_name = "register.html"
+
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
 
@@ -256,12 +289,44 @@ class Shellgamechanger(TemplateView):
 # class Adminspeker(TemplateView):
 # 	template_name = 'admin_speaker.html'
 
-# class Adminaward(TemplateView):
-# 	template_name = 'admin_award.html'
+class Session1_Images(TemplateView):
+	template_name = 'Session1_images.html'
 
-# class Adminagenda(TemplateView):
-# 	template_name = 'admin-agenda.html'
+class Session2_Images(TemplateView):
+	template_name = 'Session2_images.html'
 
-# class dashboard(TemplateView):
-# 	template_name = 'dashboard.html'
-	
+class Session3_Images(TemplateView):
+	template_name = 'Session3_images.html'
+
+class Session4_Images(TemplateView):
+	template_name = 'Session4_images.html'
+
+class Session5_Images(TemplateView):
+	template_name = 'Session5_images.html'
+
+class Session6_Images(TemplateView):
+	template_name = 'Session6_images.html'
+
+class Session7_Images(TemplateView):
+	template_name = 'Session7_images.html'
+
+class Session8_Images(TemplateView):
+	template_name = 'Session8_images.html'
+
+class Ebooklaunch(TemplateView):
+	template_name = 'E-booklaunch.html'
+
+class ESAphotos(TemplateView):
+	template_name = 'ESAphotos.html'
+
+class Expostalls(TemplateView):
+	template_name = 'Expostalls.html'
+
+class Randomclick(TemplateView):
+	template_name = 'Randomclick.html'
+
+class Shellgamechanger(TemplateView):
+	template_name = 'Shell gamechanger.html'
+
+class Inauguration(TemplateView):
+	template_name = "inauguration.html"
