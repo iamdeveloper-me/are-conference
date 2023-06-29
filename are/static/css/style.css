@@ -1735,19 +1735,25 @@ input[type=number]::-webkit-outer-spin-button {
     height: 291px;
 }
 .ImgBoxMedia img {
-    min-height: 255px;
+    min-height: 291px;
     object-fit: cover;
-    height: 255px;
+    height:291px;
 }
 .mediaOuter:hover .textOverlay {
+    background: transparent;
+}
+.mediaOuter:hover .textOverlay2 {
     background: transparent;
 }
 
 .mediaOuter:hover .textOverlay h3 {
     color: #fff;
 }
+.mediaOuter:hover .textOverlay2 h3 {
+    color: #fff;
+}
 
-.textOverlay h3 {
+.textOverlay h3, .textOverlay2 h3 {
     font-weight: 600;
     font-size: 15px;
     line-height: 21px;
@@ -1764,6 +1770,16 @@ input[type=number]::-webkit-outer-spin-button {
     text-align: center;
     transition: all .3s;
     height: 82px;
+}
+.textOverlay2 {
+    position: absolute;
+    background: #fff;
+    bottom: 0px;
+    width: 100%;
+    padding: 20px 10px;
+    text-align: center;
+    transition: all .3s;
+    
 }
 
 .ImgBoxMedia2 img {
@@ -2270,6 +2286,9 @@ input[type=number]::-webkit-outer-spin-button {
 
     header nav li {
         display: block;
+    }
+    .textOverlay{
+        height: auto;
     }
     .row.align-items-center.pb-5 {
         padding-bottom: 35px !important;
@@ -3737,4 +3756,12 @@ div.desc {
     #img01{
         margin-top: 50%;
     }
+}
+
+.imgBox{
+    border-radius: 10px;
+}
+
+.about_content.arrow::after{
+    display: none;
 }
