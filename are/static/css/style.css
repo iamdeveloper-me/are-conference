@@ -1732,6 +1732,7 @@ input[type=number]::-webkit-outer-spin-button {
     border-radius: 10px;
     margin-bottom: 25px;
     transition: all 0.3s;
+    height: 291px;
 }
 .ImgBoxMedia img {
     min-height: 255px;
@@ -1762,11 +1763,13 @@ input[type=number]::-webkit-outer-spin-button {
     padding: 20px 10px;
     text-align: center;
     transition: all .3s;
+    height: 82px;
 }
 
 .ImgBoxMedia2 img {
     min-height: 291px;
     object-fit: cover;
+    height: 291px;
 }
 
 
