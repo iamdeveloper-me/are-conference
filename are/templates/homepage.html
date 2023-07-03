@@ -65,6 +65,10 @@
                                         <div data-pos="next">-</div>
                                         <div data-pos="prev">-</div>
                                     </div>
+                                      <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
                                 </div>
                                 <img src="{% static 'images/homepage/slash.svg' %}" />
                                 <div class="cd__unit-label">Days</div>
@@ -563,11 +567,12 @@
 
             if (typeof moment === "function") {
                 moment.locale();
-                const later = moment(new Date("2022-11-23T09:00:00"));
+             //   const later = moment(new Date("2023-11-22T09:00:00"));
+                const later = moment(new Date("2023-11-24 00:00:00"));
                 const now = moment();
                 const diff = moment.duration(later.diff(now));
                 const moment_diff = moment(later.diff(now));
-                const days = moment_diff.dayOfYear() - 2;
+                const days = moment_diff.dayOfYear() -1 ;
 
                 if (diff.valueOf() >= 0) {
                     //   timeLeft.y += diff.years();
@@ -614,13 +619,13 @@
 
                 displayDigits.push(...digits);
             }
+            if(displayDigits.length===6) displayDigits.unshift("0");
             // update display
             const cols = this.el.querySelectorAll("[data-col]");
 
             if (cols) {
                 Array.from(cols).forEach((c, i) => {
                     const digit = displayDigits[i];
-
                     if (digit !== this.time[i]) {
                         const next = c.querySelector(`[data-pos="next"]`);
                         const prev = c.querySelector(`[data-pos="prev"]`);
