@@ -180,6 +180,10 @@
                                         <div data-pos="next">-</div>
                                         <div data-pos="prev">-</div>
                                     </div>
+                                    <div class="cd__digit" data-col>
+                                        <div data-pos="next">-</div>
+                                        <div data-pos="prev">-</div>
+                                    </div>
                                     <!-- <div class="cd__digit" data-col>
                                         <div data-pos="next">-</div>
                                         <div data-pos="prev">-</div>
@@ -477,7 +481,16 @@
             for (let v in display) {
                 const digits = `${display[v]}`.split("");
                 // add zero to single digits
-                if (digits.length < 2) digits.unshift("0");
+                if (v == 'd') {
+                    if (digits.length == 1 ) {
+                        digits.unshift("0");
+                        digits.unshift("0");
+                    } 
+                    else if (digits.length == 2) digits.unshift("0");
+                }
+                else {
+                    if (digits.length < 2) digits.unshift("0");
+                }
 
                 displayDigits.push(...digits);
             }
