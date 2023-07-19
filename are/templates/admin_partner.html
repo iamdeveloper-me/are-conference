@@ -8,16 +8,22 @@
                 <div id="sidebar" role="navigation">
                     <ul>
                         <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
-                        <li class="nav-item active"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a><li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        {% comment %}
+                        <li class="nav-item "><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a><li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'partner_admin' %}">Partners</a></li>
+                        {% endcomment %}
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'partner_admin' %}">Partners</a><li>
+                        
                     </ul>
                 </div>
             </div>
             <div class="col-md-10">
                 <div class="dashboard_right">
                     <div class="speaker_area">
+                        <div class="add_newspeak">
+                            <h2>Partners</h2>
+                        </div>
                         <div class="speaker_table">
                             <table width="100%" class="table table-bordered">
                                 <thead>
@@ -28,8 +34,11 @@
                                         <th>Organization</th>
                                         <th>Organization_type</th>
                                         <th>Organization Image</th>
+                                        <th>Pincode</th>
                                         <th>Country</th>
+                                        <th>State</th>
                                         <th>City</th>
+                                        <th>District</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -41,8 +50,11 @@
                                         <td>{{ data.org_name }}</td>
                                         <td>{{ data.org_type }}</td>
                                         <td><img src="{{data.org_image.url}}" width="60rem" height="70rem"></td>
+                                        <td>{{ data.pincode }}</td>
                                         <td>{{ data.country }}</td>
+                                        <td>{{ data.state }}</td>
                                         <td>{{ data.city }}</td>
+                                        <td>{{ data.district }}</td>
                                         
                                     </tr>
                                         {% comment %}

@@ -44,7 +44,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Phone number<span>*</span></label>
-                            <input type="text" pattern="[0-9]{10}" name="phone_number" class="form-control" placeholder="Enter your phone number..." required="">
+                            <input type="text" id="mobileno" pattern="[0-9]{10}" name="phone_number" class="form-control" placeholder="Enter your phone number..." required="">
                             <div id="phone_number-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
@@ -158,7 +158,7 @@
 <!--Model Popup starts-->
 <div class="container"  tabindex="-1" role="dialog" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
     <div class="row">
-        {# <a class="btn btn-primary" data-toggle="modal" href="#ignismyModal">open Popup</a> #}
+        <a class="btn btn-primary" data-toggle="modal" href="#ignismyModal">open Popup</a>
         <div class="modal fade" id="ignismyModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -191,7 +191,16 @@ $(document).ready(function() {
     
     // $('#ignismyModal').modal({backdrop: 'static', keyboard: false}, 'show');
     // $(".formsubmit").submit(function(event) {
-
+    $("#mobileno").keypress(function(){
+        data = $(this).val();
+        if (data.length < 10) {
+            $("#phone_number-error").text("Phone number must be of 10 digit")
+            $("#phone_number-error").addClass('d-block');
+        } else if (data.length == 10) {
+            $("#phone_number-error").removeClass('d-block');
+            event.preventDefault();
+        }
+    });
     $('body').on('click',"#partner-button", function(event) {
         //stop submit the form, we will post it manually.
         $(".invalid-feedback").removeClass('d-block');
