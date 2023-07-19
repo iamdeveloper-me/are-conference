@@ -1,5 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django.utils import timezone
 
 # Create your models here.
 
@@ -21,6 +22,13 @@ AWARD_CATE = (
     ('Only Generate','g'),
     ('Avoid and Minimize','a&m'),
     ('Avoid,Minimize and Generate','a,m&g'),
+	)
+
+ORG_TYPE = (
+	('Academic','Academic'),
+    ('Government','Government'),
+    ('Corporate','Corporate'),
+    ('NGO','NGO'),
 	)
 
 
@@ -88,4 +96,25 @@ class ClimateAward(models.Model):
 	send_tshirt = models.CharField(max_length=255, null=True, blank=True)
 	file = models.FileField(upload_to="images/awards_forms/", blank=True, null=True)
 	working_video = models.FileField(upload_to="images/awards_forms/", blank=True, null=True)
+
+
+class PartnerRegister(models.Model):
+	email = models.EmailField( unique =True, blank=True, null=True)
+	phone_number = models.CharField(max_length=255,unique=True,null=True, blank=True)
+	org_name = models.CharField(max_length=255,unique=True,null=True, blank=True)
+	org_type = models.CharField(max_length=255,choices=ORG_TYPE,null=True, blank=True)
+	org_image = models.ImageField(null=True, blank=True, upload_to="images")
+	org_detail = models.CharField(max_length=10000,null=True, blank=True)
+	coordinator_name = models.CharField(max_length=255,null=True, blank=True)
+	designation = models.CharField(max_length=255,null=True, blank=True)
+	pincode = models.IntegerField()
+	country = models.CharField(max_length=255,null=True, blank=True)
+	state = models.CharField(max_length=255,null=True, blank=True)
+	city = models.CharField(max_length=255,null=True, blank=True)
+	district = models.CharField(max_length=255,null=True, blank=True)
+	password = models.CharField(max_length=255,null=True, blank=True)
+	confirm_password = models.CharField(max_length=255,null=True, blank=True)
+	created_at = models.DateTimeField(default=timezone.now)
+
+
 

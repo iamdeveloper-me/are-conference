@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from .models import AmgAward, Award, ClimateAward
 from speakers.models import Speaker
-from awards.models import Award,AmgAward,ClimateAward
+from awards.models import Award,AmgAward,ClimateAward,PartnerRegister
 from agenda.models import Seats
-from .forms import AmgApplicationForm, ChallengeForm, EmailForm
+from .forms import AmgApplicationForm, ChallengeForm, EmailForm, PartnerRegisterForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,7 +14,7 @@ from django.http import HttpResponse, JsonResponse
 from reportlab.pdfgen import canvas
 from tabulate import tabulate
 from prettytable import PrettyTable
-import csv
+import csv, json
 
 class HomePageView(TemplateView):
 	model = Seats
@@ -26,7 +26,40 @@ class HomePageView(TemplateView):
 		for item in data:
 			context = item
 			break
-		return {'context':context}	
+		return {'context':context}
+
+class PartnerRegisterView(CreateView):
+	model = PartnerRegister 
+	form_class = PartnerRegisterForm
+	template_name = 'partner_register.html'
+
+	def post(self, request, *args, **kwargs):	
+		# import pdb; pdb.set_trace()
+
+		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
+		form = PartnerRegisterForm(request.POST, request.FILES)
+		if form.is_valid():
+			data = form.save(commit=False)
+			data.save()
+			request.session['status']='done'
+			status = {
+				'status':'success',
+			}
+			# send_message(
+   #              form.cleaned_data['name'],
+   #              form.cleaned_data['message']
+   #          )
+			# kwargs = {"data":True}
+			return HttpResponse(json.dumps(status),content_type="application/json")
+			# return JsonResponse(status)
+		else:
+			status = {
+				'status':'error',
+				'errors':form.errors,
+				'data':form.data
+			}
+			return HttpResponse(json.dumps(status),content_type="application/json")
+
 
 class SessionDetail(TemplateView):
 	template_name = "session_detail.html"
@@ -59,7 +92,7 @@ class Swarajaward2023(TemplateView):
 # 	template_name = "media_video.html"
 
 class Register(TemplateView):
-	template_name = "register.html"
+	template_name = "partner_register.html"
 
 class AdminAgendaView(TemplateView):
 	template_name = "agenda.html"
@@ -106,6 +139,13 @@ class AmgApplicationFormView(CreateView):
 			}
 			return JsonResponse(status)
 
+
+# class SpeakerUpdateView(UpdateView):
+# 	model = Speaker
+# 	form_class = SpeakerForm
+# 	template_name = 'admin_speaker.html'
+# 	fields = ['name','designation','detail','profile_image']
+
 		# else:
 		# 	amg_email = form.data.get('email')
 		# 	amg_mobile = form.data.get('phone_number')
@@ -130,9 +170,37 @@ class AmgApplicationFormView(CreateView):
 	# def form_invalid(self, form):
 	#     """If the form is invalid, render the invalid form."""
 	#     return self.render_to_response(self.get_context_data(form=form))
-
-class PartnerView(TemplateView):
+class PartnerView(ListView):
+	model = PartnerRegister
 	template_name = "ourpartner.html"
+	ordering = ['id']
+
+	def get_context_data(self,*args, **kwargs):
+		# import pdb; pdb.set_trace()
+		if 'status' in self.request.session and self.request.session['status']=='done':
+			context = {
+				'status':'yes',
+				'data': PartnerRegister.objects.all()
+				}
+			del self.request.session['status']
+		else:
+			context = {
+				'status':'no',
+				'data':PartnerRegister.objects.all()
+				}
+		return context
+
+
+
+# class PartnerView(TemplateView):
+# 	template_name = "ourpartner.html"
+
+	# def get_context_data(self,*args, **kwargs):
+	# 	import pdb; pdb.set_trace()
+	# 	context = super(PartnerView, self).get_context_data(*args,**kwargs)
+	# 	context = {}
+	# 	context['users'] = 'hi'
+	# 	return context
 
 class ThanksEnergyView(TemplateView):
 	template_name = "thank.html"

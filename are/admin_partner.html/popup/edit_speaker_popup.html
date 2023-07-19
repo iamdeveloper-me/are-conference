@@ -1,0 +1,31 @@
+<!--Popup for Add Speaker Start-->
+<div id="Editspeaker" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Edit Speaker</h4>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <form action="{% url 'admin_speaker_edit' %}" method="post" enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        <input type="text" name="speaker_id" hidden id="speaker_id" class=" invisible btn btn-outline-success">
+                        <label for="">Name</label>
+                        <input type="text" name="name" class="form-control" id="editname" placeholder="Name" required="">
+                        <label for="">Designation</label>
+                        <input type="text" name="designation" class="form-control" id="editdesig" placeholder="Designation" required="">
+                        <label for="">Detail</label>
+                        <textarea name="detail" class="form-control" id="editdetail" placeholder="Detail" required=""> </textarea>
+                        <label for="">Change Profile Image</label>
+                        <input type="file" name="profile_image" class="form-control" id="editprofile" required="" style="display:inline-block">
+                        <input type="submit" class="btn btn-primary" value="Update" >
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer justify-content-between">
+        </div>
+    </div>
+</div>
+</div>
+<!--Popup Add Speaker End-->

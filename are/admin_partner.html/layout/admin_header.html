@@ -1,0 +1,21 @@
+{% load static %}
+<header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar navbar-expand-lg ">
+                    <a class="navbar-brand p-0" href="{% url 'awards:home' %}">
+                        <img src="{% static 'images/Logo.png' %}" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"><img src="{% static 'images/homepage/menu.png' %}" alt="" title="" /></span>
+                    </button>
+                    
+                   <div class="logout_btn"> <a href="{% url 'logout' %}" target="_blank" class="btn registration-btn">Logout</a>
+                   </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+

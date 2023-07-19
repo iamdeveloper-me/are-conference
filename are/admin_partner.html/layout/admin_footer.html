@@ -1,0 +1,24 @@
+{% load static %}
+<footer>
+    <div class="container">
+        <div class="row copy-right">
+            <div class="col-md-4">
+                <div class="">
+                    <p>©2022, All right reserved.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="text-xl-right text-lg-right text-md-right text-left">
+                    <ul class="list-unstyled list-inline">
+                        <li class="list-inline-item">
+                            <a href="{% url 'awards:privacy_policy' %}">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="{% url 'awards:terms_services' %}">Terms of Service</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

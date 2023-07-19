@@ -1,0 +1,106 @@
+{% extends "layout/admin_base.html" %}
+{% load static %}
+{% block content %}
+<section class="dashboard_area">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div id="sidebar" role="navigation">
+                    <ul>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a><li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="dashboard_right">
+                    <div class="speaker_area">
+                       
+                        <div class="add_newspeak">
+                            <h2>Speaker</h2>
+                            <button type="button" class="common_btn" data-toggle="modal" data-target="#Addspeaker">Add New Speaker</button>
+                        </div>
+                        <div class="speaker_table">
+                            <table width="100%" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>S No.</th>
+                                        <th>Speaker Image</th>
+                                        <th>Speaker Name</th>
+                                        <th>Designation</th>
+                                        <th>Detail</th>
+                                        <th>Actions</th>
+                                        <th>download</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for data in object_list %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td><img src="{{data.profile_image.url}}" width="60rem" height="70rem"></td>
+                                        <td>{{ data.name }}</td>
+                                        <td>{{ data.designation }}</td>
+                                        <td>{{ data.detail|truncatechars:150 }}</td>
+                                        <td class="action_btn">
+
+                                            <a href="#Editspeaker" data-toggle="modal"><span class="speakeredit edit_icon" data-form="{{ data.id }}"><img src="{% static 'images/pen.png' %}" alt="" title="" /></span></a>
+
+                                            <a href="#deletepopup" data-toggle="modal"><span class="delete_icon confirm-delete" data-type="speaker_delete" data-id="{{ data.id }}"><img src="{% static 'images/delete.png' %}" alt="" title="" /></span></a>
+                                        </td>
+                                    </tr>
+                                        {% comment %}
+                                        <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
+                                        {% endcomment %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block extra_content %}   
+{% include 'popup/add_speaker_popup.html' %}
+{% include 'popup/edit_speaker_popup.html' %}
+{% include 'delete.html' %}
+{% endblock extra_content %}
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" integrity="sha512-JGKswjfABjJjtSUnz+y8XUBjBlwM1UHNlm2ZJN7A2a9HUYT3Mskq+SacsI35k4lok+/zetSxhZjKS3r3tfAnQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    $('body').on('click', ".speakeredit", function(e) {
+
+        var speaker_id = $(this).data('form');
+            
+        $.ajax({
+            type: "GET",
+            url: "/admin/editspeakerpopup/",
+            data: { speaker_id: speaker_id,},
+            success: function(context) {  
+                console.log(context)
+                $("#speaker_id").val(context.speaker_id);
+                $("#editname").val(context.speaker_name);
+                $("#editdesig").val(context.speaker_desig);
+                $("#editdetail").val(context.speaker_detail);
+                $("#editprofile").val(context.speaker_profile);
+
+            }
+        });
+    });
+    $('body').on('click', ".confirm-delete", function(e) {
+        var id = $(this).data('id');
+        var type = $(this).data('type');
+        if (type == "speaker_delete") {
+            url = '/admin/deletespeaker/'+id;
+            $('form[name=form-delete-c]').attr('action',url);
+        }
+    });    
+</script>
+
+{% endblock extra_js %}

@@ -1,0 +1,123 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/ourpartner.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+<!-- banner -->
+<div class="black_box"></div>
+<section class="partner-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="our-partnerhead">
+                    <h2>Become ARE Conference<br /> <span>Partner 2023</span></h2>
+                    <a href="{% url 'awards:partner_register' %}" >Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner end -->
+<!-- content start -->
+<section class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="partner-content">
+                    <h2>ARE Conference Partner 2022</h2>
+                    <p>Mitigating climate change requires creating a public movement for collective action. To create a
+                        public movement, one individual or an organisation is not enough. Everyone should come to one
+                        platform to synchronise their energies for mitigating climate change. We are really thankful to
+                        our partners in endeavor who are supporting us in creating this public movement to tackle the
+                        climate crisis.</p>
+                </div>
+            </div>
+            {% for report in data %}
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                    <div class="partner-card">
+                        <img src="{{report.org_image.url}}" alt="" title="" class="" />
+                        <h3>{{report.org_name}}</h3>
+                        <p>The International Solar Alliance (ISA) is an action-oriented, member-driven United Nations body.
+                            It is a collaborative platform for increased deployment of solar energy technologies as a means
+                            for bringing energy access, ensuring energy security, and driving energy transition in its
+                            member countries. The ISA strives to develop and deploy cost-effective and transformational
+                            energy solutions powered by the sun to help member countries develop low-carbon growth
+                            trajectories. </p>
+                        <!-- <a href="">View More</a>' %}' %}' %} -->
+                    </div>
+                </div>
+            {% endfor %}
+
+           
+            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="partner-card">
+                    <img src="{% static 'images/partner/9.png' %}" alt="" title="" class="" />
+                    <h3>National Institute of Solar Energy</h3>
+                    <p>NISE is an autonomous institute under the Ministry of New and Renewable Energy, Government of
+                        India established to facilitate the Research & Development, Testing, Certification, and Skill
+                        Development activities in the field of Solar energy technologies. NISE also supports the
+                        ministry in the implementation of the prestigious National Solar mission. The institute is
+                        committed to the development and demonstration of solar energy-related technologies and their
+                        applications to the common man in the country. NISE continuously strives to improve its
+                        facilities so as to compete with the latest technological advancements.
+                    </p>
+                   
+                </div>
+            </div> -->
+
+            <!-- <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="partner-card">
+                    <img src="{% static 'images/partner/11.png' %}" alt="" title="" class="" />
+                    <h3>Earth Day network</h3>
+                    <p>EARTHDAY.ORG’s mission is to diversify, educate and activate the environmental movement
+                        worldwide. Growing out of the first Earth Day in 1970, EARTHDAY.ORG is the world’s largest
+                        recruiter of the environmental movement, working with more than 150,000 partners in over 192
+                        countries to drive positive action for our planet. The Earth Day Network India Trust was
+                        launched in 2010 to conduct programs to reach out to varied demographic profiles across the
+                        length and breadth of the country—from those at the grassroots to policymakers. </p>
+                 
+                </div>
+            </div> -->
+
+            <!--           
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                <div class="partner-card">
+                    <img src="{% static 'images/icctl_logo.jpg' %}" alt="" title="" class="" />
+                    <h3>The International Council on Clean Transportation (ICCT) </h3>
+                    <p>The International Council on Clean Transportation (ICCT) is an independent nonprofit organization
+                        with having global presence across continents. ICCT’s main vision is to decarbonize the global
+                        transportation sector. It provides technical and scientific analysis to environmental
+                        regulators.</p>
+                  
+                </div>
+            </div> -->
+        </div>
+    </div>
+</section>
+<section class="becomePartnerArea">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="insteadBecomeText">
+                    <h2>Interested to Become Partner for ARE Conference?</h2>
+                    <p>Mitigating climate change requires creating a public movement for collective action. To create a
+                        public movement, one individual or an organisation is not enough. Everyone should come to one
+                        platform to synchronise their energies for mitigating climate change. We are really thankful to
+                        our partners in endeavour who are supporting us in creating this public movement to tackle the
+                        climate crisis.</p>
+
+                    <p>If you are interested in becoming a partner for one-of-its-kind Action for Restoring Environment
+                        (ARE) Conference and Energy Swaraj Awards held on 24-25 November 2023.</p>
+                  
+                    <a href="{% url 'awards:register' %}">Register Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- content end -->
+{% endblock content %}

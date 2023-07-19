@@ -59,7 +59,6 @@
     border: 1px solid transparent;
     display: inline-block;
     text-align: center;
-    pointer-events: none;
 }
 
 .our-partnerhead a:hover {

@@ -4,7 +4,7 @@ from django.views.generic import TemplateView, CreateView, ListView
 from django.views.generic.edit import DeleteView, UpdateView
 from django.contrib.auth.views import LoginView,LogoutView
 from speakers.models import Speaker
-from awards.models import Award,AmgAward,ClimateAward
+from awards.models import Award,AmgAward,ClimateAward,PartnerRegister
 from agenda.models import Conference,Agenda
 from speakers.forms import SpeakerForm
 from django.http import HttpResponseRedirect,JsonResponse,HttpResponse
@@ -63,6 +63,13 @@ class DashboardView(LoginRequiredMixin,TemplateView):
 class AdminViewSpeaker(LoginRequiredMixin,ListView):
 	model = Speaker
 	template_name = "admin_speaker.html"
+	login_url='/admin/login/'
+	ordering = ['id']
+
+
+class AdminViewPartner(LoginRequiredMixin,ListView):
+	model = PartnerRegister
+	template_name = "admin_partner.html"
 	login_url='/admin/login/'
 	ordering = ['id']
 

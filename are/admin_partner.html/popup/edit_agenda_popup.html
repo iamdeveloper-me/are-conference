@@ -1,0 +1,40 @@
+<!--Popup for Add Speaker Start-->
+<div id="Editagenda" class="modal fade">
+    <div class="modal-dialog modal-login">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4>Edit Speaker</h4>
+            </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                    <form action="{% url 'admin_agenda_edit' %}" method="post" enctype='multipart/form-data'>
+                        {% csrf_token %}
+                        <input type="text" name="conference" hidden class="form-control" id="" placeholder="time" value="{{ conf.pk }}">
+                        <input type="text" name="agenda_id" hidden id="agenda_id" class=" invisible btn btn-outline-success">
+                        <input type="date" name="date" class="editdate form-control" id="datepicker2" placeholder="yyyy-mm-dd">
+                        <label for="">session</label>
+                        <input type="choice" name="edit-session" class="form-control" id="editssession" placeholder="session">
+                        <label for="">Start Time</label>
+                        <input type="time" name="starttime" class="form-control" id="editstarttime" placeholder="time" required="true">
+                        <label for="">End Time</label>
+                        <input type="time" name="endtime" class="form-control" id="editendtime" placeholder="time" required="true">
+                        <label for="">Event</label>
+                        <textarea name="edit-event" class="form-control" id="editevent" placeholder="Detail" required=""> </textarea>
+                        <label for="">Speaker</label>
+                        <select name="speaker" class="form-control" id="editspeakeroptions">
+                            <option value="">Select Speaker</option>
+                            {% for speaker in speakers %}
+                                <option  value="{{ speaker.id }}">{{ speaker.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" class="btn btn-primary" value="Update">
+                    </form>                
+                    </div>
+                </div>
+            
+        </div>    
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+<!-- <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script> -->
+<!--Popup Add Speaker End-->

@@ -13,6 +13,7 @@ urlpatterns = [
 	path('application/',views.AmgApplicationFormView.as_view(),name='application'),
 	path('',views.HomePageView.as_view(),name='home'),
 	path('ourpartner/',views.PartnerView.as_view(),name='partner'),
+	path('ourpartner/register/',views.PartnerRegisterView.as_view(),name='partner_register'),
 	path('context/',views.ContextView.as_view(),name='context'),
 	path('thanks/',views.ThanksEnergyView.as_view(),name='thanks'),
 	path('amg_applicants/',views.AdminViewAmgApplicant.as_view(), name='amg_applicants'),

@@ -1,5 +1,5 @@
 from django import forms
-from .models import AmgAward, ClimateAward
+from .models import AmgAward, ClimateAward, PartnerRegister
 
 class EmailForm(forms.Form):
     recipient = forms.EmailField()
@@ -28,3 +28,10 @@ class ChallengeForm(forms.ModelForm):
 					'title_song', 'title_drama', 'send_tshirt', 'file' ]
 
 
+class PartnerRegisterForm(forms.ModelForm):
+	class Meta:
+		model = PartnerRegister
+		fields = [ 'email', 'phone_number', 'org_name', 'org_type', 'org_image', 
+					'coordinator_name', 'designation', 'pincode', 'country', 'state',
+					'city','district','password','confirm_password','org_detail'
+					 ]

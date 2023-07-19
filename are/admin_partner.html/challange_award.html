@@ -1,0 +1,44 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/challange.css' %}">
+{% endblock extra_css %}
+
+
+{% block content %}
+    
+    <!-- Climate Hackathon banner start -->
+    <section class="chanllege_banner">
+         <div class="chanllange_banner_text">
+             <h1><span>Climate</span> Hackathon Challenge Awards</h1>
+         </div>
+    </section>
+    <!-- Climate Hackathon banner close -->
+
+    <!-- challenge text start -->
+    <section class="chanllege_text">
+       <div class="container">
+          <div class="row">
+              <div class="col-md-7  order-md-first order-last">
+                  <div class="chanllege_left">
+                       <p>Action begins with an idea. Climate change solutions need drastic and immediate changes in energy use patterns, if anyone has any idea that one can suggest to an industry or an institution or an individual and implementation of which will be a considerable step towards solving the problem of climate change, then you have an opportunity here to shine your idea and win cash prizes and off-course good recognition and global platform.</p>
+                      <p>If not an idea but you are a writer or a painter, still you have the opportunity to win prizes. You can write a song or a drama or paint something that brings the attention of the world to this serious issue of climate change and environmental degradation,</p>
+                      <h6>So apply now, win cash prizes and get recognition on this global platform.</h6>
+                      <a href="{% url 'awards:climate_table' %}">Apply Now</a>
+                  </div>
+              </div>
+              <div class="col-md-5">
+                    <div class="chanllege_img">
+                        <img src="{% static 'images/challenge/challenges_img.png' %}" alt="" title=""/>
+                    </div>
+              </div>
+          </div>
+       </div>
+   </section>
+    <!-- challenge text close -->
+
+{% endblock content %}
+   
+   
+  </body>
+</html>

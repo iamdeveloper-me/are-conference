@@ -1,0 +1,120 @@
+{% extends "layout/base.html" %}
+{% load static %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/award.css' %}">
+{% endblock extra_css %}
+  
+{% block content %}
+<!-- award banner start -->
+<section class="award_banner">
+        <div class="container">
+            <div class="award_text">
+                <h1>Awards</h1>
+                <h4 >Last Date to Apply - 10th November 2022</h4>
+            </div>
+            <div>
+            </div>
+        </div>
+</section>
+<!-- award banner close -->
+
+<!-- award text start -->
+<section class="award_textarea">
+    <div class="banner_text">
+        <div class="container">
+        <p>From worsening climate and environmental conditions, it is clear that probably we are not taking enough corrective actions. But there are odd individuals, organisations and government bodies out there, who are actually taking significant actions and having brilliant ideas to save the world from catastrophic effects of climate change. Energy Swaraj Foundation is launching AMG (Avoid-Minimise-Generate) Awards as well as Climate Hackathon Challenge - ideas and actions to save the world to recognize citizen’s contributions, encourage them and provide them limelight so that they can spread their actions and ideas.</p>
+        </div>
+    </div>
+</section>
+<!-- award text close -->
+
+<!-- opportunity start -->
+<section class="opportunity_section_area">
+      <div class="container">
+          <div class="row no-gutters align-items-center">
+            <div class="col-md-5">
+                <div class="opportunity_img">
+                  <img src="{% static 'images/award/opportunity_img.png' %}" alt="" title=""/>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="opportunity_text">
+                     <h2>You have the <span>OPPORTUNITY</span></h2>
+                     <h2>to win cash prizes <span>UP TO RS. 15 LAKH.</span></h2>
+                </div>
+            </div>
+          </div>
+      </div>
+</section>
+<!-- opportunity close -->
+<section class="category_section2_area">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-12 ">
+               <div class="category_text">
+                   <h4>Present your innovative ideas:</h4>
+                   <p>Though this is an invite-only conference for the speakers, we present a unique opportunity for the general public to present their innovative ideas in 10-minute slots to the world leaders and get recognized. Submit your brief abstracts and get the opportunity to showcase your innovations</p>
+                   <h6>Interested in taking your work to the world?</h6>
+                   <a href="https://energyswaraj.org/event-4805456" target="_blank">Enroll Now</a>
+               </div>
+          </div>
+          {% comment %}
+          <div class="col-md-5">
+              <div class="category_img">
+                <img src="{% static 'images/award/category_img.png' %}" alt="" title=""/>
+              </div>
+          </div>
+          {% endcomment %}
+        </div>
+    </div>
+</section>
+<!-- opportunity start -->
+<section class="category_section_area">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-7 order-md-first order-last">
+               <div class="category_text">
+                   <h4>There are two Categories of Awards:</h4>
+                   <h5>Avoid-Minimise-Generate (AMG) Challenge Award,</h5>
+                   <p>The consistent efforts of conscious and aware citizens help sustain the world. Many people and organisations in the world are working hard to promote sustainable living. The Energy Swaraj Award will recognize the best examples of individuals, organisations, industries, non-governmental organisations and government bodies that follow the Avoid-Minimise-Generate (AMG) principle in their actions towards reducing their energy (electricity) consumption and adopting renewable energy solutions.</p>
+                   <p>Not only the past good work done But, even If you have not yet taken any action to adopt AMG, it is not too late, you can still plan to take action in the immediate future and apply for the Energy Swaraj Awards.</p>
+                   <h6>So apply now, win cash prizes and get recognition on this global platform.</h6>
+                   <a href="{% url 'awards:amg_award' %}">Know More</a>
+               </div>
+          </div>
+          <div class="col-md-5">
+              <div class="category_img">
+                <img src="{% static 'images/award/category_img.png' %}" alt="" title=""/>
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
+<!-- opportunity close -->
+
+
+<!-- opportunity start -->
+<section class="saveworld_section_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="category_img">
+                  <img src="{% static 'images/award/save_world.png' %}" alt="" title=""/>
+                </div>
+            </div>
+          <div class="col-md-7">
+               <div class="saveworld_text">
+                    <h2>Climate Hackathon Challenge - ideas and actions to save the world</h2>
+                    <p>Action begins with an idea. Climate change solutions need drastic and immediate changes in energy use patterns, if anyone has any idea that one can suggest to an industry or an institution or an individual and implementation of which will be a considerable step towards solving the problem of climate change, then you have an opportunity here to shine your idea and win cash prizes and off-course good recognition and global platform. </p>
+                    <p>If not an idea but you are a writer or a painter, still you have the opportunity to win prizes. You can write a song or a drama or paint something that brings the attention of the world to this serious issue of climate change and environmental degradation,</p>
+                   <h5>So apply now, win cash prizes and get recognition on this global platform.</h5>
+                   <a href="{% url 'awards:challenge_award' %}">Know More</a>
+               </div>
+          </div>
+          
+        </div>
+    </div>
+</section>
+<!-- opportunity close -->
+
+{% endblock content %}
