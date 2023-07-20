@@ -172,7 +172,6 @@
 <!--Model Popup starts-->
 <div class="container"  tabindex="-1" role="dialog" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
     <div class="row">
-        <a class="btn btn-primary" data-toggle="modal" href="#ignismyModal">open Popup</a>
         <div class="modal fade" id="ignismyModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -313,7 +312,7 @@ $(document).ready(function() {
         password = data.get('password')
         confirm_password = data.get('confirm_password')
         if (password === confirm_password) {
-            if (password.length < 7 && confirm_password.length < 7) {
+            if (password.length < 8 && confirm_password.length < 8) {
                 $("#password-error").text("password must be of atleast 8 character")
                 $("#password-error").addClass('d-block');
                 $("#confirm_password-error").text("confirm_password must be of atleast 8 character")
