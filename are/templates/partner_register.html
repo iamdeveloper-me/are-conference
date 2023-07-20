@@ -208,12 +208,15 @@ $(document).ready(function() {
 
     $(".alpha-input").keydown(function (e){
         var k = e.keyCode || e.which;
+        // debugger
         var ok = k >= 65 && k <= 90 || // A-Z
             k >= 96 && k <= 105 || // a-z
             k >= 35 && k <= 40 || // arrows
             k == 9 || //tab
             k == 46 || //del
-            k == 8 || // backspaces
+            k == 8 || // backspace
+            k == 32 ||
+            k == 190 ||
             (!e.shiftKey && k >= 48 && k <= 57); // only 0-9 (ignore SHIFT options)
 
         if(!ok || (e.ctrlKey && e.altKey)){
@@ -310,7 +313,7 @@ $(document).ready(function() {
         password = data.get('password')
         confirm_password = data.get('confirm_password')
         if (password === confirm_password) {
-            if (password.length < 8 && confirm_password.length < 8) {
+            if (password.length < 7 && confirm_password.length < 7) {
                 $("#password-error").text("password must be of atleast 8 character")
                 $("#password-error").addClass('d-block');
                 $("#confirm_password-error").text("confirm_password must be of atleast 8 character")
