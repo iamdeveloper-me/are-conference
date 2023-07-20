@@ -32,6 +32,6 @@ class PartnerRegisterForm(forms.ModelForm):
 	class Meta:
 		model = PartnerRegister
 		fields = [ 'email', 'phone_number', 'org_name', 'org_type', 'org_image', 
-					'coordinator_name', 'designation', 'pincode', 'country', 'state',
+					'coordinator_name','year', 'designation', 'pincode', 'country', 'state',
 					'city','district','password','confirm_password','org_detail'
 					 ]

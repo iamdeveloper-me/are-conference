@@ -1,8 +1,11 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
 from django.utils import timezone
+import datetime
 
 # Create your models here.
+
+YEAR_CHOICES = [(r,r) for r in range(1984, datetime.date.today().year+1)]
 
 WORK_CHOICES = (
         ('Completed: Application for work already done','Com'),
@@ -107,6 +110,7 @@ class PartnerRegister(models.Model):
 	org_detail = models.CharField(max_length=10000)
 	coordinator_name = models.CharField(max_length=255)
 	designation = models.CharField(max_length=255)
+	year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
 	pincode = models.IntegerField()
 	country = models.CharField(max_length=255)
 	state = models.CharField(max_length=255)

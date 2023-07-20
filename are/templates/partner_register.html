@@ -37,7 +37,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email Id<span>*</span></label>
-                            <input type="email" name="email" class="form-control" placeholder="Enter your email id..." maxlength="50" required="">
+                            <input type="email" id="org_email" name="email" class="form-control" placeholder="Enter your email id..." maxlength="50" required="">
                             <div id="email-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
@@ -51,7 +51,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name of the organization<span>*</span></label>
-                            <input type="text" name="org_name" class="form-control" placeholder="Enter organization name..." maxlength="100" maxlength="100" required="">
+                            <input type="text" name="org_name" class="form-control alpha-input" placeholder="Enter organization name..." maxlength="100" maxlength="50" required="">
                             <div id="org_name-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
@@ -69,11 +69,25 @@
                             <div id="org_type-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
-                    <div class="col-sm-12">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Organization Detail<span>*</span></label>
-                            <input  name="org_detail" type="text" class="form-control"  placeholder="Enter Organization Detail....." maxlength="5000" required="" >
+                            <input  name="org_detail" type="text" class="form-control"  placeholder="Enter Organization Detail....." maxlength="1000" required="" >
                             <div id="org_detail-error" class="invalid-feedback">Last name cannot be blank!</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Year<span>*</span></label>
+                            <div class="downArrow" >
+                                  <select name="year_type">
+                                     <option selected="selected">2021</option>
+                                     {% for year in data.count_list %}
+                                        <option>{{year}}</option>
+                                     {% endfor %}
+                                  </select>
+                            </div>
+                            <div id="org_type-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -95,14 +109,14 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name of the co-ordinator<span>*</span></label>
-                            <input type="text" name="coordinator_name" class="form-control" placeholder="Enter co-ordinator name..." maxlength="50" required="">
+                            <input type="text" name="coordinator_name" class="form-control alpha-input" placeholder="Enter co-ordinator name..." maxlength="25" required="">
                             <div id="coordinator_name-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Designation<span>*</span></label>
-                            <input type="text" name="designation" class="form-control" placeholder="Enter designation name..." maxlength="25" required="">
+                            <input type="text" name="designation" class="form-control alpha-input" placeholder="Enter designation name..." maxlength="20" required="">
                             <div id="designation-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
@@ -116,35 +130,35 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Pin code<span>*</span></label>
-                            <input type="number" name="pincode" class="form-control" placeholder="Enter pin code..." required="">
+                            <input type="number" id="pinno" name="pincode" class="form-control" placeholder="Enter pin code..." required="">
                             <div id="pincode-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Country<span>*</span></label>
-                            <input type="text" name="country" class="form-control" placeholder="Enter country name..." maxlength="20" required="">
+                            <input type="text" name="country" class="form-control onlyalpha" placeholder="Enter country name..." maxlength="20" required="">
                             <div id="country-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">State<span>*</span></label>
-                            <input type="text" name="state" class="form-control" placeholder="Enter state name..."  maxlength="20" required="">
+                            <input type="text" name="state" class="form-control onlyalpha" placeholder="Enter state name..."  maxlength="20" required="">
                             <div id="state-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">City<span>*</span></label>
-                            <input type="text" name="city" class="form-control" placeholder="Enter city name..."  maxlength="20" required="">
+                            <input type="text" name="city" class="form-control onlyalpha" placeholder="Enter city name..."  maxlength="20" required="">
                             <div id="city-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">District<span>*</span></label>
-                            <input type="text" name="district" class="form-control" placeholder="Enter district name..." maxlength="20" required="">
+                            <input type="text" name="district" class="form-control onlyalpha" placeholder="Enter district name..." maxlength="20" required="">
                             <div id="district-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
@@ -191,16 +205,93 @@ $(document).ready(function() {
     
     // $('#ignismyModal').modal({backdrop: 'static', keyboard: false}, 'show');
     // $(".formsubmit").submit(function(event) {
-    $("#mobileno").keypress(function(){
-        data = $(this).val();
-        if (data.length < 10) {
-            $("#phone_number-error").text("Phone number must be of 10 digit")
-            $("#phone_number-error").addClass('d-block');
-        } else if (data.length == 10) {
-            $("#phone_number-error").removeClass('d-block');
-            event.preventDefault();
+
+    $(".alpha-input").keydown(function (e){
+        var k = e.keyCode || e.which;
+        var ok = k >= 65 && k <= 90 || // A-Z
+            k >= 96 && k <= 105 || // a-z
+            k >= 35 && k <= 40 || // arrows
+            k == 9 || //tab
+            k == 46 || //del
+            k == 8 || // backspaces
+            (!e.shiftKey && k >= 48 && k <= 57); // only 0-9 (ignore SHIFT options)
+
+        if(!ok || (e.ctrlKey && e.altKey)){
+            e.preventDefault();
         }
     });
+
+    $('#org_email').on('keypress', function() {
+        var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
+        if(!re) {
+            $('#email-error').text("Email is not correct");
+            $("#email-error").addClass('d-block');
+        } else {
+            $("#email-error").removeClass('d-block');
+        }
+    })
+
+  //   $('.onlyalpha').keydown(function (e) {
+  //     if (e.shiftKey || e.ctrlKey || e.altKey) {
+  //         e.preventDefault();
+  //     } else {
+  //         var key = e.keyCode;
+  //         if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+  //             e.preventDefault();
+  //         }
+  //     }
+  // });
+    $(".onlyalpha").keypress(function (e) {
+            var keyCode = e.keyCode || e.which;
+ 
+            // $("#lblError").html("");
+ 
+            //Regex for Valid Characters i.e. Alphabets.
+            var regex = /^[A-Za-z]+$/;
+ 
+            //Validate TextBox value against the Regex.
+            var isValid = regex.test(String.fromCharCode(keyCode));
+            if (!isValid) {
+                e.preventDefault()
+            }
+        });
+
+    $("#pinno").keypress(function(evt){
+        // debugger
+        data = $(this).val();
+        if (evt.which < 48 || evt.which > 57)
+            {
+                evt.preventDefault();
+            }
+        else {
+            if (data.length < 6) {
+                $("#pincode-error").text("Pincode must be of 6 digit")
+                $("#pincode-error").addClass('d-block');
+            } else if (data.length == 6) {
+                $("#pincode-error").removeClass('d-block');
+                evt.preventDefault();
+            }
+        }
+    });
+
+    $("#mobileno").keypress(function(evt){
+        // debugger
+        data = $(this).val();
+        if (evt.which < 48 || evt.which > 57)
+            {
+                evt.preventDefault();
+            }
+        else {
+            if (data.length < 10) {
+                $("#phone_number-error").text("Phone number must be of 10 digit")
+                $("#phone_number-error").addClass('d-block');
+            } else if (data.length == 10) {
+                $("#phone_number-error").removeClass('d-block');
+                evt.preventDefault();
+            }
+        }
+    });
+
     $('body').on('click',"#partner-button", function(event) {
         //stop submit the form, we will post it manually.
         $(".invalid-feedback").removeClass('d-block');

@@ -14,7 +14,7 @@ from django.http import HttpResponse, JsonResponse
 from reportlab.pdfgen import canvas
 from tabulate import tabulate
 from prettytable import PrettyTable
-import csv, json
+import csv, json, datetime	
 
 class HomePageView(TemplateView):
 	model = Seats
@@ -32,6 +32,13 @@ class PartnerRegisterView(CreateView):
 	model = PartnerRegister 
 	form_class = PartnerRegisterForm
 	template_name = 'partner_register.html'
+
+	def get_context_data(self,*args, **kwargs):
+		context = super(PartnerRegisterView, self).get_context_data(*args,**kwargs)
+		data = {}
+		data['count_list'] = [item for item in range(2022, datetime.date.today().year+2)]
+		# import pdb; pdb.set_trace()	
+		return {'data':data}
 
 	def post(self, request, *args, **kwargs):	
 		# import pdb; pdb.set_trace()
