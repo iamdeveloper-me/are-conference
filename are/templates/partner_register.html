@@ -80,14 +80,14 @@
                         <div class="form-group">
                             <label for="exampleInputEmail1">Year<span>*</span></label>
                             <div class="downArrow" >
-                                  <select name="year_type">
+                                  <select name="year">
                                      <option selected="selected">2021</option>
                                      {% for year in data.count_list %}
                                         <option>{{year}}</option>
                                      {% endfor %}
                                   </select>
                             </div>
-                            <div id="org_type-error" class="invalid-feedback">Last name cannot be blank!</div>
+                            <div id="year-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -123,7 +123,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Upload logo of organization<span>*</span></label>
-                            <input type="file" name="org_image" class="form-control" placeholder="Upload logo of organization" required="">
+                            <input type="file" name="org_image" accept="image/png" class="form-control" placeholder="Upload logo of organization" required="">
                             <div id="org_image-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
@@ -221,7 +221,7 @@ $(document).ready(function() {
         }
     });
 
-    $('#org_email').on('keypress', function() {
+    $('#org_email').keypress(function (e) {
         var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
         if(!re) {
             $('#email-error').text("Email is not correct");
@@ -264,11 +264,12 @@ $(document).ready(function() {
                 evt.preventDefault();
             }
         else {
-            if (data.length < 6) {
+            if (data.length < 5) {
                 $("#pincode-error").text("Pincode must be of 6 digit")
                 $("#pincode-error").addClass('d-block');
-            } else if (data.length == 6) {
+            } else if (data.length == 5) {
                 $("#pincode-error").removeClass('d-block');
+            } else {
                 evt.preventDefault();
             }
         }
@@ -282,11 +283,12 @@ $(document).ready(function() {
                 evt.preventDefault();
             }
         else {
-            if (data.length < 10) {
+            if (data.length < 9) {
                 $("#phone_number-error").text("Phone number must be of 10 digit")
                 $("#phone_number-error").addClass('d-block');
-            } else if (data.length == 10) {
+            } else if (data.length == 9) {
                 $("#phone_number-error").removeClass('d-block');
+            } else {
                 evt.preventDefault();
             }
         }
