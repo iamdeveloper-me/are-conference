@@ -1598,6 +1598,7 @@ a.active.show {
     background: transparent;
     padding: 6px 12px;
 }
+
 span.fa.fa-fw.fa-eye.field-icon.toggle-password {
     font-size: 20px;
 }
@@ -3764,4 +3765,9 @@ div.desc {
 
 .about_content.arrow::after{
     display: none;
+}
+
+.partner_form textarea {
+    max-height: 50px !important;
+    overflow-y: auto;
 }

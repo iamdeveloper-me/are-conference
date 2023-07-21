@@ -72,7 +72,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Organization Detail<span>*</span></label>
-                            <input  name="org_detail" type="text" class="form-control"  placeholder="Enter Organization Detail....." maxlength="650" required="" >
+                            <textarea  name="org_detail" type="text" class="form-control"  placeholder="Enter Organization Detail....." maxlength="650" required="" ></textarea>
                             <div id="org_detail-error" class="invalid-feedback">Organization Detail cannot be blank!</div>
                         </div>
                     </div>
@@ -223,9 +223,9 @@ $(document).ready(function() {
         }
     });
 
-    $('#org_email').keypress(function (e) {
-
-        // var keycode =
+    $('#org_email').keyup(function (e) {
+        var a = 10
+        // alert("hi");
         if (e.which > 47 && e.which < 58 || e.which > 96 && e.which < 123 || e.which > 63 && e.which < 91 || e.which == 46 || e.which == 8 ) {
             if (this.value.length < 1) {
 
@@ -322,7 +322,8 @@ $(document).ready(function() {
         $(".invalid-feedback").removeClass('d-block');
         var isValid = true;
         // debugger
-        $("input").each(function() {
+        $("#form1 input").each(function() {
+            
            var element = $(this);
            if (element.val() == "") {
                name = this.name
