@@ -1274,7 +1274,6 @@ span.blackicon {
     line-height: 50px;
     transition: all 0.3s;
     border: 1px solid transparent;
-    pointer-events: none;
 }
 
 .sessionSummary h1 {
@@ -1552,7 +1551,7 @@ a.active.show {
     font-size: 14px;
     display: inline-block;
     color: #252123;
-    pointer-events: none;
+  
 }
 
 .interestesBox a:hover {
