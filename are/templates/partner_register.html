@@ -4,15 +4,15 @@
 
 <link rel="stylesheet" href="{% static 'css/ourpartner.css' %}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" ></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock extra_css %}
 
 
@@ -31,40 +31,44 @@
     </div>
     <div class="formBox">
         <div class="container">
-            <form class = 'partner_form' id="form1" method="post" enctype='multipart/form-data'>
+            <form class='partner_form' id="form1" method="post" enctype='multipart/form-data'>
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Email Id<span>*</span></label>
-                            <input type="email" id="org_email" name="email" class="form-control" placeholder="Enter your email id..." maxlength="50" required="">
+                            <input type="email" id="org_email" name="email" class="form-control"
+                                placeholder="Enter your email id..." maxlength="50" required="">
                             <div id="email-error" class="invalid-feedback">Email name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Phone number<span>*</span></label>
-                            <input type="text" id="mobileno" pattern="[0-9]{10}" name="phone_number" class="form-control" placeholder="Enter your phone number..." required="">
+                            <input type="text" id="mobileno" pattern="[0-9]{10}" name="phone_number"
+                                class="form-control" placeholder="Enter your phone number..." required="">
                             <div id="phone_number-error" class="invalid-feedback">Phone number cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name of the organization<span>*</span></label>
-                            <input type="text" name="org_name" class="form-control alpha-input" placeholder="Enter organization name..." maxlength="100" maxlength="50" required="">
-                            <div id="org_name-error" class="invalid-feedback">Name of the organization cannot be blank!</div>
+                            <input type="text" name="org_name" class="form-control alpha-input"
+                                placeholder="Enter organization name..." maxlength="100" maxlength="50" required="">
+                            <div id="org_name-error" class="invalid-feedback">Name of the organization cannot be blank!
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Type of organization<span>*</span></label>
-                            <div class="downArrow" >
-                                  <select name="org_type">
-                                     <option selected="selected">Academic</option>
-                                     <option>Government</option>
-                                     <option>Corporate</option>
-                                     <option>NGO</option>
-                                  </select>
+                            <div class="downArrow">
+                                <select name="org_type">
+                                    <option selected="selected">Academic</option>
+                                    <option>Government</option>
+                                    <option>Corporate</option>
+                                    <option>NGO</option>
+                                </select>
                             </div>
                             <div id="org_type-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
@@ -72,20 +76,22 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Organization Detail<span>*</span></label>
-                            <textarea  name="org_detail" type="text" class="form-control"  placeholder="Enter Organization Detail....." maxlength="650" required="" ></textarea>
-                            <div id="org_detail-error" class="invalid-feedback">Organization Detail cannot be blank!</div>
+                            <textarea name="org_detail" type="text" class="form-control"
+                                placeholder="Enter Organization Detail....." maxlength="650" required=""></textarea>
+                            <div id="org_detail-error" class="invalid-feedback">Organization Detail cannot be blank!
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Year<span>*</span></label>
-                            <div class="downArrow" >
-                                  <select name="year">
-                                     <option selected="selected">2021</option>
-                                     {% for year in data.count_list %}
-                                        <option>{{year}}</option>
-                                     {% endfor %}
-                                  </select>
+                            <div class="downArrow">
+                                <select name="year">
+                                    <option selected="selected">2021</option>
+                                    {% for year in data.count_list %}
+                                    <option>{{year}}</option>
+                                    {% endfor %}
+                                </select>
                             </div>
                             <div id="year-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
@@ -93,7 +99,8 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Password<span>*</span></label>
-                            <input id="password-field" name="password" type="password" class="form-control" name="password"  placeholder="Enter password..." maxlength="25" required="" >
+                            <input id="password-field" name="password" type="password" class="form-control"
+                                name="password" placeholder="Enter password..." maxlength="25" required="">
                             <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                             <div id="password-error" class="invalid-feedback">Password cannot be blank!</div>
                         </div>
@@ -101,95 +108,111 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Confirm password<span>*</span></label>
-                            <input id="confirm-password-field" name="confirm_password" type="password" class="form-control" name="confirm password"  placeholder="Enter confirm password..." maxlength="25" required="" >
-                            <span toggle="#confirm-password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-                            <div id="confirm_password-error" class="invalid-feedback">Confirm password cannot be blank!</div>
+                            <input id="confirm-password-field" name="confirm_password" type="password"
+                                class="form-control" name="confirm password" placeholder="Enter confirm password..."
+                                maxlength="25" required="">
+                            <span toggle="#confirm-password-field"
+                                class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                            <div id="confirm_password-error" class="invalid-feedback">Confirm password cannot be blank!
+                            </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name of the co-ordinator<span>*</span></label>
-                            <input type="text" name="coordinator_name" class="form-control alpha-input" placeholder="Enter co-ordinator name..." maxlength="25" required="">
-                            <div id="coordinator_name-error" class="invalid-feedback">Coordinator's name cannot be blank!</div>
+                            <input type="text" name="coordinator_name" class="form-control alpha-input"
+                                placeholder="Enter co-ordinator name..." maxlength="25" required="">
+                            <div id="coordinator_name-error" class="invalid-feedback">Coordinator's name cannot be
+                                blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Designation<span>*</span></label>
-                            <input type="text" name="designation" class="form-control alpha-input" placeholder="Enter designation name..." maxlength="20" required="">
+                            <input type="text" name="designation" class="form-control alpha-input"
+                                placeholder="Enter designation name..." maxlength="20" required="">
                             <div id="designation-error" class="invalid-feedback">Designation cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Upload logo of organization<span>*</span></label>
-                            <input type="file" name="org_image" accept="image/png" class="form-control" placeholder="Upload logo of organization" required="">
-                            <div id="org_image-error" class="invalid-feedback">Logo cann image canot be blank!</div>
+                            <input type="file" name="org_image" accept="image/png" class="form-control logo_image"
+                                placeholder="Upload logo of organization" required="">
+                            <div id="org_image-error" class="invalid-feedback">Logo cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Pin code<span>*</span></label>
-                            <input type="number" id="pinno" name="pincode" class="form-control" placeholder="Enter pin code..." required="">
+                            <input type="text" id="pinno" name="pincode" class="form-control alpha-input"
+                                placeholder="Enter pin code..." required="">
                             <div id="pincode-error" class="invalid-feedback">Pin code cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Country<span>*</span></label>
-                            <input type="text" name="country" class="form-control onlyalpha" placeholder="Enter country name..." maxlength="20" required="">
+                            <input type="text" name="country" class="form-control onlyalpha"
+                                placeholder="Enter country name..." maxlength="20" required="">
                             <div id="country-error" class="invalid-feedback">Country cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">State<span>*</span></label>
-                            <input type="text" name="state" class="form-control onlyalpha" placeholder="Enter state name..."  maxlength="20" required="">
+                            <input type="text" name="state" class="form-control onlyalpha"
+                                placeholder="Enter state name..." maxlength="20" required="">
                             <div id="state-error" class="invalid-feedback">State cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">City<span>*</span></label>
-                            <input type="text" name="city" class="form-control onlyalpha" placeholder="Enter city name..."  maxlength="20" required="">
+                            <input type="text" name="city" class="form-control onlyalpha"
+                                placeholder="Enter city name..." maxlength="20" required="">
                             <div id="city-error" class="invalid-feedback">City cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">District<span>*</span></label>
-                            <input type="text" name="district" class="form-control onlyalpha" placeholder="Enter district name..." maxlength="20" required="">
+                            <input type="text" name="district" class="form-control onlyalpha"
+                                placeholder="Enter district name..." maxlength="20" required="">
                             <div id="district-error" class="invalid-feedback">District cannot be blank!</div>
                         </div>
                     </div>
-                   
+
                 </div>
-                <Box class="RegisterBtn"><button id ="partner-button" type="button" class="partner_form1">Register</button></Box>
+                <Box class="RegisterBtn"><button id="partner-button" type="button"
+                        class="partner_form1">Register</button></Box>
             </form>
         </div>
     </div>
 </section>
 <!--Model Popup starts-->
-<div class="container"  tabindex="-1" role="dialog" aria-hidden="true" data-bs-keyboard="false" data-bs-backdrop="static">
+<div class="container" tabindex="-1" role="dialog" aria-hidden="true" data-bs-keyboard="false"
+    data-bs-backdrop="static">
     <div class="row">
         <div class="modal fade" id="ignismyModal" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <a href="{% url 'awards:partner' %}" title="Close" class="close">X</a>
-                     </div>
-                    
+                    </div>
+
                     <div class="modal-body">
-                       
+
                         <div class="thank-you-pop">
-                            <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png" alt="">
+                            <img src="http://goactionstations.co.uk/wp-content/uploads/2017/03/Green-Round-Tick.png"
+                                alt="">
                             <h1>Thank You!</h1>
                             <p>Your submission is received successfully</p>
                         </div>
 
-                         
+
                     </div>
-                    
+
                 </div>
             </div>
         </div>
@@ -199,80 +222,151 @@
 {% endblock content %}
 {% block extra_js %}
 <script>
-// debugger
-$(document).ready(function() {
-    
-    // $('#ignismyModal').modal({backdrop: 'static', keyboard: false}, 'show');
-    // $(".formsubmit").submit(function(event) {
+    // debugger
+    $(document).ready(function () {
 
-    $(".alpha-input").keydown(function (e){
-        var k = e.keyCode || e.which;
-        // debugger
-        var ok = k >= 65 && k <= 90 || // A-Z
-            k >= 96 && k <= 105 || // a-z
-            k >= 35 && k <= 40 || // arrows
-            k == 9 || //tab
-            k == 46 || //del
-            k == 8 || // backspace
-            k == 32 ||
-            k == 190 ||
-            (!e.shiftKey && k >= 48 && k <= 57); // only 0-9 (ignore SHIFT options)
+        // $('#ignismyModal').modal({backdrop: 'static', keyboard: false}, 'show');
+        // $(".formsubmit").submit(function(event) {
 
-        if(!ok || (e.ctrlKey && e.altKey)){
-            e.preventDefault();
-        }
-    });
-
-    $('#org_email').keyup(function (e) {
-        var a = 10
-        // alert("hi");
-        if (e.which > 47 && e.which < 58 || e.which > 96 && e.which < 123 || e.which > 63 && e.which < 91 || e.which == 46 || e.which == 8 ) {
-            if (this.value.length < 1) {
-
+        const checkRequired = (name, value) => {
+            if (!value) {
+                $(`#${name}-error`).addClass('d-block');
+                return false
             } else {
-                var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
-                if(!re) {
+                $(`#${name}-error`).removeClass('d-block');
+                return true
+
+            }
+        }
+
+        const checkValidations = (name, value) => {
+            let valid = checkRequired(name, value)
+            if (!valid) return false
+            if (name === "email") {
+                const emailregex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,4}$/i;
+                if (!emailregex.test(value)) {
                     $('#email-error').text("Please enter valid email");
                     $("#email-error").addClass('d-block');
-                } else {
-                    $("#email-error").removeClass('d-block');
+                    valid = false
                 }
             }
-        } else {
-            e.preventDefault();
+            if (name === "phone_number") {
+                if ((value.length < 10 || value.length > 15)) {
+                    $('#phone_number-error').text("Please enter valid number");
+                    $("#phone_number-error").addClass('d-block');
+                    valid = false
+                }
+            }
+            else if (name === "pincode") {
+                if ((value.length < 6 || value.length > 10)) {
+                    $('#pincode-error').text("Please enter valid pincode");
+                    $("#pincode-error").addClass('d-block');
+                    valid = false
+                }
+            }
+            else if (name === "password") {
+                const passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_-])(?=.{8,16})");
+                if (!passwordRegex.test(value) || value.length < 8 || value.length > 10) {
+                    $('#password-error').text("Password must be 8 to 16 characters long alphanumeric, must contain at least 1 special character and upper case / lower case letters");
+                    $("#password-error").addClass('d-block');
+                    valid = false
+                }
+                const confirmPassword = document.getElementById("confirm-password-field").value
+                if (confirmPassword === value) $("#confirm_password-error").removeClass('d-block')
+            } else if (name === "confirm_password") {
+                const password = document.getElementById("password-field").value
+                if (password !== value) {
+                    $('#confirm_password-error').text("Confirm Password and Password should be same");
+                    $("#confirm_password-error").addClass('d-block');
+                    valid = false
+                }
+            }
+            return valid
         }
-    });
-    //     } else if (this.value.length < 1) {
 
-    //     } else {
-    //         var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
-    //         if(!re) {
-    //             $('#email-error').text("Please enter valid email");
-    //             $("#email-error").addClass('d-block');
-    //         } else {
-    //             $("#email-error").removeClass('d-block');
-    //         }
-    //     }
-    // })
+        $("input").keyup((event) => {
+            const { name, value } = event.target
+            checkValidations(name, value)
+        })
 
-  //   $('.onlyalpha').keydown(function (e) {
-  //     if (e.shiftKey || e.ctrlKey || e.altKey) {
-  //         e.preventDefault();
-  //     } else {
-  //         var key = e.keyCode;
-  //         if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
-  //             e.preventDefault();
-  //         }
-  //     }
-  // });
-    $(".onlyalpha").keypress(function (e) {
+        $("textarea").keyup((event) => {
+            const { name, value } = event.target
+            checkRequired(name, value)
+        })
+
+        $(".logo_image").change((event) => {
+            const { name, value } = event.target
+            checkRequired(name, value)
+        })
+
+        $(".alpha-input").keydown(function (e) {
+            var k = e.keyCode || e.which;
+            // debugger
+            var ok = k >= 65 && k <= 90 || // A-Z
+                k >= 96 && k <= 105 || // a-z
+                k >= 35 && k <= 40 || // arrows
+                k == 9 || //tab
+                k == 46 || //del
+                k == 8 || // backspace
+                k == 32 ||
+                k == 190 ||
+                (!e.shiftKey && k >= 48 && k <= 57); // only 0-9 (ignore SHIFT options)
+
+            if (!ok || (e.ctrlKey && e.altKey)) {
+                e.preventDefault();
+            }
+        });
+
+        // $('#org_email').keyup(function (e) {
+        //     var a = 10
+        //     // alert("hi");
+        //     if (e.which > 47 && e.which < 58 || e.which > 96 && e.which < 123 || e.which > 63 && e.which < 91 || e.which == 46 || e.which == 8) {
+        //         if (this.value.length < 1) {
+
+        //         } else {
+        //             var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
+        //             if (!re) {
+        //                 $('#email-error').text("Please enter valid email");
+        //                 $("#email-error").addClass('d-block');
+        //             } else {
+        //                 $("#email-error").removeClass('d-block');
+        //             }
+        //         }
+        //     } else {
+        //         e.preventDefault();
+        //     }
+        // });
+        //     } else if (this.value.length < 1) {
+
+        //     } else {
+        //         var re = /([A-Z0-9a-z_-][^@])+?@[^$#<>?]+?\.[\w]{2,4}/.test(this.value);
+        //         if(!re) {
+        //             $('#email-error').text("Please enter valid email");
+        //             $("#email-error").addClass('d-block');
+        //         } else {
+        //             $("#email-error").removeClass('d-block');
+        //         }
+        //     }
+        // })
+
+        //   $('.onlyalpha').keydown(function (e) {
+        //     if (e.shiftKey || e.ctrlKey || e.altKey) {
+        //         e.preventDefault();
+        //     } else {
+        //         var key = e.keyCode;
+        //         if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+        //             e.preventDefault();
+        //         }
+        //     }
+        // });
+        $(".onlyalpha").keypress(function (e) {
             var keyCode = e.keyCode || e.which;
- 
+
             // $("#lblError").html("");
- 
+
             //Regex for Valid Characters i.e. Alphabets.
             var regex = /^[A-Za-z]+$/;
- 
+
             //Validate TextBox value against the Regex.
             var isValid = regex.test(String.fromCharCode(keyCode));
             if (!isValid) {
@@ -280,148 +374,161 @@ $(document).ready(function() {
             }
         });
 
-    $("#pinno").keypress(function(evt){
-        // debugger
-        data = $(this).val();
-        if (evt.which < 48 || evt.which > 57)
-            {
-                evt.preventDefault();
-            }
-        else {
-            if (data.length < 5) {
-                $("#pincode-error").text("Pincode must be of 6 digit")
-                $("#pincode-error").addClass('d-block');
-            } else if (data.length == 5) {
-                $("#pincode-error").removeClass('d-block');
-            } else {
-                evt.preventDefault();
-            }
-        }
-    });
+        // $("#pinno").keypress(function(evt){
+        //     // debugger
+        //     data = $(this).val();
+        //     if (evt.which < 48 || evt.which > 57)
+        //         {
+        //             evt.preventDefault();
+        //         }
+        //     else {
+        //         if (data.length < 5) {
+        //             $("#pincode-error").text("Pincode must be of 6 digit")
+        //             $("#pincode-error").addClass('d-block');
+        //         } else if (data.length == 5) {
+        //             $("#pincode-error").removeClass('d-block');
+        //         } else {
+        //             evt.preventDefault();
+        //         }
+        //     }
+        // });
 
-    $("#mobileno").keypress(function(evt){
-        // debugger
-        data = $(this).val();
-        if (evt.which < 48 || evt.which > 57)
-            {
-                evt.preventDefault();
-            }
-        else {
-            if (data.length < 9) {
-                $("#phone_number-error").text("Phone number must be of 10 digit")
-                $("#phone_number-error").addClass('d-block');
-            } else if (data.length == 9) {
-                $("#phone_number-error").removeClass('d-block');
-            } else {
-                evt.preventDefault();
-            }
-        }
-    });
+        // $("#mobileno").keypress(function (evt) {
+        //     // debugger
+        //     data = $(this).val();
+        //     if (evt.which < 48 || evt.which > 57) {
+        //         evt.preventDefault();
+        //     }
+        //     else {
+        //         if (data.length < 9) {
+        //             $("#phone_number-error").text("Phone number must be of 10 digit")
+        //             $("#phone_number-error").addClass('d-block');
+        //         } else if (data.length == 9) {
+        //             $("#phone_number-error").removeClass('d-block');
+        //         } else {
+        //             evt.preventDefault();
+        //         }
+        //     }
+        // });
 
-    $('body').on('click',"#partner-button", function(event) {
-        $(".invalid-feedback").removeClass('d-block');
-        var isValid = true;
-        // debugger
-        $("#form1 input").each(function() {
-            
-           var element = $(this);
-           if (element.val() == "") {
-               name = this.name
-               isValid = false;
-               $(`#${name}-error`).addClass('d-block');
-           }
-        });
-        if (isValid == true) {
-            //stop submit the form, we will post it manually.
+        $('body').on('click', "#partner-button", function (event) {
             $(".invalid-feedback").removeClass('d-block');
-            $("#partner-button").prop("disabled", true);
-            // event.preventDefault();
-            // Get form
-            const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
-            // debugger
+            var isValid = true;
 
-            var form = $('#form1')[0];
+            // $("#form1 input").each(function () {
+            //     var element = $(this);
+            //     if (element.val() == "") {
+            //         name = this.name
+            //         isValid = false;
+            //         $(`#${name}-error`).addClass('d-block');
+            //     }
+            // });
 
-            // Create an FormData object 
-            var data = new FormData(form);
-            password = data.get('password')
-            confirm_password = data.get('confirm_password')
-            if (password === confirm_password) {
-                if (password.length < 8 && confirm_password.length < 8) {
-                    $("#password-error").text("password must be of atleast 8 character")
+            $("#form1 input").each(function () {
+                var element = $(this);
+                const { name, value } = element[0]
+                const valid = checkValidations(name, value)
+                if (valid === false) isValid = false
+            });
+
+            $("#form1 textarea").each(function () {
+                var element = $(this);
+                const { name, value } = element[0]
+                const valid = checkValidations(name, value)
+                if (valid === false) isValid = false
+            });
+
+            if (isValid == true) {
+                //stop submit the form, we will post it manually.
+                $(".invalid-feedback").removeClass('d-block');
+                $("#partner-button").prop("disabled", true);
+                // event.preventDefault();
+                // Get form
+                const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                // debugger
+
+                var form = $('#form1')[0];
+
+                // Create an FormData object 
+                var data = new FormData(form);
+                password = data.get('password')
+                confirm_password = data.get('confirm_password')
+                if (password === confirm_password) {
+                    if (password.length < 8 && confirm_password.length < 8) {
+                        $("#password-error").text("password must be of atleast 8 character")
+                        $("#password-error").addClass('d-block');
+                        $("#confirm_password-error").text("confirm_password must be of atleast 8 character")
+                        $("#confirm_password-error").addClass('d-block');
+                        $("#partner-button").prop("disabled", false);
+                    } else {
+                        $.ajax({
+                            type: "POST",
+                            enctype: 'multipart/form-data',
+                            headers: { 'X-CSRFToken': csrftoken },
+                            url: "/ourpartner/register/",
+                            data: data,
+                            processData: false,
+                            contentType: false,
+                            cache: false,
+                            timeout: 800000,
+                            success: function (data) {
+
+                                // debugger
+                                if (data.status == "success") {
+
+                                    $("#partner-button").prop("disabled", false);
+                                    $('#ignismyModal').modal('show');
+
+                                    // $("#btnSubmit").prop("disabled", false);
+                                } else if (data.status == "error") {
+                                    $.each(data.errors, function (key, value) {
+
+                                        $(`#${key}-error`).text(value)
+                                        $(`#${key}-error`).addClass('d-block');
+                                        // alert(key + " " + value);
+                                    });
+                                    $(`#partner-button`).prop("disabled", false);
+                                    $(window).scrollTop(0);
+                                    // $('#amg_form').find('.invalid-feedback').removeClass('d-block');
+                                } else {
+
+                                    alert('error')
+                                }
+                            }
+                        });
+                    }
+                }
+                else {
+                    $("#password-error").text("password and confirm password must be same")
                     $("#password-error").addClass('d-block');
-                    $("#confirm_password-error").text("confirm_password must be of atleast 8 character")
+                    $("#confirm_password-error").text("password and confirm password must be same")
                     $("#confirm_password-error").addClass('d-block');
                     $("#partner-button").prop("disabled", false);
-                } else {
-                    $.ajax({
-                        type: "POST",
-                        enctype: 'multipart/form-data',
-                        headers: { 'X-CSRFToken': csrftoken },
-                        url: "/ourpartner/register/",
-                        data: data,
-                        processData: false,
-                        contentType: false,
-                        cache: false,
-                        timeout: 800000,
-                        success: function(data) {
-
-                            // debugger
-                            if (data.status == "success") {
-
-                                $("#partner-button").prop("disabled", false);
-                                $('#ignismyModal').modal('show');
-
-                                // $("#btnSubmit").prop("disabled", false);
-                            } else if (data.status == "error") {
-                                $.each(data.errors, function(key, value) {
-
-                                    $(`#${key}-error`).text(value)
-                                    $(`#${key}-error`).addClass('d-block');
-                                    // alert(key + " " + value);
-                                });
-                                $(`#partner-button`).prop("disabled", false);
-                                $(window).scrollTop(0);
-                                // $('#amg_form').find('.invalid-feedback').removeClass('d-block');
-                            } else {
-
-                                alert('error')
-                            }
-                        }
-                    });
                 }
+            } else {
+
             }
-            else {
-                $("#password-error").text("password and confirm password must be same")
-                $("#password-error").addClass('d-block');
-                $("#confirm_password-error").text("password and confirm password must be same")
-                $("#confirm_password-error").addClass('d-block');
-                $("#partner-button").prop("disabled", false);
-            }
-        } else {
 
-        }
+            // formno = form_id
+            // value = formno.toString().split('');
+            // value1 = value[4]
+            // main_id = parseInt(value1);
 
-        // formno = form_id
-        // value = formno.toString().split('');
-        // value1 = value[4]
-        // main_id = parseInt(value1);
+            // disabled the submit button
 
-        // disabled the submit button
-
+        });
     });
-});
 
 
-$(".toggle-password").click(function() {
+    $(".toggle-password").click(function () {
 
-    $(this).toggleClass("fa-eye fa-eye-slash");
-    var input = $($(this).attr("toggle"));
-    if (input.attr("type") == "password") {
-      input.attr("type", "text");
-    } else {
-      input.attr("type", "password");
-    }
-});
+        $(this).toggleClass("fa-eye fa-eye-slash");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
 </script>
-  {% endblock extra_js %}
+{% endblock extra_js %}
