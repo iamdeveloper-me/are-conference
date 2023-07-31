@@ -23,35 +23,39 @@
 </section>
 <!-- banner end -->
 <!-- content start -->
-<section class="content-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="partner-content">
-                    <h2>ARE Conference Partner 2022</h2>
-                    <p>Mitigating climate change requires creating a public movement for collective action. To create a
-                        public movement, one individual or an organisation is not enough. Everyone should come to one
-                        platform to synchronise their energies for mitigating climate change. We are really thankful to
-                        our partners in endeavor who are supporting us in creating this public movement to tackle the
-                        climate crisis.</p>
-                </div>
-            </div>
-            {% if data %}
-                {% for report in data %}
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-12">
-                        <div class="partner-card">
-                            <img src="{{report.org_image.url}}" alt="" title="" class="" />
-                            <h3>{{report.org_name}}</h3>
-                            <p>{{report.org_detail}}</p>
-                            <!-- <a href="">View More</a>' %}' %}' %} -->
+{% if data %}
+    {% for key, value in data.items %}
+        <section class="content-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="partner-content">
+                            <h2>ARE Conference Partner {{key}} </h2>
+                            <p>Mitigating climate change requires creating a public movement for collective action. To create a
+                                public movement, one individual or an organisation is not enough. Everyone should come to one
+                                platform to synchronise their energies for mitigating climate change. We are really thankful to
+                                our partners in endeavor who are supporting us in creating this public movement to tackle the
+                                climate crisis.</p>
                         </div>
                     </div>
-                {% endfor %}
-            {% endif %}    
-        </div>
+                    {% if value %}
+                        {% for report in value %}
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+                                <div class="partner-card">
+                                    <img src="{{report.org_image.url}}" alt="" title="" class="" />
+                                    <h3>{{report.org_name}}</h3>
+                                    <p>{{report.org_detail}}</p>
+                                    <!-- <a href="">View More</a>' %}' %}' %} -->
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% endif %}    
+                </div>
 
-    </div>
-</section>
+            </div>
+        </section>
+    {% endfor %}
+{% endif %}
 <section class="becomePartnerArea">
     <div class="container">
         <div class="row">

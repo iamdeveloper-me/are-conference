@@ -1,0 +1,84 @@
+{% extends "layout/admin_base.html" %}
+{% load static %}
+{% block content %}
+<section class="dashboard_area">
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-md-2">
+                <div id="sidebar" role="navigation">
+                    <ul>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'admin_dashboard' %}">dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'awards_admin' %}">Awards</a></li>
+                        {% comment %}
+                        <li class="nav-item "><a class="nav-link" href="{% url 'speaker_admin' %}">Speakers</a><li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
+                        {% endcomment %}
+                        <li class="nav-item active"><a class="nav-link" href="{% url 'partner_admin' %}">Partners</a><li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="dashboard_right">
+                    <div class="speaker_area">
+                        <div class="add_newspeak">
+                            <h2>Partners</h2>
+                        </div>
+                        <div class="speaker_table">
+                            <table width="100%" class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>S. no.</th>
+                                        <th>email</th>
+                                        <th>Phone Number</th>
+                                        <th>Organization</th>
+                                        <th>Organization_type</th>
+                                        <th>Organization Image</th>
+                                        <th>Pincode</th>
+                                        <th>Country</th>
+                                        <th>State</th>
+                                        <th>City</th>
+                                        <th>District</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for data in object_list %}
+                                    <tr>
+                                        <td>{{ forloop.counter }}</td>
+                                        <td>{{ data.email }}</td>
+                                        <td>{{ data.phone_number }}</td>
+                                        <td>{{ data.org_name }}</td>
+                                        <td>{{ data.org_type }}</td>
+                                        <td><img src="{{data.org_image.url}}" width="60rem" height="70rem"></td>
+                                        <td>{{ data.pincode }}</td>
+                                        <td>{{ data.country }}</td>
+                                        <td>{{ data.state }}</td>
+                                        <td>{{ data.city }}</td>
+                                        <td>{{ data.district }}</td>
+                                        
+                                    </tr>
+                                        {% comment %}
+                                        <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
+                                        {% endcomment %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+{% block extra_content %}   
+{% include 'popup/add_speaker_popup.html' %}
+{% include 'popup/edit_speaker_popup.html' %}
+{% include 'delete.html' %}
+{% endblock extra_content %}
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js" integrity="sha512-JGKswjfABjJjtSUnz+y8XUBjBlwM1UHNlm2ZJN7A2a9HUYT3Mskq+SacsI35k4lok+/zetSxhZjKS3r3tfAnQg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{% endblock extra_js %}

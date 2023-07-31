@@ -226,16 +226,21 @@ class PartnerView(ListView):
 
 	def get_context_data(self,*args, **kwargs):
 		# import pdb; pdb.set_trace()
+		year_list =  PartnerRegister.objects.distinct('year').order_by('year').values("year")
+		sponsor_data = {}
+
+		for ind_year in year_list:
+			sponsor_data[ind_year['year']] = PartnerRegister.objects.filter(year=ind_year['year'])
 		if 'status' in self.request.session and self.request.session['status']=='done':
 			context = {
 				'status':'yes',
-				'data': PartnerRegister.objects.all()
+				'data': sponsor_data
 				}
 			del self.request.session['status']
 		else:
 			context = {
 				'status':'no',
-				'data':PartnerRegister.objects.all()
+				'data':sponsor_data
 				}
 		return context
 

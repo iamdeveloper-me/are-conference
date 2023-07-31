@@ -35,76 +35,80 @@
           </div>
      </div>
 </section>
-<section class="sposerDetail">
-     <div class="container">
-          <div class="row">
-               <div class="col-sm-12">
-                    <div class="sponserBox">
-                         <h2>ARE Conference Sponsor 2022</h2>
-                         <p>We are thankful for our partners to render support for the ARE Conference. Without their
-                              support, a conference of this scale would not be possible. Our supporters include:</p>
+{% if data %}
+     {% for key, value in data.items %}
+          <section class="sposerDetail">
+               <div class="container">
+                    <div class="row">
+                         <div class="col-sm-12">
+                              <div class="sponserBox">
+                                   <h2>ARE Conference Sponsor {{key}}</h2>
+                                   <p>We are thankful for our partners to render support for the ARE Conference. Without their
+                                        support, a conference of this scale would not be possible. Our supporters include:</p>
+                              </div>
+                         </div>
+                         {% if value %}
+                         {% for report in value %}
+                         <div class="col-sm-6 col-md-4">
+                              <div class="sponserLogo">
+                                   <div class="spImg">
+                                        <img src="{{report.org_image.url}}" alt="" title="" />
+                                   </div>
+                                   <div class="spright">
+                                        <h3>{{report.org_name}}</h3>
+                                        <h5>Platinum Sponsor</h5>
+                                   </div>
+                              </div>
+                         </div>
+                         {% endfor %}
+                         {% endif %}
+                         <!-- <div class="col-sm-6 col-md-4">
+                              <div class="sponserLogo">
+                                   <div class="spImg">
+                                        <img src="{% static 'images/ONGCImg.png' %}" alt="" title="" />
+                                   </div>
+                                   <div class="spright">
+                                        <h3>ONGC</h3>
+                                        <h5>Platinum Sponsor</h5>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                              <div class="sponserLogo">
+                                   <div class="spImg">
+                                        <img src="{% static 'images/Shell.png' %}" alt="" title="" />
+                                   </div>
+                                   <div class="spright">
+                                        <h3>Shell</h3>
+                                        <h5>Gold Sponsor</h5>
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="col-sm-6 col-md-4">
+                              <div class="sponserLogo">
+                                   <div class="spImg">
+                                        <img src="{% static 'images/Rainmatter.png' %}" alt="" title="" />
+                                   </div>
+                                   <div class="spright">
+                                        <h3>Rainmatter</h3>
+                                        <h5>Silver Sponsor</h5>
+                                   </div>
+                              </div>
+                         </div> -->
                     </div>
                </div>
-               {% if data %}
-               {% for report in data %}
-               <div class="col-sm-6 col-md-4">
-                    <div class="sponserLogo">
-                         <div class="spImg">
-                              <img src="{{report.org_image.url}}" alt="" title="" />
-                         </div>
-                         <div class="spright">
-                              <h3>{{report.org_name}}</h3>
-                              <h5>Platinum Sponsor</h5>
+               <div class="interestesBox">
+                    <div class="container">
+                         <div class="col-sm-12">
+                              <h2>Interested to Sponsor for ARE Conference?</h2>
+                              <p>If you are interested in becoming a partner for one-of-its-kind Action for Restoring Environment
+                                   (ARE) Conference and Energy Swaraj Awards held on 24-25 November 2023.</p>
+                              <a href="{% url 'awards:sponsor_register' %}">Register Now</a>
                          </div>
                     </div>
                </div>
-               {% endfor %}
-               {% endif %}
-               <!-- <div class="col-sm-6 col-md-4">
-                    <div class="sponserLogo">
-                         <div class="spImg">
-                              <img src="{% static 'images/ONGCImg.png' %}" alt="" title="" />
-                         </div>
-                         <div class="spright">
-                              <h3>ONGC</h3>
-                              <h5>Platinum Sponsor</h5>
-                         </div>
-                    </div>
-               </div>
-               <div class="col-sm-6 col-md-4">
-                    <div class="sponserLogo">
-                         <div class="spImg">
-                              <img src="{% static 'images/Shell.png' %}" alt="" title="" />
-                         </div>
-                         <div class="spright">
-                              <h3>Shell</h3>
-                              <h5>Gold Sponsor</h5>
-                         </div>
-                    </div>
-               </div>
-               <div class="col-sm-6 col-md-4">
-                    <div class="sponserLogo">
-                         <div class="spImg">
-                              <img src="{% static 'images/Rainmatter.png' %}" alt="" title="" />
-                         </div>
-                         <div class="spright">
-                              <h3>Rainmatter</h3>
-                              <h5>Silver Sponsor</h5>
-                         </div>
-                    </div>
-               </div> -->
-          </div>
-     </div>
-     <div class="interestesBox">
-          <div class="container">
-               <div class="col-sm-12">
-                    <h2>Interested to Sponsor for ARE Conference?</h2>
-                    <p>If you are interested in becoming a partner for one-of-its-kind Action for Restoring Environment
-                         (ARE) Conference and Energy Swaraj Awards held on 24-25 November 2023.</p>
-                    <a href="{% url 'awards:sponsor_register' %}">Register Now</a>
-               </div>
-          </div>
-     </div>
-</section>
+          </section>
+     {% endfor %}
+{% endif %}
 
 {% endblock content %}
