@@ -15,6 +15,7 @@ urlpatterns = [
 	path('awards/', views.AdminViewawards.as_view(), name='awards_admin'),
 	path('agenda/', views.AdminViewagenda.as_view(), name='agendas_admin'),
 	path('partner/', views.AdminViewPartner.as_view(), name='partner_admin'),
+	path('sponsor/', views.AdminViewSponsor.as_view(), name='sponsor_admin'),
 
 	path('adminaddspeaker/', views.AdminSpeakerCreateView.as_view(), name='admin_add_speaker'),
 	path('deletespeaker/<int:pk>', views.SpeakerDeleteView.as_view(), name='speaker_delete'),

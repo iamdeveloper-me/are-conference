@@ -1,4 +1,3 @@
-import pdb
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from .models import AmgAward, Award, ClimateAward, SponsorRegister

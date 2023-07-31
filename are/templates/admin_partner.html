@@ -14,7 +14,7 @@
                         <li class="nav-item"><a class="nav-link" href="{% url 'agendas_admin' %}">Agenda</a></li>
                         {% endcomment %}
                         <li class="nav-item active"><a class="nav-link" href="{% url 'partner_admin' %}">Partners</a><li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'partner_admin' %}">Sponsors</a><li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'sponsor_admin' %}">Sponsors</a><li>
                         
                     </ul>
                 </div>
@@ -61,7 +61,8 @@
                                         {% comment %}
                                         <td><button class="trigger-btn nav-item nav-link" data-toggle="modal" data-target="#Editspeaker"><a href="{% url 'speaker_update' data.id %}"></a></button></td>
                                         {% endcomment %}
-                                    </tr>
+                                    {% empty %}
+                                    <tr><td colspan="11" class='aligncss'>Currently no Data Available</td></tr>
                                     {% endfor %}
                                 </tbody>
                             </table>
