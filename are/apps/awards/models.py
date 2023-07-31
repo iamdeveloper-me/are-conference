@@ -120,5 +120,21 @@ class PartnerRegister(models.Model):
 	confirm_password = models.CharField(max_length=255)
 	created_at = models.DateTimeField(default=timezone.now)
 
-
+class SponsorRegister(models.Model):
+	email = models.EmailField( unique =True)
+	phone_number = models.CharField(max_length=255)
+	org_name = models.CharField(max_length=255)
+	org_type = models.CharField(max_length=255,choices=ORG_TYPE)
+	org_image = models.ImageField( upload_to="images")
+	coordinator_name = models.CharField(max_length=255)
+	designation = models.CharField(max_length=255)
+	year = models.IntegerField(('year'), choices=YEAR_CHOICES, default=datetime.datetime.now().year)
+	pincode = models.IntegerField()
+	country = models.CharField(max_length=255)
+	state = models.CharField(max_length=255)
+	city = models.CharField(max_length=255)
+	district = models.CharField(max_length=255)
+	password = models.CharField(max_length=255)
+	confirm_password = models.CharField(max_length=255)
+	created_at = models.DateTimeField(default=timezone.now)
 

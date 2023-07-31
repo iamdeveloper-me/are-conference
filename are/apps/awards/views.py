@@ -1,10 +1,11 @@
+import pdb
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, CreateView, ListView, DetailView
-from .models import AmgAward, Award, ClimateAward
+from .models import AmgAward, Award, ClimateAward, SponsorRegister
 from speakers.models import Speaker
-from awards.models import Award,AmgAward,ClimateAward,PartnerRegister
+from awards.models import Award,AmgAward,ClimateAward,PartnerRegister, SponsorRegister
 from agenda.models import Seats
-from .forms import AmgApplicationForm, ChallengeForm, EmailForm, PartnerRegisterForm
+from .forms import AmgApplicationForm, ChallengeForm, EmailForm, PartnerRegisterForm, SponsorRegisterForm
 from django.contrib import auth, messages
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -37,6 +38,7 @@ class PartnerRegisterView(CreateView):
 		context = super(PartnerRegisterView, self).get_context_data(*args,**kwargs)
 		data = {}
 		data['count_list'] = [item for item in range(2022, datetime.date.today().year+2)]
+		data['api_url'] = "/ourpartner/register/"
 		# import pdb; pdb.set_trace()	
 		return {'data':data}
 
@@ -45,6 +47,46 @@ class PartnerRegisterView(CreateView):
 
 		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
 		form = PartnerRegisterForm(request.POST, request.FILES)
+		if form.is_valid():
+			data = form.save(commit=False)
+			data.save()
+			request.session['status']='done'
+			status = {
+				'status':'success',
+			}
+			# send_message(
+   #              form.cleaned_data['name'],
+   #              form.cleaned_data['message']
+   #          )
+			# kwargs = {"data":True}
+			return HttpResponse(json.dumps(status),content_type="application/json")
+			# return JsonResponse(status)
+		else:
+			status = {
+				'status':'error',
+				'errors':form.errors,
+				'data':form.data
+			}
+			return HttpResponse(json.dumps(status),content_type="application/json")
+
+class SponsorRegisterView(CreateView):
+	model = SponsorRegister
+	form_class = SponsorRegisterForm
+	template_name = 'partner_register.html'
+
+	def get_context_data(self,*args, **kwargs):
+		context = super(SponsorRegisterView, self).get_context_data(*args,**kwargs)
+		data = {}
+		data['count_list'] = [item for item in range(2022, datetime.date.today().year+2)]
+		data['api_url'] = "/oursponsor/register/"
+		# import pdb; pdb.set_trace()	
+		return {'data':data}
+
+	def post(self, request, *args, **kwargs):	
+		# import pdb; pdb.set_trace()
+
+		# objs = Conference.objects.filter(id=kwargs['pk'])[0]
+		form = SponsorRegisterForm(request.POST, request.FILES)
 		if form.is_valid():
 			data = form.save(commit=False)
 			data.save()
@@ -197,6 +239,25 @@ class PartnerView(ListView):
 				}
 		return context
 
+class SponsorView(ListView):
+	model = SponsorRegister
+	template_name = "sponsors.html"
+	ordering = ['id']
+
+	def get_context_data(self,*args, **kwargs):
+		# import pdb; pdb.set_trace()
+		if 'status' in self.request.session and self.request.session['status']=='done':
+			context = {
+				'status':'yes',
+				'data': SponsorRegister.objects.all()
+				}
+			del self.request.session['status']
+		else:
+			context = {
+				'status':'no',
+				'data':SponsorRegister.objects.all()
+				}
+		return context
 
 
 # class PartnerView(TemplateView):

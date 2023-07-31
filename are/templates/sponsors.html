@@ -9,84 +9,102 @@
 {% block content %}
 <div class="black_box"></div>
 <section class="Sponsor_area">
-  <div class="container">
-       <div class="row align-items-center justify-content-center">
-           <div class="col-sm-6">
-                <div class="sessionLeftText">
-                     <h2>Become Sponsor for
-                         ARE Conference 2023</h2>
-                     <a href="{% url 'awards:register' %}">Register Now</a>
-                </div>
-           </div>
-           <div class="col-sm-6">
-                <div class="row no-gutters align-items-center">
-                     <div class="col-sm-4 col-6">
-                          <div class="sponserImg">
-                               <img src="{% static 'images/sponser1.png' %}" alt="" title="" >
-                          </div>
-                     </div>
-                     <div class="col-sm-8 col-6">
-                         <div class="sponserImg">
-                              <img src="{% static 'images/sponser2.png' %}" alt="" title="" >
+     <div class="container">
+          <div class="row align-items-center justify-content-center">
+               <div class="col-sm-6">
+                    <div class="sessionLeftText">
+                         <h2>Become Sponsor for
+                              ARE Conference 2023</h2>
+                         <a href="{% url 'awards:sponsor_register' %}">Register Now</a>
+                    </div>
+               </div>
+               <div class="col-sm-6">
+                    <div class="row no-gutters align-items-center">
+                         <div class="col-sm-4 col-6">
+                              <div class="sponserImg">
+                                   <img src="{% static 'images/sponser1.png' %}" alt="" title="">
+                              </div>
                          </div>
-                     </div>
-                </div>
-           </div>
-       </div>
-  </div>
+                         <div class="col-sm-8 col-6">
+                              <div class="sponserImg">
+                                   <img src="{% static 'images/sponser2.png' %}" alt="" title="">
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
 </section>
 <section class="sposerDetail">
      <div class="container">
-         <div class="row">
-             <div class="col-sm-12">
-                  <div class="sponserBox">
-                      <h2>ARE Conference Sponsor 2022</h2>
-                      <p>We are thankful for our partners to render support for the ARE Conference. Without their support, a conference of this scale would not be possible. Our supporters include:</p>
-                  </div>
-             </div>
-             <div class="col-sm-6 col-md-4">
-                  <div class="sponserLogo">
-                     <div class="spImg">
-                        <img src="{% static 'images/ONGCImg.png' %}" alt="" title="" />
-                     </div>
-                     <div class="spright">
-                          <h3>ONGC</h3>
-                          <h5>Platinum Sponsor</h5>
+          <div class="row">
+               <div class="col-sm-12">
+                    <div class="sponserBox">
+                         <h2>ARE Conference Sponsor 2022</h2>
+                         <p>We are thankful for our partners to render support for the ARE Conference. Without their
+                              support, a conference of this scale would not be possible. Our supporters include:</p>
                     </div>
-                  </div>
-             </div>
-             <div class="col-sm-6 col-md-4">
-                <div class="sponserLogo">
-                   <div class="spImg">
-                      <img src="{% static 'images/Shell.png' %}" alt="" title="" />
-                   </div>
-                   <div class="spright">
-                        <h3>Shell</h3>
-                        <h5>Gold Sponsor</h5>
-                  </div>
-                </div>
-           </div>
-           <div class="col-sm-6 col-md-4">
-            <div class="sponserLogo">
-               <div class="spImg">
-                  <img src="{% static 'images/Rainmatter.png' %}" alt="" title="" />
                </div>
-               <div class="spright">
-                    <h3>Rainmatter</h3>
-                    <h5>Silver Sponsor</h5>
-              </div>
-            </div>
-       </div>
-         </div>
+               {% if data %}
+               {% for report in data %}
+               <div class="col-sm-6 col-md-4">
+                    <div class="sponserLogo">
+                         <div class="spImg">
+                              <img src="{{report.org_image.url}}" alt="" title="" />
+                         </div>
+                         <div class="spright">
+                              <h3>{{report.org_name}}</h3>
+                              <h5>Platinum Sponsor</h5>
+                         </div>
+                    </div>
+               </div>
+               {% endfor %}
+               {% endif %}
+               <!-- <div class="col-sm-6 col-md-4">
+                    <div class="sponserLogo">
+                         <div class="spImg">
+                              <img src="{% static 'images/ONGCImg.png' %}" alt="" title="" />
+                         </div>
+                         <div class="spright">
+                              <h3>ONGC</h3>
+                              <h5>Platinum Sponsor</h5>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-sm-6 col-md-4">
+                    <div class="sponserLogo">
+                         <div class="spImg">
+                              <img src="{% static 'images/Shell.png' %}" alt="" title="" />
+                         </div>
+                         <div class="spright">
+                              <h3>Shell</h3>
+                              <h5>Gold Sponsor</h5>
+                         </div>
+                    </div>
+               </div>
+               <div class="col-sm-6 col-md-4">
+                    <div class="sponserLogo">
+                         <div class="spImg">
+                              <img src="{% static 'images/Rainmatter.png' %}" alt="" title="" />
+                         </div>
+                         <div class="spright">
+                              <h3>Rainmatter</h3>
+                              <h5>Silver Sponsor</h5>
+                         </div>
+                    </div>
+               </div> -->
+          </div>
      </div>
      <div class="interestesBox">
-         <div class="container">
-              <div class="col-sm-12">
-                   <h2>Interested to Sponsor for ARE Conference?</h2>
-                   <p>If you are interested in becoming a partner for one-of-its-kind Action for Restoring Environment (ARE) Conference and Energy Swaraj Awards held on 24-25 November 2023.</p>
-                   <a href="{% url 'awards:register' %}">Register Now</a>
-              </div>
-         </div>
+          <div class="container">
+               <div class="col-sm-12">
+                    <h2>Interested to Sponsor for ARE Conference?</h2>
+                    <p>If you are interested in becoming a partner for one-of-its-kind Action for Restoring Environment
+                         (ARE) Conference and Energy Swaraj Awards held on 24-25 November 2023.</p>
+                    <a href="{% url 'awards:sponsor_register' %}">Register Now</a>
+               </div>
+          </div>
      </div>
 </section>
+
 {% endblock content %}

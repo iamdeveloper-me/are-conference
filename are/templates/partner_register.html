@@ -45,7 +45,7 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Phone number<span>*</span></label>
-                            <input type="text" id="mobileno" pattern="[0-9]{10}" name="phone_number"
+                            <input type="number" id="mobileno" pattern="[0-9]{10}" name="phone_number"
                                 class="form-control" placeholder="Enter your phone number..." required="">
                             <div id="phone_number-error" class="invalid-feedback">Phone number cannot be blank!</div>
                         </div>
@@ -71,29 +71,6 @@
                                 </select>
                             </div>
                             <div id="org_type-error" class="invalid-feedback">Last name cannot be blank!</div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Organization Detail<span>*</span></label>
-                            <textarea name="org_detail" type="text" class="form-control"
-                                placeholder="Enter Organization Detail....." maxlength="650" required=""></textarea>
-                            <div id="org_detail-error" class="invalid-feedback">Organization Detail cannot be blank!
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Year<span>*</span></label>
-                            <div class="downArrow">
-                                <select name="year">
-                                    <option selected="selected">2021</option>
-                                    {% for year in data.count_list %}
-                                    <option>{{year}}</option>
-                                    {% endfor %}
-                                </select>
-                            </div>
-                            <div id="year-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -132,6 +109,30 @@
                             <input type="text" name="designation" class="form-control alpha-input"
                                 placeholder="Enter designation name..." maxlength="20" required="">
                             <div id="designation-error" class="invalid-feedback">Designation cannot be blank!</div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 partner-org">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Organization Detail<span>*</span></label>
+                            <textarea name="org_detail" type="text" class="form-control"
+                                placeholder="Enter Organization Detail....." maxlength="650" required=""></textarea>
+                            <span>Note: Only 650 characters are allow</span>
+                            <div id="org_detail-error" class="invalid-feedback">Organization Detail cannot be blank!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Year<span>*</span></label>
+                            <div class="downArrow">
+                                <select name="year">
+                                    <option selected="selected">2021</option>
+                                    {% for year in data.count_list %}
+                                    <option>{{year}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div id="year-error" class="invalid-feedback">Last name cannot be blank!</div>
                         </div>
                     </div>
                     <div class="col-sm-6">
@@ -198,7 +199,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <a href="{% url 'awards:partner' %}" title="Close" class="close">X</a>
+                        <a id="awards-link" href="{% url 'awards:partner' %}" title="Close" class="close">X</a>
                     </div>
 
                     <div class="modal-body">
@@ -219,11 +220,15 @@
     </div>
 </div>
 <!--Model Popup ends-->
+
 {% endblock content %}
 {% block extra_js %}
 <script>
-    // debugger
+    var viewsData = {{ data| safe}};
+    const isSponsor = viewsData.api_url.includes("oursponsor")
+
     $(document).ready(function () {
+        if (isSponsor) $(".partner-org").hide()
 
         // $('#ignismyModal').modal({backdrop: 'static', keyboard: false}, 'show');
         // $(".formsubmit").submit(function(event) {
@@ -251,7 +256,7 @@
                 }
             }
             if (name === "phone_number") {
-                if ((value.length < 10 || value.length > 15)) {
+                if ((value.length !== 10)) {
                     $('#phone_number-error').text("Please enter valid number");
                     $("#phone_number-error").addClass('d-block');
                     valid = false
@@ -291,7 +296,7 @@
 
         $("textarea").keyup((event) => {
             const { name, value } = event.target
-            checkRequired(name, value)
+            if (!isSponsor) checkRequired(name, value)
         })
 
         $(".logo_image").change((event) => {
@@ -365,7 +370,7 @@
             // $("#lblError").html("");
 
             //Regex for Valid Characters i.e. Alphabets.
-            var regex = /^[A-Za-z]+$/;
+            var regex = /^[A-Za-z ]+$/;
 
             //Validate TextBox value against the Regex.
             var isValid = regex.test(String.fromCharCode(keyCode));
@@ -424,6 +429,7 @@
             //     }
             // });
 
+
             $("#form1 input").each(function () {
                 var element = $(this);
                 const { name, value } = element[0]
@@ -432,10 +438,12 @@
             });
 
             $("#form1 textarea").each(function () {
-                var element = $(this);
-                const { name, value } = element[0]
-                const valid = checkValidations(name, value)
-                if (valid === false) isValid = false
+                if (!isSponsor) {
+                    var element = $(this);
+                    const { name, value } = element[0]
+                    const valid = checkValidations(name, value)
+                    if (valid === false) isValid = false
+                }
             });
 
             if (isValid == true) {
@@ -461,20 +469,25 @@
                         $("#confirm_password-error").addClass('d-block');
                         $("#partner-button").prop("disabled", false);
                     } else {
+
                         $.ajax({
                             type: "POST",
                             enctype: 'multipart/form-data',
                             headers: { 'X-CSRFToken': csrftoken },
-                            url: "/ourpartner/register/",
+                            url: viewsData.api_url,
                             data: data,
                             processData: false,
                             contentType: false,
                             cache: false,
                             timeout: 800000,
-                            success: function (data) {
 
-                                // debugger
+                            success: function (data) {
                                 if (data.status == "success") {
+                                    $("#form1 ")[0].reset()
+                                    if (isSponsor) {
+                                        var a = document.getElementById('awards-link');
+                                        a.href = "{% url 'awards:sponsors' %}";
+                                    }
 
                                     $("#partner-button").prop("disabled", false);
                                     $('#ignismyModal').modal('show');
@@ -491,10 +504,10 @@
                                     $(window).scrollTop(0);
                                     // $('#amg_form').find('.invalid-feedback').removeClass('d-block');
                                 } else {
-
                                     alert('error')
                                 }
                             }
+
                         });
                     }
                 }
