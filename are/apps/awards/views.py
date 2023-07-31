@@ -36,7 +36,7 @@ class PartnerRegisterView(CreateView):
 	def get_context_data(self,*args, **kwargs):
 		context = super(PartnerRegisterView, self).get_context_data(*args,**kwargs)
 		data = {}
-		data['count_list'] = [item for item in range(2022, datetime.date.today().year+2)]
+		data['count_list'] = [item for item in range(2023, datetime.date.today().year+2)]
 		data['api_url'] = "/ourpartner/register/"
 		# import pdb; pdb.set_trace()	
 		return {'data':data}
@@ -76,7 +76,7 @@ class SponsorRegisterView(CreateView):
 	def get_context_data(self,*args, **kwargs):
 		context = super(SponsorRegisterView, self).get_context_data(*args,**kwargs)
 		data = {}
-		data['count_list'] = [item for item in range(2022, datetime.date.today().year+2)]
+		data['count_list'] = [item for item in range(2023, datetime.date.today().year+2)]
 		data['api_url'] = "/oursponsor/register/"
 		# import pdb; pdb.set_trace()	
 		return {'data':data}
